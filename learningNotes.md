@@ -1,7 +1,11 @@
-<details><summary>
-  Markdown between html tags works when there's an empty line before it.
-  </summary>
+# section1
+## subsection1
+### subusbsection1
+*
 
+
+* <details>
+<summary> Markdown between html tags works when there's an empty line before it. </summary>
   here ```it works```
   </details>
 <details><summary>
