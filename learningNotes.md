@@ -1,23 +1,13 @@
-# <details><summary>section1<summary>
+# section1
 ## subsection1
 ### subusbsection1
 * a1
-** a2
-** a3
+ * a2
+ * a3
 * a2
-<details>
 
 
 
-* <details>
-<summary> Markdown between html tags works when there's an empty line before it. </summary>
-  here ```it works```
-  </details>
-<details><summary>
-  Markdown between html tags works when there's an empty line before it.
-  </summary>
-  here ```it doesn't work```
-  </details>
 
 *  Parser
 *  Distributed system concepts and algorithms
