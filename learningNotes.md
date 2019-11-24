@@ -1,22 +1,22 @@
-Parsersssss12345
-Distributed system concepts and algorithms
-Operating system concepts
-Languages:
-C++ (STL, containers, concepts,contracts,modules,synchronization,transactions)
-Python
-Javascript
-Fortran, Lua, go, R 
-Function programming Languages
-Programming paradigms
-OOP or OOD
-Class based
-Object or prototype based
-Database 
-SQL
-Procedural languages
-Functional programming languages
-Descriptive languages (UML, XML)
-Design Pattern (Code Quality)
+*  Parser
+*  Distributed system concepts and algorithms
+*  Operating system concepts
+*  Languages:
+*  C++ (STL, containers, concepts,contracts,modules,synchronization,transactions)
+*  Python
+*  Javascript
+*  Fortran, Lua, go, R 
+*  Function programming Languages
+*  Programming paradigms
+*  OOP or OOD
+*  Class based
+*  Object or prototype based
+*  Database 
+*  SQL
+*  Procedural languages
+*  Functional programming languages
+*  Descriptive languages (UML, XML)
+*  Design Pattern (Code Quality)
 
 
 Data structures
