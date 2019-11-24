@@ -1,4 +1,4 @@
-# section1
+# <details><summary>section1<summary><details>
 ## subsection1
 ### subusbsection1
 *
