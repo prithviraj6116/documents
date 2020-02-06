@@ -67,15 +67,12 @@ template <typename T>
 auto fromUTF8(string source)
 {
     wstring_convert<codecvt_utf8_utf16<T>, T> convertor;
-    basic_string<T, char_traits<T>, allocator<T>>  result = convertor.from_bytes(source);
-    return result;
-}
+    basic_string<T, char_traits<T>, allocator<T>>  result =
+    convertor.from_bytes(source); return result; }
 
 //UB, no exception
  int x = 20;
  auto p = reinterpret_cast<float*>(&x);
-
-
 
 
 \end{verbatim}
@@ -85,6 +82,8 @@ auto fromUTF8(string source)
 1. shared folder ubuntu guest: 
 sudo vmhgfs-fuse -o nonempty -o allow_other .host:/data ./testmnt
 2. cmake llvm
-cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_VERBOSE_MAKEFILE=ON ../llvm -DLLVM_ENABLE_PROJECTS='clang;clang-tools-extra;lldb;compiler-rt;lld;polly'
+cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_VERBOSE_MAKEFILE=ON ../llvm
+-DLLVM_ENABLE_PROJECTS='clang;clang-tools-extra;lldb;compiler-rt;lld;polly'
+
 \end{verbatim}
 
