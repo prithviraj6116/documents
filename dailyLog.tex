@@ -24,5 +24,21 @@ auto s1 = 0123;
 auto s1 = 0x123;
 std::cout << std::hex << std::dec << std::oct << std::boolalpha
 std::setlocale(LC_ALL, "en_US.UTF-8");
+std::u32string p1 = U"abc"s;
+std::string p2 = "abc"s;
+std::u16string p3 = u"abc"s;
+enum e1{R,RED,YELLOW};
+enum class e1{R,RED,YELLOW};
+#define RED1 1
+enum class e1:uint8_t
+{
+    R=253,
+    RED,
+    YELLOW
+};
+
+
+
+
 
 \end{lstlisting}
