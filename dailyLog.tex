@@ -1,7 +1,8 @@
 \section{dailyLog} 
+
 \begin{itemize}
-    \item a
-    \item b
+    \item type punning using union, reinterpret case, strict alialing rule
+    \item union type punning, size of constexpr int == 4B or less than 4B
 \end{itemize}
 
 \begin{lstlisting}
@@ -36,6 +37,7 @@ auto s1 = 0b11
 auto s1 = 0123;
 auto s1 = 0x123;
 std::cout << std::hex << std::dec << std::oct << std::boolalpha
+std::cout << std::bitset<5>(19) << std::endl;
 std::setlocale(LC_ALL, "en_US.UTF-8");
 std::u32string p1 = U"abc"s;
 std::string p2 = "abc"s;
@@ -69,6 +71,9 @@ auto fromUTF8(string source)
     return result;
 }
 
+//UB, no exception
+ int x = 20;
+ auto p = reinterpret_cast<float*>(&x);
 
 
 
