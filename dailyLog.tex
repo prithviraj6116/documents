@@ -4,6 +4,14 @@ std::bitset<5> intA;
 struct s1 {
     int a:6;
 }
+#include <iostream>
+#include <stdexcept> 
+#include <functional>
+#include <bitset>
+#include <locale>
+#include <stdio.h>
+#include <codecvt>
+#include <assert.h>
 using namespace std::string_literals;  
 auto s1 = "abc";
 auto s1 = L"abc";
@@ -36,6 +44,10 @@ enum class e1:uint8_t
     RED,
     YELLOW
 };
+
+template <typename T> void type_name(){
+    std::cout << __PRETTY_FUNCTION__ << std::endl;
+}
 
 
 
