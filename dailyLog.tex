@@ -4,5 +4,25 @@ std::bitset<5> intA;
 struct s1 {
     int a:6;
 }
+using namespace std::string_literals;  
+auto s1 = "abc";
+auto s1 = L"abc";
+auto s1 = u8"abc";
+auto s1 = u"abc";
+auto s1 = U"abc";
+auto s1 = "abc";
+auto s1 = "abc";
+auto s1 = 42;
+auto s1 = 42l;
+auto s1 = 42ul;
+auto s1 = 42ull;
+auto s1 = 42.f;
+auto s1 = 42.;
+auto s1 = 42;
+auto s1 = 0b11
+auto s1 = 0123;
+auto s1 = 0x123;
+std::cout << std::hex << std::dec << std::oct << std::boolalpha
+std::setlocale(LC_ALL, "en_US.UTF-8");
 
 \end{lstlisting}
