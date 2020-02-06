@@ -2,7 +2,8 @@
 
 \begin{itemize}
     \item type punning using union, reinterpret case, strict alialing rule
-    \item union type punning, size of constexpr int == 4B or less than 4Ba
+    \item union type punning, size of constexpr int == 4B or less than 4B afl-fuzz
+    \item hardening
 \end{itemize}
 
 \begin{verbatim}
@@ -74,6 +75,7 @@ auto fromUTF8(string source)
  int x = 20;
  auto p = reinterpret_cast<float*>(&x);
 
+    cout <<  (void*)main << endl;
 
 \end{verbatim}
 
