@@ -48,6 +48,21 @@ enum class e1:uint8_t
 template <typename T> void type_name(){
     std::cout << __PRETTY_FUNCTION__ << std::endl;
 }
+string toUTF8(const basic_string<T, char_traits<T>, allocator<T>>& source)
+{
+    string result;
+    wstring_convert<codecvt_utf8_utf16<T>, T> convertor;
+    result = convertor.to_bytes(source);
+    return result;
+};
+
+template <typename T>
+auto fromUTF8(string source)
+{
+    wstring_convert<codecvt_utf8_utf16<T>, T> convertor;
+    basic_string<T, char_traits<T>, allocator<T>>  result = convertor.from_bytes(source);
+    return result;
+}
 
 
 
