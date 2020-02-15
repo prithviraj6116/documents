@@ -88,6 +88,24 @@ auto fromUTF8(string source)
 
     cout <<  (void*)main << endl;
 
+
+
+
+
+ union
+    {
+        float input; // assumes sizeof(float) == sizeof(int)
+        int   output;
+    } data;
+    data.input =1*sqrt(-1);//1*pow(2,-127-22)/2;///1e-45;//0b00000001000000000000010000000001;
+    cout << data.input << endl;
+
+    std::bitset<sizeof(float) * CHAR_BIT> bits(data.output);
+    std::cout <<  bits << std::endl;
+
+    // or
+    std::cout << "BIT 4: " << bits[4] << std::endl;
+
 \end{verbatim}
 
 \begin{verbatim}
