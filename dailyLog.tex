@@ -106,6 +106,11 @@ auto fromUTF8(string source)
     // or
     std::cout << "BIT 4: " << bits[4] << std::endl;
 
+    print floating point raw bits
+    auto floatValue = numeric_limits<float>::max();
+    int* intVal reinterpret_cast<int*>(&floatValue);
+    std::bitset<sizeof(float) * 8> bits1(*intVal);
+
 \end{verbatim}
 
 \begin{verbatim}
