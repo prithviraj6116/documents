@@ -125,5 +125,36 @@ cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_VERBOSE_MAKEFILE=ON ../llvm
  >> !printenv LD_LIBRARY_PATH
 
 
+
+
+
+
+#include <stdio.h>
+#include <stddef.h>
+#include "rtwtypes.h"
+#include "slx1.h"
+extern void slx1_initialize(void);
+extern void slx1_step(void);
+extern void slx1_terminate(void);
+//create slx model named "slx1" with outport named "Outport" and generated code and package it and unzip package
+//gcc -L./slx1/debug2/ -I./slx1/matlab/simulink/include -I./slx1/matlab/rtw/c/src -I./slx1/debug2/slx1_ert_shrlib_rtw -Wall -o main1e main1.c  -ldl -l:slx1.so
+//LD_LIBRARY_PATH=/home/ppatil/Downloads/debug2/slx1/debug2:$LD_LIBRARY_PATH
+int main()
+{   
+    int i;
+    scanf("%d", &i);
+    printf("abdczs start\n");
+    slx1_initialize();
+    for(int v=0;v<i;++v){
+        slx1_step();
+        printf("v12 %f\n", slx1_Y.Outport);
+    }
+    
+    slx1_terminate();
+}
+
+/* End of file */
+
+
 \end{verbatim}
 
