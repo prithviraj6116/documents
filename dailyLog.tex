@@ -108,7 +108,7 @@ auto fromUTF8(string source)
 
     print floating point raw bits
     auto floatValue = numeric_limits<float>::max();
-    int* intVal reinterpret_cast<int*>(&floatValue);
+    int* intVal = reinterpret_cast<int*>(&floatValue);
     std::bitset<sizeof(float) * 8> bits1(*intVal);
 
 \end{verbatim}
@@ -120,6 +120,10 @@ sudo vmhgfs-fuse -o nonempty -o allow_other .host:/data ./testmnt
 2. cmake llvm
 cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_VERBOSE_MAKEFILE=ON ../llvm
 -DLLVM_ENABLE_PROJECTS='clang;clang-tools-extra;lldb;compiler-rt;lld;polly'
+
+
+ >> !printenv LD_LIBRARY_PATH
+
 
 \end{verbatim}
 
