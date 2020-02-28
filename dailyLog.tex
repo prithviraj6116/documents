@@ -1,7 +1,9 @@
 \section{logs} 
 \begin{verbatim}
 
-sbmake -distcc DEBUG=1 CTB="sl_main sl_compile shared_simulink_block sl_mask sl_libraries sl_link_bd simulink_core"
+sbmake -distcc DEBUG=1 CTB="sl_main sl_compile
+shared_simulink_block sl_mask sl_libraries sl_link_bd
+simulink_core"
 \begin{itemize}
     \item type punning using union, reinterpret case, strict alialing rule
     \item union type punning, size of constexpr int == 4B or less than 4B afl-fuzz
