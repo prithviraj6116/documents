@@ -1,7 +1,15 @@
 \section{logs} 
 \begin{verbatim}
+sbmake -distcc DEBUG=1 CTB="sl_main sl_compile shared_simulink_block sl_mask sl_libraries sl_link_bd simulink_core shared_simulink_lang_blocks sl_utility sl_graphical_classes sl_services sl_proxy_desktop sl_LogLoadBlockAPI simulink_core_blocks sl_continuous_blocks sl_event_engine shared_simulink_lang_blocks"
 sbmake -distcc DEBUG=1 CTB="sl_main sl_compile shared_simulink_block sl_mask sl_libraries sl_link_bd simulink_core shared_simulink_lang_blocks sl_utility
 sbmake -distcc DEBUG=1 CTB="sl_main sl_compile shared_simulink_block sl_mask sl_libraries sl_link_bd simulink_core"
+
+
+
+mex -v -client engine engdemo.c
+export LD_LIBRARY_PATH=/local-ssd/ppatil/t1/matlab/cefclient/sys/os/glnxa64:/local-ssd/ppatil/t1/matlab/sys/os/glnxa64:/local-ssd/ppatil/t1/matlab/bin/glnxa64:/local-ssd/ppatil/t1/matlab/extern/lib/glnxa64:/local-ssd/ppatil/t1/matlab/runtime/glnxa64:/local-ssd/ppatil/t1/matlab/sys/java/jre/glnxa64/jre/lib/amd64/native_threads:/local-ssd/ppatil/t1/matlab/sys/java/jre/glnxa64/jre/lib/amd64/server:/local-ssd/ppatil/t1/matlab/bin/glnxa64/:/local-ssd/ppatil/t1/matlab/sys/os/glnxa64/
+export PATH=$PATH:/mathworks/devel/sandbox/ppatil/installs/appqi1/bin/
+
 \begin{itemize}
     \item type punning using union, reinterpret case, strict alialing rule
     \item union type punning, size of constexpr int == 4B or less than 4B afl-fuzz
