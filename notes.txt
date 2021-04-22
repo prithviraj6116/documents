@@ -1,0 +1,17 @@
+advanates of little endian: 
+1. casts are noop since address of 1(char),2(short/half),4(int/float/word),8(longint/double/doubleword/size/addr) byte int would be same
+2. for 8 bit systems or for big integers/big integers: addition and subtraction can be pipelined or parallelized since lsb needs to
+perform addition/subtraction before msb
+
+
+alignment:https://www.geeksforgeeks.org/structure-member-alignment-padding-and-data-packing/ 
+std::has_unique_object_representation
+alignas
+std::alignment_of
+__attribute__((packed))
+
+
+standardlayout object
+p4 sync -N ...
+info vtbl variable
+sb -nosplash -nodesktop -r "sfnew;bdclose all"
