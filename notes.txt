@@ -15,3 +15,25 @@ standardlayout object
 p4 sync -N ...
 info vtbl variable
 sb -nosplash -nodesktop -r "sfnew;bdclose all"
+
+exception handling: LSDA, CFI, personality function, unwind.h, setjmp, longjmp,
+goto
+-fPIC vs load time relocation
+static library vs shared library. 
+shared library can be statically linked (-fPIC) vs dynamic linked (load time relocation)
+dynamically loaded
+disadvantate of dynamicalled linked shared library:https://eli.thegreenplace.net/2011/11/03/position-independent-code-pic-in-shared-libraries/
+https://eli.thegreenplace.net/2011/11/03/position-independent-code-pic-in-shared-libraries/
+1. non-sharable text section, ram usage increase since each exe that loads
+library needs separate copy 2. text section needs writable, security 3. load time increases
+
+can we relink shared library online?
+.got: global offset table
+.bss: block started by symbol
+plt: procedure location table
+https://reverseengineering.stackexchange.com/questions/1992/what-is-plt-got
+
+
+info proc mapping
+info sharedlibrary
+https://reverseengineering.stackexchange.com/questions/6657/why-does-ldd-and-gdb-info-sharedlibrary-show-a-different-library-base-addr
