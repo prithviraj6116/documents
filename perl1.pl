@@ -40,6 +40,28 @@ my $StringComparison1 =
 $int1+=1;
 $int1-=1;
 $string1.=":s1";
+
+#types/introspection
+#jit
+#templates/generic programming
+#bash/csh/sh/tsh
+#regex
+#string formatting
+#class, inheritance, virtual,
+#functions
+#modules
+#i/o
+#capi
+#namespaces/scopes
+#os/kernel api
+#matrix ops
+#ui
+#piping
+#interprocess
+#thread
+#synchronization
+#parallel
+#optimizations
 exit;
 
 sub subroutinePassByReference1 {
