@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 
-my $int1 = 12;#global variable
+my $int1 = 12;#global variable 
 my $double1 = 31.1;#block-scoped (local) variable
 my $string1 = "first";
 my $string2 = 'second';
