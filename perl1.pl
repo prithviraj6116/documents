@@ -40,8 +40,15 @@ my $StringComparison1 =
 $int1+=1;
 $int1-=1;
 $string1.=":s1";
+exit;
 
 #types/introspection
+#ir
+#integer promotion rules
+#floating point arithmatic
+#assembly
+#ssa
+#ast
 #jit
 #templates/generic programming
 #bash/csh/sh/tsh
@@ -62,7 +69,6 @@ $string1.=":s1";
 #synchronization
 #parallel
 #optimizations
-exit;
 
 sub subroutinePassByReference1 {
     my $p1 = \$_[0];
