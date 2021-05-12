@@ -42,13 +42,18 @@ $int1-=1;
 $string1.=":s1";
 my $init2=1;
 
-
-
 exit;
 
-END { print "end" }
-print "after begin";
-BEGIN { print "begin" }
+use File::Basename;
+use lib dirname (__FILE__);
+use myperlmodule1;
+#myperlmodule1::myperlmodule1f1();
+
+
+
+#END { print "end1" }
+#print "after begin";
+#BEGIN { my $init3=1;print "begin1";print "begin2";}
 
 #use feature "switch";
 #for($int1) {
