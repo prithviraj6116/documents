@@ -40,13 +40,41 @@ my $StringComparison1 =
 $int1+=1;
 $int1-=1;
 $string1.=":s1";
+my $init2=1;
+
+
+
+exit;
+
+END { print "end" }
+print "after begin";
+BEGIN { print "begin" }
+
+#use feature "switch";
+#for($int1) {
+#    when (12){print("12");}
+#    default{print("default")}
+#}
+
+my $regexString1="fooc bar food bar";
+print($regexString1);
+my $regexString2="foo12bar car43dog bar";
+$regexString2=~s/(\D*)(\d*)(\S)/$1 $2 $3/g;
+print($regexString2);
+
+sub todo_function1 { ... }
+todo_function1();
+
 my $q1=q*whe\*${int1} re*;
 my $qq1=qq*whe\*$int1 ree*;
-print($q1);
-print($qq1);
 my @qw1=qw(aa bb cc);
 my @qw2=qw(11 22 33);
-exit;
+print($q1);
+print($qq1);
+print(@qw1);
+print(@qw2);
+
+
 open(my $fileReadH1,"<","fileio1.txt");
 my $fileline1=<$fileReadH1>;chomp($fileline1);
 print($fileline1);
@@ -63,7 +91,8 @@ while(<$fileReadH1>){
     chomp($v1);
     print($v1);
 }
-print("----");
+
+
 #while(<>){
 #    print("$_");
 #}
