@@ -7,5 +7,5 @@ sub myperlmodule1f1 {
 }
 myperlmodule1f1();
 BEGIN{print "module begin";}
-
+ 
 1;
