@@ -41,12 +41,20 @@ $int1+=1;
 $int1-=1;
 $string1.=":s1";
 my $init2=1;
-
 exit;
+
+my @array1=(1,2,3);
+print(unshift(@array1,4));
+print(@array1);
+
+use Math::Trig;
+my $tanX = tan(0.9);
+print($tanX);
+
 
 use File::Basename;
 use lib dirname (__FILE__);
-use myperlmodule1;
+#use myperlmodule1;
 #myperlmodule1::myperlmodule1f1();
 
 

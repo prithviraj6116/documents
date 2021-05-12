@@ -1,3 +1,9 @@
+cat /etc/os-release
+cat /proc/version
+cat /etc/debian-version
+dpkg -S `which ld`
+cat /proc/cpuinfo
+
 advanates of little endian: 
 1. casts are noop since address of 1(char),2(short/half),4(int/float/word),8(longint/double/doubleword/size/addr) byte int would be same
 2. for 8 bit systems or for big integers/big integers: addition and subtraction can be pipelined or parallelized since lsb needs to
