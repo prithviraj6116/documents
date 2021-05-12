@@ -40,7 +40,33 @@ my $StringComparison1 =
 $int1+=1;
 $int1-=1;
 $string1.=":s1";
+my $q1=q*whe\*${int1} re*;
+my $qq1=qq*whe\*$int1 ree*;
+print($q1);
+print($qq1);
+my @qw1=qw(aa bb cc);
+my @qw2=qw(11 22 33);
 exit;
+open(my $fileReadH1,"<","fileio1.txt");
+my $fileline1=<$fileReadH1>;chomp($fileline1);
+print($fileline1);
+$fileline1=<$fileReadH1>;chomp($fileline1);
+print($fileline1);
+open($fileReadH1,"<","fileio1.txt");
+my @filelines1=<$fileReadH1>;
+print("----");
+print(@filelines1);
+print("----");
+open($fileReadH1,"<","fileio1.txt");
+while(<$fileReadH1>){
+    my $v1=$_;
+    chomp($v1);
+    print($v1);
+}
+print("----");
+#while(<>){
+#    print("$_");
+#}
 
 #types/introspection
 #ir
