@@ -35,7 +35,7 @@ my $stringConcat1 = "$string1 and $string2";
 my $stringConcat2 = $string1 . " and " . $string2;
 my $stringMultiplication1 = $string1 x '3';
 my $NumericComparisions1 = 1==1 && 1!=2 && 1<2 && 2>1 && 1<=2 && 1>=1;
-my $StringComparison1 = 
+my $StringComparison1 =   
 '1'eq'1' && '1'ne'2' && '1'lt'2' && '99'gt'100' && '1'le'2' && '1'ge'1';
 $int1+=1;
 $int1-=1;
