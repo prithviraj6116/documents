@@ -3,12 +3,26 @@ cat /proc/version
 cat /etc/debian-version
 dpkg -S `which ld`
 cat /proc/cpuinfo
+gcc -Xlinker -rpath=/local-ssd/ppatil/installs/glibc1/ -Xlinker -I/local-ssd/ppatil/installs/glibc1/elf/ ../pppGitHub/c1.c  -o c1
+
 
 advanates of little endian: 
 1. casts are noop since address of 1(char),2(short/half),4(int/float/word),8(longint/double/doubleword/size/addr) byte int would be same
 2. for 8 bit systems or for big integers/big integers: addition and subtraction can be pipelined or parallelized since lsb needs to
 perform addition/subtraction before msb
 
+load_elf_binary: linux calls to load elf binaries
+
+ld is static linker, ld.so is loader and dynamic linker: 
+https://unix.stackexchange.com/questions/438068/what-is-the-difference-between-the-runtime-linker-ld-so-and-the-prelink-progra
+
+
+_dl_start_user: to debug ld.so 
+https://sourceware.org/glibc/wiki/Debugging/Loader_Debugging#Debugging_With_an_Alternate_Loader
+rpath vs -L : gcc : 
+cat /etc/cpuinfo: https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/tree/arch/x86/include/asm/cpufeatures.h
+
+https://www.microcontrollertips.com/difference-between-von-neumann-and-harvard-architectures/
 
 alignment:https://www.geeksforgeeks.org/structure-member-alignment-padding-and-data-packing/ 
 std::has_unique_object_representation
@@ -43,3 +57,13 @@ https://reverseengineering.stackexchange.com/questions/1992/what-is-plt-got
 info proc mapping
 info sharedlibrary
 https://reverseengineering.stackexchange.com/questions/6657/why-does-ldd-and-gdb-info-sharedlibrary-show-a-different-library-base-addr
+
+
+cpsr: control pgogram status register
+pc: program counter
+sp: stack pointer
+bp: base pointer
+gpio: general purpose io
+uart: universal asynchronous receiver trasmitter
+isr: interrupt service routine
+mmu: memory management unit i2c, spi: serial peripheral interface i2c: inter integrated circuit
