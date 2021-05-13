@@ -1,0 +1,8 @@
+#include <stdio.h>
+int v1 = 305419896;
+void ppp1(const char* i);
+int main(){
+    ppp1("abcdef");
+    int t1 = v1+1;
+    return t1;//argv[0]+1;
+}
