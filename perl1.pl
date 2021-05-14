@@ -2,6 +2,7 @@
 
 use strict;
 use warnings;
+print("$ENV{'env1'}");
 
 my $int1 = 12;#global variable 
 my $double1 = 31.1;#block-scoped (local) variable
@@ -151,6 +152,7 @@ ${$refInt1}=54;
 print($int1);
 
 
+print("$ENV{'env1'}");
 print("$ENV{'PATH'}");
 print($matrixOfInt2[0][0]->{'1'});
 print($stringMultiplication1);

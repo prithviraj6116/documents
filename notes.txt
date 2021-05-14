@@ -67,3 +67,10 @@ gpio: general purpose io
 uart: universal asynchronous receiver trasmitter
 isr: interrupt service routine
 mmu: memory management unit i2c, spi: serial peripheral interface i2c: inter integrated circuit
+echo $XDG_CURRENT_DESKTOP: debian current desktop  mate,kde,xfce,gnome,
+man hier : show linux file folder root hierarchy
+FHS: Filesystem Hierarchy Standard
+web server interfaces: cgi: common gateway interface :mod_php, java servlets, python WSGI, ruby rack
+sbin: superuser bin files
+/opt vs /usr/local
+ 

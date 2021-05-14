@@ -1,0 +1,22 @@
+TARGET = c1
+OBJ = $(TARGET).o
+SRC = $(TARGET).c
+CC = gcc
+CFLAGS = -g -nostdlib -I/usr/lib/gcc/x86_64-linux-gnu/8/include -I/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed -I/usr/include/x86_64-linux-gnu  #-I/opt/mylibc1/usr/include
+#-I/usr/include
+#-I /opt/mylibc1/usr/include -I/usr/include/linux -I/usr/lib/gcc/x86_64-linux-gnu/8/include
+LDFLAGS = -nostdlib -nostartfiles  -fpic  -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie 
+GLIBCDIR = /opt/mylibc1/usr/lib64
+STARTFILES = $(GLIBCDIR)/crt1.o $(GLIBCDIR)/crti.o `gcc --print-file-name=crtbegin.o`
+ENDFILES = `gcc --print-file-name=crtend.o` $(GLIBCDIR)/crtn.o
+LIBGROUP = -Wl,--start-group $(GLIBCDIR)/libc.so -lgcc -lgcc_eh -Wl,--end-group
+
+$(TARGET): $(OBJ)
+	$(CC) $(LDFLAGS) -o $@ $(STARTFILES) $^ $(LIBGROUP) $(ENDFILES) 
+
+$(OBJ): $(SRC)
+	$(CC) $(CFLAGS) -c $^
+
+clean:
+	rm -f *.o *.~ $(TARGET)
+

@@ -1,0 +1,14 @@
+testglibc = /opt/mylibc1
+gcc = gcc
+
+.PHONY: all
+all: c1
+
+c1: c1.o 
+	$(gcc) -Wl,--dynamic-linker=$(testglibc)/lib64/ld-2.33.so  -L$(testglibc)/lib64/  -Wl,-rpath=$(testglibc)/lib64 $< -o $@
+
+c1.o: c1.c 
+	$(gcc) -c -g -O0 -I$(testglibc)/usr/include $< -o $@ 
+
+clean: rm -f c1 c1.o
+
