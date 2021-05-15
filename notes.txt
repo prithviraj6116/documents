@@ -73,4 +73,31 @@ FHS: Filesystem Hierarchy Standard
 web server interfaces: cgi: common gateway interface :mod_php, java servlets, python WSGI, ruby rack
 sbin: superuser bin files
 /opt vs /usr/local
- 
+
+https://www.debian.org/doc/manuals/debian-faq/pkgtools.en.html: apt install;apt
+install;apt show;apt list --upgradable; apt list packagename; apt list; apt show
+packagename; dpkg --search xxx;dpkg --listfiles packagename
+
+find -L / -samefile path/to/foo.txt
+
+get macros:g++ -dM -E -x c++ /dev/null 
+libc dietlibc uclibc eglibc musl
+
+
+custom libc with gcc
+export env1=/opt/musl1;export lib1=$env1/lib;export include1=$env1/include;gcc -g -o c1 -nostdlib c1.c -I $include1 -L $lib1  -Xlinker $lib1/crt1.o -Xlinker $lib1/crti.o -lc  -Xlinker -rpath=$lib1 -Xlinker -I $lib1/ld-musl-x86_64.so.1 -Xlinker $lib1/crtn.o
+
+custom libc with g++
+export env1=/opt/mylibc1;export lib1=$env1/lib;export include1=$env1/include;g++  -nostdlib  -I $include1 -L $lib1  -Xlinker $lib1/crt1.o -Xlinker $lib1/crti.o   /usr/lib/gcc/x86_64-linux-gnu/8/crtbeginS.o -lstdc++ -lc  /usr/lib/gcc/x86_64-linux-gnu/8/crtendS.o -Xlinker -rpath=$lib1 -Xlinker -I $lib1/myld.so -Xlinker $lib1/crtn.o -nostdlib -o cpp1 cpp1.cpp
+
+
+crt1.o crti.o crtn.o:https://wiki.osdev.org/Creating_a_C_Library 
+
+fpie fpic :https://stackoverflow.com/questions/2463150/what-is-the-fpie-option-for-position-independent-executables-in-gcc-and-ld 
+
+return oriented programming attacks:https://en.wikipedia.org/wiki/Return-oriented_programming 
+
+compression: xz, lzma, gzip, bzip2 https://unix.stackexchange.com/questions/108100/why-are-tar-archive-formats-switching-to-xz-compression-to-replace-bzip2-and-wha
+
+tar -xf or tar -xjf (bzip2)
+linux package: bc: arbitrary precision calculator, xz-utils: compression,
