@@ -22,13 +22,11 @@ filetype plugin indent on
 
 
 map s <Nop>
-map sr <Nop>
 map sr yiw:,$s/<C-r>"//gc<left><left><left>
-map srf <Nop>
 map srf yiw:%s/<C-r>"//gc<left><left><left>
-map sd <Nop>
 map sd VyjP
-
+map sf :Ex<ENTER>
+map sa :up!<ENTER>
 
 
 
