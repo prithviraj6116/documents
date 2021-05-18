@@ -1,3 +1,11 @@
+function VundleInit()
+    set rtp+=~/.vim/bundle/Vundle.vim
+    call vundle#begin()
+    Plugin 'VundleVim/Vundle.vim'
+    Plugin 'gcmt/taboo.vim'
+    " my plugins
+    call vundle#end()
+endfunction
 
 set swapfile
 set dir=~/tmp
@@ -25,8 +33,8 @@ map s <Nop>
 map sr yiw:,$s/<C-r>"//gc<left><left><left>
 map srf yiw:%s/<C-r>"//gc<left><left><left>
 map sd VyjP
-map sf :Ex<ENTER>
+map - :Ex<ENTER>
 map sa :up!<ENTER>
 
-
+:call VundleInit()
 

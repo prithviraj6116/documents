@@ -1,3 +1,4 @@
+set primary window: xrandr --output VNC-1 --primary --right-of VNC-0
 cat /etc/os-release
 cat /proc/version
 cat /etc/debian-version
