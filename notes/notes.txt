@@ -1,3 +1,20 @@
+ssl(143) vs ssh(22): secure socket layer, transport layer security, secure shell
+public key infrastructure(PKI), digital certificates,
+clang  -Xclang -ast-view c1.c
+clang -Xclang -ast-dump  c1.c
+cross compilation:https://www6.software.ibm.com/developerworks/education/l-cross/l-cross-ltr.pdf 
+chip manufactures: intel vs amd
+computer manufactures: apple, dell, hp, ibm, asus, lenova, samsung
+software: microsoft, google, 
+amd: advanced micro chips
+compile with custom libc
+ export env1=/opt/mylibc1;export lib1=$env1/lib;export include1=$env1/include;gcc -nostartfiles -I $include1 -L $lib1  $lib1/crt1.o $lib1/crti.o /usr/lib/gcc/x86_64-linux-gnu/8/crtbeginS.o /usr/lib/gcc/x86_64-linux-gnu/8/crtendS.o $lib1/crtn.o -Wl,-rpath=$lib1,-I$lib1/myld.so -lstdc++ -g  -o out1 c1.c(pp)
+
+ export env1=/opt/musl1;export lib1=$env1/lib;export include1=$env1/include;gcc -nostartfiles -I $include1 -L $lib1  $lib1/crt1.o $lib1/crti.o /usr/lib/gcc/x86_64-linux-gnu/8/crtbeginS.o /usr/lib/gcc/x86_64-linux-gnu/8/crtendS.o $lib1/crtn.o -Wl,-rpath=$lib1,-I$lib1/myld.so -lstdc++ -g  -o out1 c1.c(nocpp)
+
+python compiler: nitka, brython
+stackless python
+IIFE: immediately invokded function expression
 set primary window: xrandr --output VNC-1 --primary --right-of VNC-0
 cat /etc/os-release
 cat /proc/version
@@ -86,8 +103,7 @@ libc dietlibc uclibc eglibc musl
 
 
 custom libc with gcc
-export env1=/opt/musl1;export lib1=$env1/lib;export include1=$env1/include;gcc -g -o c1 -nostdlib c1.c -I $include1 -L $lib1  -Xlinker $lib1/crt1.o -Xlinker $lib1/crti.o -lc  -Xlinker -rpath=$lib1 -Xlinker -I $lib1/ld-musl-x86_64.so.1 -Xlinker $lib1/crtn.o
-
+export env1=/opt/musl1;export lib1=$env1/lib;export include1=$env1/include;gcc -g -o c1 -nostdlib c1.c -I $include1 -L $lib1  -Xlinker $lib1/crt1.o -Xlinker $lib1/crti.o -lc  -Xlinker -rpath=$lib1 -Xlinker -I $lib1/ld-musl-x86_64.so.1 -Xlinker $lib1/crtn.o 
 custom libc with g++
 export env1=/opt/mylibc1;export lib1=$env1/lib;export include1=$env1/include;g++  -nostdlib  -I $include1 -L $lib1  -Xlinker $lib1/crt1.o -Xlinker $lib1/crti.o   /usr/lib/gcc/x86_64-linux-gnu/8/crtbeginS.o -lstdc++ -lc  /usr/lib/gcc/x86_64-linux-gnu/8/crtendS.o -Xlinker -rpath=$lib1 -Xlinker -I $lib1/myld.so -Xlinker $lib1/crtn.o -nostdlib -o cpp1 cpp1.cpp
 

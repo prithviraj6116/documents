@@ -35,6 +35,7 @@ map srf yiw:%s/<C-r>"//gc<left><left><left>
 map sd VyjP
 map - :Ex<ENTER>
 map sa :up!<ENTER>
+map si gg=G`'<ENTER>
 
 :call VundleInit()
 

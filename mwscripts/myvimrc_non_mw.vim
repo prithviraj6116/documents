@@ -7,10 +7,8 @@ function! BufferSelectAll()
     :call BufferSelectBase()
 endfunction
 function! BufferSelectBase()
-    echo "Enter buffer number: "
-    let chr = getchar()
-    echo "opening " . nr2char(chr)
-    execute("b " . nr2char(chr))
+    let chr = input("Enter Buffer Number: ")
+    execute(":silent b " . chr)
 endfunction
 
 map sb <nop>
