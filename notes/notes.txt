@@ -1,3 +1,35 @@
+clang -emit-llvm -o cpp1.ll cpp1.cpp
+clang -emit-llvm -S cpp1.bc cpp1.cpp
+llvm-as -o cpp1.bc  cpp1.ll
+lli cpp1.ll(bc)
+llc -filetype=obj -o cpp1.o cpp1.bc(ll)
+llc -filetype=asm(default) -o cpp1.s cpp1.bc(ll)
+
+/local-ssd/ppatil/installs/llvm1build/bin/ld.lld --hash-style=both --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cpp1.exe /lib/x86_64-linux-gnu/crt1.o /lib/x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/8/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/8 -L/usr/lib/gcc/x86_64-linux-gnu/8/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/local-ssd/ppatil/installs/llvm1build/bin/../lib -L/lib -L/usr/lib cpp1.bc-llc.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/8/crtend.o /lib/x86_64-linux-gnu/crtn.o  --lto-O3
+
+
+LD_PRELOAD:
+http://www.goldsborough.me/c/low-level/kernel/2016/08/29/16-48-53-the_-ld_preload-_trick/#:~:text=Outro-,Introduction,shared%20library%20before%20other%20libraries.
+
+/local-ssd/ppatil/installs/llvm1build/bin/clang++  -E/S/c  cpp1.cpp  -o cpp1 -Xclang -ast-view/-ast-dump/-emit-llvm
+hardinfo : hardware info
+lscpu
+
+cat /sys/devices/system/cpu/cpu0/cache/index0/size 
+cat /sys/devices/system/cpu/cpu0/cache/index0/coherency_line_size
+index0: Level1Data 
+index1: Level1Instruction 
+index2: Level2 
+index3: Level3
+getconf LEVEL3_CACHE_LINESIZE
+lscpu
+getconf -a
+
+sram: https://www.youtube.com/watch?v=mwNqzc1o5zM&ab_channel=UdacityUdacity
+sram: transi
+atx motherboard:
+
+pci/pcie/agp/isa slots: exansion slots
 ssl(143) vs ssh(22): secure socket layer, transport layer security, secure shell
 public key infrastructure(PKI), digital certificates,
 clang  -Xclang -ast-view c1.c
