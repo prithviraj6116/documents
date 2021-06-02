@@ -1,3 +1,10 @@
+qemu-system-x86_64 -kernel /boot/vmlinuz-4.19.0-14-amd64 -no-kvm -nographic -m 2049M -initrd /boot/initrd.img-4.19.0-14-amd64 -hda /local-ssd/ppatil/gitRepo1/buildroot/output/images/rootfs.ext4  -append "console=ttyS0 root=/dev/sda rw"
+
+
+/local-ssd/ppatil/installs/llvm1build/bin/llc -filetype=obj cpp1.ll -o cpp1.o  -O3 --debug-pass=Executions
+/local-ssd/ppatil/installs/llvm1build/bin/clang++   cpp1.cpp  -g -O3 -o cpp1_1.exe -mllvm --debug-pass=Executions
+
+
 clang -emit-llvm -o cpp1.ll cpp1.cpp
 clang -emit-llvm -S cpp1.bc cpp1.cpp
 llvm-as -o cpp1.bc  cpp1.ll
@@ -5,7 +12,7 @@ lli cpp1.ll(bc)
 llc -filetype=obj -o cpp1.o cpp1.bc(ll)
 llc -filetype=asm(default) -o cpp1.s cpp1.bc(ll)
 
-/local-ssd/ppatil/installs/llvm1build/bin/ld.lld --hash-style=both --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cpp1.exe /lib/x86_64-linux-gnu/crt1.o /lib/x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/8/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/8 -L/usr/lib/gcc/x86_64-linux-gnu/8/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/local-ssd/ppatil/installs/llvm1build/bin/../lib -L/lib -L/usr/lib cpp1.bc-llc.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/8/crtend.o /lib/x86_64-linux-gnu/crtn.o  --lto-O3
+ld.lld --hash-style=both --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cpp1.exe /lib/x86_64-linux-gnu/crt1.o /lib/x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/8/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/8 -L/usr/lib/gcc/x86_64-linux-gnu/8/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/local-ssd/ppatil/installs/llvm1build/bin/../lib -L/lib -L/usr/lib cpp1.bc-llc.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/8/crtend.o /lib/x86_64-linux-gnu/crtn.o  --lto-O3
 
 
 LD_PRELOAD:

@@ -2,7 +2,8 @@
 void v11(){int v = 1;};
 int v1 = 305419896;
 //void printf1(const char* i,...);
-int main(){
+int main(int argc, char *argv[]){
+    printf("argc = %d \n\n", argc);
     //ppp1("%d df\n", v1);
 //    printf("%d df\n", 12);
     //getchar_unlocked();

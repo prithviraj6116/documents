@@ -3,6 +3,7 @@ function VundleInit()
     call vundle#begin()
     Plugin 'VundleVim/Vundle.vim'
     Plugin 'gcmt/taboo.vim'
+    Plugin 'vim-scripts/Conque-GDB'
     " my plugins
     call vundle#end()
 endfunction
