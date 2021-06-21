@@ -1,3 +1,8 @@
+get_param(0, 'AcceleratorUseTrueIdentifier')
+get_param(gcbh,'OutputFunctionCall')
+set_param(0,'globalAccelVerboseBuild','on')
+simulink: algebric loop, variable sized signals, zero crossing, minor step updates,
+
 qemu-system-x86_64 -kernel /boot/vmlinuz-4.19.0-14-amd64 -no-kvm -nographic -m 2049M -initrd /boot/initrd.img-4.19.0-14-amd64 -hda /local-ssd/ppatil/gitRepo1/buildroot/output/images/rootfs.ext4  -append "console=ttyS0 root=/dev/sda rw"
 
 

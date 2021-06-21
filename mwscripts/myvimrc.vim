@@ -37,6 +37,7 @@ map sd VyjP
 map - :Ex<ENTER>
 map sa :up!<ENTER>
 map si gg=G`'<ENTER>
+map sg F<SPACE>"byf:f:l"cyf<SPACE><C-w>w:e<C-R>b<BACKSPACE><CR>:<C-R>c<CR>
 
 :call VundleInit()
 
