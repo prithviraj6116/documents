@@ -1,19 +1,34 @@
 #include <iostream>
+#include <string>
+#include <time.h>
+#include <algorithm>
 bool is_sorted(int *a, int n) {
   for (int i = 0; i < n - 1; i++)
     if (a[i] > a[i + 1])
       return false;
   return true;
 }
+
+const std::string currentDateTime() {
+    time_t     now = time(0);
+    struct tm  tstruct;
+    char       buf[80];
+    tstruct = *localtime(&now);
+    strftime(buf, sizeof(buf), "%Y-%m-%d.%X", &tstruct);
+    auto str1 = std::string(buf);
+    std::replace(str1.begin(), str1.end(), '.','-');
+    std::replace(str1.begin(), str1.end(), ':','-');
+    return str1;
+}
+
 int main() {
-    int a[4]={1,3,2,4};
-    int b[4]={1,2,3,4};
-    if (!is_sorted(a,4)) {
-        printf("a no\n");
-    }
-    if (is_sorted(b,4)) {
-        printf("b yes\n");
-    }
+    std::cout << currentDateTime() << std::endl;
+    std::string s1{};
+    std::string s2{""};
+    std::cout << s1.size() << " " << s2.size() << std::endl;
+    s1 = {};
+    s2 = {""};
+    std::cout << s1.size() << " " << s2.size() << std::endl;
     return 0;
 }
 #if 0

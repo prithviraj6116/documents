@@ -1,3 +1,12 @@
+sbmake -distcc DEBUG=1 CTB="shared_cgxe foundation/matrix cgir_vm_rt cgir_vm_core shared_simulink_lang_blocks sl_utility sl_compile sl_services sl_graphical_classes sl_loadsave sl_main"
+
+simulink compiler:toolbox/coder/simulinkcoder_core/+coder/+internal/ModelBuilder.m  at line number 723 all the raccel files are generated and begins to build
+https://inside.mathworks.com/wiki/Generating_C%2B%2B_Source-To-Test_Mapping
+
+mingw vs cygwin: cygwin is compatibility layer to port linux application source code to build on windows by replacing linux syscalls to windows OS calls. mingw is gnu port for windows. it may not have full compatibility with linux gnu.
+c/c++: main function 2 signature int main() and int main(int argc, char* argv[], char* environmentVariables[]), third argument is implementation depenedent.
+
+matlab online :  matlab.internal.webgui
 get_param(0, 'AcceleratorUseTrueIdentifier')
 get_param(gcbh,'OutputFunctionCall')
 set_param(0,'globalAccelVerboseBuild','on')
