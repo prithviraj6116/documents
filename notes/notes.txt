@@ -1,7 +1,91 @@
+stack decoder online tool : http://www-sbtools-ah.mathworks.com/hub/share/sbtools/apps/stack_trace/index.cgi/stacktrace 
+
+
+
+CTB="sl_graphical_classes sl_engine_classes"
+simulink functions in SF:
+MAL: requires input S/T/C specified. hence during propagation STC of callsite are verified with SLport STC.
+    Propagation:  SLFuncIn->SlFuncOut->CallSiteOut   SLFunctionIn==CallSiteIn SLFunctionOut==CallSiteOut
+CAL: can let input S/T/C inherit but callsite does not propagate S/T/C to input parameter. so S/T/C set in SL at propagation. And during codegene callsite and SLport STC are verfied
+     Propagation: SLFuncIn->SlFuncOut         CG: SLFunctionIn==CallSiteIn SLFunctionOut==CallSiteOut
+
+
+For Simulink states in SF:
+MAL/CAL: chart inputs and outputs can be used as ports. ports can be have S/T/C inherited or explicit but need to match S/T/C to corresponding chart input/output
+MAL/CAL propagation for inputs: SLIn->mainIn->SLStateIn->SLStateOut->mainOut->SLOut->backPropagationA
+
+Back propagaiton trick: 
+Add SLState with outChart1->inChart1. 
+For ML chart you also need to write "ex:outChart1=inChart1" on one of the states.
+
+Atomic Subchart Mapping: 
+input:slIn->mainIn->subchartIn->back
+output:mainOut->subchartOut->mainOut->slOut->back
+MAL: mapped main chart output and local data must have STC specified
+CAL: mapped main chart output and local data must have STC specified. Only exception is if main output is mapped to subchart output then main output can be left inherited. In this case, back propagation might set types
+
+MAL: O be written, L (if used in chart) be written
+CAL: O/L are auto-written to 0s
+
+MAL: L if IV exists, no error
+MAL: L if no IV and no write in chart, we get error compile-time FULL_ASSIGNMENT_REQUIRED_ERROR
+MAL: L if no IV but written in chart but used before write, then runtime error READ_BEFORE_WRITE_ERROR
+
+
+MAL: IV is not vectorized as per Size
+CAL: IV is i   vectorized as per Size
+
+
+
+MAL: Size is     inferred from IV
+CAL: Size is NOT inferred from IV
+
+stateflow data:
+Property Inspector
+Name, Port, Size, Type, InitialValue, FirstIndex 
+(LoggingSection) LogSignalData(UseSignalName, LimitDataPointToLast, Decimation), TestPoint,  
+(AdvancedSection) VariableSize, ResolveToSignalObject, InitialValueFromWorkspace, LockFixedPointTools, 
+           TUnable, 
+           Unit, Complexity, Range
+
+
+M Chart: FI 
+C Chart: TU
+
+Input Scope: IV, LS, RTSO, IVFW, TU
+Local Scope: P, VS, TU, U
+Parameter Scope: P, IV, LS, VS, RTSO, IVFW, U, R
+DSM Scope: all but S
+Constant Scope:  P, LS, VS, RTSO, IVFW, TU, U, C, R
+
+Built-in numeric except boolean:
+Boolean: C
+FixedPoint: same as "Built-in numeric except boolean"
+Enumeration: U, C, R
+Bus: IV, IVFW, U, C, R
+String: S, FI, VS, LFPT, U, C, R
+
+P: I/O
+U,R: I/L/O built-in
+C: I/O/P non-boolean-built-in
+VS: M charts and M based functions in C chart. non-string. for buses and for param it is ignored.
+TU: P in M
+IV,IVFW: L/O non-bus
+LS: L/O
+RTSO: L/O 
+
+
+mouse cursor : sudo update-alternatives --config x-cursor-theme
+
+
 sbmake -distcc DEBUG=1 CTB="shared_cgxe foundation/matrix cgir_vm_rt cgir_vm_core shared_simulink_lang_blocks sl_utility sl_compile sl_services sl_graphical_classes sl_loadsave sl_main"
 
 simulink compiler:toolbox/coder/simulinkcoder_core/+coder/+internal/ModelBuilder.m  at line number 723 all the raccel files are generated and begins to build
+custom code building:/local-ssd/ppatil/coverage4/matlab/toolbox/shared/cgxe/cgxe/private/createCustomCodeDLL.m : 72
+stateflow code generation: private/code_chart_source_file.m and /local-ssd/ppatil/coverage4/matlab/toolbox/stateflow/stateflow/private/targetman.m : 429
+jit:serializeJITEngine 
 https://inside.mathworks.com/wiki/Generating_C%2B%2B_Source-To-Test_Mapping
+
 
 mingw vs cygwin: cygwin is compatibility layer to port linux application source code to build on windows by replacing linux syscalls to windows OS calls. mingw is gnu port for windows. it may not have full compatibility with linux gnu.
 c/c++: main function 2 signature int main() and int main(int argc, char* argv[], char* environmentVariables[]), third argument is implementation depenedent.
@@ -68,7 +152,7 @@ compile with custom libc
 python compiler: nitka, brython
 stackless python
 IIFE: immediately invokded function expression
-set primary window: xrandr --output VNC-1 --primary --right-of VNC-0
+linux set primary window or display in multi display systems: xrandr --output VNC-1 --primary --right-of VNC-0
 cat /etc/os-release
 cat /proc/version
 cat /etc/debian-version
