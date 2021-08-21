@@ -1,3 +1,18 @@
+
+function studioUtils(i)
+    studioTag='Studio16'; 
+    studio = DAS.Studio.getStudio(studioTag);
+%     studioTag=studio.getAllStudios{i}.getStudioTag()
+%     studio = DAS.Studio.getStudio(studioTag);
+    activeEditor=studio.App.getActiveEditor;
+    hId = activeEditor.getHierarchyId;
+    currentTab = studio.getTabComponents{studio.getCurrentTab};
+    studio.getTabTitle(studio.getCurrentTab);
+    studio.getStudioTitle;
+    disp(GLUE2.HierarchyService.getPaths(hId));
+
+end
+
 stack decoder online tool : http://www-sbtools-ah.mathworks.com/hub/share/sbtools/apps/stack_trace/index.cgi/stacktrace  
 abca           
 
