@@ -1,3 +1,19 @@
+simulink  configuration parameters->data import/export: tout:always array, logsout(signal logging),dsmout: always dataset
+                                    xout, yout, xFinal: can be array/struct/dataset
+                                                        array: same type, built-in
+                                                        struct: built-in
+                                                        dataset: any
+                                                        
+SDI:
+1. logsout and dsmout always go to SDI: logsout(signal logging) goes to signal/Statelfow, dsmout goes to state
+2. xout, yout: go to SDI if dataset. if struct/array, it goes to SDI if "RecordLoggedWorkspacedataInSDI"==true
+3. types: 
+   1. Outport(yout), 
+   2. States(xout), 
+   3. Stateflow(state with LogSelfActivity or ActiveStateData/NormalData with LogData), 
+   4. Signal(logsout except those for Stateflow)
+   5. DSM(dsmout)
+
 
 function studioUtils(i)
     studioTag='Studio16'; 
