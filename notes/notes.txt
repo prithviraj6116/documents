@@ -1,3 +1,19 @@
+matlab/src/sl_graphical_classes/export/include/sl_graphical_classes/RegisterModelParameters.hpp
+allslfeature=slf_feature('report');
+slflist= slfeature('query','stateflow');
+
+
+
+
+
+
+
+MLFcn   :  stops every, hoverStoped(StoppedI1ShowI1OnI1-I1OnI2-I1OnCh,StoppedI2ShowI2OnI1-I2OnI2-I2OnCh), openEditorInstanceButPathAlwaysI1, BP I1I2Ch SyncYes
+MLFBlock:  stops every, hoverStoped(StoppedI1ShowI1OnI1-I1OnI2-I1OnCh,StoppedI2ShowI2OnI1-I2OnI2-I2OnCh), openEditorInstanceButPathAlwaysI1, hoverPaused(I1No,I2No,CNo), BP I1I2Ch SyncYes,
+TTFcn   :  stops every, hoverStopped(StoppedI1ShowI1OnCh, StoppedI2ShowI2OnCh), openEditorOpensChart, BP I1I2Ch SyncNo,
+TTBlock :  stops every, hoverStoped(StoppedI1ShowI1OnI1-I1OnI2-I1OnCh,StoppedI2ShowI2OnI1-I2OnI2-I2OnCh), openEditorOpensChart, hoverPaused(I1No,I2No,CI1) , BP I1I2Ch SyncNo, 
+
+
 simulink  configuration parameters->data import/export: tout:always array, logsout(signal logging),dsmout: always dataset
                                     xout, yout, xFinal: can be array/struct/dataset
                                                         array: same type, built-in
@@ -14,7 +30,12 @@ SDI:
    4. Signal(logsout except those for Stateflow)
    5. DSM(dsmout)
 
-
+ subchartM3I = StateflowDI.SFDomain.id2DiagramElement(objectId);
+openState = StateflowDI.SubchartOpenRequest(subchartM3I, 'REUSE_TAB');
+studioApp = SLM3I.SLDomain.getLastActiveStudioAppFor(get_param(obj.topModelName,'handle'));
+activeEditor = studioApp.getActiveEditor;
+w = StateflowDI.HierarchyServiceUtils.getHIDWithParent(objectId, activeEditor.getHierarchyId);
+studioApp.processOpenRequest(openState,w);
 function studioUtils(i)
     studioTag='Studio16'; 
     studio = DAS.Studio.getStudio(studioTag);
