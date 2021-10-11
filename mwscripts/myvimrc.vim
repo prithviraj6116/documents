@@ -4,6 +4,7 @@ function VundleInit()
     Plugin 'VundleVim/Vundle.vim'
     Plugin 'gcmt/taboo.vim'
     Plugin 'vim-scripts/Conque-GDB'
+    " Plugin 'easymotion/vim-easymotion'
     " my plugins
     call vundle#end()
 endfunction
@@ -30,14 +31,29 @@ let g:netrw_preview = 1
 filetype plugin indent on
 
 
+map - :Ex<ENTER>
+
 map s <Nop>
+map sv <Leader><Leader>s
 map sr yiw:,$s/<C-r>"//gc<left><left><left>
 map srf yiw:%s/<C-r>"//gc<left><left><left>
 map sd VyjP
-map - :Ex<ENTER>
 map sa :up!<ENTER>
-map si gg=G`'<ENTER>
-map sg F<SPACE>"byf:f:l"cyf<SPACE><C-w>w:e<C-R>b<BACKSPACE><CR>:<C-R>c<CR>
-
+map sm 0f<SPACE>f<SPACE>f<SPACE>lvf:h"ay<ESC>f:lvf<SPACE>"by<C-W>w:e +<C-R>b <C-R>a<CR><C-W>w<C-W>w
+"ident whole file 
+"map si gg=G`'<ENTER> 
+"map sg F<SPACE>"byf:f:l"cyf<SPACE><C-w>w:e<C-R>b<BACKSPACE><CR>:<C-R>c<CR>
+"
+"map d <Nop>
+"map sc <C-]>
+"map df <C-t>
+"
+"map f <Nop>
+"map fd [m
+"map ff ]m
+"map fD ]M
+"map gg <C-t>
+"
+"
 :call VundleInit()
 

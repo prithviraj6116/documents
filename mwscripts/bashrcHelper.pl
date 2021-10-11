@@ -33,18 +33,25 @@ sub p4o {
 
 }
 
+
 sub chd {
     my $d = $ENV{"d"};
     my $s = $ENV{"s"};
+    my $MYSBROOT = $ENV{"MYSBROOT"};
+    my $MYSBNAME = $ENV{"MYSBNAME"};
     my %DirectoryShortCutMappings = (
         'gitroot',"$d/gitRepo1/",
         'mygit',"$d/gitRepo1/pppGitHub/",
         'conf',"$s/misc/configurations/",
         'lang',"$d/gitRepo1/pppGitHub/lang",
         'notes',"$d/gitRepo1/pppGitHub/notes",
-        'mwscripts',"$d/gitRepo1/pppGitHub/mwscripts"
+        'mwscripts',"$d/gitRepo1/pppGitHub/mwscripts",
+        "02sfroot","$MYSBROOT/matlab/toolbox/stateflow/src/",
+        "03sftest","$MYSBROOT/matlab/test/toolbox/stateflow",
+        "01$MYSBNAME","$MYSBROOT",
     );
     my @directoryKeys=sort(keys(%DirectoryShortCutMappings));
+    #my @directoryKeys=keys(%DirectoryShortCutMappings);
     my $counter = 0;
     foreach(@directoryKeys) {
         $counter = $counter + 1;

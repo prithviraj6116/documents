@@ -1,9 +1,3 @@
-matlab/src/sl_graphical_classes/export/include/sl_graphical_classes/RegisterModelParameters.hpp
-allslfeature=slf_feature('report');
-slflist= slfeature('query','stateflow');
-
-
-
 
 
 
@@ -308,3 +302,43 @@ compression: xz, lzma, gzip, bzip2 https://unix.stackexchange.com/questions/1081
 
 tar -xf or tar -xjf (bzip2)
 linux package: bc: arbitrary precision calculator, xz-utils: compression,
+
+
+
+
+
+
+
+
+
+
+
+matlab/src/sl_graphical_classes/export/include/sl_graphical_classes/RegisterModelParameters.hpp
+allslfeature=slf_feature('report');
+slflist= slfeature('query','stateflow');
+mw runlikebat -testlist test/toolbox/stateflow/sf_in_matlab/bug_fixes/tg1879530_BPonCommentedTransition.m -interactive -logs /tmp/asvs
+get_param(blockPathOrModel,'ObjectParameters');
+get_param(blockPathOrModel,'DialogParameters');
+get_param(0, 'CurrentSystem');
+
+get_param(blockH, 'parent') vs getfullname(blockH)
+get_param(blockH, 'ReferenceBlock')
+
+getSimulinkBlockHandle(blockPath) vs get_param(blockPath, 'handle')
+TTT: mainmodel->lib1(notopened)->lib2(opened,breakpoint)
+chartInstance = sf('GetSFBlockData', SFblockH);  
+TTT: rtwOptimizationInfo g1290447 how is it used in rtw and rapidaccel
+TTT:prs_overide_data_type can be short-circuited based on fixptOverride
+cdr_data_set_props_with_resolve_type: can be better written  like below
+ if (S==nullptr)                  {resolve_type;errorOnFailure;return;}
+ resoveBuiltIns{cdr_data_type_from_name_no_default, returnOnSuccess;}
+ if (typeStr startsWith 'fixdt(') {cdr_evaluate_expression(slResolve); returnOnSuccess;}
+ resolveExpression{cdr_data_set_props_from_sl_type(ssRegisterTypeFromExprNoError);}
+ errorOrFailure;
+ %note: there is not much difference between slResolve and ssRegisterTypeFromExprNoError
+
+fixdt: unspecified scaling(fixdt(1,16) or best precision(based on min/max): SL supports except for bus fields, SF does not support 
+
+
+
+
