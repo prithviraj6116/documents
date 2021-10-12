@@ -23,20 +23,20 @@ function vmd() {
     eval "gvim . &"
 }
 function getUserSbroot() {
-    MYSBNAME=$(sbroot|cut -d'.' -f 2)
-    MYSBROOT=$(sbroot)
     SBNAMEIFNETWORKSB=${PWD/$s\//}
     if [[ "$(sbroot)" != $d* ]]; then
-        echo "$s/$MYSBNAME"
+        echo "$s/$1"
     else
-        echo "$(sbroot)"
+        echo "$2"
     fi
 }
 function chd() {
     export PPP_COMMAND=chd
     export PPP_DIRECTORYNUMBER='-1';
-    export MYSBNAME=$(sbroot|cut -d'.' -f 2)
-    export MYSBROOT=$(getUserSbroot)
+    export ORIGSBROOT=$(sbroot)
+    export MYSBNAME=$(echo $ORIGSBROOT|cut -d'.' -f 2)
+    export MYSBROOT=$(getUserSbroot $MYSBNAME $ORIGSBROOT)
+    export MYSBNAME=${MYSBNAME/$d\//(local)}
     if [[ $# == 0 ]];
     then
         echo "$(perl $d/gitRepo1/pppGitHub/mwscripts/bashrcHelper.pl)"

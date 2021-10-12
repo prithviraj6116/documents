@@ -46,9 +46,10 @@ sub chd {
         'lang',"$d/gitRepo1/pppGitHub/lang",
         'notes',"$d/gitRepo1/pppGitHub/notes",
         'mwscripts',"$d/gitRepo1/pppGitHub/mwscripts",
-        "02sfroot","$MYSBROOT/matlab/toolbox/stateflow/src/",
-        "03sftest","$MYSBROOT/matlab/test/toolbox/stateflow",
-        "01$MYSBNAME","$MYSBROOT",
+        "4: sfroot","$MYSBROOT/matlab/toolbox/stateflow/src/",
+        "3: sftest","$MYSBROOT/matlab/test/toolbox/stateflow",
+        "2: matlabroot","$MYSBROOT/matlab",
+        "1: $MYSBNAME","$MYSBROOT",
     );
     my @directoryKeys=sort(keys(%DirectoryShortCutMappings));
     #my @directoryKeys=keys(%DirectoryShortCutMappings);
@@ -60,7 +61,8 @@ sub chd {
 
         my $dirnum = $ENV{"PPP_DIRECTORYNUMBER"};
         if ($dirnum == -1) {
-            print("$counter : $key : $value\n");
+            #print("$counter : $key : $value\n");
+            print("$counter : $key \n");
         } elsif($dirnum==$counter) {
             print($value);
         }

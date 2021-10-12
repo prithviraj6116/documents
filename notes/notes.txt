@@ -339,6 +339,9 @@ cdr_data_set_props_with_resolve_type: can be better written  like below
 
 fixdt: unspecified scaling(fixdt(1,16) or best precision(based on min/max): SL supports except for bus fields, SF does not support 
 
-
+we could replace:MAKE_USTRINGSTREAM(sizeBufStream) with auto sizeBufStream = fl::io::make_ustringstream();
+validatedvector could use copyconstructor/init method taking std::vector<T>
+what happens when P1 (param) data size in SF is set using P1 itself (works)
+obsolete features: SF_NEW_SIZE_METHOD BUS_ARRAYS
 
 
