@@ -48,3 +48,45 @@ C(error if direct access): output data IVFW(0) VS(1) double/3
 M(error): output data bus/[1,4] VS and in chart data=[struct(), struct()]
 M(works): output data double/[1,4] VS and in chart data=[2,2]
 
+
+parse_data_message_priority is called for non-messages in DES charts
+fill_initial_value_from_expression->data_set_compiled_initial_value: do we need to mark it mexMakeArrayPersistent: when does it get deleted.
+get_sf_block_port_info: if we move this to cpp(mdlInitializeSizes), can we avoid calling mexMakeArrayPersistent
+
+when IV is disabled (e.g. Bus/must resolve to signal object), it still shows up in SymbolWindow 
+
+
+MLW:Matlab base workspace
+SLW: Simulink model workspace
+MV: matlab vairble
+SF data type: MLW/SLW MV(string/charvector), MLW/SLW Alias, SFMaskEditParam(string/char-vector)/SFMaskDatatypestringParam, MLW function returning string/char vector, type(dataName)
+SF data size/initial value: MLW/SLW MV(numeric), MLW/SLW/SFMaskEditParam(numeric), size(dataName)(only for size)
+
+Model explorer data type: MLW/SLW alias
+Model explorer data size: numeric literal, MLW/SLW MV, 
+
+MLW Simulink.Signal,Simulink.Parameter, Simulink.AliasType datatype/dimensions/initialvalue fields cannot use Simulink model workspace variable/parameter
+
+data_does_not_need_initialization: do we need to check if chart is sfx
+
+rename: ValidatedArray: ValidateDoubles
+
+parse_data_compiled_min_max_helper: ErrorSizeTypeEnum::INTEGER/UNSIGNED: do we need this? also duplicate code
+
+
+crash: mal, output data, type:inherit size:-1 IV=c   where c=[BasicColors.Blue;BasicColors.Blue];c(2)=[];c(1)=[]
+
+get_CDRtype_from_initial_value can be optimized
+
+mal scope:l/o type:-1 size=-1 iv=Simulink.Bus.createMATLABStruct('busName')  compiles to double
+
+mal: if size is specified via literal/var/param, then IV is not vectorized. but if size is specified as size(anotherData) then IV is vectorized accordingly
+
+may be not necessary: set_data_size_from_initial_value_dimensions>if (!data_get_compiled_initial_value_is_non_scalar(data) && parsedNDims == 0) {
+
+when stopped at breakpoint, model ref MLFB instance does not open in modelref instance context; same is true with TT. TT library instance also lacks context
+
+synchronous domain(HDL state control block) allows only discrete update method and only eml-non-direct-feedthough and SF-moore 
+
+moore chart: no continous update method
+des: always inherited update method

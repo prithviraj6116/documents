@@ -49,7 +49,7 @@ abca
 
 
 
-CTB="sl_graphical_classes sl_engine_classes"
+CTB="sl_graphical_classes sl_engine_classes sl_main fixedpoint_core sl_compile"
 simulink functions in SF:
 MAL: requires input S/T/C specified. hence during propagation STC of callsite are verified with SLport STC.
     Propagation:  SLFuncIn->SlFuncOut->CallSiteOut   SLFunctionIn==CallSiteIn SLFunctionOut==CallSiteOut
@@ -344,4 +344,31 @@ validatedvector could use copyconstructor/init method taking std::vector<T>
 what happens when P1 (param) data size in SF is set using P1 itself (works)
 obsolete features: SF_NEW_SIZE_METHOD BUS_ARRAYS
 
+https://inside.mathworks.com/wiki/Category:Native_Memory_Diagnostics  memmgr feature('memmgr')
 
+GDB ptype
+GDB whatis
+
+
+sf('get',dataId,'data.parsedInfo.type.base') is stale even after compile, 
+to refresh above, c=sf('IdToHandle,dataId);c.parsedInfo.type.base;
+accessing mcos/udd data copies data->getParsedInfo() to data->parsedInfo
+
+q1_findCoverage: do we need do parse0 to find out if we are using temporal operators
+q1_findCoverage:  // Process inherited types (may use registered bus types)
+
+prs_set_flags_from_data_properties: complexity seems different than size/type
+
+sfunction input: (0) data (port) (1) atomic subchart data(l->o) (2) sl function data (3) events (port)
+sfunction output: (0) demux (1) data(port) (2) Trigger event(port) (3) atomic subchart Trigger event (4) atomic subchart data(l->i,o->i) (5) slfunction data
+demux output: (0) function call event(port) (2) atomic subchart fcn event (3) SL function Fcn Call
+
+CAL parameter data tunable: grayed out, but can be enabled/disabled via command line: if enabled: sim: regenerates code when value changes but CG: works correctly
+CAL l/o data with initfromworkspace: sim: works i.e. does not regenerates code when param value changes in workspace
+
+set_inherited_data_properties_into_chart_io_data does not belong to propagate_info_to_atomic_subchart_io
+
+set breakpoints in mdl* methods in stateflow_mdl_methods.stubs and  enable: debugbuild and nonjit
+for jit, some of mdl* methods in sf_sfun.cpp are called at runtime.
+
+for inherited inputs, mdlPropagationPass(dimensions) is called twice.
