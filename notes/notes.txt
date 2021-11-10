@@ -372,3 +372,9 @@ set breakpoints in mdl* methods in stateflow_mdl_methods.stubs and  enable: debu
 for jit, some of mdl* methods in sf_sfun.cpp are called at runtime.
 
 for inherited inputs, mdlPropagationPass(dimensions) is called twice.
+
+Simulink.importExternalCTypes
+
+continuous charts generate seperate outputs functions even though it never is used.
+
+test1
