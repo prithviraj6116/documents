@@ -39,6 +39,8 @@ map sr yiw:,$s/<C-r>"//gc<left><left><left>
 map srf yiw:%s/<C-r>"//gc<left><left><left>
 map sd VyjP
 map sa :up!<ENTER>
+map sg :!g++ mycpp2.cpp mycpp3.cpp mycpp4.cpp -std=c++17;./a.out;<ENTER>
+map s1g :!g++ -E mycpp5.cpp;<ENTER>
 map sm 0f<SPACE>f<SPACE>f<SPACE>lvf:h"ay<ESC>f:lvf<SPACE>"by<C-W>w:e +<C-R>b <C-R>a<CR><C-W>w<C-W>w
 "ident whole file 
 "map si gg=G`'<ENTER> 

@@ -55,8 +55,8 @@ function getTerminalTabTitle() {
     #export MYSBROOT=$(sbroot|cut -d'.' -f 2)
     echo $PWD3
 }
-
-alias sbr="sb -r \"openExample('stateflow/AutomaticTransmissionUsingDurationOperatorExample');bdclose all;cd(matlabroot);startup; \" &> /tmp/matlab.log &";        
+  
+alias sbr="sb -r \"openExample('stateflow/AutomaticTransmissionUsingDurationOperatorExample');bdclose all;cd(matlabroot);myStartup; \" &> /tmp/matlab.log &";        
 alias newSession="cd ~;rm -rf logs log matlab_crash_dump* orig.matlab_crash_dump*; pkill -9 -f matlab;sbstop 8 0;pkill -9 -f chrome;pkill -9 -f mozilla; pkill -9 -f firefox; pkill -9 -f p4v;pkill -9 -f gvim;cd -;google-chrome &> /tmp/chrome.log &"
 
 export PS1=..............................................................................\\n$\ 

@@ -49,7 +49,10 @@ abca
 
 
 
-CTB="sl_graphical_classes sl_engine_classes sl_main fixedpoint_core sl_compile"
+CTB="sl_graphical_classes sl_engine_classes sl_main fixedpoint_core sl_compile shared_cgxe foundation/matrix cgir_vm_rt cgir_vm_core shared_simulink_lang_blocks sl_utility sl_compile sl_services sl_graphical_classes sl_loadsave shared_cgxe"
+
+
+
 simulink functions in SF:
 MAL: requires input S/T/C specified. hence during propagation STC of callsite are verified with SLport STC.
     Propagation:  SLFuncIn->SlFuncOut->CallSiteOut   SLFunctionIn==CallSiteIn SLFunctionOut==CallSiteOut
@@ -377,4 +380,15 @@ Simulink.importExternalCTypes
 
 continuous charts generate seperate outputs functions even though it never is used.
 
-test1
+continuous charts do not serialize jit engine. hence closing and opening model with continuous chart regenerates code
+
+registerSimulinkFunctionsCalledByChart has some unnecessary code in for loop
+
+model params: TargetStyle, SimulationMode, RapidAcceleratorSimStatus, ModelReferenceTargetType, SimulationStatus, 
+
+curiousbly recurring template pattern
+type erasure: boost::any_range
+
+v=feature('diagnosticSpec','sf::cdr.*=all');
+v=feature('diagnosticDest','file=mylogfile.txt');
+http://inside-files.mathworks.com/dev/ltc/doxygen/Bfl/html/user_view/foundation/log/src/log/
