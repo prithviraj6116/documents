@@ -1,0 +1,25 @@
+#!/usr/bin/python
+
+import os.path
+import sys
+import fileinput
+
+if __name__ == '__main__':
+  " Invoke sbroot!"
+  command = "sbroot"
+  proc = os.popen(command)
+
+  "old_stdout, sys.stdout = sys.stdout, os.devnull"
+  "old_stderr, sys.stderr = sys.stderr, os.devnull"
+  "try:"
+  sbroot = proc.read().split('\n')[0]
+  "finally:"
+  "  sys.stdout = old_stdout"
+  "  sys.stderr = old_stderr"
+  if not sbroot:
+    sbroot = fileinput.input('sb_to_use.txt')[0].rstrip('\n')
+  sys.stderr.write('sbroot is '+ sbroot + '\n')
+  dest = sbroot + '/' + sys.argv[1]
+  sys.stderr.write('cd '+ dest + '\n')
+  print dest
+  

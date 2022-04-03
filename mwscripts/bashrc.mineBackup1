@@ -1,0 +1,2 @@
+#source /sandbox/savadhan/sbtools
+export PATH=$PATH://mathworks/hub/share/sbtools/apps/cgir_tools

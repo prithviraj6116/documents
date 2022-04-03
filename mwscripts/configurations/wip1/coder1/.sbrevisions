@@ -1,0 +1,4 @@
+matlab/java/src/com/mathworks/toolbox/coder/model/UnifiedModel.java,//mw/Bsfml/matlab/java/src/com/mathworks/toolbox/coder/model/UnifiedModel.java#1,edit
+matlab/java/src/com/mathworks/toolbox/coder/nide/Nide.java,//mw/Bsfml/matlab/java/src/com/mathworks/toolbox/coder/nide/Nide.java#1,edit
+matlab/toolbox/coder/coder/+codergui/private/getIncludedFunctions.m,//mw/Bsfml/matlab/toolbox/coder/coder/+codergui/private/getIncludedFunctions.m#1,edit
+matlab/toolbox/coder/coder/+codergui/private/transformInferenceReport.m,//mw/Bsfml/matlab/toolbox/coder/coder/+codergui/private/transformInferenceReport.m#1,edit

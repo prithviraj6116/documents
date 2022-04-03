@@ -1,0 +1,43 @@
+#!/usr/bin/env python2.7
+
+import sys
+import subprocess
+from os import path
+import os
+import argparse
+import sys
+
+def die(message):
+    sys.stderr.write('Error! %s\n' % message)
+    sys.exit(1)
+
+def run_cmd(cmd):
+    print cmd
+    subprocess.check_call(cmd.split())
+
+parser = argparse.ArgumentParser(description = "sbcopy a sandbox and then start sbruntests")
+parser.add_argument('-copy', required=True, metavar="LOCAL_SB_LOC", help="original sandbox location")
+parser.add_argument('-testlogarea', required=False, metavar="TEST_LOG_AREA", help="test log area")
+parser.add_argument('-rerunusing', required=False, metavar="RERUNUSING", help="test log area", default="jobarchive")
+
+(options, sbrun_args) = parser.parse_known_args()
+
+orig_sandbox = ''
+sb_name = ''
+if options.copy:
+    orig_sandbox = path.abspath(options.copy)
+    (dummy, sb_name) = path.split(orig_sandbox)
+    if not path.isfile(path.join(orig_sandbox, 'mw_anchor')):
+        die('%s is not a valid sandbox' % orig_sandbox)
+        
+testlogarea = path.join('/sandbox', os.getenv('USER'), 'sbruntests', sb_name)
+if options.testlogarea:
+    testlogarea = options.testlogarea
+
+rerunusing = options.rerunusing
+
+run_cmd('sbcopy -no-perforce %s .' % orig_sandbox)
+run_cmd('restoreDebugFiles.py')
+
+sbrun_args = ' '.join(sbrun_args)
+#run_cmd('sbruntests -autofarm devel -sbscanlog-interval 20m -rerunusing %(rerunusing)s -testlogarea %(testlogarea)s %(sbrun_args)s' % locals())

@@ -1,0 +1,5 @@
+{
+"unpackslx": {  "inputs":  [  {"name":"filename", "kind":"required", "type":"filepath=*.slx" }  ] },
+"viewbdxml": {  "inputs":  [  {"name":"filename", "kind":"required", "type":"filepath=*.slx" }  ] },
+"viewslx": {  "inputs":  [  {"name":"filename", "kind":"required", "type":"filepath=*.slx" }  ] }
+}

@@ -1,0 +1,25 @@
+#!/usr/bin/env python
+from sbtools import *
+from  add import addToSubmitList
+
+root = getRootDir();
+if not root:
+    print 'Not in a sandbox'
+    sys.exit(1)
+
+os.chdir(root)
+#dirs = '.'
+#dirs = 'matlab/toolbox/stateflow/stateflow/+Stateflow/+App'
+#dirs = 'matlab/test/toolbox/stateflow'
+dirs = 'matlab/test/toolbox/stateflow/sf_in_matlab'
+# dirs = '''matlab/simulink
+# matlab/rtw
+# matlab/src
+# matlab/toolbox
+# matlab/test
+# matlab/resources
+# matlab/config'''
+
+for dir in dirs.split():
+    addToSubmitList(dir)
+

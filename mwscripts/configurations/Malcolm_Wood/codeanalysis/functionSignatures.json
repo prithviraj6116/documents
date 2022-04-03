@@ -1,0 +1,13 @@
+{
+"headertree": {  "inputs":  [  {"name":"filename", "kind":"required", "type":"filepath" }  ] },
+"headersubtree": {  "inputs":  [  {"name":"filename", "kind":"required", "type":"filepath" }  ] },
+"linecount": {  "inputs":  [  {"name":"filename", "kind":"required", "type":"filepath" }  ] },
+"preprocess": {  "inputs":  [  {"name":"filename", "kind":"required", "type":"filepath" }  ] },
+"preprocessed_linecount": {  "inputs":  [  {"name":"filename", "kind":"required", "type":"filepath" }  ] },
+"sbcc": {  "inputs":  [  {"name":"filename", "kind":"required", "type":"filepath" }  ] },
+"fix_source_file": {  "inputs":  [  {"name":"filename", "kind":"required", "type":"filepath" }  ] },
+"insert_header": {  "inputs":  [
+   {"name":"file_to_modify", "kind":"required", "type":"filepath" },
+   {"name":"header_to_insert", "kind":"required", "type":"char" }
+  ] }
+}

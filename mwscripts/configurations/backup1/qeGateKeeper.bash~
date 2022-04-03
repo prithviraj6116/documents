@@ -1,0 +1,38 @@
+#!/bin/bash
+
+# note 1: do not delete any line below.
+# note 2;leave environment variable empty if not required.
+# note 3: all logs are created in $s/qeGateKeeperLogs/
+# note 4: semi-comma is required at the end of each line
+# note 4: number of processes will be forked equal to value for noOfParralleProcesses mentioned below. This bash script will exit immediately. If you need to kill all the forked processes, use pkill -9 -f bdmasterHelper
+
+export name='i4';
+
+export sbcluster="Bllvm"
+export sbclusterlocation="50";#39 for Bstateflow,  50 for Bllvm etc.
+
+
+
+#runlikebat testpath from matlabroot; separate multiple testpaths with space
+export testlist='test/toolbox/stateflow/coder/semantics/duration/negative/tGraphicalFcnInDuration.m';
+
+#noOfChanges MUST BE equal to the number of changes in the current running job.
+#todo: get this number directly from the p4/sb apis
+export noOfChanges=5;
+
+
+#important: number of parallel processes needed. each process will open a qualifying submission sandbox and run the tests
+export noOfParallelProcesses=2;
+
+
+
+#CTB if required. separated by space
+export ctb='stateflow';
+
+
+
+
+#do not change anything below
+export qeGateKeeper='1'
+bash /mathworks/devel/sandbox/ppatil/configurations/bdmasterHelper.bash
+

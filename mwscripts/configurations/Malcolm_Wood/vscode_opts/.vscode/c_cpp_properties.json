@@ -1,0 +1,43 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "/usr/include",
+                "../../derived/glnxa64/src/include",
+                "../include",
+                "/local-ssd/mwood/mathworks-hub/3rdparty/R2018a/2868321/glnxa64/boost/include",
+                "/local-ssd/mwood/mathworks-hub/3rdparty/R2018a/2868321/glnxa64/cpp11compat/include",
+                "/local-ssd/mwood/mathworks-hub/3rdparty/R2018a/2932112/glnxa64/CppMicroServices/include",
+                "/local-ssd/mwood/mathworks-hub/3rdparty/R2018b/2984433/glnxa64/icu/include",
+                "/local-ssd/mwood/mathworks-hub/3rdparty/R2018b/2984433/glnxa64/tbb/include",
+                "/local-ssd/mwood/mathworks-hub/3rdparty/R2018b/2984433/glnxa64/gmock/include/gmock",
+                "/local-ssd/mwood/mathworks-hub/3rdparty/R2018b/2984433/glnxa64/gmock/include/gtest",
+                "/mathworks/hub/3rdparty/internal/2782847/glnxa64/gcc-6.3.0/include/c++/6.3.0/",
+                "/mathworks/hub/3rdparty/internal/2782847/glnxa64/gcc-6.3.0/include/c++/6.3.0/x86_64-pc-linux-gnu/",
+                "/mathworks/hub/3rdparty/internal/2782847/glnxa64/gcc-6.3.0/lib/gcc/x86_64-pc-linux-gnu/6.3.0/include/"
+        ],
+            "browse": {
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": "",
+                "path": [
+                "/usr/include",
+                "../../derived/glnxa64/src/include",
+                "../include",
+                "/local-ssd/mwood/mathworks-hub/3rdparty/R2018a/2868321/glnxa64/boost/include",
+                "/local-ssd/mwood/mathworks-hub/3rdparty/R2018a/2868321/glnxa64/cpp11compat/include",
+                "/local-ssd/mwood/mathworks-hub/3rdparty/R2018a/2932112/glnxa64/CppMicroServices/include",
+                "/local-ssd/mwood/mathworks-hub/3rdparty/R2018b/2984433/glnxa64/icu/include",
+                "/local-ssd/mwood/mathworks-hub/3rdparty/R2018b/2984433/glnxa64/tbb/include",
+                "/local-ssd/mwood/mathworks-hub/3rdparty/R2018b/2984433/glnxa64/gmock/include/gmock",
+                "/local-ssd/mwood/mathworks-hub/3rdparty/R2018b/2984433/glnxa64/gmock/include/gtest",
+                "/mathworks/hub/3rdparty/internal/2782847/glnxa64/gcc-6.3.0/include/c++/6.3.0/",
+                "/mathworks/hub/3rdparty/internal/2782847/glnxa64/gcc-6.3.0/include/c++/6.3.0/x86_64-pc-linux-gnu/",
+                "/mathworks/hub/3rdparty/internal/2782847/glnxa64/gcc-6.3.0/lib/gcc/x86_64-pc-linux-gnu/6.3.0/include/"
+                ]
+            },
+            "intelliSenseMode": "clang-x64"
+        }
+    ],
+    "version": 3
+}

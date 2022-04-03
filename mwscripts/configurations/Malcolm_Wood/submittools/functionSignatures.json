@@ -1,0 +1,4 @@
+{
+"p4edit": {  "inputs":  [  {"name":"filename", "kind":"required", "type":"filepath" }  ] },
+"p4add": {  "inputs":  [  {"name":"filename", "kind":"required", "type":"filepath" }  ] }
+}

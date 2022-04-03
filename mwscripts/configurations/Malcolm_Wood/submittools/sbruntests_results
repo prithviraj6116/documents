@@ -1,0 +1,3 @@
+#!/bin/sh
+cd `/public/Malcolm_Wood/submittools/sbruntests_finder_python`
+sbscanlog -ohtml-and-view sbtest/sbscanlog_results.html

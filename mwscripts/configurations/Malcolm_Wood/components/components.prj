@@ -1,0 +1,125 @@
+<deployment-project plugin="plugin.toolbox" plugin-version="1.0">
+  <configuration build-checksum="1855090753" file="\\mathworks\public\Malcolm_Wood\components\components.prj" location="\\mathworks\public\Malcolm_Wood\components" name="components" target="target.toolbox" target-name="Package Toolbox">
+    <param.appname>components</param.appname>
+    <param.authnamewatermark>Malcolm</param.authnamewatermark>
+    <param.email>malcolm.wood@mathworks.co.uk</param.email>
+    <param.company>MathWorks</param.company>
+    <param.summary>Component Analysis Functions for MATLAB</param.summary>
+    <param.description>A collection of functions for analysing component dependencies, and generating CTB lists.</param.description>
+    <param.screenshot />
+    <param.version>1.0</param.version>
+    <param.output>${PROJECT_ROOT}\components.mltbx</param.output>
+    <param.products.name>
+      <item>MATLAB</item>
+      <item>Simulink</item>
+    </param.products.name>
+    <param.products.id>
+      <item>-1</item>
+      <item>-1</item>
+    </param.products.id>
+    <param.products.version>
+      <item>8.5</item>
+      <item>8.5</item>
+    </param.products.version>
+    <param.platforms />
+    <param.guid>55c99ba1-d632-496b-adb4-010b329919e5</param.guid>
+    <param.exclude.filters />
+    <param.examples>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;examples/&gt;</param.examples>
+    <param.demosxml />
+    <param.apps />
+    <param.docs />
+    <unset>
+      <param.authnamewatermark />
+      <param.email />
+      <param.company />
+      <param.screenshot />
+      <param.version />
+      <param.output />
+      <param.platforms />
+      <param.exclude.filters />
+      <param.demosxml />
+      <param.apps />
+      <param.docs />
+    </unset>
+    <fileset.rootdir>
+      <file>\\mathworks\public\Malcolm_Wood\components</file>
+    </fileset.rootdir>
+    <fileset.rootfiles>
+      <file>${PROJECT_ROOT}\.SimulinkProject</file>
+      <file>${PROJECT_ROOT}\@mtfilename</file>
+      <file>${PROJECT_ROOT}\Bslx_ignore_list.txt</file>
+      <file>${PROJECT_ROOT}\Bslx_required_comps.txt</file>
+      <file>${PROJECT_ROOT}\Bslx_required_list.txt</file>
+      <file>${PROJECT_ROOT}\Bslx_required_tests.txt</file>
+      <file>${PROJECT_ROOT}\buildlistMatcher.m</file>
+      <file>${PROJECT_ROOT}\buildlistProblemReport.m</file>
+      <file>${PROJECT_ROOT}\buildlistReport.m</file>
+      <file>${PROJECT_ROOT}\checkCTB.m</file>
+      <file>${PROJECT_ROOT}\checkSnap.m</file>
+      <file>${PROJECT_ROOT}\component_line_counts.m</file>
+      <file>${PROJECT_ROOT}\component_line_counts.txt</file>
+      <file>${PROJECT_ROOT}\ComponentAnalysis.m</file>
+      <file>${PROJECT_ROOT}\componentReader.m</file>
+      <file>${PROJECT_ROOT}\CTBChecker.m</file>
+      <file>${PROJECT_ROOT}\downstreamDependencies.m</file>
+      <file>${PROJECT_ROOT}\genBuildList.m</file>
+      <file>${PROJECT_ROOT}\matlabCodeDependencies.m</file>
+      <file>${PROJECT_ROOT}\private</file>
+      <file>${PROJECT_ROOT}\readBuildList.m</file>
+      <file>${PROJECT_ROOT}\readComponentList.m</file>
+      <file>${PROJECT_ROOT}\readComponentList.m~</file>
+    </fileset.rootfiles>
+    <fileset.depfun.included />
+    <fileset.depfun.excluded />
+    <fileset.package />
+    <build-deliverables>
+      <file location="\\mathworks\public\Malcolm_Wood\components" name="components.mltbx" optional="false">\\mathworks\public\Malcolm_Wood\components\components.mltbx</file>
+    </build-deliverables>
+    <workflow />
+    <matlab>
+      <root>C:\Bslx\matlab</root>
+      <toolboxes>
+        <toolbox name="matlabhdlcoder" />
+        <toolbox name="fixedpoint" />
+        <toolbox name="embeddedcoder" />
+        <toolbox name="matlabcoder" />
+      </toolboxes>
+      <toolbox>
+        <matlabhdlcoder>
+          <enabled>true</enabled>
+        </matlabhdlcoder>
+      </toolbox>
+      <toolbox>
+        <fixedpoint>
+          <enabled>true</enabled>
+        </fixedpoint>
+      </toolbox>
+      <toolbox>
+        <embeddedcoder>
+          <enabled>true</enabled>
+        </embeddedcoder>
+      </toolbox>
+      <toolbox>
+        <matlabcoder>
+          <enabled>true</enabled>
+        </matlabcoder>
+      </toolbox>
+    </matlab>
+    <platform>
+      <unix>false</unix>
+      <mac>false</mac>
+      <windows>true</windows>
+      <win2k>false</win2k>
+      <winxp>false</winxp>
+      <vista>false</vista>
+      <linux>false</linux>
+      <solaris>false</solaris>
+      <osver>6.1</osver>
+      <os32>false</os32>
+      <os64>true</os64>
+      <arch>win64</arch>
+      <matlab>true</matlab>
+    </platform>
+  </configuration>
+</deployment-project>

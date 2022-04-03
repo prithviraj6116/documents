@@ -1,0 +1,168 @@
+#!/bin/csh -f
+
+alias dmb "sbmake -distcc build DEBUG=1"
+alias smb "mw gmake build DEBUG=1"
+alias smbv "sbmake build DEBUG=1 VERBOSE=1"
+alias smp "sbmake prebuild"
+
+setenv PMERGE p4merge
+
+function smbc
+    sbmake -o maven_bom DEBUG=1 COMPONENTS_TO_BUILD=$argv[1]
+end
+
+function dmbc
+    sbmake -distcc -o maven_bom DEBUG=1 COMPONENTS_TO_BUILD=$argv[1]
+end
+
+alias sbccc "sbcc -dc"
+alias sbed "sbedits -d ."
+
+alias cds "cd /sandbox/mwood"
+
+function cdlatest
+    cd /mathworks/devel/jobarchive/$argv[1]/latest_pass
+end
+
+alias cdbuild "cd (mw -using Bslx:current anchor)"
+
+alias srcdir "cd (/public/Malcolm_Wood/submittools/cdhelper_python matlab/src/simulink)"
+alias slsdir "cd (/public/Malcolm_Wood/submittools/cdhelper_python matlab/src/sl_loadsave)"
+alias slsmdir "cd (/public/Malcolm_Wood/submittools/cdhelper_python matlab/toolbox/simulink/sl_loadsave_mcos/src/sl_loadsave_mcos)"
+alias sgcdir "cd (/public/Malcolm_Wood/submittools/cdhelper_python matlab/src/sl_graphical_classes)"
+alias skdir "cd (/public/Malcolm_Wood/submittools/cdhelper_python matlab/src/sl_skeleton)"
+alias skldir "cd (/public/Malcolm_Wood/submittools/cdhelper_python matlab/src/sl_skeleton_loader)"
+alias prmdir "cd (/public/Malcolm_Wood/submittools/cdhelper_python matlab/src/sl_prm_descriptor)"
+alias tbdir "cd (/public/Malcolm_Wood/submittools/cdhelper_python matlab/toolbox/simulink/simulink)"
+alias testdir "cd (/public/Malcolm_Wood/submittools/cdhelper_python matlab/test/toolbox/simulink)"
+alias resdir "cd (/public/Malcolm_Wood/submittools/cdhelper_python matlab/resources/Simulink)"
+alias jdir "cd (/public/Malcolm_Wood/submittools/cdhelper_python matlab/java/src)"
+alias shcdir "cd (/public/Malcolm_Wood/submittools/cdhelper_python matlab/toolbox/simulink/simharness/src/simharness_core)"
+alias shdir "cd (/public/Malcolm_Wood/submittools/cdhelper_python matlab/toolbox/shared/simharness/src/simharness)"
+alias slexdir "cd (/public/Malcolm_Wood/submittools/cdhelper_python matlab/toolbox/simulink/slexportprevious/src/slexportprevious)"
+
+alias incdir "cd (/public/Malcolm_Wood/submittools/cdhelper_python matlab/derived/glnxa64/src/include)"
+alias csdir "cd (/public/Malcolm_Wood/submittools/cdhelper_python matlab/toolbox/shared/configset/src/configset_base)"
+alias sltdir "cd (/public/Malcolm_Wood/submittools/cdhelper_python matlab/toolbox/simulink/sltemplate/web/GalleryView/js/app)"
+
+alias vsopts "cp -r /md/mwood/software/vscode_opts/.vscode ."
+alias sbdir "cd (sbroot)"
+
+alias sbrt "/public/Malcolm_Wood/submittools/sbruntests_results"
+
+alias msbscanlog "sbscanlog -ohtml-and-view sbtest/sbscanlog_results.html"
+
+function econfig
+    sbe -w matlab/config/components/$argv[1] \&
+end
+
+alias compgrep "find matlab/config/components -name \\*.xml -exec grep -n -H \!:1 {} \\\;"
+
+function hgrep
+    find . -name "*.hpp" | xargs grep -nH $argv[1]
+end
+
+function xgrep
+    find . -name "*.cpp" | xargs grep -nH $argv[1]
+end
+
+function jgrep
+    find . -name "*.java" | xargs grep -nH $argv[1]
+end
+
+function mgrep
+    find . -name "*.m" | xargs grep -nH $argv[1]
+end
+
+function jsgrep
+    find . -name "*.js" | xargs grep -nH $argv[1]
+end
+
+alias hgrepx "find . -name \"*.h\" -exec grep -n -H \!:1 '{}' \\\;"
+alias egrep "find . -name \"*\!:2\" -exec grep -n -H \!:1 '{}' \\\;"
+alias xgrepc "xgrep \!:1 \| grep -c \!:1"
+alias hgrepc "hgrep \!:1 \| grep -c \!:1"
+
+alias msb "sb -nosplash -nodesktop -noaccel"
+
+function sbb
+    cd /local-ssd/mwood
+    cd /local-ssd/mwood/x$argv[1]
+end
+
+function msync
+    cd /local-ssd/mwood
+    ./sync.sh
+end
+                        
+function mclone
+    set -l sandbox_num $argv[1]
+    set -e argv[1]
+    cd /local-ssd/mwood
+    sbclone syncmaster/Bslx.latest_pass x$sandbox_num $argv
+    cd x$sandbox_num
+end
+
+function ecrash
+    sbe ~/matlab_crash_dump.$argv[1]-1
+end
+
+function decodetests
+    /public/Malcolm_Wood/submittools/decodetests $argv[1]
+end
+
+    
+alias tcrash "/sandbox/mwood/stack_decoder.pl --in=/home/mwood/matlab_crash_dump.\!:1 --format=short"
+
+function msbruntests
+    set -l suites $argv[1]
+    set -e argv[1]
+    sbruntests -local all -F none -testsuites $suites -rerunusing jobarchive $argv
+end
+
+function msbruntestsn
+    set -l suites $argv[1]
+    set -e argv[1]
+    sbruntests -local all -F none -testsuites $suites -noretryfailedtests -rerunusing nothing $argv
+end
+
+function msbruntestsnf
+    set -l suites $argv[1]
+    set -e argv[1]
+    sbruntests -F none -testsuites $suites -noretryfailedtests -rerunusing nothing $argv
+end
+
+function msbruntestsf
+    set -l suites $argv[1]
+    set -e argv[1]
+    sbruntests -F none -testsuites $suites -rerunusing jobarchive $argv
+end
+
+alias msbruntestsq "sbruntests -local all -F none -testsuites Bslx_short -noretryfailedtests -rerunusing nothing"
+alias msbruntestsqf "sbruntests -F none -testsuites Bslx_short -rerunusing jobarchive"
+
+function msbruntests_rerun
+    sbruntests -local all -F none -testsuites ../x$argv[1]_sbruntests/glnxa64$argv[1]/sbtest/failed_testsuites.txt -rerunusing jobarchive
+end
+
+setenv P4CONFIG .perforce
+
+function sbsnew
+    mw -using $argv[1] sbs clone create -cluster $argv[1]
+end
+
+alias sbsdiscard "mw sbs discard ."
+
+alias p4c "p4 changes -u mwood -s pending"
+
+alias chrome "/opt/google/chrome/chrome"
+alias chromed "/opt/google/chrome/chrome http://localhost:49431/ \&"
+
+alias scsh "source /public/Malcolm_Wood/submittools/fish_malcolm.sh"
+alias ecsh "sbe /public/Malcolm_Wood/submittools/fish_malcolm.sh"
+
+alias vscode "/md/mwood/software/visual_studio_code/start_vscode ."
+
+alias firefox "/md/mwood/software/firefox/firefox"
+
+alias sbstool "/md/mwood/software/sandbox-manager-0.15.0-x86_64.AppImage"

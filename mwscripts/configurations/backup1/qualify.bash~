@@ -1,0 +1,67 @@
+#!/bin/bash
+
+#Note 1: Do not delete any lines below.
+#        Leave environment variable empty if not required.
+#        reset enviornment variable by giving empty string '' and NOT by giving '0' or 0
+#        semi-comma is MUST at the end of each line
+#Note 2: logs will created in $s/qualificationLogs
+#Note 3:qualification reproducation script will be in $s/qualificationLogs/$name/sbqualify.bash
+#       you can use above script to produce identical qualification anytime
+
+
+
+
+export name='static23';
+
+
+# '1':to clone new sandbox;
+# '' :  to use existing sandbox of above $name
+export sbclone='1';
+
+#cluster
+export sbcluster='Bstateflow';
+
+
+#job number without j. leave empty for latest_pass. It is ignored if sbclone=''.
+export sbclonefromspecificjob='';
+
+#restorepoint directory,
+#CAUTION/DANGER: if specified with sbclone='' (i.e. use existing sandbox), all existing changes in sandbox will be p4 reverted.
+export rp='/sandbox/ppatil/_sbbackup/local_ppatil-deb8-64_local-ssd_ppatil_sf1_backup/static23/';
+
+
+#lcm double update; changelists separated by space
+#specifying this enables sbclone='1', sbclonefromspecificjob='', rp='',  and sbcluster="Blcmdacore2"
+export lcm2update='';
+
+
+#compile components CTB list
+export ctb='stateflow stateflow_resources stateflow_core stateflow_coder_tests stateflow_coder_semantics_tests stateflow_tests stateflow_negative_tests stateflow_demos';
+
+
+#sbsbmartbuild '1' for yes; '' for no
+export smartbd='1';
+
+
+# sbrunlikebat
+#testlists (space separated if multiple) path relative to matlabroot
+export testlist='';
+
+
+#same as testlist in the case when test is BPed
+export unbp='';
+
+
+# for sbruntests
+export cfg='';
+export runallunder='test/toolbox/stateflow';
+export testsuites='Acgir -testsuites dacore';
+
+
+
+
+#Do not change anything below
+export originalQualifyBash=1;
+
+bash /mathworks/devel/sandbox/ppatil/configurations/qualifyHelper.bash
+

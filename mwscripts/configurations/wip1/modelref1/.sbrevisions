@@ -1,0 +1,14 @@
+matlab/src/simulink/sl_blks/modelref.cpp,//mw/Bsfml/matlab/src/simulink/sl_blks/modelref.cpp#4,edit
+matlab/src/simulink/sl_glue/SLGlueAccessBlock.cpp,//mw/Bsfml/matlab/src/simulink/sl_glue/SLGlueAccessBlock.cpp#3,edit
+matlab/src/simulink/sl_mdlref/ModelBlockInterfaceManager.cpp,//mw/Bsfml/matlab/src/simulink/sl_mdlref/ModelBlockInterfaceManager.cpp#1,edit
+matlab/src/simulink/sl_mdlref/ModelrefSave.cpp,//mw/Bsfml/matlab/src/simulink/sl_mdlref/ModelrefSave.cpp#1,edit
+matlab/src/sl_loadsave/common/filename_extensions.cpp,//mw/Bsfml/matlab/src/sl_loadsave/common/filename_extensions.cpp#1,edit
+matlab/src/sl_loadsave/export/include/sl_loadsave/slsFileNameUtils.hpp,//mw/Bsfml/matlab/src/sl_loadsave/export/include/sl_loadsave/slsFileNameUtils.hpp#1,edit
+matlab/toolbox/simulink/simulink/FileReferenceBrowser.m,//mw/Bsfml/matlab/toolbox/simulink/simulink/FileReferenceBrowser.m#1,edit
+matlab/toolbox/simulink/simulink/ModelReferenceBrowser.m,//mw/Bsfml/matlab/toolbox/simulink/simulink/ModelReferenceBrowser.m#1,edit
+matlab/toolbox/stateflow/stateflow/+Stateflow/+App/+Cdr/+Runtime/InstanceIndRuntime.m,//mw/Bsfml/matlab/toolbox/stateflow/stateflow/+Stateflow/+App/+Cdr/+Runtime/InstanceIndRuntime.m#10,edit
+matlab/toolbox/stateflow/stateflow/+Stateflow/+App/+Studio/SaveAs.m,//mw/Bsfml/matlab/toolbox/stateflow/stateflow/+Stateflow/+App/+Studio/SaveAs.m#5,edit
+matlab/toolbox/stateflow/stateflow/+Stateflow/+App/+Utils/addInputPorts.m,not-in-Perforce,add
+matlab/toolbox/stateflow/stateflow/+Stateflow/+App/+Utils/addToModelRefInfo.m,not-in-Perforce,add
+matlab/toolbox/stateflow/stateflow/+Stateflow/+App/+Utils/loadSFXHelper.m,not-in-Perforce,add
+matlab/toolbox/stateflow/stateflow/+Stateflow/+App/+Utils/modelRefSFX.m,not-in-Perforce,add

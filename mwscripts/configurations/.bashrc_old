@@ -1,0 +1,42 @@
+# -*-shell-script-*-
+
+# For information and guidelines on what should and should NOT go
+# in here, please read sbsetupunix help:
+#   http://wiki/SBTools#sbsetupunix
+# In particular pay attention to the 'Typical Mistakes' that can cause
+# significant pain to the company.
+# You should also time your changes as explained in sbsetupunix help.
+
+
+# Customize DEFAULT_SANDBOX to where you normally work
+export DEFAULT_SANDBOX=/mathworks/devel/sandbox/$LOGNAME/a
+. /mathworks/hub/share/sbtools/bash_setup.bash
+source /mathworks/hub/share/sbtools/bash_setup.bash
+
+# Uncomment the following to disable setmwe. See man nosetmwe
+# alias setmwe='man nosetmwe'
+
+export PATH=$PATH:/sandbox/savadhan/sbtools
+source /sandbox/savadhan/sbtools/_bash_functions
+. /sandbox/savadhan/sbtools/_bash_functions
+export SBTOOLS_VNC_WINDOW_MGR=mate-session
+################
+# Perforce
+################
+
+export P4CONFIG=.perforce
+
+################
+# My own macros
+################
+#alias got='gol;cd matlab/test/toolbox/stateflow'    
+alias sb2s='gol;sb -nosplash  -r "cd(matlabroot); vdp; bdclose all; cd /mathworks/devel/sandbox/ppatil/models;disp(pwd)" &'
+alias sb2n='gos;sb -nosplash  -r "cd(matlabroot); vdp; bdclose all; cd /mathworks/devel/sandbox/ppatil/models;disp(pwd)" &' 
+
+alias vncserver='\vncserver -geometry 1600x900 -geometry 1280x800 -geometry 1024x768 -geometry 1920x1200'
+alias ems='gol;cd matlab/toolbox/stateflow/src/stateflow/cdr; emacs . &'
+alias emn='gos;cd matlab/toolbox/stateflow/src/stateflow/cdr; emacs . &'
+#GREP_OPTIONS="-n --color --exclude-dir=.svn --exclude-dir=.hg --exclude-dir=.git"
+export GREP_OPTIONS
+#source .my_commands
+#export SBTOOLS_VNC_WINDOW_MGR=gnome-classic

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<toolset id="user_favorite_commands_toolset" template="false">
+   <tool id="815b7b5a-cedf-47bf-b588-7fae9ba881f4" label="pcode" toolset_id="user_favorite_commands_toolset">
+      <callback>savedir=pwd;[dir,filename,ext]=fileparts(matlab.desktop.editor.getActiveFilename);cd(dir); disp(filename);eval(['if exist(''' filename '.p'', ''file'')' newline 'pcode ' filename ext ';' newline 'else' newline 'disp(''not pcoded'');' newline 'end']);cd(savedir);</callback>
+      <icon name="favorite_command"/>
+      <parent_tool id="default_category" toolset_id="favorite_commands_toolset"/>
+   </tool>
+   <tool id="28a30e25-8ba3-4f6e-9ff1-ba83e2e81aff" label="temp1" toolset_id="user_favorite_commands_toolset">
+      <callback>file='sfxModel1.m';nondebuglines=[7,8];alllines=1:23;cd temp1;pcode sfxDebugInstr1.m;pcode sfxDebugInstr2.m;pcode sfxDebugInstr3.m;cd ..;copyfile temp1/sfxDebugInstr1.p .;copyfile temp1/sfxDebugInstr2.p .;copyfile temp1/sfxDebugInstr3.p .;d=setdiff(alllines,nondebuglines);builtin('_InvalidateMCodeLinesForTesting',fullfile(pwd, file),d);clear all;dbclear all;clc;dbstop('in', 'mainApplication.m', 'at', '3');dbstop('in', 'mainApplication.m', 'at', '3');dbstop('in', 'mainApplication.m', 'at', '3');mainApplication</callback>
+      <icon name="favorite_command"/>
+      <parent_tool id="default_category" toolset_id="favorite_commands_toolset"/>
+   </tool>
+   <tool id="bde84ed4-9324-4093-8474-51d13876be99" label="MLEditor" toolset_id="user_favorite_commands_toolset">
+      <callback>edit(matlab.desktop.editor.getActiveFilename)</callback>
+      <icon name="favorite_command"/>
+   </tool>
+   <tool id="294cc07f-575b-4087-814e-dc0b260839de" label="startup1" toolset_id="user_favorite_commands_toolset">
+      <callback>rootDir = matlabroot;
+jDesktop = com.mathworks.mde.desk.MLDesktop.getInstance;
+jDesktop.getMainFrame.setTitle(rootDir);
+
+
+
+opeds = com.mathworks.mlservices.MLEditorServices.getEditorApplication().getOpenEditors();
+mlroot = matlabroot;
+mlRootLen = length(mlroot);
+for i = (opeds.size()-1) : -1 : 0
+    filepath = char(opeds.get(i).getStorageLocation().getFile().toString());
+    if ~strcmp(mlroot, filepath(1:mlRootLen))
+        opeds.get(i).close();
+    end
+end</callback>
+      <icon name="favorite_command"/>
+      <parent_tool id="default_category" toolset_id="favorite_commands_toolset"/>
+   </tool>
+   <tool id="a64ed1b0-e2ad-4992-acbf-8b34218919b9" label="menutags" toolset_id="user_favorite_commands_toolset">
+      <callback>    evalin('base',' cm = sl_customization_manager;')
+if evalin('base','cm.showWidgetIdAsToolTip')
+    evalin('base','cm.showWidgetIdAsToolTip = false;')
+    disp('Disabled Menu Tags Display');
+else
+    evalin('base','cm.showWidgetIdAsToolTip = true;')
+    disp('Enabled Menu Tags Display');
+end
+evalin('base','clear cm');
+if sf('Feature','DebugIdMode') == 1
+    sf('Feature','DebugIdMode','off');
+else
+    sf('Feature','DebugIdMode','on');
+end</callback>
+      <icon name="favorite_command"/>
+      <parent_tool id="default_category" toolset_id="favorite_commands_toolset"/>
+   </tool>
+   <tool id="80d9d9ea-6093-4b99-b1e0-c9a2c78b27c8" label="p4" toolset_id="user_favorite_commands_toolset">
+      <callback>savedir=pwd;[dir,filename,ext]=fileparts(matlab.desktop.editor.getActiveFilename);cd(dir); disp(filename);eval(['!p4 edit ' filename ext]);eval(['!p4 add ' filename ext]);cd(savedir);</callback>
+      <icon name="favorite_command"/>
+      <parent_tool id="default_category" toolset_id="favorite_commands_toolset"/>
+   </tool>
+   <tool id="294551b9-1726-4203-8c0e-5ccc32096cc3" label="gvim" toolset_id="user_favorite_commands_toolset">
+      <callback>filenames=matlab.desktop.editor.getAll; 
+disp(['opening all opened files in in gvim.']);
+toOpen = matlab.desktop.editor.getActiveFilename;
+for i =1:length(filenames)
+    toOpen = [toOpen ' ' filenames(i).Filename];
+end
+
+eval(['!source ~/.bashrc;gvim ' toOpen]);
+</callback>
+      <icon name="favorite_command"/>
+      <parent_tool id="default_category" toolset_id="favorite_commands_toolset"/>
+   </tool>
+   <tool id="12c50a49-1452-49c1-a464-efc8f0f0ad8e" label="m_bp" toolset_id="user_favorite_commands_toolset">
+      <callback>add_devutils;
+bpManager;</callback>
+      <icon name="favorite_command"/>
+      <parent_tool id="default_category" toolset_id="favorite_commands_toolset"/>
+   </tool>
+   <tool id="cfc5d63d-bd4f-4707-8f75-47af6b19cf5b" label="gvim" toolset_id="user_favorite_commands_toolset">
+      <callback>filename=matlab.desktop.editor.getActiveFilename; disp(['opening ' filename 'in gvim.']);eval(['!p4 edit ' filename ext]);eval(['!gvim  ' filename ext]);</callback>
+      <icon name="favorite_command"/>
+      <parent_tool id="default_category" toolset_id="favorite_commands_toolset"/>
+   </tool>
+   <tool id="12410f88-9d54-4926-a296-10df51366e8c" label="MLEditor" toolset_id="user_favorite_commands_toolset" type="group">
+      <icon name="favorite_category"/>
+      <parent_tool id="favorite_commands_gallery" toolset_id="favorite_commands_toolset"/>
+   </tool>
+</toolset>

@@ -1,0 +1,38 @@
+# -*-shell-script-*-
+
+# For information and guidelines on what should and should NOT go  
+# in here, please read sbsetupunix help:
+#   http://inside.mathworks.com/wiki/SBTools#sbsetupunix
+# In particular pay attention to the 'Typical Mistakes' that can cause
+# significant pain to the company.
+# You should also time your changes as explained in sbsetupunix help.
+
+
+# Enable DEFAULT_SANDBOX to set a default sandbox for tools like sbm when not
+# run from within a sandbox.
+#export DEFAULT_SANDBOX=/mathworks/devel/sandbox/$LOGNAME/b
+unset PYTHONPATH
+unset LD_LIBRARY_PATH
+
+export SBTOOLS_VNC_WINDOW_MGR=mate-session
+export P4CONFIG=.perforce
+export P4MERGE=p4merge
+export VISUAL=gvim
+export EDITOR=gvim
+
+source /mathworks/hub/share/sbtools/bash_setup.bash
+
+export PATH=$PATH://mathworks/hub/share/sbtools/apps/cgir_tools
+source /mathworks/inside/labs/dev/matlab_coder_tools/sbtools-completions/sbtools-completions/bash/setup.bash
+
+export PATH=$PATH:/sandbox/savadhan/sbtools
+source /sandbox/savadhan/sbtools/_bash_functions
+
+export PATH=$PATH:/local-ssd/ppatil/gitRepo1/pppGitHub/mwscripts
+source /local-ssd/ppatil/gitRepo1/pppGitHub/mwscripts/bashrc.bash
+
+
+
+
+
+

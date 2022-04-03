@@ -1,0 +1,24 @@
+#!/usr/bin/python
+
+import os.path
+import sys
+import fileinput
+
+" From sbruntests documentation "
+" When running sandbox, the default test log area is SBROOT_sbruntests/SBARCH"
+" If the sandbox root is also a mount point, the default test log area "
+" is SBROOT/work/sbruntests/SBARCH"
+
+if __name__ == '__main__':
+  " Invoke sbroot!"
+  command = "sbroot"
+  proc = os.popen(command)
+  sbroot = proc.read().split('\n')[0]
+  sys.stderr.write('sbroot is '+ sbroot + '\n')
+  if os.path.exists(sbroot + '_sbruntests/glnxa64'):
+    dest = sbroot + '_sbruntests/glnxa64'
+  else:
+    dest = sbroot + '/work/sbruntests/glnxa64'
+  sys.stderr.write('cd '+ dest + '\n')
+  print dest
+  

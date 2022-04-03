@@ -1,0 +1,237 @@
+Gset background=dark
+set lines=999 columns=1000
+hi SpecialKey guifg=Blue
+hi MoreMsg guifg=Green
+hi Visual guifg=NONE guibg=NONE
+hi Folded ctermbg=4 guibg=Blue
+hi FoldColumn ctermbg=7
+hi DiffAdd guibg=Blue
+hi DiffChange guibg=Magenta
+hi DiffDelete guibg=Cyan
+hi Normal guifg=Gray guibg=Black
+hi Cursor guibg=White
+hi lCursor guibg=White
+hi Comment guifg=Cyan
+hi Constant guifg=Magenta
+hi Special guifg=Red
+hi Identifier guifg=Cyan
+hi Statement guifg=Yellow
+hi PreProc guifg=Blue
+hi Type guifg=Green
+hi Underlined guifg=Blue
+hi Todo guifg=Black         " be iMproved, required
+"set noswapfile
+"show the command as it is being entered in console"
+set showcmd
+set nocompatible
+
+set nocompatible     
+set relativenumber
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+"set rtp+=~/.vim/bundle/Vundle.vim
+"call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+"Plugin 'VundleVim/Vundle.vim'
+"Plugin 'lyuts/vim-rtags'
+"let g:rtagsRcCmd = "rc --socket-file=" .$WORKING_DIR. "/.sbtools/sbcpptags/rdm_socket" 
+"set runtimepath^=/mathworks/devel/sandbox/ppatil/configurations/vimplugins/ctrlp.vim
+"set rtp^=/mathworks/devel/sandbox/ppatil/configurations/vimplugins/ctrlp/plugin/ctrlp.vim
+":set autochdir
+syntax on
+set number
+set hlsearch
+set laststatus=2
+":set foldmethod=indent
+":set foldmethod=syntax
+set autoindent
+:set cursorline
+highlight Folded guibg=black
+highlight Folded guifg=white
+:set autoread
+:colorscheme koehler
+"let g:GdbCmd = '/mathworks/hub/share/sbtools/bin/glnxa64/gdb-77-deb7-64'
+let g:GdbCmd = 'sb -no-debug-backing-stores -debug -gdb-switches --annotate=3 -gdb-switches --args'
+if has('win32')
+    set guifont=Consolas:h11
+else
+    let sbroot=system('sbroot')
+    if !v:shell_error
+        source /mathworks/hub/share/sbtools/apps/vim/vimrc.vim
+    else
+  	filetype plugin on
+    end
+end
+set wildmode=longest:list
+
+set hidden
+
+" Automatically closing braces
+inoremap {<CR> {<CR>}<Esc>ko<tab>
+inoremap [<CR> [<CR>]<Esc>ko<tab>
+inoremap (<CR> (<CR>)<Esc>ko<tab>
+set guifont=Courier\ New\ 12
+
+runtime macros/matchit.vim
+set history=1000
+set ww+=[,],<,>
+:nnoremap <C-k> []%
+:nnoremap <C-j> ][j][%
+"nnoremap <C-q> vey:,$s/<C-r>*//gc<left><left><left>
+"nnoremap <M-q> vey:%s/<C-r>*//gc<left><left><left>
+"nnoremap <M-R> bvey
+":nnoremap <C-l> zfa}<ENTER>k
+"nnoremap <M-r> b"_deP
+nmap ooo VyP<Down>g0
+nmap oo o<Esc>k<Down><Down>g0
+nmap OO O<Esc>j
+:noremap S :update<CR>
+":map <C-f> <Right>
+":map <C-b> <Left>
+:set ignorecase
+:set smartcase
+":map s <Leader><Leader>s
+:map <M-p> :!p4 edit \<C-r>%  <ENTER>:p4 add \<C-r>% <ENTER>
+:set wildignorecase
+"nnoremap f w
+:nnoremap <M-1> /function <ENTER>
+:nnoremap <M-2> ?function <ENTER>
+:nnoremap <M-3> %/{<ENTER>
+:nnoremap <M-4> :?}<ENTER>%
+":nnoremap <M-5> g0"nP<ENTER>g0
+":nnoremap <M-c>mc g0i%%<ESC>jg0
+":nnoremap <M-c>u g0vld<ESC>jg0
+":nnoremap <M-c>cc g0i//<ESC>jg0
+":nnoremap <M-6> g0"mP<ENTER>g0
+:noremap <C-M-f> :BufSurfForward<CR>
+:noremap <C-M-b> :BufSurfBack<CR>
+let g:netrw_preview = 1
+:set showcmd
+":map . -
+augroup Netrw_dvorak_fix
+    autocmd!
+    autocmd Filetype netrw call Fix_netrw_maps_for_dvorak()
+augroup END
+function! Fix_netrw_maps_for_dvorak()
+    map <buffer> l <ENTER>
+    "noremap <buffer> l veee"fy:e <C-r>%/<C-r>f<ENTER>
+endfunction
+
+
+
+"let g:clang_user_options='|| exit 0'
+"let g:clang_complete_auto = 1
+"let g:clang_complete_copen = 1
+"let g:clang_use_library = 1
+"let g:clang_periodic_quickfix=1
+"let g:clang_snippets=1
+"let g:clang_conceal_snippets=1
+"let g:clang_snippets_engine='clang_complete'
+"if has("win32")
+"let g:clang_library_path = '//mathworks/hub/3rdparty/R2018a/2781786/win32/Clang/release/lib/'
+"elseif has ("win64")
+"let g:clang_library_path = '//mathworks/hub/3rdparty/R2018a/2781786/win64/Clang/release/lib/'
+"elseif has ("unix")
+"let s:uname = system("uname -s")
+"if s:uname == "ppatil"
+"let g:clang_library_path = '//mathworks/hub/3rdparty/R2018a/2781786/maci64/Clang/release/lib/'
+"else
+"let g:clang_library_path = '//mathworks/hub/3rdparty/R2018a/2781786/glnxa64/Clang/release/lib/'
+"endif
+"endif
+
+
+
+"augroup netrw_mapping
+"    autocmd!
+    "    autocmd filetype netrw call NetrwMapping()
+"augroup END
+"
+"function! NetrwMapping()
+"    noremap <buffer> o P<C-w>w 
+"endfunction
+""
+"set scrolloff=3
+" allow hiding a buffers without saving it
+":nnoremap <C-b>f :bnext<CR>
+":nnoremap <C-b>b :bprevious<CR>
+"nnoremap <C-s> <CR>
+"nnoremap f g_
+"nnoremap F _
+"nmap  <C-j> <F3>  
+"nmap  <C-k> <F4>
+"nmap <C-l> <ENTER>
+":nnoremap <C-s> <ENTER><CR>
+"nnoremap ' `
+"nnoremap ` '
+"nnoremap <C-f> :BufSurfForward<CR>
+"nnoremap <C-b> :BufSurfBack<CR>
+"let loaded_matchparen = 1
+
+"emacs mappings
+"nnoremap <C-a> 0
+"nnoremap <C-b> <left>
+"nnoremap <C-f> <right>
+"nnoremap <C-e> $<left>
+
+"nmap <M-f> e
+"nmap <M-b> b 
+"nnoremap <C-v> <C-F>
+"nnoremap <M-v> <C-B>
+"nnoremap <C-k> dd
+"nnoremap <C-y> P
+"nmap <C-i> <F3>
+"nmap <C-o> <F4>
+"nmap <C-d> <Esc>x
+"nnoremap <C-x> 
+"Set
+"
+"
+"
+"
+
+
+"function! DeleteLines(pattern) range
+"  let delid = '<!DELETE!LINE!ID!>'  " an id that does not occur in buffer
+"  if search(delid, 'cnw') > 0
+"    redraw  " so message is seen
+"    echo 'Error: buffer contains pattern used to delete lines'
+"    return
+"  endif
+"  let pattern = empty(a:pattern) ? @/ : a:pattern
+"  let sub = a:firstline . ',' . a:lastline . 's/' . escape(pattern, '/')
+"  " Retain newline if it is last character so do not delete following line.
+"  let rep = '/\=delid . (submatch(0) =~ "\n$" ? "\r" : "")/e'
+"  execute sub . rep . (&gdefault ? '' : 'g')
+"  execute 'g/\C' . delid . '/' . 'd'
+"endfunction
+"command! -nargs=? -range=% DeleteLines k'|<line1>,<line2>call DeleteLines(<q-args>)"
+"
+"function! KeepLines(pattern) range
+"  let delid = '<!DELETE!LINE!ID!>'  " an id that does not occur in buffer
+"  if search(delid, 'cnw') > 0
+"    redraw  " so message is seen
+"    echo 'Error: buffer contains pattern used to delete lines'
+"    return
+"  endif
+"  let pattern = empty(a:pattern) ? @/ : a:pattern
+"  let sub = a:firstline . ',' . a:lastline . 's/' . escape(pattern, '/')
+"  " Retain newline if it is last character so do not delete following line.
+"  let rep = '/\=delid . (submatch(0) =~ "\n$" ? "\r" : "")/e'
+"  execute sub . rep . (&gdefault ? '' : 'g')
+"  execute 'v/\C' . delid . '/' . 'd'
+"endfunction
+"command! -nargs=? -range=% KeepLines k'|<line1>,<line2>call KeepLines(<q-args>)"
+"
+"function! CopyMatches(reg)
+"  let hits = []
+"  %s//\=len(add(hits, submatch(0))) ? submatch(0) : ''/gne
+"  let reg = empty(a:reg) ? '+' : a:reg
+"  execute 'let @'.reg.' = join(hits, "\n") . "\n"'
+"endfunction
+"command! -register CopyMatches call CopyMatches(<q-reg>)
+

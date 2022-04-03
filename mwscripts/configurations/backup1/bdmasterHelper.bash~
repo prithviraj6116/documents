@@ -1,0 +1,134 @@
+#!/bin/bash
+
+if [ -z "$qeGateKeeper" ]; then
+    logdir=/mathworks/devel/sandbox/$USER/bdmasterLogs;
+else
+    logdir=/mathworks/devel/sandbox/$USER/qeGateKeeperLogs;    
+fi
+    
+
+mypath=$logdir/$name;
+
+if [ -d "$mypath" ]; then
+    cd $mypath;
+    dateNow=`date +%y%m%d%H%M%S`;    
+    versionDir=$mypath/version_$dateNow;
+    echo "Warning: log directory $mypath exists."
+    echo "Copying its contents to $versionDir dir."
+    mkdir -p $versionDir;
+    prevFiles=$(ls sand* 2> /dev/null)
+    if [ -n "$prevFiles" ];then
+        mv sand* $versionDir;
+    fi
+    prevFiles=$(ls t* 2> /dev/null)
+    if [ -n "$prevFiles" ];then
+        mv t* $versionDir;    
+    fi
+
+else
+    mkdir -p $mypath;
+    echo "Creating log directory $mypath"
+fi
+
+changes=`p4 changes -m "$noOfChanges" //mw/$sbcluster/...`
+while read -r line; do
+    #arrChanges+=("$line")
+    arrChanges=("$line" "${arrChanges[@]}")
+done <<< "$changes"
+
+
+
+function forkTestSandbox() {
+    startChange=$1
+    endChange=$(($1+$2))
+    if (( endChange >= noOfChanges ));then
+        endChange=noOfChanges;
+    fi
+    processNo=$3
+    mypath=$4
+    logpath=$mypath;
+    mkdir -p $logpath;    
+    for ((i=startChange; i<endChange; i++));do
+        tokens=( ${arrChanges[i]} );
+        client=${tokens[5]};
+        qualifySandbox="$(cut -d'@' -f2 <<<"$client")"
+        changelistNumber=${tokens[1]};
+        qDir=/mathworks/devel/sbs/"$sbclusterlocation"/"$qualifySandbox"/matlab
+        echo "verifying tests in $client started" &>> "$logpath"/testProcess_"$processNo".log;
+        if [ -d "$qDir" ]; then
+            cd $qDir
+            if [ -n "$ctb" ]; then
+                sbmake -distcc DEBUG=1 CTB="$ctb"  &>  "$logpath"/tsbmake_c"$changelistNumber"_"$qualifySandbox".log;
+                echo "finished running sbmake in $client." &>> "$logpath"/testProcess_"$processNo".log;                
+            fi
+            if [ -n "$testlist" ]; then
+                mw runlikebat -logs /tmp -testlist $testlist &>  "$logpath"/t_c"$changelistNumber"_"$qualifySandbox".log;
+                echo "finished running tests in $client. " &>> "$logpath"/testProcess_"$processNo".log;
+            fi            
+        else
+            echo "Failure: directory $qDir does not exist. Failure" &>> "$logpath"/testProcess_"$processNo".log;
+        fi
+        echo "verifying tests in $client finished" &>> "$logpath"/testProcess_"$processNo".log;         done
+}
+
+function forkBuildSandbox() {
+    startChange=$1
+    endChange=$(($1+$2))
+    sandboxNo=$3
+    mypath=$4
+    noOfChangelistSteps=$5
+    logpath=$mypath/sandbox_"$sandboxNo"_logs;
+    mkdir -p $logpath;    
+    dateNow=`date +%y%m%d%H%M%S`;
+    sbsName="$name"_"$sandboxNo"_"$dateNow"
+    echo "cloning $sbsName started" &>> "$logpath"/mainLog.log;    
+    mw -using $sbcluster sbs clone create -cluster "$sbcluster" -name "$sbsName" &> "$logpath"/sbsclone.log;
+    echo "cloning $sbsName finished" &>> "$logpath"/mainLog.log;        
+    cd $s/$sbsName/matlab;
+    cn='';
+    for ((i=0; i<endChange; i++));do
+        tokens=( ${arrChanges[i]} );
+        client=${tokens[5]};
+        qualifySandbox="$(cut -d'@' -f2 <<<"$client")"
+        changelistNumber=${tokens[1]};
+        echo "synching $changelistNumber started" &>> "$logpath"/mainLog.log;
+        p4 sync @="$changelistNumber" &> "$logpath"/sync_changelist_"$changelistNumber".log;
+        echo "synching $changelistNumber finished" &>> "$logpath"/mainLog.log;
+        if (( i >= startChange)); then
+            if (( ((i-startChange+1) % noOfChangelistSteps) == 0  || i==endChange-1)); then
+                cn=" $cn -cn $changelistNumber "
+                echo "building $changelistNumber started" &>> "$logpath"/mainLog.log;
+                sbsmartbuild $cn  -distcc &> "$logpath"/smartbuild_changelist_"$changelistNumber".log;
+
+                sbmake -distcc DEBUG=1 CTB="$ctb" &> "$logpath"/sbmakeGivenComponents_changelist_"$changelistNumber".log;
+
+                echo "building $changelistNumber finished" &>> "$logpath"/mainLog.log;
+                cn='';
+            else
+                cn=" $cn -cn $changelistNumber "
+            fi
+
+        fi
+    done
+}
+if [ -z "$qeGateKeeper" ]; then
+    size=$(( noOfChanges/noOfSandboxes +1));
+    sandboxNo=1;
+    for ((j=0; j<noOfChanges; j=j+size));do
+        forkBuildSandbox $j $size $sandboxNo $mypath $noOfChangelistSteps &
+        sandboxNo=$((sandboxNo+1))
+    done
+else
+    size=$(( noOfChanges/noOfParallelProcesses + 1));
+    sandboxNo=1;
+    for ((j=0; j<noOfChanges; j=j+size));do
+        forkTestSandbox $j $size $sandboxNo $mypath &
+        sandboxNo=$((sandboxNo+1))
+    done
+fi
+echo "Script Finished."
+echo "Processes started as requested." 
+echo "Please monitor logs in the $mypath using \"tail -f fileName\".";
+echo "If you need to kill all the started processs do \"sudo pkill -9 -f bdmasterHelper\"."
+
+exit;

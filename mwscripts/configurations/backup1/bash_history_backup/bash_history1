@@ -1,0 +1,500 @@
+cd l21
+p4 opened
+sbr
+sbr
+sudo pkill -9 -f matlab
+sudo pkill -9 -f matlab
+sbr
+sbr
+cd $d/sf21
+p4 opened
+p4 diff
+cd ../l21
+p4 diff
+p4 opened
+sbr
+cd ../sf22
+p4 opened
+cd ../sf23
+cd ..
+ls
+cd l22
+p4 opened
+cd ../l21
+p4 opened
+sbr
+p4 login -a
+sb -r Bslrt matlab &
+sb -r Bstateflow &
+cd $d
+mw -using Bslrt matlab -r "vdp;bdclose all" &
+mw -using Bstateflow matlab -r "vdp;bdclose all" &
+cd $d/l22
+sb -r "cd(matlabroot);rehash toolboxcache;rehash toolboxreset;cd(matlabroot);cd test/toolbox/stateflow/sf_in_matlab;r1=runtests(pwd, 'IncludeSubfolders', true); cd ~/Downloads; save('r1.mat','r1)" &
+sbbackup -opened -l v1
+sbr
+exit
+cd $d
+ls
+cd l21
+p4 opened
+cd /mathworks/devel/sandbox/ppatil/checksum6
+sbr
+sb -r "vdp;bdclose all" &
+sb -r "vdp;bdclose all" &
+exit
+mw -using Bllvm:current anchor
+cd /mathworks/devel/bat/Bllvm/build/
+ls
+cd matlab/
+ls
+sb 
+cd $d
+ssh sbsdock
+cd /mathworks/devel/bat/filer/batfs0805-0/ppatil.Bllvm.861157.bc
+ls
+cd build/
+ls
+cd matlab/
+ls
+sb -r "vdp;bdclose all" &
+sbstop 4 0
+sbvncserver
+cd /mathworks/devel/sandbox/ppatil/checksum6
+p4v . &
+exit
+cd $d
+ls
+cd l21
+p4 opened
+cd ../l24
+p4 opened
+sb -r "vdp;bdclose all" &
+p4 opened
+exit
+echo $PYTHONPATH
+source ~/.bashrc
+echo $PYTHONPATH
+exit
+gvim ~/.bash.m
+gvim ~/.bashrc.mine 
+source ~/.bashrc
+gvim ~/.bash_profile 
+source ~/.bashrc
+echo $PYTHONPATH
+exit
+source ~/.bashrc
+echo $PYTHONPATH
+gvim ~/.bash_profile 
+gvim ~/.bashrc
+echo $PYTHONPATH
+source ~/.bashrc
+echo $PYTHONPATH
+sudo pkill -9 -f matlab
+cd $d/sf21
+p4 opened
+cd ../sf22
+p4 opened
+cd ../sf23
+p4 opened
+cd ..s/f24
+cd ..
+sbclone Bstateflow.latest_pass/ sf24
+cd sf24
+sb -r "vdp;bdclose all" &
+cd $d
+ls
+cd l21
+p4 opened
+p4 diff
+cd ../l22
+p4 diff
+p4 opened
+cd ..
+l23
+cd l23
+p4 opened
+p4 diff
+cd ../l24
+p4 opened
+cd ../l21
+p4 opened
+cd ../sf24
+ls
+cd matlab/toolbox/slrt/blocks/internal
+ls
+gvim Makefile 
+echo $PYTHONPATH
+gvim ~/.bashrc
+sbstop 4 0
+echo $PYTHONPATH
+source ~/.bashrc
+gvim ~/.bashrc
+gvim ~/.vimrc
+export PTYHONPATH=" "
+echo $PYTHONPATH
+export PYYHONPATH=" "
+echo $PYTHONPATH
+export PYTHONPATH=" "
+echo $PYTHONPATH
+source ~/.bashrc
+echo $PYTHONPATH
+exit
+echo $PYTHONPATH
+g pythonpath
+grep pythonpath -rIin . --color
+cd ~
+ls
+ls -a 
+gvim .cshrc
+gvim .profile 
+grep -r PYTHONPATH /etc/*
+grep -r PYTHONPATH ~/.*
+cd $s/configurations/
+grep -r PYTHONPATH ~/.*
+grep -r PYTHONPATH .
+grep -rIin PYTHONPATH .
+ls
+echo $PYTHONPATH
+gvim ~/.bashrc
+gvim ~/.bash_profile 
+gvim ~/.bashrc.mine 
+gvim ~/.bashrc.mine 
+echo $PYTHONPATH
+env
+grep DEFAULT_SANDBOX -rIiIn . --color
+rm .zfs/snapshot/snap-2018.04.20-23.40.01/.bashrc~
+sudo rm .zfs/snapshot/snap-2018.04.20-23.40.01/.bashrc~
+gvim .zfs/snapshot/snap-2018.04.20-23.40.01/.bashrc~
+gvim .zfs/snapshot/snap-2018.04.20-23.40.01/.bashrc~
+cd .zfs
+ls
+ls -al
+cd snapshot/
+ls
+cd ../..
+ls
+echo $PYTHONPATH
+grep DEFAULT_SANDBOX -rIiIn . --color
+cd .zfs/snapshot/
+ls
+sudo rm -rf snap-2018.04.20-23.40.01/
+exit
+echo $PYTHONPATH
+gvim ~/.bashrc
+echo $DEFAULT_SANDBOX
+gvim ~/.bashrc
+exit
+echo $PYTHONPATH
+gvim ~/.bashrc
+sudo pkill -9 -f matlab
+cd $d/sf25
+cd /local-ssd/ppatil/sf24
+cd $d/sf24
+sbr
+gvim ~/.bashrc
+gvim
+cd $d/l21
+p4 diff
+p4 opened
+sbr
+cd -
+cd matlab/toolbox/slrt/blocks/internal/
+gvim Makefile 
+cd /local-ssd/ppatil/sf24/matlab/toolbox/simulink/internal/ResaveAndBuildHarness/
+g updatedemo
+cd $d/sf24/
+cd matlab/toolbox/slrt/blocks/internal/
+qmake -f Makefile 
+less Makefile 
+sbmake CTB=slrt
+sbmake CTB=slrt
+sbmake CTB=slrt
+sbmake CTB=slrt
+sbmake CTB=slrt
+gvim Makefile 
+pwd
+/local-ssd/ppatil/sf24/matlab/toolbox/slrt/blocks/internal
+cd /local-ssd/ppatil/l21/matlab/toolbox/slrt/blocks/internal
+sbmake CTB=slrt
+sbmake CTB=slrt
+touch authored.Libs
+gvim authored.Libs 
+sbmake CTB=slrt
+sbmake CTB=slrt
+sbmake CTB=slrt
+sbmake CTB=slrt
+sbmake CTB=slrt
+sbmake CTB=slrt
+sbr
+sbmake CTB=slrt
+cd ..
+find . -name "slrt*"
+find . -name "slrtl*"
+cd /mathworks/devel/sandbox/ppatil/checksum6
+gvim
+gvim
+p4 opened
+sbbackup -opened -l v1
+qedit
+sbhostlease
+cd /mathworks/devel/sandbox/ppatil/license1
+ls
+p4 diff
+p4v . &
+cd /mathworks/devel/sandbox/ppatil/checksum6
+gvim
+sudo pkill -9 -f matlab
+cd $d/l21
+p4 opened
+p4v . &
+p4v . &
+df -h | grep ssd
+cd $d
+ls
+cd l31
+p4 opened
+sbr
+cd ~/Downloads/
+g session
+g channel
+g channel
+g channel
+ls
+cd temp1
+ls
+ls -a
+cd ..
+ls
+cd netDemo1/
+g channel
+cd ../timer1/
+g channel
+cd ../cycle2
+g channel
+cd ../cycle2
+g channel
+cd ..
+sbvncviewer -leased
+ppatil&12Drstvat
+ppatil&12Drstvat
+sbvncviewer -leased
+cd $d/l21
+p4 opened
+sbr
+p4v . &
+p4 opened
+cd ../l22
+cd ..
+ls
+ls
+sbclone Bllvm.latest_pass/ l31;sbclone Bllvm.latest_pass/ l32;sbclone Bllvm.latest_pass/ l33;sbclone Bstateflow.latest_pass/ sf31;sbclone Bstateflow.latest_pass/ sf32;
+cd $s
+mw -using Bllvm sbs cloen create -cluster Bllvm -name "z1"
+mw -using Bllvm sbs clone create -cluster Bllvm -name "z1"
+mw -using Bllvm sbs clone create -cluster Bllvm -name "y1"
+cd $s/y1
+exit
+cd /mathworks/devel/sandbox/ppatil/qualificationLogs/license1/
+ls
+tail -f sbmake.log 
+tail -f sbqualify.bash 
+less sbqualify.bash 
+cd /mathworks/devel/sandbox/ppatil/license1
+p4 opened
+p4v . &
+cd -
+tail -f sbsmartbuild.log 
+less sbsmartbuild.log 
+less sbmake.log 
+less sbqualify.bash 
+exit
+sudo pkill -9 -f matlab
+sudo pkill -9 -f p4v
+exit
+m
+cd $d/l32
+sbrestore -r /mathworks/devel/sandbox/ppatil/_sbbackup/local_ppatil-deb9-64_local-ssd_ppatil_l31_backup/v1/
+exit
+cd $s/y1
+sbr
+cd $d
+ls
+cd sf31
+sbr
+sbstop 4 0
+sbvncviewer -leased
+sbvncviewer -leased &
+cd $d/l31
+p4 opened
+cd ../l32
+p4 opened
+cd $s/y2
+cd $s/y1
+p4 opened
+sfml
+gvim CdrTransition.m 
+p4v . &
+gvim CdrTransition.m 
+cd $d/l31
+p4 opened
+sbr
+sblocalhub -prune
+df -h | grep ssd
+cd $d
+ls
+cd l31
+p4 opened
+cd sf31
+cd $d/sf31
+p4 opened
+cd /mathworks/devel/sandbox/ppatil/_sbbackup/
+ls
+cd backup3
+ls
+cd ../backup1/
+cd ../backup2
+cd ..
+ls
+cd local_ppatil-deb9-64_local-ssd_ppatil_l1_backup/
+ls
+cd ..
+cd local_ppatil-deb9-64_local-ssd_ppatil_sf1_backup/
+ls
+cd ../local_ppatil-deb9-64_local-ssd_ppatil_sf2_backup/
+ls
+cd -
+ls
+find . -name "chart.cpp"
+cd ../local_ppatil-deb9-64_local-ssd_ppatil_sf2_backup/
+find . -name "chart.cpp"
+cd ../local_ppatil-deb8-64_local-ssd_ppatil_sf1_backup/
+find . -name "chart.cpp"
+cd ../local_ppatil-deb8-64_local-ssd_ppatil_sf2_backup/
+find . -name "chart.cpp"
+cd ..
+find . -name "chart.cpp"
+find . -name "data.cpp"
+cd local_ppatil-deb8-64_local-ssd_ppatil_sf2_backup/
+ls -rtl1
+ls -tl1
+ls -tl1r
+cd Q1
+ls
+diff matlab/resources/Stateflow/en/cdr.xml  /local-ssd/ppatil/sf31/matlab/resources/Stateflow/en/cdr.xml 
+cd $d
+ls
+cd -
+cd ..
+ls
+cp -r Q1 ../
+cd ..
+ls
+mkdir tempBackup1
+mv Q1 tempBackup1/
+cd $d/l31
+p4 opened
+cd ../l31
+cd ../l32
+p4 opened
+cd ../sf31
+p4 opened
+cd $d
+ls
+cd sf13
+p4 opened
+cd sf21
+cd $d/sf21
+p4 opened
+cd $d/sf22;p4 opened
+cd $d/sf23;p4 opened
+cd $d/sf24;p4 opened
+cd $d/sf11;p4 opened
+cd $d/sf12;p4 opened
+cd $d/sf13;p4 opened
+cd $d/sf14;p4 opened
+cd $d/sf15;p4 opened
+cd $d/l21;p4 opened
+cd $d/l22;p4 opened
+cd $d/l23;p4 opened
+p4 diff
+cd -
+cd $d/l21
+p4 opened
+p4 diff
+sbbackup -opened -l v1
+cd $d/l31
+sbbackup -opened -l v1
+p4 opeend
+p4 opened
+sbrestore -r /mathworks/devel/sandbox/ppatil/_sbbackup/local_ppatil-deb9-64_local-ssd_ppatil_l21_backup/v1
+p4v . &
+sbstop 4 0
+p4 opened
+p4 --help
+p
+p4 changes -s pending
+p4 opened
+p4 reopen -c 3445363 //mw/Bllvm/matlab/toolbox/stateflow/stateflow/+Stateflow/+App/+Cdr/...
+p4 opened
+man sbreviewboard 
+p4 change
+p4 opened
+p4 changes //mw/Bllvm/...
+p4 changes -u ppatil
+p4 changes -u ppatil -c ppatil.l31
+less .perforce 
+cat .perforce 
+p4 changes -u ppatil -c ppatil.ppatil-deb9-64.local-ssd.ppatil.l31
+p4 changes -u ppatil -c ppatil.ppatil-deb9-64.local-ssd.ppatil.l31
+p4 changes -u ppatil -c ppatil.ppatil-deb9-64.local-ssd.ppatil.l
+p4 changes -u ppatil -c ppatil.ppatil-deb9-64.local-ssd.ppatil.l*
+p4 changes -u ppatil -c ppatil.ppatil-deb9-64.local-ssd.ppatil.l31
+p4 changes -u ppatil -c ppatil.ppatil-deb9-64.local-ssd.ppatil.l31 -l
+p4 changes -u ppatil -c ppatil.ppatil-deb9-64.local-ssd.ppatil.l31 -L
+p4 changes -u ppatil -c ppatil.ppatil-deb9-64.local-ssd.ppatil.l31
+p4 files @3445463
+p4 files @=3445463
+p4 files @=3445363
+p4 files @=c3445363
+p4 files @=3445363
+p4 opened
+p4 describe c3445363
+p4 describe 3445363
+p4 describe
+p4 describe -a
+p4 describe --help
+p4 describe -h
+p4 describe -m 4
+p4 describe -m 
+p4 changes -u ppatil -c ppatil.ppatil-deb9-64.local-ssd.ppatil.l31
+p4 describe -u ppatil -c ppatil.ppatil-deb9-64.local-ssd.ppatil.l31
+p4 changes -u ppatil -c ppatil.ppatil-deb9-64.local-ssd.ppatil.l31
+p4 change 3445363
+p4 changes -u ppatil -c ppatil.ppatil-deb9-64.local-ssd.ppatil.l31
+p4 change 3445363
+sfml
+p4 edit CdrAndState.m 
+p4 change 3445363
+p4 opened
+p4 change 3445363
+p4 opened
+sbreviewboard -cn 33445363
+sbreviewboard -cn 3445363
+p4 changes -u ppatil -c ppatil.ppatil-deb9-64.local-ssd.ppatil.l31
+p4 opened
+p4 revert //mw/Bllvm/matlab/toolbox/stateflow/stateflow/+Stateflow/+App/+Cdr/+Transforms/LowerTemporalCustom.m
+p4 changes -u ppatil -c ppatil.ppatil-deb9-64.local-ssd.ppatil.l31
+sbreviewboard -cn 3445363
+p4 fix -cn 3445363 g1729823
+p4 fix -c 3445363 g1729823
+sbbackup -opened -l v1
+sbbackup -opened -l v1
+sbbackup -opened -l v1
+cp -r /mathworks/devel/sandbox/ppatil/_sbbackup/local_ppatil-deb9-64_local-ssd_ppatil_l31_backup/v1/ /mathworks/devel/sandbox/ppatil/_sbbackup/tempBackup1/
+cd /mathworks/devel/sandbox/ppatil/_sbbackup/tempBackup1/
+ls
+mv v1 l1
+mv Q1 sf1
+ls
+exit

@@ -1,0 +1,103 @@
+# -*-shell-script-*-
+
+# For information and guidelines on what should and should NOT go
+# in here, please read sbsetupunix help:
+#   http://inside.mathworks.com/wiki/SBTools#sbsetupunix
+# In particular pay attention to the 'Typical Mistakes' that can cause
+# significant pain to the company.
+# You should also time your changes as explained in sbsetupunix help.
+
+
+# Enable DEFAULT_SANDBOX to set a default sandbox for tools like sbm when not
+# run from within a sandbox.
+# export DEFAULT_SANDBOX=/mathworks/devel/sandbox/$LOGNAME/a
+. /mathworks/hub/share/sbtools/bash_setup.bash
+
+# Uncomment following to use emacs via 'emacsclient' as the editor for Perforce
+#   export EDITOR='sbe -w'
+#   export VISUAL='sbe -w'
+#   export P4EDITOR='sbe -w'
+#   export P4DIFF='sbe -sb-diff'
+#   export P4MERGE='sbe -sb-merge'
+# Emacsclient is a capability where an existing emacs session is reused. If you
+# want to always use a new emacs session, use
+#   export EDITOR='emacs'
+#   export VISUAL='emacs'
+#   export P4EDITOR='emacs'
+#   export P4DIFF='emacs -sb-diff'
+#   export P4MERGE='emacs -sb-merge'
+# You can also use gvim as the editor via: export P4EDITOR='gvim -f'
+
+# If you want to further customize your bash configuration, uncomment the lines
+# below, and create ~/.bashrc.mine
+#  if [ -f "$HOME/.bashrc.mine" ] ; then
+#      . "$HOME/.bashrc.mine"
+#  fi
+
+
+
+
+
+
+
+
+
+
+
+    #older
+    # -*-shell-script-*-
+
+# For information and guidelines on what should and should NOT go
+# in here, please read sbsetupunix help:
+#   http://wiki/SBTools#sbsetupunix
+# In particular pay attention to the 'Typical Mistakes' that can cause
+# significant pain to the company.
+# You should also time your changes as explained in sbsetupunix help.
+
+
+# Customize DEFAULT_SANDBOX to where you normally work
+export DEFAULT_SANDBOX=/mathworks/devel/sandbox/$LOGNAME/a
+#. /mathworks/hub/share/sbtools/bash_setup.bash
+source /mathworks/hub/share/sbtools/bash_setup.bash
+
+# Uncomment the following to disable setmwe. See man nosetmwe
+# alias setmwe='man nosetmwe'
+
+export PATH=$PATH:/sandbox/savadhan/sbtools
+source /sandbox/savadhan/sbtools/_bash_functions
+#. /sandbox/savadhan/sbtools/_bash_functions
+export SBTOOLS_VNC_WINDOW_MGR=mate-session
+################
+# Perforce
+################
+
+export P4CONFIG=.perforce
+
+################
+# My own macros
+################
+#alias got='gol;cd matlab/test/toolbox/stateflow'    
+alias sb2s='gol;sb -nosplash  -r "cd(matlabroot); vdp; bdclose all; cd /mathworks/devel/sandbox/ppatil/models;disp(pwd)" &'
+alias sb2n='gos;sb -nosplash  -r "cd(matlabroot); vdp; bdclose all; cd /mathworks/devel/sandbox/ppatil/models;disp(pwd)" &' 
+
+alias vncserver='\vncserver -geometry 1600x900 -geometry 1280x800 -geometry 1024x768 -geometry 1920x1200'
+alias ems='gol;cd matlab/toolbox/stateflow/src/stateflow/cdr; emacs . &'
+alias emn='gos;cd matlab/toolbox/stateflow/src/stateflow/cdr; emacs . &'
+#GREP options interfere with sbtools from srinath. Do not uncomment below line    
+#GREP_OPTIONS="-n --color --exclude-dir=.svn --exclude-dir=.hg --exclude-dir=.git"
+#export GREP_OPTIONS
+export ZFS_MASTER_SB="Bstateflow"
+export SILENT=1
+export LOCATION=AH
+export BUILD_SRC_SIMULINK=1
+alias mykillallbash='sudo pkill -9 -f chromi;sudo pkill -9 -f icewea;sudo pkill -9 -f vmware;sudo pkill -9 -f gdb;sudo pkill -9 -f matlab;sudo pkill -9 -f gdb;pkill -9 -f gvim; pkill -9 -f emacs;pkill -9 -f gedit'
+alias mystartall='vmware &> ~/Downloads/logvmware & chromium &> ~/Downloads/logchromium &'
+my-evil-newsb() {
+    t_mydate=`date +%Y-%m-%d-%H-%M-%S`;
+    t_myname="sb-$t_mydate-$1-$2";
+    evil-newsb $t_myname;
+}
+
+#source .my_commands
+#Do not uncomment following line. gnome-classic has a lot of problems with matlab    
+#export SBTOOLS_VNC_WINDOW_MGR=gnome-classic

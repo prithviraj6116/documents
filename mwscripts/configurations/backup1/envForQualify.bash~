@@ -1,0 +1,32 @@
+#!/bin/bash
+
+unset name;
+unset sbclone;
+unset rp;
+unset sbp4sync;
+unset ctb;
+unset testlist;
+unset unbp;
+unset runallunder;
+unset testsuites;
+
+export name='sfmlcdr2';
+export sbclone='1';
+export rp='/mathworks/devel/sandbox/ppatil/_sbbackup/sbs_ppatil.sfmlcdr_backup/latest/';
+export sbp4sync='';
+export ctb='stateflow stateflow_core stateflow_tests';
+export testlist='test/toolbox/stateflow/sfckin/tmessages.m';
+export unbp='';
+export runallunder='';
+export testsuites='Acgir';
+
+echo name=$name;
+echo sbclone=$sbclone;
+echo rp=$rp;
+echo sbp4synch=$sbp4sync;
+echo ctb=$ctb;
+echo testlist=$testlist;
+echo unbp=$unbp;
+echo runallunder=$runallunder;
+echo testsuites=$testsuites;
+

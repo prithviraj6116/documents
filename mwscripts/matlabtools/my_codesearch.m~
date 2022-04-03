@@ -1,0 +1,41 @@
+function my_codesearch(searchTerm, fileType, addTest)
+    savePath = pwd;
+    tempDir = fullfile(matlabroot,'tempDir');
+    cd(matlabroot);
+    if exist(fullfile(matlabroot,'tempDir'), 'dir')
+        rmdir(fullfile(matlabroot,'tempDir'),'s')
+    end
+    mkdir(tempDir);
+    cd(tempDir);    
+    baseURL = 'http://codesearch.mathworks.com/SearchResults.do?searchTerm=';
+    outputFileFormat = 'XML';% 'CSV'
+    switch fileType
+        case 'm'
+            urlToSearch=[baseURL searchTerm '&indexType=3&' ...
+                'searchField=TEXT&sort=FILETYPE&' ...
+                'fileType=M&' ...
+                'fileType=C%23&fileType=C%2B%2B&fileType=C%2FC%2B%2B+Header&fileType=Chart&fileType=Codegen+Templates&fileType=Configuration&fileType=Fortran&fileType=HDL&fileType=Interface+Definition&fileType=IXF&fileType=JAR+Manifest&fileType=Java&fileType=JavaScript&' ...
+                'fileType=JSON&fileType=M&fileType=Makefile+Lists&fileType=Makefiles&fileType=Message+Table&fileType=Model&fileType=Module+Dependencies&fileType=MTF&fileType=Objective+C%2B%2B&fileType=Perl&fileType=Project&fileType=Python+Source&fileType=Requirements&'...
+                'fileType=Resource&fileType=Scala+Language&fileType=Scalable+Vector+Graphics&fileType=Shell+Scripts&fileType=Simscape&fileType=SQL&fileType=Standard+ML&fileType=TCL&fileType=Template&fileType=Testing&fileType=TLC&fileType=Toolbox+Settings&' ...
+                'fileType=Translation+Table&fileType=TXT&fileType=Visual+Basic&fileType=Web&fileType=XDC&fileType=XML&fileType=YAML&fileType=ZML&sourceDir=config&sourceDir=matlab%2FActivate.app&sourceDir=matlab%2Fbin&sourceDir=matlab%2Fbootstrap&sourceDir=matlab%2Fc&sourceDir=matlab%2Fcdimages&sourceDir=matlab%2Fcefclient&sourceDir=matlab%2Fcefclient_interface&sourceDir=matlab%2Fcode_analyzer&sourceDir=matlab%2Fconfig&sourceDir=matlab%2Fconnector&sourceDir=matlab%2FContents&sourceDir=matlab%2Fcoreui&sourceDir=matlab%2FDeactivate.app&sourceDir=matlab%2Fdeployment_server&sourceDir=matlab%2Fdoc&sourceDir=matlab%2Fdoxygen&sourceDir=matlab%2Fetc&sourceDir=matlab%2Fexamples&sourceDir=matlab%2Fextern&sourceDir=matlab%2Fexternal&sourceDir=matlab%2Ffoundation&sourceDir=matlab%2Ffoundation_extdata_matrix_data&sourceDir=matlab%2Ffoundation_extdata_serialization&sourceDir=matlab%2Ffoundation_extdata_standalone&sourceDir=matlab%2Ffoundation_libraries&sourceDir=matlab%2Ffront_end&sourceDir=matlab%2Fhelp&sourceDir=matlab%2Finstall&sourceDir=matlab%2Finternaldoc&sourceDir=matlab%2Fjava&sourceDir=matlab%2Fjavascripts&sourceDir=matlab%2Flib&sourceDir=matlab%2Flicenses&sourceDir=matlab%2Fmakefiles&sourceDir=matlab%2Fmakerules&sourceDir=matlab%2Fmath&sourceDir=matlab%2Fmatlab_extdata&sourceDir=matlab%2F'...
+                'matlab_extdata_test&sourceDir=matlab%2Fmatlab_extdata_test_common&sourceDir=matlab%2Fmatlabscript&sourceDir=matlab%2Fmcr&sourceDir=matlab%2Fmda&sourceDir=matlab%2Fmex&sourceDir=matlab%2Fmsvc_headers&sourceDir=matlab%2Fnotebook&sourceDir=matlab%2Fobj&sourceDir=matlab%2Fosinteg&sourceDir=matlab%2Fpbr&sourceDir=matlab%2Fpgo&sourceDir=matlab%2Fplatform&sourceDir=matlab%2Fpolyspace&sourceDir=matlab%2Fprototype_serialization&sourceDir=matlab%2Fremote&sourceDir=matlab%2Fresources&sourceDir=matlab%2Frtw&sourceDir=matlab%2Fruntime&sourceDir=matlab%2Fsettings&sourceDir=matlab%2Fsimulink&sourceDir=matlab%2Fsrc&sourceDir=matlab%2Fstandalone&sourceDir=matlab%2Fstateflow&sourceDir=matlab%2Fsys&sourceDir=matlab%2Ftest&sourceDir=matlab%2Ftoolbox&sourceDir=matlab%2Ftools&sourceDir=matlab%2Ftrademarks&sourceDir=matlab%2Fui&sourceDir=matlab%2Fwebimages&indexName=Bmain&indexDir=&f=' outputFileFormat];
+        case 'cpp'
+        case 'hpp'
+    end
+    [searchStr,status] = urlread(urlToSearch); %#ok<URLRD>
+    if status ~= 1
+        error('Stateflow:CodeSearch', 'could not read cs');
+    end
+    xmlFile = 'tempFile.xml';
+    mt_writetextfile(xmlFile,searchStr);
+    c=xml2struct(xmlFile);
+    v = cell(1,length(c.searchresults.files.file));
+    for i = 1:length(c.searchresults.files.file)
+        filePath = fullfile(strtrim(c.searchresults.files.file{i}.path.Text), strtrim(c.searchresults.files.file{i}.filename.Text));
+        v{i} = fullfile(matlabroot,filePath(8:end));
+        system(['ln -s ' v{i} ' ' 'n' num2str(i) '_' strtrim(c.searchresults.files.file{i}.filename.Text) ]);
+    end
+    delete(xmlFile);
+    cd(savePath);
+    eval(['!source ~/.bashrc;cd ' tempDir '; gvim .']);    
+    return;

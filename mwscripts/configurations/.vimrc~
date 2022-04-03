@@ -1,0 +1,53 @@
+" From Nishith's vimrc
+syntax on
+set number
+set hlsearch
+set ignorecase
+set smartcase
+set laststatus=2
+set autoindent
+"let loaded_matchparen = 1
+
+
+let g:GdbCmd = '/mathworks/hub/share/sbtools/bin/glnxa64/gdb-77-deb7-64'
+
+if has('win32')
+    set guifont=Consolas:h11
+else
+    let sbroot=system('sbroot')
+    if !v:shell_error
+        source /mathworks/hub/share/sbtools/apps/vim/vimrc.vim
+    else
+  	filetype plugin on
+    end
+end
+  "abc  
+set wildmode=longest:list
+
+set scrolloff=3
+" allow hiding a buffers without saving it
+set hidden
+l
+"nnoremap ' `
+"nnoremap ` '
+nnoremap <C-f> :BufSurfForward<CR>
+nnoremap <C-b> :BufSurfBack<CR>
+runtime macros/matchit.vim
+set history=1000
+set ww+=[,],<,>
+:nnoremap <C-Down> :bnext<CR>
+:nnoremap <C-Up> :bprevious<CR>
+vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
+
+nmap oo o<Esc>k 
+nmap OO O<Esc>j
+nnoremap s :update<CR>
+"nnoremap s <CR>
+nnoremap <C-s> <CR>
+nnoremap f g_
+nnoremap F _
+nmap  <C-j> <F3>  
+nmap  <C-k> <F4>
+nmap <C-l> <ENTER>
+:set autochdir
+

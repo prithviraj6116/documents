@@ -1,0 +1,117 @@
+<deployment-project plugin="plugin.toolbox" plugin-version="1.0">
+  <configuration build-checksum="588612904" file="\\mathworks\public\Malcolm_Wood\simulinktools\simulinktools.prj" location="\\mathworks\public\Malcolm_Wood\simulinktools" name="simulinktools" target="target.toolbox" target-name="Package Toolbox">
+    <param.appname>simulinktools</param.appname>
+    <param.authnamewatermark>Malcolm</param.authnamewatermark>
+    <param.email />
+    <param.company />
+    <param.summary>Functions for use in Simulink development</param.summary>
+    <param.description>A collection of functions for use in Simulink development.</param.description>
+    <param.screenshot />
+    <param.version>1.0</param.version>
+    <param.output>${PROJECT_ROOT}\simulinktools.mltbx</param.output>
+    <param.products.name>
+      <item>MATLAB</item>
+      <item>Simulink</item>
+    </param.products.name>
+    <param.products.id>
+      <item>-1</item>
+      <item>-1</item>
+    </param.products.id>
+    <param.products.version>
+      <item>8.5</item>
+      <item>8.5</item>
+    </param.products.version>
+    <param.platforms />
+    <param.guid>0b7b8799-dd53-42c3-b704-1e31417897c0</param.guid>
+    <param.exclude.filters />
+    <param.examples>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;examples/&gt;</param.examples>
+    <param.demosxml />
+    <param.apps />
+    <param.docs />
+    <unset>
+      <param.email />
+      <param.company />
+      <param.screenshot />
+      <param.version />
+      <param.output />
+      <param.platforms />
+      <param.exclude.filters />
+      <param.demosxml />
+      <param.apps />
+      <param.docs />
+    </unset>
+    <fileset.rootdir>
+      <file>\\mathworks\public\Malcolm_Wood\simulinktools</file>
+    </fileset.rootdir>
+    <fileset.rootfiles>
+      <file>${PROJECT_ROOT}\allparams.m</file>
+      <file>${PROJECT_ROOT}\allsys.m</file>
+      <file>${PROJECT_ROOT}\cdlatest.m</file>
+      <file>${PROJECT_ROOT}\filedir.m</file>
+      <file>${PROJECT_ROOT}\gcbp.m</file>
+      <file>${PROJECT_ROOT}\gcl.m</file>
+      <file>${PROJECT_ROOT}\gcsp.m</file>
+      <file>${PROJECT_ROOT}\gdb_index.m</file>
+      <file>${PROJECT_ROOT}\gdb_time.m</file>
+      <file>${PROJECT_ROOT}\geckdir.m</file>
+      <file>${PROJECT_ROOT}\jobarchivedir.m</file>
+      <file>${PROJECT_ROOT}\sbah.m</file>
+      <file>${PROJECT_ROOT}\sbdir.m</file>
+      <file>${PROJECT_ROOT}\sbuk.m</file>
+      <file>${PROJECT_ROOT}\tbdir.m</file>
+      <file>${PROJECT_ROOT}\testdir.m</file>
+    </fileset.rootfiles>
+    <fileset.depfun.included />
+    <fileset.depfun.excluded />
+    <fileset.package />
+    <build-deliverables>
+      <file location="\\mathworks\public\Malcolm_Wood\simulinktools" name="simulinktools.mltbx" optional="false">\\mathworks\public\Malcolm_Wood\simulinktools\simulinktools.mltbx</file>
+    </build-deliverables>
+    <workflow />
+    <matlab>
+      <root>C:\Bslx\matlab</root>
+      <toolboxes>
+        <toolbox name="matlabhdlcoder" />
+        <toolbox name="fixedpoint" />
+        <toolbox name="embeddedcoder" />
+        <toolbox name="matlabcoder" />
+      </toolboxes>
+      <toolbox>
+        <matlabhdlcoder>
+          <enabled>true</enabled>
+        </matlabhdlcoder>
+      </toolbox>
+      <toolbox>
+        <fixedpoint>
+          <enabled>true</enabled>
+        </fixedpoint>
+      </toolbox>
+      <toolbox>
+        <embeddedcoder>
+          <enabled>true</enabled>
+        </embeddedcoder>
+      </toolbox>
+      <toolbox>
+        <matlabcoder>
+          <enabled>true</enabled>
+        </matlabcoder>
+      </toolbox>
+    </matlab>
+    <platform>
+      <unix>false</unix>
+      <mac>false</mac>
+      <windows>true</windows>
+      <win2k>false</win2k>
+      <winxp>false</winxp>
+      <vista>false</vista>
+      <linux>false</linux>
+      <solaris>false</solaris>
+      <osver>6.1</osver>
+      <os32>false</os32>
+      <os64>true</os64>
+      <arch>win64</arch>
+      <matlab>true</matlab>
+    </platform>
+  </configuration>
+</deployment-project>

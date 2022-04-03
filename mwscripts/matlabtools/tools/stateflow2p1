@@ -1,0 +1,405 @@
+#!/bin/bash
+
+CLUSTERNAME=Bweb_diagram
+USERNAME=$(whoami)
+TARGET_REG_FILE=".target_directory"
+
+function usage()
+{
+    echo ${0##*/} | awk '{
+        print "Setup and manage stateflow 2p sandbox for Stateflow as a Service Development";
+        printf("\n");
+        printf("USAGE: %s\n", $1);
+        printf("\n");
+        printf(" -h --help\n");
+        printf("\n");
+        printf(" -sync=name\t\t Sync a new sandbox at the current location\n");
+        printf(" -u --update\t\t Update the sandbox\n");
+        printf(" --check-depend\t\t Check if all the required dependencies met.\n");
+        printf(" -b --build\t\t Build the sandbox\n");
+        printf(" -c --clean\t\t Clean the current build\n");
+        printf(" -target --setupTarget\t Setup a custom target path for this sandbox\n");
+        printf(" -d --deploy\t\t Start web server on localhost.\n");
+        printf(" --undeploy\t\t Stop web server on localhost.\n");
+        printf(" -l --editmode\t\t Start the onChange server to auto compile changes\n");
+        printf("\n");
+    }'
+}
+
+# ----------------------------------------------------------
+#
+# Setup tools
+#
+
+# ----------------------------------------------------------
+#
+# Setup sb
+#
+
+function setupSandbox() {
+    target=$1;
+    if [ "$target" == "" ]; then
+        target=`pwd`;
+    fi
+    if [ "$CLIENTNAME" == "" ]; then
+        echo "Please provide the name of the sandbox."
+        exit 2;
+    fi
+
+    pushd $target;
+    mw -using ${CLUSTERNAME} create_bme_client -client_name ${USERNAME}.${CLIENTNAME}
+    if [ "$?" == "0" ]; then
+        echo "Sandbox created at $target"
+    else
+        echo "Sandbox creation failed"
+    fi
+    popd
+}
+
+function gotoRoot {
+    root=$(sbroot)
+    if [ "$?" != "0" ]; then
+        exit 2;
+    fi
+    pushd ${root}
+}   
+
+
+function saveTarget {
+    target="$1";
+    # need to be in a 2p sandbox
+    root=$(sbroot)
+    if [ "$?" != "0" ]; then
+        exit 2;
+    fi
+    if [ -d "$target" ]; then
+        pushd ${root} &> /dev/null
+        echo ${target} > ./${TARGET_REG_FILE}
+        popd &> /dev/null 
+        echo "Setting target to $target";
+    else   
+        echo "ERROR: Setting target directory." 
+        echo "Specified target directory does not exist."
+        exit 2;
+    fi
+}
+
+function loadTarget {
+    gotoRoot &> /dev/null;
+    if [ -f ./${TARGET_REG_FILE} ]; then
+        target=$(cat ${TARGET_REG_FILE});
+        echo ${target};
+    else
+        if [ ! -d ./target ]; then
+            mkdir ./target &> /dev/null;
+            mkdir ./target/mongod &> /dev/null;
+        fi
+        echo $(pwd)/target
+    fi
+}
+        
+function cleanTarget {
+    target=$(loadTarget);
+    echo TARGET: ${target}
+    if [ "$?" == "0" ]; then
+        root=$(sbroot)
+        pushd ${root};
+        pushd ./scm/stateflow/main
+        
+        mw mvn -X -Dalt.build.dir="${target}/target" clean
+        rslt=$?
+        popd;    
+        if [ "$rslt" == "0" ]; then
+            pushd ${target} > /dev/null;
+            echo Cleaning node.js modules.
+            rm -rf ./node_modules/*
+            echo Cleaning Stateflow node server
+            rm -rf *.js
+            echo "Clean succeeded!"
+        else
+            echo ERROR: Clean failed.
+        fi
+        
+    fi
+}
+
+vercomp () {
+    if [[ $1 == $2 ]]
+    then
+        return 0
+    fi
+    local IFS=.
+    local i ver1=($1) ver2=($2)
+    # fill empty fields in ver1 with zeros
+    for ((i=${#ver1[@]}; i<${#ver2[@]}; i++))
+    do
+        ver1[i]=0
+    done
+    for ((i=0; i<${#ver1[@]}; i++))
+    do
+        if [[ -z ${ver2[i]} ]]
+        then
+            # fill empty fields in ver2 with zeros
+            ver2[i]=0
+        fi
+        if ((10#${ver1[i]} > 10#${ver2[i]}))
+        then
+            return 1
+        fi
+        if ((10#${ver1[i]} < 10#${ver2[i]}))
+        then
+            return 2
+        fi
+    done
+    return 0
+}
+
+testvercomp () {
+    if [ -z "$(which $1)" ]; then
+        echo "Fail: $1 not found, required $4 $3"
+        DEPENDENCY_MET=0
+        return;
+    fi
+    vercomp $2 $3
+    case $? in
+        0) op='>=';;
+        1) op='>=';;
+        2) op='<';;
+    esac
+    if [[ $op != $4 ]]
+    then
+        echo "FAIL: $1 $2 found, required $4 $3"
+        DEPENDENCY_MET=0
+    else
+        echo "PASS: $1 $2 found, required $4 $3"
+    fi
+}
+
+
+function checkDepedenciesForLinux {
+  DEPENDENCY_MET=1;
+  echo "OS: Linux";
+  npmV=$(cut "-d " -f1 <<< $(tr -dc '0-9. '<<< $(npm -v)));
+  gruntV=$(cut "-d " -f1 <<< $(tr -dc '0-9. '<<< $(grunt -v)));
+  nodeV=$(cut "-d " -f1 <<< $(tr -dc '0-9. '<<< $(node -v)));
+  mongodV=$(cut "-d " -f1 <<< $(tr -dc '0-9. '<<< $(mongod --version)));
+  mvnV=$(cut "-d " -f1 <<< $(tr -dc '0-9. '<<< $(mvn -v)));
+  pythonV=$(cut "-d " -f1 <<< $(tr -dc '0-9. '<<< $(python --version 2>&1)));
+  testvercomp 'npm' $npmV '1.0.0' '>='
+  testvercomp 'grunt' $gruntV '1.0.0' '>='
+  testvercomp 'node' $nodeV '6.0.0' '>='
+  testvercomp 'mongod' $mongodV '3.0.0' '>='
+  testvercomp 'mvn' $mvnV '3.0.0' '>='
+  testvercomp 'python' $pythonV '2.7.0' '>='
+  if (( $DEPENDENCY_MET == 0 )); then
+      echo "all dependencies not found";
+      exit;
+  fi
+}
+
+function checkDependenciesForMac {
+  DEPENDENCY_MET=1;
+  echo "OS: Mac/Darwin";
+  npmV=$(cut "-d " -f1 <<< $(tr -dc '0-9. '<<< $(npm -v)));
+  gruntV=$(cut "-d " -f1 <<< $(tr -dc '0-9. '<<< $(grunt -v)));
+  nodeV=$(cut "-d " -f1 <<< $(tr -dc '0-9. '<<< $(node -v)));
+  mongodV=$(cut "-d " -f1 <<< $(tr -dc '0-9. '<<< $(mongod --version)));
+  mvnV=$(cut "-d " -f1 <<< $(tr -dc '0-9. '<<< $(mvn -v)));
+  pythonV=$(cut "-d " -f1 <<< $(tr -dc '0-9. '<<< $(python --version 2>&1)));
+  testvercomp 'npm' $npmV '1.0.0' '>='
+  testvercomp 'grunt' $gruntV '1.0.0' '>='
+  testvercomp 'node' $nodeV '6.0.0' '>='
+  testvercomp 'mongod' $mongodV '3.0.0' '>='
+  testvercomp 'mvn' $mvnV '3.0.0' '>='
+  testvercomp 'python' $pythonV '2.7.0' '>='
+  if (( $DEPENDENCY_MET == 0 )); then
+      echo "all dependencies not found";
+      exit;
+  fi
+}
+
+function checkDependencies {
+    root=$(sbroot);
+    pushd ${root};
+    OS="`uname`"
+    case $OS in
+        'Linux')
+            checkDepedenciesForLinux;
+            ;;
+        'FreeBSD')
+            ;;
+        'Darwin')
+            checkDependenciesForMac;
+            ;;
+        *)
+            echo "ERROR: unsupported OS \"$OS\""
+            usage
+            exit 1
+            ;;
+    esac
+
+}
+
+function undeployTarget {
+    echo Undeploying previously deployed Stateflow node server
+    OS="`uname`"
+    case $OS in
+        'Linux')
+            sudo pkill -9 -f npm;
+            sudo pkill -9 -f node;
+            sudo pkill -9 -f mongod;
+            ;;
+        'FreeBSD')
+            ;;
+        'Darwin')
+            sudo pkill -9 -f npm;
+            sudo pkill -9 -f node;
+            sudo pkill -9 -f mongod;
+            ;;
+        *)
+            echo "ERROR: unsupported OS \"$OS\""
+            usage
+            exit 1
+            ;;
+    esac
+}
+
+function deployTarget {
+    undeployTarget;
+    echo Deploying Stateflow node server
+    target=$(loadTarget);
+    root=$(sbroot)
+    pushd ${root}
+    if [ ! -d ${target}/logs ]; then
+        mkdir ${target}/logs;
+    fi
+    if [ ! -d ${target}/mongod ]; then
+        mkdir ${target}/mongod;
+    fi
+    mongod --dbpath ${root}/target/mongod &> ${target}/logs/mongod.log &
+    cd ${root}/target #/target/main
+    npm start &> ${target}/logs/npmstart.log &
+    popd
+}
+
+function buildTarget {
+    checkDependencies;
+    targetType=$1;
+    if [ "$targetType" == "" ]; then
+        targetType="ALL";
+    fi
+    target=$(loadTarget);
+    echo TARGET: ${target}
+    echo TARGETTYPE: ${targetType};
+    if [ "$?" == "0" ]; then
+        root=$(sbroot)
+        if [ "$targetType" == "SERVER" ] || [ "$targetType" == "ALL" ]; then
+            pushd ${target} > /dev/null;
+            echo Copying server files to ${target}
+            cp -rf ${root}/scm/stateflow_server/* ${target}
+            popd;
+        fi
+        if [ "$targetType" == "CLIENT" ] ||  [ "$targetType" == "ALL" ]; then
+            pushd ${target} > /dev/null;
+            npm install grunt;
+            npm install mojo;
+            npm install babel-code-frame;
+            npm install babel;
+            npm install request;
+            npm install compat
+            npm install body-parser
+            npm install
+            popd
+            pushd ${root}/scm/stateflow/main
+            mw mvn -X -Dalt.build.dir=${target}/target install
+        fi
+        rslt=$?
+        popd;    
+        
+    fi
+}
+
+function updateSource {
+    gotoRoot;
+    if [ "$?" == "0" ]; then
+    pushd scm/stateflow/main
+    p4 sync ...
+    popd
+    pushd scm/
+    if [ ! -d stateflow_server ]; then
+        mkdir -p stateflow_server;
+    fi
+    pushd stateflow_server
+    p4 sync ...
+    popd
+    fi
+}
+
+function startEditMode {
+    gotoRoot;
+    if [ "$?" == "0" ]; then
+         target=$(loadTarget);
+        if [ "$?" == "0" ]; then
+            echo TARGET: ${target}
+            src=$(pwd)/scm/stateflow/main;
+            pushd $src &> /dev/null;
+            grunt --targetDir="${target}/target"     
+            exit 0;
+        fi
+    fi
+    exit 2;
+}
+
+if [ "$1" == "" ]; then
+    usage;
+    exit 1;
+fi
+
+while [ "$1" != "" ]; do
+    PARAM=`echo $1 | awk -F= '{print $1}'`
+    VALUE=`echo $1 | awk -F= '{print $2}'`
+    case $PARAM in
+        -h | --help)
+            usage
+            exit
+            ;;
+        -s | --src-path)
+            SRCPATH=$VALUE;
+            pushd $SRCPATH > /dev/null
+            ;;
+        -u | --update )
+            updateSource;
+            ;;
+        -sync | --setupSandbox )
+            CLIENTNAME=$VALUE;
+            setupSandbox $SRCPATH
+            ;;
+        -target | --setuptarget )
+            saveTarget $VALUE
+            ;;
+        -d | --deploy)
+            deployTarget
+            ;;
+        --undeploy)
+            undeployTarget
+            ;;
+        -b | --build)
+            buildTarget $VALUE
+            ;;
+        -c | --clean)
+            cleanTarget
+            ;;
+        --check-depend)
+            checkDependencies
+            ;;
+        -l | --editmode)
+            startEditMode
+            ;;
+    *)
+        echo "ERROR: unknown parameter \"$PARAM\""
+        usage
+        exit 1
+        ;;
+    esac
+    shift
+done

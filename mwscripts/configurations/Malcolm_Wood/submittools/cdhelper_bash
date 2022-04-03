@@ -1,0 +1,2 @@
+#! /bin/bash
+cd `/public/Malcolm_Wood/submittools/cdhelper_python $1 $2`

@@ -1,0 +1,19 @@
+c = ComponentAnalysis.loadFromCache;
+up = c.upstreamComponentsFrom('simulink','matlab');
+up{end,4} = []; % preallocate
+for i=1:size(up,1)
+    if ~isempty(up{i,2})
+        continue;
+    end
+    cr = componentReader(up{i});
+    [cpp,java,m] = cr.getCodeCount;
+    up{i,2} = cpp;
+    up{i,3} = java;
+    up{i,4} = m;
+end
+
+f = fopen('comps.csv','w');
+for i=1:size(up,1)
+    fprintf(f,'%s,%d,%d,%d\n',up{i,1},up{i,2},up{i,3},up{i,4});
+end
+fclose(f);

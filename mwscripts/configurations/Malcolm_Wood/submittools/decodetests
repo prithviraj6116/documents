@@ -1,0 +1,40 @@
+#!/usr/bin/python
+
+import os
+import os.path
+import sys
+import fileinput
+
+" get pwd "
+" get relpath "
+" strip module name "
+" convert to testbin path "
+" call stack_decoder "
+
+if __name__ == '__main__':
+  " Find MATLAB root "
+  command = "sbroot"
+  proc = os.popen(command)
+  sbroot = proc.read().split('\n')[0]
+  mroot = sbroot + "/matlab"
+  nmroot = len(mroot);
+
+  " Get cwd relative to MATLAB root "
+  cwd = os.getcwd()
+  rel = cwd[nmroot:len(cwd)]
+
+  " Insert the extra bits of path to give us the output folder "
+  outdir = mroot + "/derived/glnxa64/testbin" + rel
+
+  log = outdir + "/" + sys.argv[1] + ".log"
+
+  decoder = mroot + "/bin/stack_decoder.pl"
+
+  cmd = "mw " + decoder + " --in=" + log
+
+  print cmd
+
+  os.system(cmd)
+  
+
+  

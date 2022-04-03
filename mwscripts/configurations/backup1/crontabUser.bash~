@@ -1,0 +1,51 @@
+#!/bin/bash
+
+cloneSSDSB()
+{
+
+
+
+    dirName=$s/backupCloneRestoreLogs/ssd/$2/$1/logs_$dateNow;
+    mkdir -p $dirName;
+    cd /local-ssd/$USER;    
+    sbclone -backup-opened $2.latest_pass/ $1/ &> $dirName/sbclone.log;
+    cd $1;
+    sbrestore -no-prompt -f  &> $dirName/sbrestore.log;
+    cd matlab;
+    sbmake DEBUG=1 CTB="stateflow_resources stateflow stateflow_core" &> $dirName/sbmake.log;
+}
+
+cloneNetworkSB()
+{
+    dirName=$s/backupCloneRestoreLogs/sbs/$2/$1/logs_$dateNow;    
+    mkdir -p $dirName;
+    ln -sf /mathworks/devel/sbs/$3/$USER.$1 $s/$1;    
+    cd /mathworks/devel/sbs/$3/$USER.$1/matlab;
+    sbmake DEBUG=1 CTB="stateflow_resources stateflow stateflow_core" &> $dirName/sbmake.log;        
+}
+
+dateNow=`date +%y%m%d%H%M%S`;
+. /hub/share/sbtools/bash_setup.bash;
+dirName=$s/backupCloneRestoreLogs/syncSSD/logs_$dateNow;
+
+
+
+mkdir -p $dirName/Bstateflow;
+sbsyncmaster -C /local-ssd/$USER -log-dir $dirName/Bstateflow -src-root Bstateflow -cfg /sandbox/$USER/configurations/sbsync.cfg;
+
+mkdir -p $dirName/Bllvm;
+sbsyncmaster -C /local-ssd/$USER -log-dir $dirName/Bllvm -src-root Bllvm -prime-from /local-ssd/$USER/Bstateflow.latest_pass   -cfg /sandbox/$USER/configurations/sbsync.cfg;
+
+
+
+cloneSSDSB "sf1" "Bstateflow";
+cloneSSDSB "l1" "Bllvm";
+#cloneSSDSB "sf2" "Bstateflow"
+
+
+cloneNetworkSB "sf1_sbs" "Bstateflow" "29";
+cloneNetworkSB "l1_sbs" "Bllvm" "50";
+
+
+
+
