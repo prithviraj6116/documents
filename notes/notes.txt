@@ -49,7 +49,7 @@ abca
 
 
 
-CTB="sl_graphical_classes sl_engine_classes sl_main fixedpoint_core sl_compile shared_cgxe foundation/matrix cgir_vm_rt cgir_vm_core shared_simulink_lang_blocks sl_utility sl_compile sl_services sl_graphical_classes sl_loadsave shared_cgxe"
+CTB="eml_inference sl_graphical_classes sl_engine_classes sl_main fixedpoint_core sl_compile shared_cgxe foundation/matrix cgir_vm_rt cgir_vm_core shared_simulink_lang_blocks sl_utility sl_compile sl_services sl_graphical_classes sl_loadsave shared_cgxe"
 
 
 
@@ -392,3 +392,61 @@ type erasure: boost::any_range
 v=feature('diagnosticSpec','sf::cdr.*=all');
 v=feature('diagnosticDest','file=mylogfile.txt');
 http://inside-files.mathworks.com/dev/ltc/doxygen/Bfl/html/user_view/foundation/log/src/log/
+Foundation logger/mwlogger uses Boost.log
+https://www.boost.org/doc/libs/1_59_0/libs/log/doc/html/index.html
+
+
+http://inside.mathworks.com/wiki/OUT_OF_MODEL.mk
+
+https://stackoverflow.com/questions/210835/what-is-referential-transparency
+vim: :e->reload, :e!->reload+discardLocalChanges
+
+c++ exception safety guarantee
+
+record_SF_known_struct_types_recursively : not required
+ StdCdrEmlApi::setCdrModuleInfo: has if branch which should be in the caller
+
+fDataCGTypeMap is not allocated on dummyCdrModuleInfo during propagation which means, during propatation cgtype are not reused.
+
+cdr_cg_struct_or_enum_type_from_data : how does hdl/clientserver work for two isntances of library chart with different input struct type. since simstruct is not available, we just rely on data->parsedInfo which is not instance specific
+
+getSSIDFromObjectId chart_is_eml can be used instead in first if
+
+chart.eml.f2fConfig when does it get set in cdr_eml_infer_chart
+
+MAL chart output variable size data(size=n) initial values have to match size of data(n). for CAL, it can be of of size 1-n
+
+MAL variable-size: supported. dynamic memory can be specified for ml-function-locals but not required
+CAL variable-size: only accessed in MLFcn/TTMLFcn/SLFcn. also dynamic memory is required for code-gen
+
+MAL unbounded: supported. featured off. not sure about codegen supported(?)
+CAL unbounded: not supported.
+
+MAL symbolic size: not supported
+CAL symbolic size: supported, but not-supported if data is var-size
+
+cdr_eml_infer_chart: do we need cdrModuleInfo->createSymbols() here;
+
+cdr_nodedef::getInputType : not clear why known type is marked as double
+
+std::reference_wrapper motivation: https://www.nextptr.com/tutorial/ta1441164581/stdref-and-stdreference_wrapper-common-use-cases
+std::vector<std::reference_wrapper<int>>
+not allowed:std::vector<const int>,std::vector<int&> as T in std::vector<T> requires assignable
+std::get retruns reference_wrapper. reference_wrapper can returns T& with get()
+auto i = 1;auto r = std::ref(i); r.get()=12;
+
+std::conditional_t
+
+inherited class method with same name but different prototype hides(not override) the base method.
+
+expr: [1,2]: eml after parse_function: #matrix(#vcat($1,$2) what is type of #matrix here
+
+during propagation size inference, if any input type is not known, we set all inputs(except bus) to be real. input type of bus is always known before size pass. it happens during after mdlInitializeSizes
+above process happens for complexity also. during size prop-inference, if we don't know any input complexity, we set all input to be real. bus/enum/string don't have compexity.
+
+in cdr_update_types_against_inference_results, after propagation inference, we only throw errors if output t/s/c is inferred, unambiguous, have user specified value and mismatch with user-speciefied value. 
+so if output type is fully specified, it won't throw error even if one of the statements is wrong (e.g. outputDouble2Real=inputDouble3Real) as output is not inferred in this case.
+
+DCE: errorOnUnresolvedSymbolsInChart->createEmptyStubsForIntrinsics->
+DCE: PropagationManager::errorOnUnresolvedSymbols->constructCoders
+
