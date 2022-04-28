@@ -1,4 +1,35 @@
-  
+bhagavad gita: 
+
+tukaram:  https://www.youtube.com/playlist?list=PLPiSaErUa7PcGPe9xQ7pOWEyM6mlfKdbi 
+dasbodh: https://www.youtube.com/playlist?list=PLc1r4Cpf66cCRmkHK7YsE7ZZK2Q3xjE0C
+
+gurucharitra: https://www.youtube.com/playlist?list=PL_6xj9qo5MfasqnCUaWDpqbadG60I4Xrw 
+ramdaskatha: https://www.youtube.com/playlist?list=PL_6xj9qo5Mfb-Wk6zaB9ITrkjsNJnumcY
+navanathsar:  https://www.youtube.com/playlist?list=PL_6xj9qo5MfaF1Yk8PVnOLKEIwGco8B11
+dhyaneshwari: https://www.youtube.com/playlist?list=PL_6xj9qo5MfZ6_sAidq6Svg5-MyjjfjXV
+manache shlok:  https://www.youtube.com/playlist?list=PLRlSTUDyrQYi2-WN7hWatTwlst6BW3Dgp
+                https://www.youtube.com/playlist?list=PLAUy5gvjzw_941zCER5wQ1UWczqqqCsoF
+
+
+youtube audio playlist downloader: yt-dlp --extract-audio --playlist-start 1 --rm-cache-dir --audio-format mp3 -o "das-%(playlist_index)s.%(ext)s" <youtube-playlist-link>
+
+sbindent: https://web.microsoftstream.com/video/f99a8bd4-1530-4146-a6f1-afbe76db59ba
+dangling if 
+
+#bii sandbox
+https://inside.mathworks.com/wiki/Component_BII_Sandboxes
+mw -using Bstateflow printenv | grep COMPONENTS_TO_BUILD
+mkdir biisbdir;cd biisbdir;
+echo "MW_CLUSTER=Bstateflow" > mw_anchor;echo "P4CLIENT=ppatil.mybii1" > .perforce; echo "P4PORT=p4anycast.mathworks.com:1666" >> .perforce; echo "ENV Bstateflow" > battree
+mw -using Bstateflow gmake -f //mathworks/hub/share/apps/iat/tools/sc/R2020a/4605547/glnxa64/thin_snap.mk COMPONENTS_TO_BUILD="stateflow_resources" BUY_ARCHLIST="glnxa64" P4_CLIENT="ppatil.mybii1" create_sandbox
+cd matlab;
+sbmake CTB=stateflow_resources;
+
+
+runtests with parameters:
+runtests("t_sl_trackerGNNRetrodiction[ScenarioParameters=EKF]/checkRapidAcceleratorAgainstNormal")
+edg parser components:
+CTB="shared_cxxfe_parser_mi shared_cxxfe_parser_mi shared_cxxfe_ast shared_cxxfe_instrum shared_cxxfe_instrum shared_cxxfe_instrum shared_cxxfe_instrum shared_cxxfe_ast_annotations shared_cxxfe_instrum_mi shared_cxxfe_instrum_mi shared_cxxfe_parser shared_cxxfe_il2ast shared_cxxfe_il2ast shared_cxxfe_il2ast shared_cxxfe_ast2cgir shared_cxxfe_ast2cgir shared_cxxfe_ast2cgir shared_cxxfe_il2cgir shared_cxxfe_il2cgir shared_cxxfe_il2cgir shared_cxxfe_cgir"
 
 
 
