@@ -1,3 +1,52 @@
+execution domains (export function, discrete, continuous/hybrid)
+Stateflow limitations on continuous, SL functions, SL states,
+
+all config set options: matlab/toolbox/shared/configset/src/configset_base/checksum/type/
+
+sfc('coder_options')
+
+  %v=sf('find',sf('FunctionsIn',sf('get',sf('GetSFBlockData',gcbh),'instance.chart')),'state.name','mlfcn1')
+    %v=sf('find',sf('SubstatesIn',sf('get',sf('GetSFBlockData',gcbh),'instance.chart')),'state.name','stateA')
+    %v=sf('get',sf('find',sf('SubstatesIn',sf('get',sf('GetSFBlockData',gcbh),'instance.chart')),'state.name','A'),'state.simulink.blockHandle')
+    %sf('get',sf('GetSFBlockData',get_param(get_param(gcbh,'ReferenceBlock'),'handle')),'instance.chart')
+    %getappdata(get_param(sf('get',sf('GetSFBlockData',get_param(get_param(gcbh,'ReferenceBlock'),'handle')),'instance.sfunctionBlock'),'Object'),'SF_InstanceSpecChecksum')
+sbsmartbuild -opened; mw runlikebat does not work
+
+
+c style comments: //
+-Wimplicit-int
+int main()
+
+
+C89  keywords: 32
+built-in types(6)         : void, char, int, float, double, enum
+aggreate types(2)         : struct, union   
+type modifiers(4)         : signed, unsigned, short, long
+storage specifier(4)      : auto, register, static, extern
+cv qualifier(2)           : const, volatile 
+conditional statements(5) : if, else, switch, case, default
+loops(3)                  : for, do, while
+jump statements(4)        : break, continue, goto, return
+misc(2)                   : typedef, sizeof
+C99 keywords: 5
+_Bool, _Complex,_Imaginary, restrict, inline
+
+C Scopes: file scope, block scope, function parameter scope, function scope
+Non-structured: FORTRAN, BASIC, COBOL
+Structured    : Ada, Pascal, C   : goto prohibited or not supported
+ANSI: American National Standards Instrutute
+ISO: International Standards Organization
+
+B Ken Thomspson -> C Dennis Ritchie
+
+C Not strongly typed: no run time checking for arguments matching parameter types, implicit type conversion
+
+
+
+
+
+
+
 bhagavad gita: 
 
 tukaram:  https://www.youtube.com/playlist?list=PLPiSaErUa7PcGPe9xQ7pOWEyM6mlfKdbi 
