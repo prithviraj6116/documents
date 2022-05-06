@@ -34,29 +34,58 @@ Call pp (the CGIR pretty printer), placing the output in /tmp/foo.html.
 Also opens this file in firefox.
 end
 
-define load_sl_libs
+define bex
+    breaksegv
+    break SF::assertion_failed
+    break ThrowAssertion
+end
+document bex
+Break on a few common assertions etc.
+end
+
+handle SIGSEGV nostop noprint
+
+define mstack
+  printf "%s", SF::dbstack()
+end
+document mstack
+Dumps the MATLAB callstack (dbstack)
+end
+
+define d
+    disable
+end
+define e
+    enable
+end
+define a1
     set auto-solib-add off
     attach $arg0
-    load_my_common_libs
+    load_ml_libs
+    load_sf_libs
+
+end
+define load_ml_libs
+    # libraries needed so breaksegv works:
+    sharedlibrary libmwmcr.so
+    sharedlibrary libmwfl.so
+end
+define load_sl_libs
+    sharedlibrary libmwcg_ir.so
+    sharedlibrary libmwsl_services.so
+    sharedlibrary libmwcgir_xform.so
+    sharedlibrary libmwcgir_support.so
     sharedlibrary libmwsl_graphical_classes.so
     sharedlibrary libmwsl_engine.so
     sharedlibrary libmwsl_engine_classes.so
     sharedlibrary libmwsl_lang_blocks.so
     sharedlibrary libmwsimulink.so
-
 end
-define load_my_common_libs
-    sharedlibrary libmwsl_services.so
+define load_sf_libs
     sharedlibrary libmwstateflow.so
     sharedlibrary libmwsf_runtime.so
     sharedlibrary libmwsf_variants.so
-    sharedlibrary libmwcg_ir.so
-    sharedlibrary libmwcgir_xform.so
-    sharedlibrary libmwcgir_support.so
 
-    # libraries needed so breaksegv works:
-    sharedlibrary libmwmcr.so
-    sharedlibrary libmwfl.so
 end
 
 define sfdebug1

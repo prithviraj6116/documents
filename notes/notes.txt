@@ -1,3 +1,5 @@
+linux: fg, bg
+sbvim
 
 >>c=settings //give matlab and simulink preferences/settings 
 

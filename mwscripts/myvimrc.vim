@@ -3,11 +3,11 @@ function VundleInit()
     call vundle#begin()
     Plugin 'VundleVim/Vundle.vim'
     Plugin 'gcmt/taboo.vim'
-    Plugin 'vim-scripts/Conque-GDB'
+    " Plugin 'vim-scripts/Conque-GDB'
     Plugin 'easymotion/vim-easymotion'
-    " my plugins
     call vundle#end()
 endfunction
+
 
 set swapfile
 set dir=/tmp
@@ -42,6 +42,11 @@ map sg :!g++ cpp1.cpp -std=c++17;./a.out;<ENTER>
 map s1g :!g++ -E cpp1.cpp;<ENTER>
 map sm 0f<SPACE>f<SPACE>f<SPACE>lvf:h"ay<ESC>f:lvf<SPACE>"by<C-W>w:e +<C-R>b <C-R>a<CR><C-W>w<C-W>w
 map s2g :!git add -u;git commit -m "abc";git push<ENTER>
+map g <Nop>
+map gib :GDB info b<ENTER>
+map gs :GDB disable<ENTER>
+map gc :GDB c<ENTER>
+map ge :GDB enable<ENTER>
 
 
 "ident whole file 
