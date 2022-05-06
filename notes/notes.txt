@@ -1,5 +1,5 @@
 
->>c=settings  
+>>c=settings //give matlab and simulink preferences/settings 
 
 git config --global credential.helper store
 execution domains (export function, discrete, continuous/hybrid)
