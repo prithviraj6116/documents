@@ -1,4 +1,4 @@
-1. c chart, local data, DRSO, bus type: IV is not taken from signal object 
+1. c chart, local data, DRSO, bus type: IV is not taken from signal object   
 2. symbol window hover over sfix shows double type
 3. whos in MATLAB command line shows bytes column. for string and fi objects, its values are confusing
 4. does cdr_data_reset_props leak memory
