@@ -41,7 +41,7 @@ map sa :up!<ENTER>
 map sg :!g++ cpp1.cpp -std=c++17;./a.out;<ENTER>
 map s1g :!g++ -E cpp1.cpp;<ENTER>
 map sm 0f<SPACE>f<SPACE>f<SPACE>lvf:h"ay<ESC>f:lvf<SPACE>"by<C-W>w:e +<C-R>b <C-R>a<CR><C-W>w<C-W>w
-
+map s2g :!git add -u;git commit -m "abc";git push
 
 
 "ident whole file 

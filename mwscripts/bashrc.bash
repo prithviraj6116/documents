@@ -24,7 +24,7 @@ function vmd() {
 }
 function getUserSbroot() {
     SBNAMEIFNETWORKSB=${PWD/$s\//}
-    if [[ "$(sbroot)" != $d* ]]; then
+    if [[ "$(sbroot 2>/tmp/log1)" != $d* ]]; then
         echo "$s/$1"
     else
         echo "$2"
@@ -33,20 +33,20 @@ function getUserSbroot() {
 function chd() {
     export PPP_COMMAND=chd
     export PPP_DIRECTORYNUMBER='-1';
-    export ORIGSBROOT=$(sbroot)
+    export ORIGSBROOT=$(sbroot 2>/tmp/log1)
     export MYSBNAME=$(echo $ORIGSBROOT|cut -d'.' -f 2)
     export MYSBROOT=$(getUserSbroot $MYSBNAME $ORIGSBROOT)
     export MYSBNAME=${MYSBNAME/$d\//(local)}
     if [[ $# == 0 ]];
     then
-        echo "$(perl $d/gitRepo1/pppGitHub/mwscripts/bashrcHelper.pl)"
+        echo "$(perl /mathworks/devel/sandbox/ppatil/misc/hubdocs/mwscripts/bashrcHelper.pl)"
         read -p "Enter directory number: " directoryNumber
         export PPP_DIRECTORYNUMBER=$directoryNumber
     else
-        temp1=$(perl $d/gitRepo1/pppGitHub/mwscripts/bashrcHelper.pl)
+        temp1=$(perl /mathworks/devel/sandbox/ppatil/misc/hubdocs/mwscripts/bashrcHelper.pl)
         export PPP_DIRECTORYNUMBER=$1
     fi
-    cd "$(perl $d/gitRepo1/pppGitHub/mwscripts/bashrcHelper.pl)"
+    cd "$(perl /mathworks/devel/sandbox/ppatil/misc/hubdocs/mwscripts/bashrcHelper.pl)"
 }
 function getTerminalTabTitle() {
     PWD1=${PWD/$s/\$s}
@@ -56,9 +56,10 @@ function getTerminalTabTitle() {
     echo $PWD3
 }
   
-alias sbr="sb -r \"openExample('stateflow/AutomaticTransmissionUsingDurationOperatorExample');bdclose all;cd(matlabroot);addpath('/mathworks/home/ppatil/Documents/MATLAB/');myStartup; \" &> /tmp/matlab.log &";        
-alias mynote="cd /mathworks/devel/sandbox/ppatil/misc/hubdocs/notes/;gvim notes.txt & cd -"
-alias newSession="cd ~;rm -rf logs log matlab_crash_dump* orig.matlab_crash_dump*; pkill -9 -f matlab;sbstop 8 0;pkill -9 -f chrome;pkill -9 -f mozilla; pkill -9 -f firefox; pkill -9 -f p4v;pkill -9 -f gvim;cd -;google-chrome &> /tmp/chrome.log & mynote &"
+alias sbr="sb -r \"openExample('stateflow/AutomaticTransmissionUsingDurationOperatorExample');bdclose all;cd(matlabroot);addpath('/mathworks/devel/sandbox/ppatil/misc/hubdocs/mwscripts');myStartup;cd('~/Downloads') \" &> /tmp/matlab.log &";        
+alias mynote="cd /mathworks/devel/sandbox/ppatil/misc/hubdocs/notes/;gvim notes.txt & cd - &>/tmp/log1 &"
+alias newSession="cd ~;rm -rf logs log matlab_crash_dump* orig.matlab_crash_dump*; pkill -9 -f matlab;sbstop 8 0;pkill -9 -f chrome;pkill -9 -f mozilla; pkill -9 -f firefox; pkill -9 -f p4v;pkill -9 -f gvim;cd -;google-chrome &> /tmp/chrome.log & mynote &> tmp/log1 &"
+
 export PS1=..............................................................................\\n$\ 
 export PROMPT_COMMAND='echo -ne "\033]0;$(getTerminalTabTitle)\007"'
 

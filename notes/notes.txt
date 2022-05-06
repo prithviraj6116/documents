@@ -1,5 +1,5 @@
 
->>c=settings
+>>c=settings  
 
 git config --global credential.helper store
 execution domains (export function, discrete, continuous/hybrid)
