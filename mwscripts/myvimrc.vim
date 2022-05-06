@@ -48,7 +48,6 @@ map gs :GDB disable<ENTER>
 map gc :GDB c<ENTER>
 map ge :GDB enable<ENTER>
 
-
 "ident whole file 
 "map si gg=G`'<ENTER> 
 "map sg F<SPACE>"byf:f:l"cyf<SPACE><C-w>w:e<C-R>b<BACKSPACE><CR>:<C-R>c<CR>

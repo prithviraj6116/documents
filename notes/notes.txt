@@ -1,5 +1,24 @@
 linux: fg, bg
 sbvim
+vim cmd:  :help sbvim
+how to get vim help
+vim:  ": help command",":map key" 
+:help
+//settings
+:help ts?
+:help sw?  
+:set sw 3
+:set sw? 
+//variables
+:let var1=123
+:echo var1
+:let g:var2=1
+:let s:var2=4
+:help variables
+:filter buf* let g:   //only shows variables with buf*
+:h :filter
+:h : files
+:h :registers
 
 >>c=settings //give matlab and simulink preferences/settings 
 
