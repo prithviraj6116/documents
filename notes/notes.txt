@@ -1,3 +1,7 @@
+
+>>c=settings
+
+git config --global credential.helper store
 execution domains (export function, discrete, continuous/hybrid)
 Stateflow limitations on continuous, SL functions, SL states,
 
@@ -537,3 +541,195 @@ so if output type is fully specified, it won't throw error even if one of the st
 DCE: errorOnUnresolvedSymbolsInChart->createEmptyStubsForIntrinsics->
 DCE: PropagationManager::errorOnUnresolvedSymbols->constructCoders
 
+
+
+CTB
+shared_cgxe
+foundation/matrix
+cgir_vm_rt
+cgir_vm_core
+shared_simulink_lang_blocks
+sl_utility
+sl_compile
+sl_services
+sl_graphical_classes
+sl_loadsave
+https://web.microsoftstream.com/video/ce9533af-63a6-423b-a4e2-9a050e12ef11
+
+commands
+cgxe('Feature','evil') cgxe('getJITEngines');
+
+to be learned
+jit
+vvir
+llvm
+lint
+atomic subcharts
+continuous charts
+gdb
+eml
+sfir
+cgir
+cgxe
+mlfb
+parser/lexer
+ast
+sbcc
+mex/mxarray
+model references/
+c promotion rules
+unicode, ascii, ustring, cgstring, std::string, char*
+old
+https://inside.mathworks.com/wiki/Category:Software_Performance_Tools source_to_text http://inside.mathworks.com/wiki/Generating_C++_Source-To-Test_Mapping#Determine_which_tests_cover_a_function.2Fcondition
+
+https://eli.thegreenplace.net/2012/01/03/understanding-the-x64-code-models/
+
+http://inside.mathworks.com/wiki/String_Development_Guide gdb:
+
+GDB printf "%s",CG::EffectTools::toString(this).c_str()
+GDB set print elements 0
+
+GDB p &(this->fEffects)
+GDB p *(*long*)$5
+GDB watch *(long*) $5
+GDB p binfo GDB cond breakpointnumber i == 99 GDB info breakpoints GDB info watchpoints
+
+
+p4v -> edit -> preferences -> Applet -> Check "Allow perforce applets to run in Helix P4V"  Click Apply and Okay. Close p4v and restart p4v. Now click  View->Review Board. This should add a new tab in p4v for ReviewBoard(RB)
+
+Simulink.ExtMode.CtrlPanel.createExtModeCtrlPanelForModel('model2') simulink compiler appdesigner: https://reviewboard.mathworks.com/r/523541/
+
+webapps: install license manager (lmgrd), download license of web app from https://inside-labs.mathworks.com/dev/it_tracker/install/passcodes.html and add following lines at the top SERVER ah-ppatil-l ID=0 27000 DAEMON MLM /mathworks/devel/sandbox/ppatil/switchProperties1/matlab/etc/glnxa64/MLM
+
+Connecting to windows vm sbrdesktop AD.MATHWORKS.COM/ppatil
+
+java exit: //mathworks/devel/sandbox/ppatil/_sbbackup/sbs_ppatil.jexitSfx1_backup/jexitsfx1 qerunbptest g2292966;"
+
+https://confluence.mathworks.com/pages/viewpage.action?spaceKey=CGIRDOC&title=Node+Semantics&REF=D59535FE0AAD8E72D3A45F8E956288F501C26BC821A8142CB3B900000004#NodeSemantics-MatrixRef
+
+appdesigner sfx integration bindings: sbbackup -opened -l sfmlApp1Working
+vmware shared folder ubuntu guest
+ sudo vmhgfs-fuse -o nonempty -o allow_other .host:/data ./testmnt
+a
+cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_VERBOSE_MAKEFILE=ON ../llvm -DLLVM_ENABLE_PROJECTS='clang;clang-tools-extra;lldb;compiler-rt;lld;polly'
+
+$ sbmake -distcc DEBUG=1 CTB="sl_main simulinkcoder_capi stateflow_core"
+
+Description	Command
+misc commands	get current desktop environmet $echo $XDG_CURRENT_DESKTOP
+sudo mount /dev/sdb1 /local-ssd
+ sbmake -distcc DEBUG=1 CTB=matlab_desktop NOBUILDTESTS=1 NORUNTESTS=1
+ mw sbprequal -F submit.txt -runallunder test/toolbox/stateflow/sf_in_matlab/cdr/negative/ -nochart  -levels all -logdir work/q1
+sbmininclude
+sbgensubmit -o submit2.txt -opened
+mw sbreviewboard  -F submit2.txt  -create-all-images
+japanese i18n sandbox
+$ export LANG=ja_JP.utf8
+$locale
+ edit(fullfile(userpath, 'startup.m')) 
+component dependency	
+ mw ch findPath -f MATLAB -c stateflow sltemplate 
+find last changelist for each line of file	
+p4 annotate -I //mw/ClusterName/filePath#revision
+p4 annotate -I //mw/Bstateflow/matlab/toolbox/stateflow/src/stateflow/cdr/LowerDuration.cpp#2
+prefdir
+sls_findparts('myfile.sfx')
+p4 merge //mw/Bstateflow/...@=4055904 //mw/Bllvm/...
+docroot /mathworks/devel/jobarchive/Bdoc18b/latest_pass/matlab/help
+deploytool 
+mw sbs snapshot create mysnapshotname
+mw sbs clone create -from ppatil.sbsname -s mysnapshotname -n "newsbname"
+mw -using Bmlcoder.j972079 reproduceSession -identifier http://trweb.mathworks.com/tr/result?id=8576154566
+ Stateflow.Interface.JSController.debugMode(1)
+cd $s/sandboxName/matlab;
+mw perl pbr/bin/mkcdimages -source $(pwd) -dest $(pwd) -iso  -RC
+cd $s/sandboxName;
+mw sbinstallmatlab -from $(pwd) -to installDirFullPath -products Stateflow (Or "-named-lic dacore",for all products)
+mw -using ClusterName sbinstallmatlab -from ClusterName -to InstallDirFullPath -products Stateflow
+ open_system(gcb, 'evilsf')
+p4 branch_unlock //mw/Bstateflow -allow ppatil
+p4 branch_lock //mw/Bstateflow -reason “for fixing build failures”
+sfc coder_options debugBuilds 1;
+sfc coder_options forceDebugOff 1; 
+sf feature evil;
+evil_jit_settings -disable  
+sf('Tesla', 1);  (deprecated)
+sfc('coder_options','forceNonJitBuild',1) (we tell this api to customer)
+sf('feature', 'Pretty print CGIR logs',0);
+sfc coder_options debugBuilds 0;
+sf feature developer on
+p4 client -o
+mw -using Bllvm sbs -c Bllvm -A sfxcoderA1 -hook altroot -n sfxcoderRoot
+mw sbs -U
+mw -using Bllvm sbs -c Bllvm -bac-client-force -j 1045749
+mw -using Bllvm sbs -c Bllvm -A t30 -j 1043404
+mw  sbs clone alias sfxCoder2_a1
+mw sbs -u -alias t30
+license commands	
+ 
+ feature('lmfeaturelist')
+ feature ('lmsearchpath')
+mw matlab -c licensefile
+coder commands	
+coder.const(@disp, class(dout));
+p4 reset	
+p4 sync -N matlab/...
+mwuetest.getWindowTester(gcb).toolStripTester.showWidgetInfoAsToolTip(false)
+generate baseline for a single testpoint	
+evil_generate_baseline tDebuggingAdvanced -testspec:lvlTwo_DebuggerCheckSymbolsUIValue
+Links
+Description	Command	Tags
+build area help	build-area
+shared folder sudo apt install open-vm-tools open-vm-tools-desktop sudo mount -t fuse.vmhgfs-fuse .host:/ /mnt/hgfs -o allow_other sudo mkdir -p /mnt/hgfs
+
+depviewer	
+test selection in bat	
+i18n	
+locks on clusters	
+changereach	
+component search in clusters	
+performance tests	
+gui testing	
+upt	
+code coverage in BaT	
+mockup state action language prompts	
+model reference	
+sbtools auto-complete	
+p4 triggers	
+ulcm	
+mdlInitializePropagationPass
+
+http://stateflow-00-deb9-64/mathworks/hub/share/sbtools/apps/nighthawk/ CDR_ChartCompiledInfo CDR_MachineCompiledInfo SF::CDR_IDC_Info
+
+sfx MATLAB Coder issues 1. disp does not throw proper error
+
+Navigation menu
+Ppatil
+0
+2
+TalkPreferencesWatchlistContributionsLog outPageDiscussionHide Left-NavReadEditEdit sourceView historyPrint as PDFUnwatch
+More
+Search
+Search Wiki on Inside
+Main Page
+Categories
+Category Cloud
+Recent changes
+Most Linked Pages
+New Pages
+Random Page
+Help
+Getting Started
+Wiki Markup
+Category:Help
+Tools
+What links here
+Related changes
+Upload File
+Special pages
+Printable version
+Permanent link
+Page information
+Cite this page
+This page was last modified 09:50, 15 March 2021 by Wiki on Inside user Ppatil.
+Privacy policyAbout Wiki on InsideDisclaimersPowered by MediaWiki
