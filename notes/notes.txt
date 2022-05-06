@@ -3,6 +3,13 @@ Stateflow limitations on continuous, SL functions, SL states,
 
 all config set options: matlab/toolbox/shared/configset/src/configset_base/checksum/type/
 
+set_param(0, 'GlobalUseClassicAccelMode', 'on');
+%     set_param(0, 'AcceleratorUseTrueIdentifier','on');
+%     set_param(0, 'GlobalUseClassicAccelMode', 'on');
+%     slfeature('FMUBlockRaccelReval',1);
+%     slfeature('UseSimulationServiceForRaccel',0);
+%     slfeature('MLSysBlockRaccelReval',1);
+ 
 sfc('coder_options')
 
   %v=sf('find',sf('FunctionsIn',sf('get',sf('GetSFBlockData',gcbh),'instance.chart')),'state.name','mlfcn1')
