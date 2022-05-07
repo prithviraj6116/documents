@@ -29,6 +29,14 @@ vim:  ": help command",":map key"
 :h : files
 :h :registers
 
+:set laststaus or :echo &laststatus
+:highlight statusline
+:highlight
+
+:set laststatus=2
+:highlight statusline gui=bold,italic guifg=red guibg=yellow
+
+
 >>c=settings //give matlab and simulink preferences/settings 
 
 git config --global credential.helper store
