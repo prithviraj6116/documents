@@ -1,3 +1,10 @@
+IDEAS
+1. gdb debug symbols: does it load every time I run MATLAB in same session. can it be made faster
+2. gdbserver, gdb like fsb
+3. hybrid stack: 
+4. matlab based GUI like fsb
+
+a:
 linux: fg, bg
 sbvim
 vim cmd:  :help sbvim
