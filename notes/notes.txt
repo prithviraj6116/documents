@@ -32,10 +32,41 @@ vim:  ": help command",":map key"
 :set laststaus or :echo &laststatus
 :highlight statusline
 :highlight
+:highlight cursor guifg=red guibg=yellow
+:help notationA
+tab
+shiftwidth: whitespaces equal to one indentation
+tabstop: whitespace equal to one tab
 
 :set laststatus=2
 :highlight statusline gui=bold,italic guifg=red guibg=yellow
 
+vim equivalent of non-printing keys
+<NL>:<C-j>:newline
+<CR>:<C-m>:carriage return
+<BS>:<C-h>:backspace
+<ESC>:<C-[>:escape
+<TAB>:<C-i>:tab
+<FF>:<C-l>:formfeed
+
+scroll up/down:
+1 line:CTRL-e,CTRL-y
+1/2 screen: CTRL-d,CTRL-u
+1 screen: CTRL-f,CTRL-b
+
+:h press ctr-v twice for :h ^v
+:h press ctrl-v and ctrl-b for :h ^b
+:h reg  and press ctrl-d  for auto completion
+
+gvim -D  to debug
+/%Vfoo   searches foo in visual/select mode
+folding: zf zo zc
+tab: tabe tabc gt
+window: C-w-s C-w-v C-w-w C-w-c
+scroll:C-e,y,f,b,d,u zt,zb,zz
+mapleader \ <Leader>
+command mode: ctrl-v to enter <C->,  
+              ctrl-d to auto-complete
 
 >>c=settings //give matlab and simulink preferences/settings 
 
@@ -58,7 +89,8 @@ sfc('coder_options')
     %v=sf('find',sf('SubstatesIn',sf('get',sf('GetSFBlockData',gcbh),'instance.chart')),'state.name','stateA')
     %v=sf('get',sf('find',sf('SubstatesIn',sf('get',sf('GetSFBlockData',gcbh),'instance.chart')),'state.name','A'),'state.simulink.blockHandle')
     %sf('get',sf('GetSFBlockData',get_param(get_param(gcbh,'ReferenceBlock'),'handle')),'instance.chart')
-    %getappdata(get_param(sf('get',sf('GetSFBlockData',get_param(get_param(gcbh,'ReferenceBlock'),'handle')),'instance.sfunctionBlock'),'Object'),'SF_InstanceSpecChecksum')
+    %getappdata(get_param(sf('get',sf('GetSFBlockData',get_param(get_param(gcbh,'ReferenceBlock'),'handle')),'instance.sfunctionBlock'),
+    'Object'),'SF_InstanceSpecChecksum')
 sbsmartbuild -opened; mw runlikebat does not work
 
 
@@ -85,7 +117,7 @@ Non-structured: FORTRAN, BASIC, COBOL
 Structured    : Ada, Pascal, C   : goto prohibited or not supported
 ANSI: American National Standards Instrutute
 ISO: International Standards Organization
-
+aba
 B Ken Thomspson -> C Dennis Ritchie
 
 C Not strongly typed: no run time checking for arguments matching parameter types, implicit type conversion
@@ -109,7 +141,8 @@ manache shlok:  https://www.youtube.com/playlist?list=PLRlSTUDyrQYi2-WN7hWatTwls
                 https://www.youtube.com/playlist?list=PLAUy5gvjzw_941zCER5wQ1UWczqqqCsoF
 
 
-youtube audio playlist downloader: yt-dlp --extract-audio --playlist-start 1 --rm-cache-dir --audio-format mp3 -o "das-%(playlist_index)s.%(ext)s" <youtube-playlist-link>
+youtube audio playlist downloader: yt-dlp --extract-audio --playlist-start 1 --rm-cache-dir --audio-format mp3 -o 
+"das-%(playlist_index)s.%(ext)s" <youtube-playlist-link>
 
 sbindent: https://web.microsoftstream.com/video/f99a8bd4-1530-4146-a6f1-afbe76db59ba
 dangling if 

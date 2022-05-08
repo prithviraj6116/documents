@@ -14,6 +14,8 @@ set dir=/tmp
 set history=1000
 set lines=999 columns=1000
 syntax on
+highlight cursor guifg=red guibg=yellow
+set laststatus=2
 set number
 set hidden
 set hlsearch
@@ -26,7 +28,9 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set tags=./tags;,./gems.tags;
-
+set showcmd
+set ruler
+set incsearch
 let g:netrw_preview = 1
 filetype plugin indent on
 
@@ -42,11 +46,6 @@ map sg :!g++ cpp1.cpp -std=c++17;./a.out;<ENTER>
 map s1g :!g++ -E cpp1.cpp;<ENTER>
 map sm 0f<SPACE>f<SPACE>f<SPACE>lvf:h"ay<ESC>f:lvf<SPACE>"by<C-W>w:e +<C-R>b <C-R>a<CR><C-W>w<C-W>w
 map s2g :!git add -u;git commit -m "abc";git push<ENTER>
-map g <Nop>
-map gib :GDB info b<ENTER>
-map gs :GDB disable<ENTER>
-map gc :GDB c<ENTER>
-map ge :GDB enable<ENTER>
 
 "ident whole file 
 "map si gg=G`'<ENTER> 
