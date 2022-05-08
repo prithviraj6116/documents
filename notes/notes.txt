@@ -65,8 +65,13 @@ tab: tabe tabc gt
 window: C-w-s C-w-v C-w-w C-w-c
 scroll:C-e,y,f,b,d,u zt,zb,zz
 mapleader \ <Leader>
+gvim -u DEFAULTS/NONE/NORC
+gvim --noplugin
+:filter searchtext browse oldfiles
 command mode: ctrl-v to enter <C->,  
               ctrl-d to auto-complete
+              q:  command list
+              q/  search list
 
 >>c=settings //give matlab and simulink preferences/settings 
 
