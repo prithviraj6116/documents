@@ -68,6 +68,14 @@ mapleader \ <Leader>
 gvim -u DEFAULTS/NONE/NORC
 gvim --noplugin
 :filter searchtext browse oldfiles
+:list
+:jumps
+:filter
+:marks
+:oldfiles
+:files
+:command
+:let
 command mode: ctrl-v to enter <C->,  
               ctrl-d to auto-complete
               q:  command list
