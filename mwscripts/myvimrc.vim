@@ -33,7 +33,7 @@ set showcmd
 set ruler
 set incsearch
 filetype plugin indent on
-set verbose=5
+set verbose=0
 "let g:netrw_preview = 1
 
 

@@ -1,3 +1,5 @@
+Reviewboard ideas
+1. ML enumeration properties v=mycolors.Red; v.prop1; where prop1 is the property of mycolors and Red is enumeration of mycolor
 IDEAS
 1. gdb debug symbols: does it load every time I run MATLAB in same session. can it be made faster
 2. gdbserver, gdb like fsb
@@ -5,7 +7,24 @@ IDEAS
 4. matlab based GUI like fsb
 5. issues with debian 11 gdb: continue while program is running
 6. call stack graph traversing outside debugging
+matlab:
+classdef mycolors  Or classdef mycolors < uint8 (now enum will implicitly convert to uint8)
+enumeration
+red,blue,yellow
+end
+end
+bug: sldd enum export does not work
 
+stack viewer:
+1. matlab global, persistent vars not showing up
+2. modify value in sv and have it updated in gdb
+3. send whole stack to sv when called sv(). filter it in sv
+
+
+mx mex:
+mxGetData ->void*
+mxGetPr ->double*
+mxGetInt8s,mxGetUint16s->only available in interleaved
 a:
 linux: fg, bg
 sbvim
@@ -76,13 +95,21 @@ gvim --noplugin
 :files
 :command
 :let
+:echo expand("%p")
+:h load-plugins
+:map b6 :bp<bar>sp<bar>bn<bar>bd<CR>
+ bp|sp|bn|bd : close current buffer(do not close window); and open next buffer in same window
+ packadd sources twice, packadd! sources once
 command mode: ctrl-v to enter <C->,  
               ctrl-d to auto-complete
               q:  command list
               q/  search list
 
->>c=settings //give matlab and simulink preferences/settings 
 
+//mathworks/hub/share/sbtools/external-apps/exuberant-ctags/exuberant-ctags-5.9/exuberant-ctags/ctags -R *
+
+
+>>c=settings //give matlab and simulink preferences/settings 
 git config --global credential.helper store
 execution domains (export function, discrete, continuous/hybrid)
 Stateflow limitations on continuous, SL functions, SL states,

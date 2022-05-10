@@ -100,7 +100,7 @@ end
 
 
 # shar stateflow
-source /sandbox/savadhan/sbtools/mw-gdbscripts/.gdbinit
+#source /sandbox/savadhan/sbtools/mw-gdbscripts/.gdbinit
 #source /mathworks/inside/labs/dev/matlab_coder_tools/ydebug/ydebug.gdb
 
 # Uncomment following to improve debugging STL, etc. (see sb-gdb).
