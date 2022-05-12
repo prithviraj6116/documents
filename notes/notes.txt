@@ -20,7 +20,8 @@ stack viewer:
 2. modify value in sv and have it updated in gdb
 3. send whole stack to sv when called sv(). filter it in sv
 
-
+C:
+unistd.h: posix apis.
 mx mex:
 mxGetData ->void*
 mxGetPr ->double*
