@@ -1,3 +1,6 @@
+
+sbruntests -cfg sfcore -cfg slstring -cfg reqtable
+
 Reviewboard ideas
 1. ML enumeration properties v=mycolors.Red; v.prop1; where prop1 is the property of mycolors and Red is enumeration of mycolor
 IDEAS
