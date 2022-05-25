@@ -3,6 +3,13 @@ link time optimizations, initialization, initializer list, uniform initializatio
 default/copy/move construction, copy/move assignment, explicit/defaulted/deleted 
 constructor,bitset, boost dynamic bitset, vector bool , vector char
 
+
+print type name:
+boost::core::demangle(typeid(b1).name())
+boost::typeindex::type_id_runtime(b1).pretty_name()
+
+c runtime librara
+
 sbruntests -cfg sfcore -cfg slstring -cfg reqtable
 
 Reviewboard ideas
