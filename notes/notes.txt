@@ -1,4 +1,7 @@
-review board: link time optimizations, initialization, initializer list, uniform initialization, default/copy/move construction, copy/move assignment, explicit/defaulted/deleted constructor,
+review board: 
+link time optimizations, initialization, initializer list, uniform initialization, 
+default/copy/move construction, copy/move assignment, explicit/defaulted/deleted 
+constructor,bitset, boost dynamic bitset, vector bool , vector char
 
 sbruntests -cfg sfcore -cfg slstring -cfg reqtable
 
