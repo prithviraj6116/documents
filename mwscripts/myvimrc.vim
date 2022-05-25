@@ -14,7 +14,7 @@ set dir=/tmp
 set history=1000
 set lines=999 columns=1000
 syntax on
-highlight cursor guifg=red guibg=yellow
+highlight cursor guifg=red guibg=blue
 highlight statusline guifg=green guibg=red
 set laststatus=2
 set number
@@ -45,7 +45,7 @@ set verbose=0
 "map srf yiw:%s/<C-r>"//gc<left><left><left>
 "map sd VyjP
 "map sa :up!<ENTER>
-map s1g :!g++ cpp1.cpp -std=c++17;./a.out;<ENTER>
+map s1g :!cd ~/Downloads/stu1;rm cpp1;g++ cpp1.cpp -o cpp1 -std=c++17;./cpp1;cd -<ENTER>
 map s2g :!git add -u;git commit -m "abc";git push<ENTER>
 "map s1g :!g++ -E cpp1.cpp;<ENTER>
 "map sm 0f<SPACE>f<SPACE>f<SPACE>lvf:h"ay<ESC>f:lvf<SPACE>"by<C-W>w:e +<C-R>b <C-R>a<CR><C-W>w<C-W>w
