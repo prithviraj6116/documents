@@ -1,7 +1,8 @@
 review board: 
 link time optimizations, initialization, initializer list, uniform initialization, 
 default/copy/move construction, copy/move assignment, explicit/defaulted/deleted 
-constructor,bitset, boost dynamic bitset, vector bool , vector char
+constructor,bitset, boost dynamic bitset, vector bool , vector char, bitset enum
+label#1,
 
 
 print type name:
@@ -859,3 +860,26 @@ Page information
 Cite this page
 This page was last modified 09:50, 15 March 2021 by Wiki on Inside user Ppatil.
 Privacy policyAbout Wiki on InsideDisclaimersPowered by MediaWiki
+
+label#1 bitset with enum
+using namespace std;
+class E1BS {
+    public:
+    enum bitEnum {
+    E1_1,
+    E1_2,
+    E1_3,
+    E1_4
+    };
+    E1BS(unsigned int i1):b1{i1}{}
+    bitset<4> b1;
+    E1BS& operator|(E1BS e){ b1 = b1 |e.b1;return *this;}
+    bool operator[](bitEnum e){return b1[e];}
+    void set(bitEnum e){b1.set(e);}
+    void reset(bitEnum e){b1.reset(e);}
+    bool test() {return false;}
+    bool test(unsigned int e1) {return e1 == e1 & b1.to_ulong();}
+    template <typename T, typename... Types> bool test(T var1, Types... var2) {
+        return b1[var1] | test(var2...);
+    }
+};
