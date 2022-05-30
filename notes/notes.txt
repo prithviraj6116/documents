@@ -2,13 +2,15 @@ review board:
 link time optimizations, initialization, initializer list, uniform initialization, 
 default/copy/move construction, copy/move assignment, explicit/defaulted/deleted 
 constructor,bitset, boost dynamic bitset, vector bool , vector char, bitset enum
-label#1,
+label#1,make_array:if want to add/delete elment;we dont need to count,make_*: no
+need to enumerate types;e.g. make_tuple,make_pair;
 
-
+tuple implemention: multiple inheritance via variadic template
+sizeof...
 print type name:
 boost::core::demangle(typeid(b1).name())
 boost::typeindex::type_id_runtime(b1).pretty_name()
-
+print makefile information: mw gmake -p -f bdbgenerator.mk  | grep -i matlabjavap
 c runtime librara
 
 sbruntests -cfg sfcore -cfg slstring -cfg reqtable
