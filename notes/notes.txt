@@ -1,6 +1,7 @@
 BUGS
 1. sldd enum export does not work
 2. zerojitemissions is not respected by emlreport which is always created at slprj/_sfprj/EMLReport/
+3. nonjit or jit simulation does not always generate single code for single specialization
 
 REVIEW BOARD
 link time optimizations, initialization, initializer list, uniform initialization, 
