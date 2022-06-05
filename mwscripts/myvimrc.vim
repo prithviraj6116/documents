@@ -44,7 +44,7 @@ set verbose=0
 "map sr yiw:,$s/<C-r>"//gc<left><left><left>
 "map srf yiw:%s/<C-r>"//gc<left><left><left>
 "map sd VyjP
-"map sa :up!<ENTER>
+map sa :up!<ENTER>
 map s1g :!cd ~/Downloads/stu1;rm cpp1;g++ cpp1.cpp -o cpp1 -std=c++17;./cpp1;cd -<ENTER>
 map s2g :!git add -u;git commit -m "abc";git push<ENTER>
 "map s1g :!g++ -E cpp1.cpp;<ENTER>
