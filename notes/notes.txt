@@ -1,5 +1,6 @@
 BUGS
 1. sldd enum export does not work
+2. zerojitemissions is not respected by emlreport which is always created at slprj/_sfprj/EMLReport/
 
 REVIEW BOARD
 link time optimizations, initialization, initializer list, uniform initialization, 
