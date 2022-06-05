@@ -696,7 +696,7 @@ sl_loadsave
 https://web.microsoftstream.com/video/ce9533af-63a6-423b-a4e2-9a050e12ef11
 
 commands
-cgxe('Feature','evil') cgxe('getJITEngines');
+cgxe('Feature','evil') cgxe('getJITEngines');cgxemgr.cpp has all the cgxe internal api list
 
 to be learned
 jit
