@@ -1,22 +1,25 @@
-review board: 
+BUGS
+1. sldd enum export does not work
+
+REVIEW BOARD
 link time optimizations, initialization, initializer list, uniform initialization, 
 default/copy/move construction, copy/move assignment, explicit/defaulted/deleted 
 constructor,bitset, boost dynamic bitset, vector bool , vector char, bitset enum
 label#1,make_array:if want to add/delete elment;we dont need to count,make_*: no
-need to enumerate types;e.g. make_tuple,make_pair;
+need to enumerate types;e.g. make_tuple,make_pair;zeroemission
 
+C/C++
 tuple implemention: multiple inheritance via variadic template
 sizeof...
 print type name:
 boost::core::demangle(typeid(b1).name())
 boost::typeindex::type_id_runtime(b1).pretty_name()
 print makefile information: mw gmake -p -f bdbgenerator.mk  | grep -i matlabjavap
-c runtime librara
+c runtime library
 
+MWTOOLS
 sbruntests -cfg sfcore -cfg slstring -cfg reqtable
 
-Reviewboard ideas
-1. ML enumeration properties v=mycolors.Red; v.prop1; where prop1 is the property of mycolors and Red is enumeration of mycolor
 IDEAS
 1. gdb debug symbols: does it load every time I run MATLAB in same session. can it be made faster
 2. gdbserver, gdb like fsb
@@ -24,13 +27,19 @@ IDEAS
 4. matlab based GUI like fsb
 5. issues with debian 11 gdb: continue while program is running
 6. call stack graph traversing outside debugging
-matlab:
+
+MATLAB
+ML enumeration properties v=mycolors.Red; v.prop1; where prop1 is the property of mycolors and Red is enumeration of mycolor
 classdef mycolors  Or classdef mycolors < uint8 (now enum will implicitly convert to uint8)
 enumeration
 red,blue,yellow
 end
 end
-bug: sldd enum export does not work
+
+Simulink
+
+
+a
 
 stack viewer:
 1. matlab global, persistent vars not showing up
