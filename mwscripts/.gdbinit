@@ -63,7 +63,8 @@ define a1
     attach $arg0
     load_ml_libs
     load_sf_libs
-
+    loadsymsSF
+    sharedlibrary stateflow/sf_sfun.mexa64
 end
 define load_ml_libs
     # libraries needed so breaksegv works:
@@ -85,7 +86,6 @@ define load_sf_libs
     sharedlibrary libmwstateflow.so
     sharedlibrary libmwsf_runtime.so
     sharedlibrary libmwsf_variants.so
-
 end
 
 define sfdebug1
