@@ -22,6 +22,7 @@ boost::typeindex::type_id_runtime(b1).pretty_name()
 print makefile information: mw gmake -p -f bdbgenerator.mk  | grep -i matlabjavap
 c runtime library
 initializer_list is a language feature that requires #include<initializer_list>
+dynamic cast target type must be pointer or reference;
 
 MWTOOLS
 sbruntests -cfg sfcore -cfg slstring -cfg reqtable
