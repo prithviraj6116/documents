@@ -2,6 +2,7 @@ BUGS
 1. sldd enum export does not work
 2. zerojitemissions is not respected by emlreport which is always created at slprj/_sfprj/EMLReport/
 3. nonjit or jit simulation does not always generate single code for single specialization
+4. sfgco on modelref charts does not work
 
 REVIEW BOARD
 link time optimizations, initialization, initializer list, uniform initialization, 
@@ -9,6 +10,8 @@ default/copy/move construction, copy/move assignment, explicit/defaulted/deleted
 constructor,bitset, boost dynamic bitset, vector bool , vector char, bitset enum
 label#1,make_array:if want to add/delete elment;we dont need to count,make_*: no
 need to enumerate types;e.g. make_tuple,make_pair;zeroemission
+
+C++20/RB/modernize:source_location
 
 C/C++
 tuple implemention: multiple inheritance via variadic template

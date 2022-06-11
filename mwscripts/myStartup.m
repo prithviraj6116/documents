@@ -1,6 +1,6 @@
 function myStartup
     setMATLABTitle;
-    setFileGenDir;
+%     setFileGenDir;
  
 end
 function setFileGenDir
