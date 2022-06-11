@@ -23,6 +23,11 @@ print makefile information: mw gmake -p -f bdbgenerator.mk  | grep -i matlabjava
 c runtime library
 initializer_list is a language feature that requires #include<initializer_list>
 dynamic cast target type must be pointer or reference;
+signal handleer: sigint,sigterm,sigsegv,sigabrt,sigill,sigfpe.
+no signal handler: sigstop
+abort/assert calls sigabrt
+Ctrl-c calls sigstop
+Ctrl-z calls sigint
 
 MWTOOLS
 sbruntests -cfg sfcore -cfg slstring -cfg reqtable
