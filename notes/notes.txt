@@ -21,6 +21,7 @@ boost::core::demangle(typeid(b1).name())
 boost::typeindex::type_id_runtime(b1).pretty_name()
 print makefile information: mw gmake -p -f bdbgenerator.mk  | grep -i matlabjavap
 c runtime library
+initializer_list is a language feature that requires #include<initializer_list>
 
 MWTOOLS
 sbruntests -cfg sfcore -cfg slstring -cfg reqtable
