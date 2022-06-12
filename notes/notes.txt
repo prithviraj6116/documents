@@ -31,6 +31,7 @@ Ctrl-z calls sigint
 constructor: converting(normal/non-explicit) vs explicit 
 user-defind conversion functions: converting(normal) or explicit
 narrowing conversion warnings only for direct-list-initialiation or copy-list-initialiation
+typeid keyword requires #include<typeinfo> 
 MWTOOLS
 sbruntests -cfg sfcore -cfg slstring -cfg reqtable
 
