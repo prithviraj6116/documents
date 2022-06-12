@@ -9,7 +9,8 @@ link time optimizations, initialization, initializer list, uniform initializatio
 default/copy/move construction, copy/move assignment, explicit/defaulted/deleted 
 constructor,bitset, boost dynamic bitset, vector bool , vector char, bitset enum
 label#1,make_array:if want to add/delete elment;we dont need to count,make_*: no
-need to enumerate types;e.g. make_tuple,make_pair;zeroemission
+need to enumerate types;e.g. make_tuple,make_pair;zeroemission; relational oper-
+tors on differnet types(-1>1), src/stateflow allowed warnings
 
 C++20/RB/modernize:source_location
 
@@ -53,10 +54,14 @@ end
 
 Simulink
 
-
-a
-
+MWTOOLS
+sbmake/sbcc DEBUG   Mode == DEBUG=1 ASSERTS=1 => -g -O0 
+sbmake/sbcc MIXED   Mode == DEBUG=  ASSERTS=1 =>    -O3
+sbmake/sbcc RELEASE Mode == DEBUG=  ASSERTS=0 =>    -O3 -DNDEBUG
 postcodegen:  https://reviewboard.mathworks.com/r/733581/diff/1/ 
+
+
+
 
 stack viewer:
 1. matlab global, persistent vars not showing up
