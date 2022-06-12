@@ -28,8 +28,9 @@ no signal handler: sigstop
 abort/assert calls sigabrt
 Ctrl-c calls sigstop
 Ctrl-z calls sigint
-converting constructor vs explicit constructor
-converting operator overload
+constructor: converting(normal/non-explicit) vs explicit 
+user-defind conversion functions: converting(normal) or explicit
+narrowing conversion warnings only for direct-list-initialiation or copy-list-initialiation
 MWTOOLS
 sbruntests -cfg sfcore -cfg slstring -cfg reqtable
 
