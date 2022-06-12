@@ -33,8 +33,16 @@ constructor: converting(normal/non-explicit) vs explicit
 user-defind conversion functions: converting(normal) or explicit
 narrowing conversion warnings only for direct-list-initialiation or copy-list-initialiation
 typeid keyword requires #include<typeinfo> 
+decltype<declval<T>(constructorargs).nonstaticfunction(functionargs)> to get a return type of non-static function's return value without class object
+declval constructorargs and functionargs are not evaluated.
+declval can only be used in unevaluated context;
+unevaluted vs evaluated context:
+
 MWTOOLS
 sbruntests -cfg sfcore -cfg slstring -cfg reqtable
+sbmake/sbcc DEBUG   Mode == DEBUG=1 ASSERTS=1 => -g -O0 
+sbmake/sbcc MIXED   Mode == DEBUG=  ASSERTS=1 =>    -O1
+sbmake/sbcc RELEASE Mode == DEBUG=  ASSERTS=0 =>    -O3 -DNDEBUG
 
 IDEAS
 1. gdb debug symbols: does it load every time I run MATLAB in same session. can it be made faster
@@ -54,10 +62,6 @@ end
 
 Simulink
 
-MWTOOLS
-sbmake/sbcc DEBUG   Mode == DEBUG=1 ASSERTS=1 => -g -O0 
-sbmake/sbcc MIXED   Mode == DEBUG=  ASSERTS=1 =>    -O3
-sbmake/sbcc RELEASE Mode == DEBUG=  ASSERTS=0 =>    -O3 -DNDEBUG
 postcodegen:  https://reviewboard.mathworks.com/r/733581/diff/1/ 
 
 
