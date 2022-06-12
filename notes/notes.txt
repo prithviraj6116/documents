@@ -28,7 +28,8 @@ no signal handler: sigstop
 abort/assert calls sigabrt
 Ctrl-c calls sigstop
 Ctrl-z calls sigint
-
+converting constructor vs explicit constructor
+converting operator overload
 MWTOOLS
 sbruntests -cfg sfcore -cfg slstring -cfg reqtable
 
