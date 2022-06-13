@@ -42,6 +42,9 @@ types: fundamental(arithmetic,void, nullptr_t),derived(function,array,pointer,me
        arithmetic(integral,floating),integral(bool,char,int),floating(float,double),member_pointer(member_object,member_function),reference(lvalue_reference,rvalue_reference)
        scalar(arithmetic,nullptr_t,pointer,member_pointer,enum),compound(derived,user-defined)
        object(scalar,array,union,class) non_object(void,function,reference)
+standard layout vs aggregate vs trivial vs literal vs POD: Code#101   https://stackoverflow.com/questions/6496545/trivial-vs-standard-layout-vs-pod
+SFINAE: std::void_t vs enable_if 
+
 
 MWTOOLS
 sbruntests -cfg sfcore -cfg slstring -cfg reqtable
@@ -925,3 +928,83 @@ class E1BS {
         return b1[var1] | test(var2...);
     }
 };
+
+
+
+
+Code#101
+#include <boost/type_index.hpp>
+#include <iostream>
+#include<functional>
+#include<type_traits>
+using namespace std;
+template <class T>
+void foo(T&&) {
+    std::cout << "\n Short name: " << boost::typeindex::type_id<T>().raw_name();
+    std::cout << "\n Readable name: " << boost::typeindex::type_id<T>().pretty_name() << std::endl;
+}
+struct s1{
+    int i1;
+    int i2;
+};
+struct s2{
+    int i1;
+    private:
+    int i2;
+};
+struct s3{
+    s3(){}
+    int i1;
+    int i2;
+};
+struct s4{
+    ~s4(){}
+    int i1;
+    int i2;
+};
+struct s5{
+    virtual void f1(){}
+    int i1;
+    int i2;
+};
+struct s6{
+    private:
+    int i1;
+    int i2;
+};
+enum class E1{E11};
+struct s7{
+    E1 i1;
+    int j1[3][7];
+    int i2;
+};
+
+template<typename T>
+void f1(T t1,const char* t2) {
+    cout << "                   "  << typeid(T).name() << ": " << t2 << endl;
+    cout << "is_standard_layout: " << is_standard_layout<T>::value << endl; 
+    cout << "is_aggregate:       " << is_aggregate<T>::value << endl; 
+    cout << "is_trivial:         " << is_trivial<T>::value << endl; 
+    cout << "is_literal_type:    " << is_literal_type<T>::value << endl; 
+    cout << "is_pod:             " << is_pod<T>::value << endl; 
+}
+int main() {
+    s1 s1v={1,2};
+    s2 s2v;
+    s3 s3v;
+    s4 s4v={1,2};
+    s5 s5v;
+    s6 s6v;
+    s7 s7v;
+    f1(s1v,"nothing");
+    f1(s2v,"private-public");
+    f1(s3v,"constructor");
+    f1(s4v,"destructor");
+    f1(s5v,"virtual function");
+    f1(s6v,"all private");
+    f1(s7v,"enum member");
+    
+}
+
+
+
