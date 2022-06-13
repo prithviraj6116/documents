@@ -37,6 +37,11 @@ decltype<declval<T>(constructorargs).nonstaticfunction(functionargs)> to get a r
 declval constructorargs and functionargs are not evaluated.
 declval can only be used in unevaluated context;
 unevaluted vs evaluated context:
+tie, make_tuple and forward_as_tuple
+types: fundamental(arithmetic,void, nullptr_t),derived(function,array,pointer,member_pointer(?),reference), user-defined(class,enum,union, typedef(?)),
+       arithmetic(integral,floating),integral(bool,char,int),floating(float,double),member_pointer(member_object,member_function),reference(lvalue_reference,rvalue_reference)
+       scalar(arithmetic,nullptr_t,pointer,member_pointer,enum),compound(derived,user-defined)
+       object(scalar,array,union,class) non_object(void,function,reference)
 
 MWTOOLS
 sbruntests -cfg sfcore -cfg slstring -cfg reqtable
