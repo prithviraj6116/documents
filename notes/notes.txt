@@ -3,6 +3,8 @@ BUGS
 2. zerojitemissions is not respected by emlreport which is always created at slprj/_sfprj/EMLReport/
 3. nonjit or jit simulation does not always generate single code for single specialization
 4. sfgco on modelref charts does not work
+5. enum of type u32/i64/u64 works in MATLAB not in SF/Simulink
+6. imported enum where enums are same in c and m but values are not: value taken from cenum and hover over does not work.
 
 REVIEW BOARD
 link time optimizations, initialization, initializer list, uniform initialization, 
@@ -77,7 +79,7 @@ Simulink/Stateflow
    ns/ns,a/ns,i/ns,e/ns:                                                                siet:defines enum    u81632: defines u81632 macros  ns: invalid m enum
    ns/s,a/s,i/s        :                                                                siet:imports         u81632: imports header         ns: invalid m enum
    e/s                 :                                                                siet:defines enum    u81632: defines u81632 macros  ns: invalid m enum
-
+Simulink.data.getEnumTypeInfo
 postcodegen:  https://reviewboard.mathworks.com/r/733581/diff/1/ 
 
 
