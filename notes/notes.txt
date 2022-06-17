@@ -50,6 +50,7 @@ standard layout vs aggregate vs trivial vs literal vs POD: Code#101   https://st
 SFINAE: std::void_t vs enable_if 
 std::any vs std::variant: https://stackoverflow.com/questions/56303939/c-stdvariant-vs-stdany  
      any==void* variant==union
+c enum forward declaration is incomplete, c++ enum forward declaration with associated type is complete declaration.
 
 MWTOOLS
 sbruntests -cfg sfcore -cfg slstring -cfg reqtable
