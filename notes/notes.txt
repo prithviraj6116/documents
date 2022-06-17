@@ -71,7 +71,11 @@ red,blue,yellow
 end
 end
 
-Simulink
+Simulink/Stateflow
+1. datascope(not-specified,auto,imported,exported)/headerfile(not-specified/specified), type(Simulink.IntEnumType, uint8, uint16, uint32,not-specified)
+   ns/ns,a/ns,i/ns,e/ns: siet:defines enum    u81632: defines uint8 macros  ns:
+   ns/s,a/s,i/s        : siet:imports         u81632: imports               ns:
+   e/s                 : siet:
 
 postcodegen:  https://reviewboard.mathworks.com/r/733581/diff/1/ 
 
