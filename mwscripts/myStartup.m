@@ -1,7 +1,10 @@
 function myStartup
     setMATLABTitle;
 %     setFileGenDir;
- 
+ sbmatlabcmdhelper
+end
+function sbmatlabcmdhelper()
+     addpath('//mathworks/hub/share/sbtools/matlab-cmds'); rehash;
 end
 function setFileGenDir
     cfg=Simulink.fileGenControl('getConfig');
@@ -187,4 +190,23 @@ function dummyFunction1
     %v=sf('get',sf('find',sf('SubstatesIn',sf('get',sf('GetSFBlockData',gcbh),'instance.chart')),'state.name','A'),'state.simulink.blockHandle')
     %sf('get',sf('GetSFBlockData',get_param(get_param(gcbh,'ReferenceBlock'),'handle')),'instance.chart')
     %getappdata(get_param(sf('get',sf('GetSFBlockData',get_param(get_param(gcbh,'ReferenceBlock'),'handle')),'instance.sfunctionBlock'),'Object'),'SF_InstanceSpecChecksum')
+end
+function tempf1
+    sfc('coder_options','forceNonJitBuild',1);
+    sf('feature','Pretty print CGIR logs',1);
+    sf('feature','Use global scope when pretty printing CGIR logs',1);
+    internal.cgir.Debug.turnOnPrettyPrints();
+    cgirrtwdebug=internal.cgir.Debug;
+    cgirrtwdebug.PrettyPrinter.EnabledBefore=1;
+    cgirrtwdebug.PrettyPrinter.EnabledAfter=1;
+    cgirrtwdebug.PrettyPrinter.EnabledGlobalScope=1;
+    cgirrtwdebug.PrettyPrinter.RemoveIdenticalFiles=1;
+    cgirrtwdebug.TransformLogService.Enabled=1;
+    cgirrtwdebug.TransformLogService.EnabledGlobalScope=1;
+    cgirrtwdebug.NamePrinter.Enabled=1;
+    %slfeature('rtwcgir',6);
+    sf('feature','Globals to Locals',0);
+    sf('feature','Local Reuse',0);
+    sf('feature','Local Dead Code Enhanced',0);
+    sf('feature','Globals Reuse',0);
 end

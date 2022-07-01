@@ -84,6 +84,7 @@ define load_sl_libs
 end
 define load_sf_libs
     sharedlibrary libmwstateflow.so
+    sharedlibrary stateflow/sf_sfun.mexa64
     sharedlibrary libmwsf_runtime.so
     sharedlibrary libmwsf_variants.so
 end
