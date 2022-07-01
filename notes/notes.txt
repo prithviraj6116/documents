@@ -58,7 +58,7 @@ sbmake/sbcc DEBUG   Mode == DEBUG=1 ASSERTS=1 => -g -O0
 sbmake/sbcc MIXED   Mode == DEBUG=  ASSERTS=1 =>    -O1
 sbmake/sbcc RELEASE Mode == DEBUG=  ASSERTS=0 =>    -O3 -DNDEBUG
 in non-jit genereted code-directory, open .mku file and add -v to CC as "CC = /local-ssd/ppatil/fexp2/matlab/bin/mex -R2018a -v" 
-sim(modelName,'SimulationMode','normal'/'accelerator'/'rapid-accelerator');
+sim(modelName,'SimulationMode','normal'/'accel'/'rapid'/'software');
 rtwbuild(modelName);slbuild(modelName,noarg/'StandaloneCoderTarget'/'ModelReferenceSimTarget');
 
 IDEAS
