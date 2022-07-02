@@ -1025,7 +1025,14 @@ int main() {
 
 
 Code_102
-
+evil_purgedir('all');y2=sim(modelName,'SimulationMode','normal');
+evil_purgedir('all');y2=sim(modelName,'SimulationMode','accel');
+evil_purgedir('all');y2=sim(modelName,'SimulationMode','rapid');
+evil_purgedir('all');y2=sim(modelName,'SimulationMode','software');
+evil_purgedir('all');y2=sim(modelName,'SimulationMode','processor');
+evil_purgedir('all');slbuild(modelName,'ModelReferenceSimTarget');
+evil_purgedir('all');slbuild(modelName,'StandaloneCoderTarget');
+in: fullfile(matlabroot,'toolbox/stateflow/coder/private/compute_target_info.m') at line 248
 disp('-------------pass---begin---------');
 disp(['Target: ', targetName]);
 disp(['SimulationMode:', get_param(mainMachineName, 'SimulationMode')]);
@@ -1040,3 +1047,5 @@ if ~isempty(targetProps)
 else
     disp('None: targetProps')
 end
+
+disp('-------------pass---end---------');
