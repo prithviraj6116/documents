@@ -61,6 +61,9 @@ in non-jit genereted code-directory, open .mku file and add -v to CC as "CC = /l
 sim(modelName,'SimulationMode','normal'/'accel'/'rapid'/'software');
 rtwbuild(modelName);slbuild(modelName,noarg/'StandaloneCoderTarget'/'ModelReferenceSimTarget');Code_102
 
+
+Linux/Windows:
+watch: to repeat commands every x seconds
 IDEAS
 1. gdb debug symbols: does it load every time I run MATLAB in same session. can it be made faster
 2. gdbserver, gdb like fsb
