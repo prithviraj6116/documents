@@ -35,6 +35,7 @@ set incsearch
 filetype plugin indent on
 set verbose=0
 "let g:netrw_preview = 1
+let g:termdebug_logger_enabled=1
 
 
 

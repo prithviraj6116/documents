@@ -1,4 +1,4 @@
-BUGS
+BUGS 
 1. sldd enum export does not work
 2. zerojitemissions is not respected by emlreport which is always created at slprj/_sfprj/EMLReport/
 3. nonjit or jit simulation does not always generate single code for single specialization
@@ -71,7 +71,14 @@ IDEAS
 4. matlab based GUI like fsb
 5. issues with debian 11 gdb: continue while program is running
 6. call stack graph traversing outside debugging
-7. vim gdb fixes: (1) stack frames "see more frames" link issue (2) Downstack (D) when in last frame file but on different line (3) gdb window refresh issue (4) remove tty and prompt
+7. vim gdb fixes: (1) stack frames "see more frames" link issue 
+                  (2) Downstack (D) when in last frame file but on different line 
+                  (3) gdb window refresh issue 
+                  (4) remove tty and prompt
+                  (5) run with local gdb (/usr/bin/gdb)
+                  (6) jit crash
+                  (7) fix logging
+                  (8)   ../../src/gdb/value.c:3968: internal-error: Unexpected lazy value type
 
 MATLAB
 ML enumeration properties v=mycolors.Red; v.prop1; where prop1 is the property of mycolors and Red is enumeration of mycolor
