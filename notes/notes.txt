@@ -79,6 +79,10 @@ IDEAS
                   (6) jit crash
                   (7) fix logging
                   (8)   ../../src/gdb/value.c:3968: internal-error: Unexpected lazy value type
+                  (9) merge sbv-tools to sbv-runtime
+                  (10)common viminfo
+                  (11)common gdbinit
+                  (12) attach_sf layer
 
 MATLAB
 ML enumeration properties v=mycolors.Red; v.prop1; where prop1 is the property of mycolors and Red is enumeration of mycolor
