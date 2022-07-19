@@ -6,9 +6,54 @@
 #
 
 
+source /mathworks/hub/share/sbtools/.gdbinit
 set height 0
 set breakpoint pending on
 breaksegv
+
+
+
+
+define load_common_libs
+    sb-auto-load-libs libmw\(stateflow\|sf_\)
+    sb-auto-load-libs libmw\(cg_ir\|cgir_support\|cgir_xform\)
+    sb-auto-load-libs libmw\(mcr\|fl\|sl_services\)
+    sb-auto-load-libs sf_sfun
+    sb-auto-load-libs sf_req
+    #sb-auto-load-libs sf_builtin
+    #sb-auto-load-libs sf.mexa64
+    #sb-auto-load-libs libmwlxemainservices
+    #sb-auto-load-libs libmex
+    #sb-auto-load-libs libmwm_dispatcher
+end
+
+define quick_attach_sf2
+    set auto-solib-add off
+    attach $arg0
+    load_common_libs
+end
+
+
+define mstack
+  printf "%s", SF::dbstack()
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 define locals-up
@@ -45,9 +90,6 @@ end
 
 handle SIGSEGV nostop noprint
 
-define mstack
-  printf "%s", SF::dbstack()
-end
 document mstack
 Dumps the MATLAB callstack (dbstack)
 end
@@ -61,10 +103,12 @@ end
 define a1
     set auto-solib-add off
     attach $arg0
+    #sharedlibrary libmwstateflow
     load_ml_libs
-    load_sf_libs
-    loadsymsSF
-    sharedlibrary stateflow/sf_sfun.mexa64
+    sb-auto-load-libs libmwstateflow
+    #load_sf_libs
+    #loadsymsSF
+    #sharedlibrary stateflow/sf_sfun.mexa64
 end
 define load_ml_libs
     # libraries needed so breaksegv works:
@@ -179,7 +223,7 @@ define loadsymsSF
 
 
   # display breakpoint status, so one knows symbols were loaded
-  info break
+  #info break
 end
 #---------------------#
 # Unit test debugging #

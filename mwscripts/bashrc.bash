@@ -4,7 +4,7 @@ export LOCATION=AH
 export BUILD_SRC_SIMULINK=1
 export VISUAL=gvim
 export EDITOR=gvim
-
+export SBTOOLS_VNC_WINDOW_MGR=mate-session
 
 function p4o {
     export PPP_P4OPENED=$(p4 opened)

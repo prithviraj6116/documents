@@ -64,6 +64,8 @@ rtwbuild(modelName);slbuild(modelName,noarg/'StandaloneCoderTarget'/'ModelRefere
 
 Linux/Windows:
 watch: to repeat commands every x seconds
+desktop envorinment: sudo update-alternatives --set x-session-manager /usr/bin/mate-session
+                     ls /usr/share/xsessions
 IDEAS
 1. gdb debug symbols: does it load every time I run MATLAB in same session. can it be made faster
 2. gdbserver, gdb like fsb
