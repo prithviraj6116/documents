@@ -53,6 +53,7 @@ std::any vs std::variant: https://stackoverflow.com/questions/56303939/c-stdvari
 c enum forward declaration is incomplete, c++ enum forward declaration with associated type is complete declaration.
 
 MWTOOLS
+find vs ftfind: ft-find respects .gitignore
 sbruntests -cfg sfcore -cfg slstring -cfg reqtable
 sbmake/sbcc DEBUG   Mode == DEBUG=1 ASSERTS=1 => -g -O0 
 sbmake/sbcc MIXED   Mode == DEBUG=  ASSERTS=1 => -g -O2
