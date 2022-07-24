@@ -62,6 +62,7 @@ in non-jit genereted code-directory, open .mku file and add -v to CC as "CC = /l
 sim(modelName,'SimulationMode','normal'/'accel'/'rapid'/'software');
 rtwbuild(modelName);slbuild(modelName,noarg/'StandaloneCoderTarget'/'ModelReferenceSimTarget');Code_102
 c = sfgco; sf('PrettyPrintAst',c.id)
+md=Simulink.ModelAdvisor.getModelAdvisor('ppp1');w1=md.runCheck('mathworks.hism.hisf_0015');md.displayReport;
 
 Linux/Windows:
 watch: to repeat commands every x seconds
