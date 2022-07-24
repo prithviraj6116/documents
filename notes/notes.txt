@@ -53,7 +53,7 @@ std::any vs std::variant: https://stackoverflow.com/questions/56303939/c-stdvari
 c enum forward declaration is incomplete, c++ enum forward declaration with associated type is complete declaration.
 
 MWTOOLS
-find vs ftfind: ft-find respects .gitignore
+find vs fd: fd ignores hidden files
 sbruntests -cfg sfcore -cfg slstring -cfg reqtable
 sbmake/sbcc DEBUG   Mode == DEBUG=1 ASSERTS=1 => -g -O0 
 sbmake/sbcc MIXED   Mode == DEBUG=  ASSERTS=1 => -g -O2
@@ -61,7 +61,7 @@ sbmake/sbcc RELEASE Mode == DEBUG=  ASSERTS=0 => -g -O2 -DNDEBUG
 in non-jit genereted code-directory, open .mku file and add -v to CC as "CC = /local-ssd/ppatil/fexp2/matlab/bin/mex -R2018a -v" 
 sim(modelName,'SimulationMode','normal'/'accel'/'rapid'/'software');
 rtwbuild(modelName);slbuild(modelName,noarg/'StandaloneCoderTarget'/'ModelReferenceSimTarget');Code_102
-
+c = sfgco; sf('PrettyPrintAst',c.id)
 
 Linux/Windows:
 watch: to repeat commands every x seconds
