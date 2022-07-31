@@ -71,11 +71,13 @@ desktop envorinment: sudo update-alternatives --set x-session-manager /usr/bin/m
 IDEAS 
 1. gdb debug symbols: does it load every time I run MATLAB in same session. can it be made faster
 2. gdbserver, gdb like fsb
-3. hybrid stack: MATLAB, c++, Java,
+3. hybrid stack: MATLAB, c++, JavaScipt,
 4. matlab based GUI like fsb
 5. issues with debian 11 gdb: continue while program is running
 6. call stack graph traversing outside debugging
-7. vim gdb fixes: (1) stack frames "see more frames" link issue 
+7. gdb generic pval to work with enum,enum class,macros,pointers
+8. sbruntests -cfg sfcore_not_in_bstateflow.txt
+8. vim gdb fixes: (1) stack frames "see more frames" link issue 
                   (2) Downstack (D) when in last frame file but on different line 
                   (3) gdb window refresh issue 
                   (4) remove tty and prompt
