@@ -14,8 +14,6 @@ set dir=/tmp
 set history=1000
 set lines=999 columns=1000
 syntax on
-highlight cursor guifg=red guibg=blue
-highlight statusline guifg=green guibg=red
 set laststatus=2
 set number
 set hidden
@@ -35,7 +33,12 @@ set incsearch
 filetype plugin indent on
 set verbose=0
 "let g:netrw_preview = 1
-
+"highlight cursor guifg=red guibg=blue
+"highlight statusline guifg=green guibg=red
+highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=17 gui=bold guifg=blue guibg=green
+highlight DiffDelete cterm=bold ctermfg=10 ctermbg=17 gui=bold guifg=blue guibg=red
+highlight DiffChange cterm=bold ctermfg=10 ctermbg=17 gui=bold guifg=blue guibg=yellow
+highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=bold guifg=blue guibg=pink
 
 
 "map - :Ex<ENTER>

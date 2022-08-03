@@ -1070,3 +1070,23 @@ else
 end
 
 disp('-------------pass---end---------');
+
+
+func! s:MakeGDBCommandLineVisibleAndInTerminalMode(msg)
+    let curwinid = win_getid(winnr())
+    call win_gotoid(s:gdbwin)
+    let gdbwinmode= mode()
+    if gdbwinmode != 't'
+        normal! GA
+    endif
+    call win_gotoid(curwinid)
+endfunc
+
+func! s:OnGdbMainOutput(dict, chan, msg)
+  if s:foundGdbPrompt
+      if a:msg =~ '(gdb)'
+          " GDB command is finished executing.
+          call s:MakeGDBCommandLineVisibleAndInTerminalMode(a:msg)
+      endif
+      return
+  endif
