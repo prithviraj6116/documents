@@ -69,6 +69,7 @@ watch: to repeat commands every x seconds
 desktop envorinment: sudo update-alternatives --set x-session-manager /usr/bin/mate-session
                      ls /usr/share/xsessions
 IDEAS 
+9. warn on putting breakpoint on dll build without -O0
 1. gdb debug symbols: does it load every time I run MATLAB in same session. can it be made faster
 2. gdbserver, gdb like fsb
 3. hybrid stack: MATLAB, c++, JavaScipt,
@@ -1090,3 +1091,34 @@ func! s:OnGdbMainOutput(dict, chan, msg)
       endif
       return
   endif
+
+
+
+sb -r "sfnew;bdclose all" &
+>> cd ~/Downloads/old1/stu18
+
+gvim toolbox/simulink/hmi/sl_hmi/util/util.cpp toolbox/vision/src/scopes/VideoViewer.cpp toolbox/stateflow/src/stateflow/cdr/cdr_semantics_state.cpp toolbox/stateflow/src/sf_sfun/sf_sfun.cpp +306 &
+
+breakpoint on util.cpp 290
+brakpoint on VideoViewer.cpp 384
+
+openExample('vision/TrackingMarkerUsingSimulinkImagesExample')
+TrackingMarkerUsingSimulinkImagesExample
+
+util.cpp 287
+
+
+
+
+With GDB
+(1)  (gdb) hybrid_stack
+(2)  (gdb) pmxval mxArrayArg
+     (gdb) pmxval mxArrayArg "field1(index).field2{cellarrayIndex}"
+(3)  (gdb) pmstackval stacklevel comandtoEvalute
+
+
+printf "%s", SF:printf "%s", SF::EvaluateCmdAtMATLABStackLevel(2,"status")
+printf "%s", SF::GetMLValueStr(mxArrayArg,"")
+printf "%s", SF::GetMLValueStr(mxArrayArg,".field1(index).field2{cellarrayindex}")
+
+
