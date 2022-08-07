@@ -69,6 +69,8 @@ watch: to repeat commands every x seconds
 desktop envorinment: sudo update-alternatives --set x-session-manager /usr/bin/mate-session
                      ls /usr/share/xsessions
 IDEAS 
+11. debug dll copy from some cronjob sandbox to sbsyncmaster/sbclone
+10. loadSymbolsForBreakpoints() in gdb to be used by emcas, vscode
 9. warn on putting breakpoint on dll build without -O0
 1. gdb debug symbols: does it load every time I run MATLAB in same session. can it be made faster
 2. gdbserver, gdb like fsb
@@ -100,6 +102,7 @@ end
 end
 
 Simulink/Stateflow
+1. DO-178C qualification tools, JMAAB,
 1. datascope(not-specified,auto,imported,exported)/headerfile(not-specified/specified): type(Simulink.IntEnumType, uint8, uint16, uint32,not-specified)
    
    ns/ns,a/ns,i/ns,e/ns:                                                                siet:defines enum    u81632: defines u81632 macros  ns: invalid m enum
