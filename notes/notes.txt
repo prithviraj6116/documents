@@ -1125,3 +1125,6 @@ printf "%s", SF::GetMLValueStr(mxArrayArg,"")
 printf "%s", SF::GetMLValueStr(mxArrayArg,".field1(index).field2{cellarrayindex}")
 
 
+ yes | sbsmartbuild -opened -ignore-failed-modules -lean -no-ch-validate
+
+
