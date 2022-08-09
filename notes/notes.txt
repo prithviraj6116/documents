@@ -5,6 +5,44 @@ BUGS
 4. sfgco on modelref charts does not work
 5. enum of type u32/i64/u64 works in MATLAB not in SF/Simulink
 6. imported enum where enums are same in c and m but values are not: value taken from cenum and hover over does not work.
+7. isTemporaryMachineContext: is not required anymore
+
+Mathworks Apps
+Mathworks Products
+1: Coders: MATLAB, Simlink, Embedded, HDL, GPU, PLC, Filter Design HDL, 
+2: Compiler: MATLAB, Simulink, MATLAB SDK, 
+3. VnV: Test, Design Verifier, Design Optimizer, Coverage, 
+        HDL Verifier, Check, Code Inspector, Requirement Toolbox,
+        Polyspace Code Prover, Polyspace Bug Finder, Polyspace Ada,
+        IEC Certification, DO Qualification Kit, 
+4. MATLAB: Drive, Grader, In the Cloud, Mobile, Parallel Server, 
+           Report Generator, Web App Server
+5. Simulink: Control Design,  RealTime, Desktop RealTime, Report Generator,
+             Stateflow, System Composure, 
+6. Toolbox/Blockset/Testbench: 
+   6.1 5G, LTE, Wireless HDL, Antenna, Bluetooth, Communication,
+       Industrial Communication, RADAR, LIDAR, RF Toolbox, 
+       RF Blockset, RF PCB, Satellite Communication, Signal Processing,
+       DSP System, DSP HDL, WLAN, Wavelet, Wireless Testbench, UAV,
+       Signal Integrity, Mixed Signal, 
+   6.2 Image acq, Image processing, Vision HDL, Computer Vision, 
+       Audio,
+   6.3 SimBiology, Sensor Fusion and Tracking, ROS, Robust Control, 
+       RoadRunner, RoadRunner Scenario, Risk Management, Reinforcement 
+       Learning, Predictive Maintenance, Powertrain, Parallel Computing,
+       Phased Array System, Partial Differential Equations, Optimization,
+       Navigation, Motor Control, Model Predictive Control, Model-Based 
+       Calibration, Mapping, Instrument Control, Global Optimization, Fuzzy
+       Logic, Financial, Financial Instruments, Econometric, Deep Learning, 
+       Deep Learning HDL, DDS, Datafeed, Database, Data Acq, Curve Fitting,
+       Control System, BioInformatics, AUTOSAR, Automated Driving, Aerospace
+       Toobox, Aerospace Blockset, Installation and Licensing, SerDes, 
+       SimEvents, SoC, Spreadsheet Link, Statistic and Machine Learning, 
+       Symbolic Math, Text Analysis, ThingSpeaks, Vehicle Dynamics, Robotic 
+       system, Robotic control, Fixed-point,
+7. Simscape: Driveline, Electric, Fluids, Multibody, Multibody Link
+
+
 
 REVIEW BOARD
 link time optimizations, initialization, initializer list, uniform initialization, 
@@ -1125,6 +1163,6 @@ printf "%s", SF::GetMLValueStr(mxArrayArg,"")
 printf "%s", SF::GetMLValueStr(mxArrayArg,".field1(index).field2{cellarrayindex}")
 
 
- yes | sbsmartbuild -opened -ignore-failed-modules -lean -no-ch-validate
+yes | sbsmartbuild -opened -ignore-failed-modules -lean -no-ch-validate  -no-sbindent-files-in-lockdown
 
 
