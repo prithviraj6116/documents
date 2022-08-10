@@ -6,6 +6,7 @@ BUGS
 5. enum of type u32/i64/u64 works in MATLAB not in SF/Simulink
 6. imported enum where enums are same in c and m but values are not: value taken from cenum and hover over does not work.
 7. isTemporaryMachineContext: is not required anymore
+8. do we need GEN_FCN_GET_STATEFLOW_RTWCONTEXT? if so, why?
 
 Mathworks Apps
 Mathworks Products
