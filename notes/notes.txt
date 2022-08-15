@@ -59,6 +59,8 @@ literal/aggregate/standardlayout/trivial/pod, array/vector/valarray,bitset/vecto
 C++20/RB/modernize:source_location
 
 C/C++
+non-exported symbols: nm libname.so | grep ' t '
+exported symbols:     nm libname.so | grep ' T '
 tuple implemention: multiple inheritance via variadic template
 sizeof...
 print type name:
