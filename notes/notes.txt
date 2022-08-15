@@ -8,6 +8,7 @@ BUGS
 7. isTemporaryMachineContext: is not required anymore
 8. do we need GEN_FCN_GET_STATEFLOW_RTWCONTEXT? if so, why?
 9. ctxInfo->isCodingSimCG: might not be used 
+10. targetman.m#184 is redudant   infomatman('save','binary',machineId,mainMachineId,targetId,binaryDateNum);
 Mathworks Apps
 Mathworks Products
 1: Coders: MATLAB, Simlink, Embedded, HDL, GPU, PLC, Filter Design HDL, 
