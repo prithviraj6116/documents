@@ -95,6 +95,11 @@ std::any vs std::variant: https://stackoverflow.com/questions/56303939/c-stdvari
 c enum forward declaration is incomplete, c++ enum forward declaration with associated type is complete declaration.
 
 MWTOOLS
+valgrind:
+   sb -memmgr "debug,nonewhandler" -nodesktop -nosplash -nojvm
+   MATLAB_MEM_MGR="debug,noleakcheck" "/local-ssd/ppatil/dsm1/matlab/bin/glnxa64/MATLAB" -nosplash -softwareopengl -nodesktop
+   http://inside.mathworks.com/wiki/Category:Native_Memory_Diagnostics
+   >>feature('memmgr')
 find vs fd: fd ignores hidden files
 sbruntests -cfg sfcore -cfg slstring -cfg reqtable
 sbmake/sbcc DEBUG   Mode == DEBUG=1 ASSERTS=1 => -g -O0 
