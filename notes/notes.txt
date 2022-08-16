@@ -95,11 +95,17 @@ std::any vs std::variant: https://stackoverflow.com/questions/56303939/c-stdvari
 c enum forward declaration is incomplete, c++ enum forward declaration with associated type is complete declaration.
 
 MWTOOLS
+
+emacs: sbe, vertical split:c-x-3, gdb:c-x-m-d, breakpoint: c-x-a-b
 valgrind:
+   cd /mathworks/devel/sandbox/jaadm/Bmain_valgrind_debug/latest_valgrind_pass; mw -using Bmain sbs clone create -snapshot clone_me -n q1_valgrind
+   sbsync-and-make -src-root Bmain -run-sbvalsetup -build-type debug -ignore-failed-modules
    sb -memmgr "debug,nonewhandler" -nodesktop -nosplash -nojvm
    MATLAB_MEM_MGR="debug,noleakcheck" "/local-ssd/ppatil/dsm1/matlab/bin/glnxa64/MATLAB" -nosplash -softwareopengl -nodesktop
    http://inside.mathworks.com/wiki/Category:Native_Memory_Diagnostics
    >>feature('memmgr')
+   sbmake --eval=BASE_REQS=valgrind DEBUG=1
+   IVF:invalid free, IVR: invalid read, IVW: invalid write, MMF: mismatched free, UNC: un-initialized condition, UNV: uninitialized value
 find vs fd: fd ignores hidden files
 sbruntests -cfg sfcore -cfg slstring -cfg reqtable
 sbmake/sbcc DEBUG   Mode == DEBUG=1 ASSERTS=1 => -g -O0 
