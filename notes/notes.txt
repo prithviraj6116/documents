@@ -1,4 +1,4 @@
-BUGS 
+BUGS /
 1. sldd enum export does not work
 2. zerojitemissions is not respected by emlreport which is always created at slprj/_sfprj/EMLReport/
 3. nonjit or jit simulation does not always generate single code for single specialization
@@ -9,6 +9,7 @@ BUGS
 8. do we need GEN_FCN_GET_STATEFLOW_RTWCONTEXT? if so, why?
 9. ctxInfo->isCodingSimCG: might not be used 
 10. targetman.m#184 is redudant   infomatman('save','binary',machineId,mainMachineId,targetId,binaryDateNum);
+11. dsm with diagnostics enabled written in for loop in EML chart
 Mathworks Apps
 Mathworks Products
 1: Coders: MATLAB, Simlink, Embedded, HDL, GPU, PLC, Filter Design HDL, 
@@ -118,6 +119,8 @@ c = sfgco; sf('PrettyPrintAst',c.id)
 md=Simulink.ModelAdvisor.getModelAdvisor('ppp1');w1=md.runCheck('mathworks.hism.hisf_0015');md.displayReport;
 
 Linux/Windows:
+du -sh *
+df -h | grep ppatil
 watch: to repeat commands every x seconds
 desktop envorinment: sudo update-alternatives --set x-session-manager /usr/bin/mate-session
                      ls /usr/share/xsessions
@@ -163,7 +166,7 @@ Simulink/Stateflow
    e/s                 :                                                                siet:defines enum    u81632: defines u81632 macros  ns: invalid m enum
 Simulink.data.getEnumTypeInfo
 postcodegen:  https://reviewboard.mathworks.com/r/733581/diff/1/ 
-
+simulink model status bar: modeling->environment
 
 
 
@@ -182,6 +185,11 @@ a:
 linux: fg, bg
 sbvim
 vim cmd:  :help sbvim
+:set ignorecase 
+:set noignorecase  (unset)
+:set ignorecase& (set to default)
+:echo &ignorecase
+
 how to get vim help
 vim:  ": help command",":map key" 
 :help
