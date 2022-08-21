@@ -149,6 +149,9 @@ IDEAS
                   (11)common gdbinit
                   (12) attach_sf layer
 
+vs code:
+/mathworks/inside/labs/dev/matlab_coder_tools/vscodeproj/vscodeproj/vsproj.py --proj stateflow_core,sf_analysis,sf_cdr,sf_dd,sf_il,sf_ir,sf_req,sf_req_analysis,sf_services,sf_shared,sf_xform,cgir_core,cgir_algorithm,eml_inference --clangd
+
 MATLAB
 ML enumeration properties v=mycolors.Red; v.prop1; where prop1 is the property of mycolors and Red is enumeration of mycolor
 classdef mycolors  Or classdef mycolors < uint8 (now enum will implicitly convert to uint8)
