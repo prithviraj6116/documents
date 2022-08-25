@@ -697,7 +697,13 @@ slflist= slfeature('query','stateflow');
 mw runlikebat -testlist test/toolbox/stateflow/sf_in_matlab/bug_fixes/tg1879530_BPonCommentedTransition.m -interactive -logs /tmp/asvs
 get_param(blockPathOrModel,'ObjectParameters');
 get_param(blockPathOrModel,'DialogParameters');
+get_param(blockPathOrModel,'IntrinsicDialogParameters');
+get_param(blockPathOrModel,'AlgorithmParameters');
+get_param(blockPathOrModel,'SecondaryAlgorithmParameters');
 get_param(0, 'CurrentSystem');
+parameters:
+https://www.technblogy.com/2020/12/30/get-the-parameters-of-simulink-block/
+get(get_param(<modelname>,'handle'))
 
 get_param(blockH, 'parent') vs getfullname(blockH)
 get_param(blockH, 'ReferenceBlock')
