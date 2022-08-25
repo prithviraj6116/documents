@@ -1,3 +1,6 @@
+TODO:
+System composure license: https://web.yammer.com/main/org/mathworks.com/threads/eyJfdHlwZSI6IlRocmVhZCIsImlkIjoiMTcyMTE3MDAzNjk1NzE4NCJ9
+
 BUGS /
 1. sldd enum export does not work
 2. zerojitemissions is not respected by emlreport which is always created at slprj/_sfprj/EMLReport/
@@ -943,7 +946,10 @@ mw -using Bllvm sbs -c Bllvm -A t30 -j 1043404
 mw  sbs clone alias sfxCoder2_a1
 mw sbs -u -alias t30
 license commands	
- 
+mw -using R2022a sbinstallmatlab -from R2022a -to sflic2/ -products "MATLAB,Simulink,MATLAB Report Generator,Requirements Toolbox,Simulink Report Generator,Simulink Test,System Composer"
+license('inuse')
+license('inuse','productname')
+ver
  feature('lmfeaturelist')
  feature ('lmsearchpath')
 mw matlab -c licensefile
