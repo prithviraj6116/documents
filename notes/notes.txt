@@ -701,6 +701,7 @@ get_param(blockPathOrModel,'IntrinsicDialogParameters');
 get_param(blockPathOrModel,'AlgorithmParameters');
 get_param(blockPathOrModel,'SecondaryAlgorithmParameters');
 get_param(0, 'CurrentSystem');
+SLPrmDescTypes.hpp contains paramcategory and paramtypes
 parameters:
 https://www.technblogy.com/2020/12/30/get-the-parameters-of-simulink-block/
 get(get_param(<modelname>,'handle'))
