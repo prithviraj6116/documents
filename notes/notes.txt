@@ -695,7 +695,7 @@ matlab/src/sl_graphical_classes/export/include/sl_graphical_classes/RegisterMode
 allslfeature=slf_feature('report');
 slflist= slfeature('query','stateflow');
 mw runlikebat -testlist test/toolbox/stateflow/sf_in_matlab/bug_fixes/tg1879530_BPonCommentedTransition.m -interactive -logs /tmp/asvs
-get_param(blockPathOrModel,'ObjectParameters');
+slfeature('ListSetAndSave',1);get_param(blockPathOrModel,'ObjectParameters');%to see all(active,hidden,featured-off,obsolote) parameters
 get_param(blockPathOrModel,'DialogParameters');
 get_param(blockPathOrModel,'IntrinsicDialogParameters');
 get_param(blockPathOrModel,'AlgorithmParameters');
