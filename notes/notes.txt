@@ -4,6 +4,7 @@ SLDV:
 sldvoptions
 sldvcomat
 autoverifier
+what is relevance of "states when enabling" in function-call-subsystem(triggered/periodic)
 
 BUGS /
 1. sldd enum export does not work
@@ -18,7 +19,7 @@ BUGS /
 10. targetman.m#184 is redudant   infomatman('save','binary',machineId,mainMachineId,targetId,binaryDateNum);
 11. dsm with diagnostics enabled written in for loop in EML chart
 12. converting triggered-function-call-subsystem to Simulink Function using "Treat as Simulink Function" errors out. It only works if you set_param(function_call_subsystem,'FunctionName','somevalidname');
-13. PI options in simulink function in SF chart are unnecessary(1. sample time type (both works same i.e. as triggered) 2.subsystem reference(errors) 
+13. PI options in simulink function in SF chart are unnecessary(1. sample time type (both works same i.e. as triggered) 2.subsystem reference(errors out) 3. show subsystem reinitialize port 4. show port labels 5. 
 14. copying Simulink-Function-In-SF to Simulink-Canvass, marks function-call-subsystem as non-atomic
 Mathworks Apps
 Mathworks Products
