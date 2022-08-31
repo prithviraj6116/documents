@@ -20,6 +20,7 @@ BUGS /
 11. dsm with diagnostics enabled written in for loop in EML chart
 12. PI options in simulink function in SF chart are unnecessary(1. sample time type (both works same i.e. as triggered) 2.subsystem reference(errors out) 3. show subsystem reinitialize port 4. show port labels 5. 
 13. copying Simulink-Function-In-SF to Simulink-Canvass, marks function-call-subsystem as non-atomic
+14. usesGlobalEventVar is unused
 Mathworks Apps
 Mathworks Products
 1: Coders: MATLAB, Simlink, Embedded, HDL, GPU, PLC, Filter Design HDL, 
@@ -182,7 +183,9 @@ Simulink/Stateflow
 Simulink.data.getEnumTypeInfo
 postcodegen:  https://reviewboard.mathworks.com/r/733581/diff/1/ 
 simulink model status bar: modeling->environment
-
+Simulink-Function-In-SF only allows inherited sample time (-1) or constant time(Inf)
+SLState-In-SF sample time must match that of parent chart.
+>>help slcg %for pretty printing rtw or simulink coder
 
 
 stack viewer:
