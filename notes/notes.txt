@@ -21,6 +21,8 @@ BUGS /
 12. PI options in simulink function in SF chart are unnecessary(1. sample time type (both works same i.e. as triggered) 2.subsystem reference(errors out) 3. show subsystem reinitialize port 4. show port labels 5. 
 13. copying Simulink-Function-In-SF to Simulink-Canvass, marks function-call-subsystem as non-atomic
 14. usesGlobalEventVar is unused
+15. CAL->localdata->modelexplorer->descriptiontab->savetoworkspace: is still visible and does not work. for MAL it is hidden
+    when enabled, such CAL chart does not work in for-each subsystem
 Mathworks Apps
 Mathworks Products
 1: Coders: MATLAB, Simlink, Embedded, HDL, GPU, PLC, Filter Design HDL, 
@@ -951,6 +953,8 @@ p4 branch_lock //mw/Bstateflow -reason “for fixing build failures”
 sfc coder_options debugBuilds 1;
 sfc coder_options forceDebugOff 1; 
 sf feature evil;
+slfeature('rtwcgir',6)
+help slcg
 evil_jit_settings -disable  
 sf('Tesla', 1);  (deprecated)
 sfc('coder_options','forceNonJitBuild',1) (we tell this api to customer)
