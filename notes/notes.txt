@@ -21,6 +21,9 @@ BUGS /
 12. PI options in simulink function in SF chart are unnecessary(1. sample time type (both works same i.e. as triggered) 2.subsystem reference(errors out) 3. show subsystem reinitialize port 4. show port labels 5. 
 13. copying Simulink-Function-In-SF to Simulink-Canvass, marks function-call-subsystem as non-atomic
 14. usesGlobalEventVar is unused
+15. codingNoInitializer might never be true
+16. CAL->localdata->modelexplorer->descriptiontab->savetoworkspace. when enabled, such CAL chart cannot be in for-each.
+    we might be able to remove this restriction.
 
 
 
