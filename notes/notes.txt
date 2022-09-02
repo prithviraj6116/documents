@@ -187,14 +187,16 @@ code replacement library custom crl using configuration->codegeneration->interfa
 create tables (one for each replacement) and save tables in registration file and then
 >>RTW.TargetRegistry.getInstance('reset');
 
-rapidaccel: ExtMode=1
-sil:
-pil
-slrt
-sldv:  RTWExternMdlXlate=1
-sim
-grt/ert
+sim(modelName,'normal'): non-jit sf_sfun.mex
+sim(modelName,'rapid'): ExtMode=1
+sim(modelName,'software-in-loop'): _sbs.mex
+sim(modelName,'processor-in-loop'): 
+slbuild StandaloneCoderTarget(mainModel grt/ert): 
+slbuild ModelReferenceSimTarget (refModel acceleator/rapid): _msf.mex
+slbuild ModelReferenceCoderTarget(refModel sil): _ssf.mex
 autosar
+slrt:
+sldv:  RTWExternMdlXlate=1
 plc: RTWExternMdlXlate=2
 
 1. DO-178C qualification tools, JMAAB,
