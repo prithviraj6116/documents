@@ -186,19 +186,47 @@ Simulink/Stateflow
 code replacement library custom crl using configuration->codegeneration->interface->add-custom CRL, 
 create tables (one for each replacement) and save tables in registration file and then
 >>RTW.TargetRegistry.getInstance('reset');
-RapidAcceleratorSimStatus={starting, terminating, active, inactive,dormant}
+
+TargetStyle={Auto,StandaloneTarget,SimulationTarget}
+SimulationMode={normal,accelerator,rapid-acceleator,software-in-loop, hardware-in-loop,external}
 SimulationStatus={stopped, updating, initializing, running, paused}
+RapidAcceleratorSimStatus={starting, terminating, active, inactive,dormant}
+
+hModelCodegenMgr = coder.internal.ModelCodegenMgr.getInstance(modelH);
+hModelCodegenMgr.CodeFormatForStateflow={Embedded-C, RealTime} CFS
+non-jit sf: modelName_sfun.mex
                                                                                           ModelReferenceTargetType=normal/accel/sil/pil
-sim     (modelName, 'SimulationMode', 'normal')                    : non-jit sf_sfun.mex  ModelReferenceTargetType=SIM*/SIM/RTW/RTW
-sim     (modelName, 'SimulationMode', 'accel')                     :                      ModelReferenceTargetType=SIM /SIM/RTW/RTW
-sim     (modelName, 'SimulationMode', 'rapid')                     : ExtMode=1,           ModelReferenceTargetType=SIM /SIM/err/err
+sim     (modelName, 'SimulationMode', 'normal')                    :                    ModelReferenceTargetType=SIM*/SIM/RTW/RTW
+                                                                     hModelCodegenMgr= []
+                                                                     TargetStyle=SimulationTarget rtwenvironmentmode(isSim)=1
+sim     (modelName, 'SimulationMode', 'accel')                     : jit or Accelerator_S-Function _acc.mex
+                                                                                        ModelReferenceTargetType=SIM /SIM/RTW/RTW
+                                                                     hModelCodegenMgr= []
+                                                                     TargetStyle=SimulationTarget 
+                                                                     rtwenvironmentmode(isSim)=1
+sim     (modelName, 'SimulationMode', 'rapid')                     : ExtMode=1,          ModelReferenceTargetType=SIM /SIM/err/err 
+                                                                     hModelCodegenMgr.CodeFormatForStateflow=RealTime 
+                                                                     TargetStyle=StandaloneTarget 
+                                                                     rtwenvironmentmode(isSim)=1
 sim     (modelName, 'SimulationMode', 'software-in-loop')          : _sbs.mex,            ModelReferenceTargetType=RTW /RTW/RTW/err 
+                                                                     hModelCodegenMgr.CodeFormatForStateflow=Embedded-C 
+                                                                     TargetStyle=StandaloneTarget 
+                                                                     rtwenvironmentmode(isSim)=0
 sim     (modelName, 'SimulationMode', 'processor-in-loop')         :                      ModelReferenceTargetType=RTW /RTW/err/RTW 
-sim     (modelName, 'SimulationMode', 'processor-in-loop')         : 
+
 slbuild (modelName,                   'StandaloneCoderTarget')     : as mainModel grt/ert, ModelReferenceTargetType=NONE 
-SIM*: ModelReferenceSimTarget=SIM but SimulationModeOfMainModel=Normal: is it same as set_param(refModel,'SimulationCommand','update')?
+                                                                     hModelCodegenMgr.CodeFormatForStateflow=Embedded-C 
+                                                                     TargetStyle=StandaloneTarget 
+                                                                     rtwenvironmentmode(isSim)=0
 slbuild (modelName,                   'ModelReferenceSimTarget')   : as refModel  acceleator, _msf.mex, ModelReferenceTargetType=SIM
+                                                                     hModelCodegenMgr.CodeFormatForStateflow=Embedded-C 
+                                                                     TargetStyle=StandaloneTarget 
+                                                                     rtwenvironmentmode(isSim)=0
 slbuild (modelName,                   'ModelReferenceCoderTarget') : as refModel, sil,        _ssf.mex, ModelReferenceTargetType=RTW
+                                                                     hModelCodegenMgr.CodeFormatForStateflow=Embedded-C 
+                                                                     TargetStyle=StandaloneTarget 
+                                                                     rtwenvironmentmode(isSim)=0
+SIM*: ModelReferenceSimTarget=SIM but SimulationModeOfMainModel=Normal: is it same as set_param(refModel,'SimulationCommand','update')?
 
 slbuild ModelReferenceCoderTarget(refModel sil): _ssf.mex
 modelreference: https://www.mathworks.com/help/ecoder/ug/simulation-mode-override-behavior-in-model-reference-hierarchy.html
