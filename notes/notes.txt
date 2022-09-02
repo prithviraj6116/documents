@@ -187,6 +187,15 @@ code replacement library custom crl using configuration->codegeneration->interfa
 create tables (one for each replacement) and save tables in registration file and then
 >>RTW.TargetRegistry.getInstance('reset');
 
+rapidaccel: ExtMode=1
+sil:
+pil
+slrt
+sldv:  RTWExternMdlXlate=1
+sim
+grt/ert
+autosar
+plc: RTWExternMdlXlate=2
 
 1. DO-178C qualification tools, JMAAB,
 1. datascope(not-specified,auto,imported,exported)/headerfile(not-specified/specified): type(Simulink.IntEnumType, uint8, uint16, uint32,not-specified)
