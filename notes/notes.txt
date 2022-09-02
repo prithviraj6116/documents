@@ -183,6 +183,11 @@ end
 end
 
 Simulink/Stateflow
+code replacement library custom crl using configuration->codegeneration->interface->add-custom CRL, 
+create tables (one for each replacement) and save tables in registration file and then
+>>RTW.TargetRegistry.getInstance('reset');
+
+
 1. DO-178C qualification tools, JMAAB,
 1. datascope(not-specified,auto,imported,exported)/headerfile(not-specified/specified): type(Simulink.IntEnumType, uint8, uint16, uint32,not-specified)
    
