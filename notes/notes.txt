@@ -186,14 +186,22 @@ Simulink/Stateflow
 code replacement library custom crl using configuration->codegeneration->interface->add-custom CRL, 
 create tables (one for each replacement) and save tables in registration file and then
 >>RTW.TargetRegistry.getInstance('reset');
+RapidAcceleratorSimStatus={starting, terminating, active, inactive,dormant}
+SimulationStatus={stopped, updating, initializing, running, paused}
+                                                                                          ModelReferenceTargetType=normal/accel/sil/pil
+sim     (modelName, 'SimulationMode', 'normal')                    : non-jit sf_sfun.mex  ModelReferenceTargetType=SIM*/SIM/RTW/RTW
+sim     (modelName, 'SimulationMode', 'accel')                     :                      ModelReferenceTargetType=SIM /SIM/RTW/RTW
+sim     (modelName, 'SimulationMode', 'rapid')                     : ExtMode=1,           ModelReferenceTargetType=SIM /SIM/err/err
+sim     (modelName, 'SimulationMode', 'software-in-loop')          : _sbs.mex,            ModelReferenceTargetType=RTW /RTW/RTW/err 
+sim     (modelName, 'SimulationMode', 'processor-in-loop')         :                      ModelReferenceTargetType=RTW /RTW/err/RTW 
+sim     (modelName, 'SimulationMode', 'processor-in-loop')         : 
+slbuild (modelName,                   'StandaloneCoderTarget')     : as mainModel grt/ert, ModelReferenceTargetType=NONE 
+SIM*: ModelReferenceSimTarget=SIM but SimulationModeOfMainModel=Normal: is it same as set_param(refModel,'SimulationCommand','update')?
+slbuild (modelName,                   'ModelReferenceSimTarget')   : as refModel  acceleator, _msf.mex, ModelReferenceTargetType=SIM
+slbuild (modelName,                   'ModelReferenceCoderTarget') : as refModel, sil,        _ssf.mex, ModelReferenceTargetType=RTW
 
-sim(modelName,'normal'): non-jit sf_sfun.mex
-sim(modelName,'rapid'): ExtMode=1
-sim(modelName,'software-in-loop'): _sbs.mex
-sim(modelName,'processor-in-loop'): 
-slbuild StandaloneCoderTarget(mainModel grt/ert): 
-slbuild ModelReferenceSimTarget (refModel acceleator/rapid): _msf.mex
 slbuild ModelReferenceCoderTarget(refModel sil): _ssf.mex
+modelreference: https://www.mathworks.com/help/ecoder/ug/simulation-mode-override-behavior-in-model-reference-hierarchy.html
 autosar
 slrt:
 sldv:  RTWExternMdlXlate=1
