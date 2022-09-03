@@ -215,7 +215,7 @@ sim     (modelName, 'SimulationMode', 'software-in-loop')          : _sbs.mex,  
 sim     (modelName, 'SimulationMode', 'processor-in-loop')         :                      ModelReferenceTargetType=RTW /RTW/err/RTW 
 
 slbuild (modelName,                   'StandaloneCoderTarget')     : as mainModel grt/ert, ModelReferenceTargetType=NONE 
-                                                                     hModelCodegenMgr.CodeFormatForStateflow=Embedded-C 
+                                                                     hModelCodegenMgr.CodeFormatForStateflow=RealTime
                                                                      TargetStyle=StandaloneTarget 
                                                                      rtwenvironmentmode(isSim)=0
 slbuild (modelName,                   'ModelReferenceSimTarget')   : as refModel  acceleator, _msf.mex, ModelReferenceTargetType=SIM
@@ -223,16 +223,16 @@ slbuild (modelName,                   'ModelReferenceSimTarget')   : as refModel
                                                                      TargetStyle=StandaloneTarget 
                                                                      rtwenvironmentmode(isSim)=0
 slbuild (modelName,                   'ModelReferenceCoderTarget') : as refModel, sil,        _ssf.mex, ModelReferenceTargetType=RTW
-                                                                     hModelCodegenMgr.CodeFormatForStateflow=Embedded-C 
+                                                                     hModelCodegenMgr.CodeFormatForStateflow=RealTime
                                                                      TargetStyle=StandaloneTarget 
                                                                      rtwenvironmentmode(isSim)=0
 SIM*: ModelReferenceSimTarget=SIM but SimulationModeOfMainModel=Normal: is it same as set_param(refModel,'SimulationCommand','update')?
-
-modelreference: https://www.mathworks.com/help/ecoder/ug/simulation-mode-override-behavior-in-model-reference-hierarchy.html
-autosar
-slrt:
+manually setting SimuationMode=external via command line.: ctrl-d(update) mode=external, ctrl-t(update) mode=normal
+slrealtime with manually setting SimuationMode=external via command line.: ctrl-d(update) mode=external, ctrl-t(update) mode=normal
 sldv:  RTWExternMdlXlate=1
+autosar
 plc: RTWExternMdlXlate=2
+modelreference: https://www.mathworks.com/help/ecoder/ug/simulation-mode-override-behavior-in-model-reference-hierarchy.html
 
 BLAS (Basic Linear Algebra Subprograms)
 
