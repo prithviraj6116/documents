@@ -239,7 +239,7 @@ modelreference: https://www.mathworks.com/help/ecoder/ug/simulation-mode-overrid
 BLAS (Basic Linear Algebra Subprograms)
 LAPACK (Linear Algebra Package)
 FFT (Fast Fourier Transform Library)
-
+tlc files: https://www.mathworks.com/help/rtw/ug/compare-system-target-file-support.html
 1. DO-178C qualification tools, JMAAB,
 1. datascope(not-specified,auto,imported,exported)/headerfile(not-specified/specified): type(Simulink.IntEnumType, uint8, uint16, uint32,not-specified)
    
