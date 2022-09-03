@@ -228,12 +228,13 @@ slbuild (modelName,                   'ModelReferenceCoderTarget') : as refModel
                                                                      rtwenvironmentmode(isSim)=0
 SIM*: ModelReferenceSimTarget=SIM but SimulationModeOfMainModel=Normal: is it same as set_param(refModel,'SimulationCommand','update')?
 
-slbuild ModelReferenceCoderTarget(refModel sil): _ssf.mex
 modelreference: https://www.mathworks.com/help/ecoder/ug/simulation-mode-override-behavior-in-model-reference-hierarchy.html
 autosar
 slrt:
 sldv:  RTWExternMdlXlate=1
 plc: RTWExternMdlXlate=2
+
+BLAS (Basic Linear Algebra Subprograms)
 
 1. DO-178C qualification tools, JMAAB,
 1. datascope(not-specified,auto,imported,exported)/headerfile(not-specified/specified): type(Simulink.IntEnumType, uint8, uint16, uint32,not-specified)
