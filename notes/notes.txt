@@ -24,7 +24,7 @@ BUGS /
 15. codingNoInitializer might never be true
 16. CAL->localdata->modelexplorer->descriptiontab->savetoworkspace. when enabled, such CAL chart cannot be in for-each.
     we might be able to remove this restriction.
-
+17. vim status bar function name does not work with namespace A::B format 
 
 
 15. CAL->localdata->modelexplorer->descriptiontab->savetoworkspace: is still visible and works. for MAL it is hidden
