@@ -128,6 +128,14 @@ valgrind:
    sbmake --eval=BASE_REQS=valgrind DEBUG=1
    IVF:invalid free, IVR: invalid read, IVW: invalid write, MMF: mismatched free, UNC: un-initialized condition, UNV: uninitialized value
 find vs fd: fd ignores hidden files
+Lint Commands:
+edittime.setDisplayIssues('off')
+sf('GetLintIssues', c.Id)
+sf('Feature', 'SFLint', 0)
+
+get optimiztion level from dll/so file
+readelf --debug-dump=info libmwstateflow.so.dbg   | grep -i "\-O2"
+
 sbruntests -cfg sfcore -cfg slstring -cfg reqtable
 sbmake/sbcc DEBUG   Mode == DEBUG=1 ASSERTS=1 => -g -O0 
 sbmake/sbcc MIXED   Mode == DEBUG=  ASSERTS=1 => -g -O2
@@ -432,6 +440,8 @@ youtube audio playlist downloader: yt-dlp --extract-audio --playlist-start 1 --r
 sbindent: https://web.microsoftstream.com/video/f99a8bd4-1530-4146-a6f1-afbe76db59ba
 dangling if 
 
+disable bii
+sbmake -distcc DEBUG=1 CTB=stateflow_core BH_ALLOW_ISOLATED_BUILDS=
 #bii sandbox
 https://inside.mathworks.com/wiki/Component_BII_Sandboxes
 mw -using Bstateflow printenv | grep COMPONENTS_TO_BUILD
