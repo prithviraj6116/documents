@@ -1305,3 +1305,20 @@ printf "%s", SF::GetMLValueStr(mxArrayArg,".field1(index).field2{cellarrayindex}
 yes | sbsmartbuild -opened -ignore-failed-modules -lean -no-ch-validate  -no-sbindent-files-in-lockdown
 
 
+
+polyspace bugfinder and coderprover
+
+function myrunpolyspace(modelBuildDir)
+    %polyspacesetup('install');
+    %polyspacesetup('uninstall');
+    %polyspacesetup('showpolyspacefolders')
+    proj = polyspace.Project;
+    proj.Configuration.Sources = {fullfile(pwd, modelBuildDir,'mym1.c')};
+    proj.Configuration.TargetCompiler.Compiler = 'gnu4.9';
+    proj.Configuration.EnvironmentSettings.IncludeFolders = {fullfile(pwd, modelBuildDir)};
+    proj.Configuration.ResultsDir = fullfile(pwd,'results');
+    proj.run('codeProver');
+    disp(proj.Results.getSummary('runtime'));    
+    proj.run('bugFinder');
+    disp(proj.Results.getSummary('defects'));
+end
