@@ -1307,7 +1307,7 @@ yes | sbsmartbuild -opened -ignore-failed-modules -lean -no-ch-validate  -no-sbi
 
 
 polyspace bugfinder and coderprover
-
+https://www.mathworks.com/help/bugfinder/gs/use-bug-finder-and-code-prover.html
 function myrunpolyspace(modelBuildDir)
     %polyspacesetup('install');
     %polyspacesetup('uninstall');
