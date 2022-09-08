@@ -6,6 +6,11 @@ sldvcomat
 autoverifier
 what is relevance of "states when enabling" in function-call-subsystem(triggered/periodic)
 
+p4 clients -a -u ppatil -U
+p4 client -df -Ds ppatil.ulcm122ad
+killall mate-panel : to reboot mate desktop without logout. it kills mate desktop process and debian automatically starts new mate desktop process
+killall == pkill -9 -f
+
 BUGS /
 1. sbmake after p4 reverting a file still compiles it
 1. sldd enum export does not work
