@@ -7,6 +7,7 @@ autoverifier
 what is relevance of "states when enabling" in function-call-subsystem(triggered/periodic)
 
 BUGS /
+1. sbmake after p4 reverting a file still compiles it
 1. sldd enum export does not work
 2. zerojitemissions is not respected by emlreport which is always created at slprj/_sfprj/EMLReport/
 3. nonjit or jit simulation does not always generate single code for single specialization
@@ -1308,6 +1309,8 @@ yes | sbsmartbuild -opened -ignore-failed-modules -lean -no-ch-validate  -no-sbi
 
 polyspace bugfinder and coderprover
 https://www.mathworks.com/help/bugfinder/gs/use-bug-finder-and-code-prover.html
+https://www.mathworks.com/help/bugfinder/defect-reference.html
+https://www.mathworks.com/help/codeprover/run-time-check-reference.html
 function myrunpolyspace(modelBuildDir)
     %polyspacesetup('install');
     %polyspacesetup('uninstall');
