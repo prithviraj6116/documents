@@ -47,6 +47,8 @@ mdl_cleanup_runtime_resources_c3_modelName
 
 
 BUGS /
+17. data logging adds capi code(test point specific) code due to  get_logged_and_tp_data
+18. 
 16.  CdrActionSubsysChartManImpl::appendCodeInMdlSetupRuntimeResources, optimize when fActionsStates->empty()
 1. sbmake after p4 reverting a file still compiles it
 1. sldd enum export does not work
