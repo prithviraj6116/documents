@@ -11,7 +11,7 @@ p4 client -df -Ds ppatil.ulcm122ad
 killall mate-panel : to reboot mate desktop without logout. it kills mate desktop process and debian automatically starts new mate desktop process
 killall == pkill -9 -f
 
-non-jit _sfun.c :
+non-jit modelName_sfun.c :
 modelName_initializer
 modelName_terminator
 sf_modelName_method_dispatcher
@@ -26,7 +26,17 @@ static SfOptimizationInfoFlags sOptimizationInfoFlags;
 load_modelName_optimization_info
 unload_modelName_optimization_info
 
+non-jit c3_modelName.c
+c3_modelName_method_dispatcher
+   mdlSetupWorkWidths_c3_modelName
+   mdlSetupRuntimeResources_c3_modelName (-> mdl_setup_runtime_resources_c3_modelName)
+   mdlProcessParameters_c3_modelName
+mdlRTW_c3_modelName
+
+
+
 BUGS /
+16.  CdrActionSubsysChartManImpl::appendCodeInMdlSetupRuntimeResources, optimize when fActionsStates->empty()
 1. sbmake after p4 reverting a file still compiles it
 1. sldd enum export does not work
 2. zerojitemissions is not respected by emlreport which is always created at slprj/_sfprj/EMLReport/
