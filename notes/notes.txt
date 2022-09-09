@@ -12,6 +12,8 @@ killall mate-panel : to reboot mate desktop without logout. it kills mate deskto
 killall == pkill -9 -f
 
 non-jit _sfun.c :
+modelName_initializer
+modelName_terminator
 sf_modelName_method_dispatcher
 sf_modelName_process_check_sum_call
 sf_modelName_get_eml_resolved_functions_info
