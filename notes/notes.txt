@@ -11,6 +11,18 @@ p4 client -df -Ds ppatil.ulcm122ad
 killall mate-panel : to reboot mate desktop without logout. it kills mate desktop process and debian automatically starts new mate desktop process
 killall == pkill -9 -f
 
+non-jit _sfun.c :
+sf_modelName_method_dispatcher
+sf_modelName_process_check_sum_call
+sf_modelName_get_eml_resolved_functions_info
+sf_modelName_third_party_uses_info
+sf_modelName_jit_fallback_info
+sf_modelName_get_post_codegen_info
+sf_modelName_updateBuildInfo_args_info
+sf_modelName_register_exported_symbols
+load_modelName_optimization_info
+unload_modelName_optimization_info
+
 BUGS /
 1. sbmake after p4 reverting a file still compiles it
 1. sldd enum export does not work
