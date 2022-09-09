@@ -29,9 +29,20 @@ unload_modelName_optimization_info
 non-jit c3_modelName.c
 c3_modelName_method_dispatcher
    mdlSetupWorkWidths_c3_modelName
-   mdlSetupRuntimeResources_c3_modelName (-> mdl_setup_runtime_resources_c3_modelName)
+   mdlSetupRuntimeResources_c3_modelName 
+     init_dsm_address_info(chartInstance);
+     init_simulink_io_address(chartInstance);
+     mdl_setup_runtime_resources_c3_modelName
    mdlProcessParameters_c3_modelName
+     initialize_params_c3_modelName
+sf_opaque_initialize_c3_modelName
+  initialize_params_c3_modelName
+  initialize_c3_modelName
+enable_c3_modelName
+disable_c3_modelName
 mdlRTW_c3_modelName
+mdl_cleanup_runtime_resources_c3_modelName
+
 
 
 
