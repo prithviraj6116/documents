@@ -22,6 +22,7 @@ sf_modelName_jit_fallback_info
 sf_modelName_get_post_codegen_info
 sf_modelName_updateBuildInfo_args_info
 sf_modelName_register_exported_symbols
+static SfOptimizationInfoFlags sOptimizationInfoFlags;
 load_modelName_optimization_info
 unload_modelName_optimization_info
 
