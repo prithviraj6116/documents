@@ -10,22 +10,57 @@ p4 clients -a -u ppatil -U
 p4 client -df -Ds ppatil.ulcm122ad
 killall mate-panel : to reboot mate desktop without logout. it kills mate desktop process and debian automatically starts new mate desktop process
 killall == pkill -9 -f
-
+----------------
+non-jit modelName_sfun_registry.c
+sf_machine_global_initializer
+  sf_register_machine_exported_symbols
+    sf_modelName1_register_exported_symbols
+    sf_modelName2_register_exported_symbols
+sf_machine_global_initializer_called
+sf_machine_global_terminator
+    modelName1_terminator
+    modelName2_terminator
+sf_machine_global_method_dispatcher
+  sf_modelName_method_dispatcher
+ProcessMexSfunctionCmdLineCall
+  sf_mex_unlock_call
+  sf_process_check_sum_call
+     sf_modelName_check_sum_call
+  sf_process_get_eml_resolved_functions_info
+     sf_modelName_get_eml_resolved_functions_info
+  sf_process_get_jit_fallback_info
+     sf_modelName_get_jit_fallback_info
+  sf_process_get_post_codegen_info_call
+     sf_modelName_get_post_codegen_info_call
+  sf_process_get_third_party_uses_info_call
+     sf_modelName_get_third_party_uses_info_call
+  sf_process_get_updateBuildInfo_args_info
+     sf_modelName_get_updateBuildInfo_args_info
+-----------------
 non-jit modelName_sfun.c :
+sf_modelName_method_dispatcher
+   c3_modelName_method_dispatcher
+
+sf_modelName_process_check_sum_call
+    c3_modelName_process_check_sum_call
+sf_modelName_get_eml_resolved_functions_info
+   c3_modelName_get_eml_resolved_functions_info
+sf_modelName_get_jit_fallback_info
+   c3_modelName_get_jit_fallback_info
+sf_modelName_get_post_codegen_info
+   c3_modelName_get_post_codegen_info
+sf_modelName_get_third_party_uses_info
+   c3_modelName_get_third_party_uses_info
+sf_modelName_get_UpdateBuildInfo_args_info
+   c3_modelName_updateBuildInfo_args_info
+
 modelName_initializer
 modelName_terminator
-sf_modelName_method_dispatcher
-sf_modelName_process_check_sum_call
-sf_modelName_get_eml_resolved_functions_info
-sf_modelName_third_party_uses_info
-sf_modelName_jit_fallback_info
-sf_modelName_get_post_codegen_info
-sf_modelName_updateBuildInfo_args_info
 sf_modelName_register_exported_symbols
 static SfOptimizationInfoFlags sOptimizationInfoFlags;
 load_modelName_optimization_info
 unload_modelName_optimization_info
-
+------------------
 non-jit c3_modelName.c
 c3_modelName_method_dispatcher
    mdlSetupWorkWidths_c3_modelName
@@ -35,6 +70,15 @@ c3_modelName_method_dispatcher
      mdl_setup_runtime_resources_c3_modelName
    mdlProcessParameters_c3_modelName
      initialize_params_c3_modelName
+
+c3_modelName_process_check_sum_call
+c3_modelName_get_eml_resolved_functions_info
+c3_modelName_get_jit_fallback_info
+c3_modelName_get_post_codegen_info
+c3_modelName_get_third_party_uses_info
+c3_modelName_updateBuildInfo_args_info
+
+
 sf_opaque_initialize_c3_modelName
   initialize_params_c3_modelName
   initialize_c3_modelName
@@ -42,7 +86,7 @@ enable_c3_modelName
 disable_c3_modelName
 mdlRTW_c3_modelName
 mdl_cleanup_runtime_resources_c3_modelName
-
+-------------------------
 
 
 
