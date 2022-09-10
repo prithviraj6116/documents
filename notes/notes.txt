@@ -91,6 +91,8 @@ mdl_cleanup_runtime_resources_c3_modelName
 
 
 BUGS /
+20. testpoint g2573846 g2554834
+    set_param(modelName,'RTWCAPISignals','on') for test-points
 19. coverage is enabled(without user enabling it) for non-jit code in   CtxCoderOptions::isCodingCoverag
 18. data logging (without test-point) adds capi code(test point specific) code due to  get_logged_and_tp_data during non-jit code which is not-useful since user cannot use it in floating scope
 17. save-restore code might be avoided if save operating point is not enabled  
