@@ -1415,3 +1415,11 @@ function myrunpolyspace(modelBuildDir)
     proj.run('bugFinder');
     disp(proj.Results.getSummary('defects'));
 end
+
+
+rapid simulation (rsim.tlc)
+modelName='mymodel1';
+wrtp=rsimgetrtp(modelName);
+save(['b' modelName], 'wrtp');
+slbuild(modelName);
+>> !<fullpathModelName> -p <fullPathOfbModelName.mat> -o <fullpathOfOutput.mat> -v
