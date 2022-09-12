@@ -91,6 +91,7 @@ mdl_cleanup_runtime_resources_c3_modelName
 
 
 BUGS /
+21. g1614555, g1516596, g2793685: persistent variables in continuous eml charts
 20. testpoint g2573846 g2554834
     set_param(modelName,'RTWCAPISignals','on') for test-points
 19. coverage is enabled(without user enabling it) for non-jit code in   CtxCoderOptions::isCodingCoverag
