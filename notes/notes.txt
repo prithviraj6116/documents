@@ -1430,3 +1430,6 @@ slfeature('Uint32Enum',1)
 
 //shows what myobserve1 is observing
 >> get_param('myobserve1', 'ObserverContext')
+
+w1=Simulink.SimulationInput(modelName);
+o2=sim(w1)
