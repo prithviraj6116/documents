@@ -1427,3 +1427,6 @@ slbuild(modelName);
 
 
 slfeature('Uint32Enum',1)
+
+//shows what myobserve1 is observing
+>> get_param('myobserve1', 'ObserverContext')
