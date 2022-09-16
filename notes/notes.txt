@@ -1433,3 +1433,15 @@ slfeature('Uint32Enum',1)
 
 w1=Simulink.SimulationInput(modelName);
 o2=sim(w1)
+
+cd matlab/toolbox/stateflow/coder/private/bin
+perl coder2m.pl ../../../coder/ force
+
+
+simulink model always stops here even blank simulink model
+WidgetRepositoryApiImpl::anyWidgetsExistForModel
+inmem
+license('inuse')
+SLM3I.SLCommonDomain.isStateflowLoaded()
+Stateflow.App.Cdr.Utils.isStateflowLoaded()
+why does vdp load Stateflow?
