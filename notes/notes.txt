@@ -1451,3 +1451,4 @@ todo: create bug for DES chart inner transition to substate
 
 DES: (1) no during action (2) no simulink based states (3) no sample time (4) no input/output events (5) temporal trigger not allowed with transition condition
      (6) transition condition requires Message/Event trigger (7) not allowed in triggered or function call subsystem
+
