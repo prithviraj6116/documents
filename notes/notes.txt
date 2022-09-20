@@ -1453,6 +1453,8 @@ todo: sf4ml_testtools in different clusters
 todo: buscreators 
 todo: python
 todo: stateflow create auto-app with active-state data and recreate animation in app
+todo: Stateflow.internal.findCommand
+todo: pretty-printer navigation, keyboard-shortcuts, go-to-definition, 
 
 DES: (1) no during action (2) no simulink based states (3) no sample time (4) no input/output events (5) temporal trigger not allowed with transition condition
      (6) transition condition requires Message/Event trigger (7) not allowed in triggered or function call subsystem 
