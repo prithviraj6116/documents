@@ -1462,7 +1462,7 @@ DES: (1) no during action (2) no simulink based states (3) no sample time (4) no
      (6) transition condition requires Message/Event trigger (7) not allowed in triggered or function call subsystem 
      (8) no code generation
 
-
+Simulink editor developer help page: https://confluence.mathworks.com/pages/viewpage.action?pageId=775337453
 nonjit-fallback: (1) imported bus (2) test-point
 parameters:
 EnablePacing
