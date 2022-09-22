@@ -1459,6 +1459,9 @@ todo: custom code separate process
 todo: custom code c++
 todo: ffmpe2 for saving
 
+xdpyinfo | grep 'dimensions:'
+ffmpeg -video_size 3840x1215 -framerate 30 -f x11grab -i :0.0 -c:v libx264rgb -crf 0 -preset ultrafast sample.mkv
+
 plc gecks: g2651295, g2450425  esc: 2829032 , 2811763,  2807437
 
 DES: (1) no during action (2) no simulink based states (3) no sample time (4) no input/output events (5) temporal trigger not allowed with transition condition
