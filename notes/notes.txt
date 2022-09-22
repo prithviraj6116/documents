@@ -1463,8 +1463,9 @@ DES: (1) no during action (2) no simulink based states (3) no sample time (4) no
      (8) no code generation
 
 
-
+nonjit-fallback: (1) imported bus (2) test-point
 parameters:
 EnablePacing
 PacingRate
 DefaultCustomCodeFunctionArrayLayout
+UseRowMajorAlgorithm
