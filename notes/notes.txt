@@ -1463,6 +1463,7 @@ todo: subsystem reference chart, what is the modelname/machinename in generate_i
 todo: custom code separate process and sil
 todo: why MLFB out=10 shows up as '10.000' in simout while MAL out=10 shows up as '10'
 todo: evil_purgedir('all') to clean  slcov_output, _ssf.mex _msf.mex, _sbs.mex
+todo: c function block, code-generation and row-major issues
 
 
 network:
