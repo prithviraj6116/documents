@@ -1458,6 +1458,8 @@ todo: pretty-printer navigation, keyboard-shortcuts, go-to-definition,
 todo: custom code separate process
 todo: custom code c++
 todo: ffmpe2 for saving
+todo: imported+non-impoted nested bus-enum 
+todo: subsystem reference chart, what is the modelname/machinename in generate_ir_for_chart
 
 xdpyinfo | grep 'dimensions:'
 ffmpeg -video_size 3840x1215 -framerate 30 -f x11grab -i :0.0 -c:v libx264rgb -crf 0 -preset ultrafast sample.mkv
