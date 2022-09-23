@@ -1469,6 +1469,15 @@ todo: disabling "preserve element dimenstions" where it is required
 todo: how to use Simulink.ValueType
 todo: cc struct can have extra members than correspoding bus. but it must have all the members from bus. 
 
+bus headers are like unimported custom code includes
+bus/enum type: 
+(1) if matches with cc includes, then imported else
+(2) imported for "imported+headerfile" or "auto+withheaderfile"
+    exported for "exported+with/without headerfile" or "auto+withoutheaderfile"
+
+headerfile for exported is only applicable for code-generation.
+for simulation, exported generates (1) struct for buses (2) macro based named-const for enums
+
 
 import bus type: bus-bus nesting: nested1:topexportbottomimport: works  nested2:topimportbottomexport does not work
 import bus type: bus-enum type: nested1:busexportenumimport:works busimportenumexport:works
