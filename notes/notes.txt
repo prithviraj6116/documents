@@ -1468,6 +1468,7 @@ todo: c function block, code-generation and row-major issues
 todo: disabling "preserve element dimenstions" where it is required
 todo: how to use Simulink.ValueType
 todo: cc struct can have extra members than correspoding bus. but it must have all the members from bus. 
+todo: cstructname for mlfb/mal input/outputs or mal locals
 
 bus headers are like unimported custom code includes
 bus/enum type: 
