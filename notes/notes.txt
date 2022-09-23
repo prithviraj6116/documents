@@ -1470,6 +1470,8 @@ todo: how to use Simulink.ValueType
 todo: cc struct can have extra members than correspoding bus. but it must have all the members from bus. 
 
 
+import bus type: bus-bus nesting: nested1:topexportbottomimport: works  nested2:topimportbottomexport does not work
+import bus type: bus-enum type: nested1:busexportenumimport:works busimportenumexport:works
 network:
 protocol: 
   serial:
