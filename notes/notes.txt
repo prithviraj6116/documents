@@ -1467,6 +1467,7 @@ todo: evil_purgedir('all') to clean  slcov_output, _ssf.mex _msf.mex, _sbs.mex
 todo: c function block, code-generation and row-major issues
 todo: disabling "preserve element dimenstions" where it is required
 todo: how to use Simulink.ValueType
+todo: cc struct can have extra members than correspoding bus. but it must have all the members from bus. 
 
 
 network:
