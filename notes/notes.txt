@@ -1471,6 +1471,13 @@ todo: cc struct can have extra members than correspoding bus. but it must have a
 todo: cstructname for mlfb/mal input/outputs or mal locals
 
 
+bus/enum types import/export setting algorithm:
+EMLExclusive(always imported,no bus required,all childtypes imported as well)<SLEMLCommon(bus required, busimportedsetting<imported<gentypedef)<SL(bus required, busimportedsetting<customcodeheader<gentypedef*)
+*error if type contains in customcodeheader
+
+
+
+
 headerfile for exported is only applicable for code-generation.
 for simulation, exported generates (1) struct for buses (2) macro based named-const for enums
 
@@ -1532,3 +1539,6 @@ CG::Obj->CG::Node,CG::Edge,CG::Scope,CG::Symbol
 CG::Node->CG::Stmt,CG::Expr
 CG::Symbol->CG::Var,CG::Type,CG::Const
 CG::Const->CG::Fcn,CG::DoublConst,..
+
+
+evil_generate_baseline('t_buswithndelem1','-justSave')
