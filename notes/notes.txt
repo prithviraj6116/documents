@@ -1481,7 +1481,12 @@ for simulation, exported generates (1) struct for buses (2) macro based named-co
 
 
 import bus type: bus-bus nesting: nested1:topexportbottomimport: works  nested2:topimportbottomexport does not work
-import bus type: bus-enum type: nested1:busexportenumimport:works busimportenumexport:works
+import bus type: bus-enum type: nested1:busexportenumimport:works busimportenumexport:works due to implicit enum/integer casting
+
+generate typedef: 
+    (1) only for MLFB/SF block simulation, 
+    (2) error if type exists in cc imported includes with "ImportCustomCode==true" 
+    (3) else bus/enum always exports even if marked as import
 network:
 protocol: 
   serial:
