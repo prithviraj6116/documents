@@ -1486,7 +1486,9 @@ generate typedef:
     (3) no effect on exclusinve coder.cstructname imported types. 
         exclusive means they are not used by(or inside of) mlfb/mal input/output/localdata types. 
         such types always imported 
-        A->B A,B:coder.cstructname B:input , A,B:both buses and imported header. generate-typedef enabled: gives  CStructNameInconsistentUseOfExtern
+          e.g. A(parenttype)->B(childtype) A,B:both used with coder.cstructname A:MLFB temporaty B:MLFB input;  
+               A,B:both buses and both have imported header. generate-typedef enabled: 
+               above example gives  CStructNameInconsistentUseOfExtern because B is exported but A is imported
     (4) else bus/enum always exports even if marked as import
 
 
@@ -1497,7 +1499,7 @@ Bus/enum types: general rules, see below for cstructname special case
 (2) imported for "imported+headerfile" or "auto+withheaderfile"
     exported for "exported+with/without headerfile" or "auto+withoutheaderfile"
 
-MLFB/MLFcnInSF: (1) cstructname with headerfile types are always imported along its children (2) now remaining types struct types (input/output/localdata) are handled as per rules above
+MLFB/MLFcnInSF: (1) exclusive(see above) cstructname with headerfile types are always imported along its children (2) now remaining types struct types (input/output/localdata) are handled as per rules above
 network:
 protocol: 
   serial:
