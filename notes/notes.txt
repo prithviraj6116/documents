@@ -1480,7 +1480,7 @@ headerfile for exported is only applicable for code-generation.
 for simulation, exported generates (1) struct for buses (2) macro based named-const for enums
 
 
-import bus type: bus-bus nesting: nested1:topexportbottomimport: works  nested2:topimportbottomexport does not work
+import bus type: bus-bus nesting: nested1:topexportbottomimport: works  nested2:topimportbottomexport does not work: MAL/CAL: host compiler error MLFB: CStructNameInconsistentUseOfExtern
 import bus type: bus-enum type: nested1:busexportenumimport:works busimportenumexport:works due to implicit enum/integer casting
 
 generate typedef: 
