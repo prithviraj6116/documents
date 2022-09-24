@@ -1486,6 +1486,7 @@ import bus type: bus-enum type: nested1:busexportenumimport:works busimportenume
 generate typedef: 
     (1) only for MLFB/SF block simulation, 
     (2) error if type exists in cc imported includes with "ImportCustomCode==true" 
+    (3) no effect on imported using eml coder.cstructname. i.e. such types always imported 
     (3) else bus/enum always exports even if marked as import
 network:
 protocol: 
