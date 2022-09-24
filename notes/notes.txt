@@ -1470,11 +1470,6 @@ todo: how to use Simulink.ValueType
 todo: cc struct can have extra members than correspoding bus. but it must have all the members from bus. 
 todo: cstructname for mlfb/mal input/outputs or mal locals
 
-bus headers are like unimported custom code includes
-bus/enum type: 
-(1) if matches with cc includes, then imported else
-(2) imported for "imported+headerfile" or "auto+withheaderfile"
-    exported for "exported+with/without headerfile" or "auto+withoutheaderfile"
 
 headerfile for exported is only applicable for code-generation.
 for simulation, exported generates (1) struct for buses (2) macro based named-const for enums
@@ -1488,6 +1483,16 @@ generate typedef:
     (2) error if type exists in cc imported includes with "ImportCustomCode==true" 
     (3) no effect on imported using eml coder.cstructname. i.e. such types always imported 
     (3) else bus/enum always exports even if marked as import
+
+
+Bus headers are like unimported custom code includes
+
+Bus/enum types: general rules, see below for cstructname special case
+(1) if matches with cc includes, then imported else
+(2) imported for "imported+headerfile" or "auto+withheaderfile"
+    exported for "exported+with/without headerfile" or "auto+withoutheaderfile"
+
+MLFB/MLFcnInSF: (1) cstructname with headerfile types are always imported along its children (2) now remaining types struct types (input/output/localdata) are handled as per rules above
 network:
 protocol: 
   serial:
