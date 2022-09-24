@@ -1488,18 +1488,21 @@ generate typedef:
         such types always imported 
           e.g. A(parenttype)->B(childtype) A,B:both used with coder.cstructname A:MLFB temporaty B:MLFB input;  
                A,B:both buses and both have imported header. generate-typedef enabled: 
-               above example gives  CStructNameInconsistentUseOfExtern because B is exported but A is imported
+               above example gives  CStructNameInconsistentUseOfExtern because B is exported but A(exclusive) is imported
     (4) else bus/enum always exports even if marked as import
 
 
 Bus headers are like unimported custom code includes
 
 Bus/enum types: general rules, see below for cstructname special case
-(1) if matches with cc includes, then imported else
+(1) if matches with cc includes and type is not used with cstrcutname imported, then imported else
 (2) imported for "imported+headerfile" or "auto+withheaderfile"
     exported for "exported+with/without headerfile" or "auto+withoutheaderfile"
 
 MLFB/MLFcnInSF: (1) exclusive(see above for details) cstructname with headerfile types are always imported along its children (2) now remaining types struct types (input/output/localdata) are handled as per rules above
+          e.g. A(parenttype)->B(childtype) A,B:both used with coder.cstructname A:MLFB temporaty B:MLFB input;  
+               A,B:both buses,both exported. generate-typedef disabled: 
+               above example gives  CStructNameInconsistentUseOfExtern because B is exported but A(exclusive) is imported
 network:
 protocol: 
   serial:
