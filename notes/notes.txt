@@ -1499,7 +1499,7 @@ Bus/enum types: general rules, see below for cstructname special case
 (2) imported for "imported+headerfile" or "auto+withheaderfile"
     exported for "exported+with/without headerfile" or "auto+withoutheaderfile"
 
-MLFB/MLFcnInSF: (1) exclusive(see above) cstructname with headerfile types are always imported along its children (2) now remaining types struct types (input/output/localdata) are handled as per rules above
+MLFB/MLFcnInSF: (1) exclusive(see above for details) cstructname with headerfile types are always imported along its children (2) now remaining types struct types (input/output/localdata) are handled as per rules above
 network:
 protocol: 
   serial:
