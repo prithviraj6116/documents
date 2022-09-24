@@ -1478,11 +1478,16 @@ for simulation, exported generates (1) struct for buses (2) macro based named-co
 import bus type: bus-bus nesting: nested1:topexportbottomimport: works  nested2:topimportbottomexport does not work: MAL/CAL: host compiler error MLFB: CStructNameInconsistentUseOfExtern
 import bus type: bus-enum type: nested1:busexportenumimport:works busimportenumexport:works due to implicit enum/integer casting
 
+Any coder.cstructname import type needs all its children types to be imported using cstructname
+
 generate typedef: 
     (1) only for MLFB/SF block simulation, 
     (2) error if type exists in cc imported includes with "ImportCustomCode==true" 
-    (3) no effect on imported using eml coder.cstructname. i.e. such types always imported 
-    (3) else bus/enum always exports even if marked as import
+    (3) no effect on exclusinve coder.cstructname imported types. 
+        exclusive means they are not used by(or inside of) mlfb/mal input/output/localdata types. 
+        such types always imported 
+        A->B A,B:coder.cstructname B:input , A,B:both buses and imported header. generate-typedef enabled: gives  CStructNameInconsistentUseOfExtern
+    (4) else bus/enum always exports even if marked as import
 
 
 Bus headers are like unimported custom code includes
