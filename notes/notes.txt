@@ -1542,3 +1542,14 @@ CG::Const->CG::Fcn,CG::DoublConst,..
 
 
 evil_generate_baseline('t_buswithndelem1','-justSave')
+
+
+mw -using R2019a matlab -r "sfnew;bdclose all" &> /tmp/r19a.log &
+mw -using R2019b matlab -r "sfnew;bdclose all" &> /tmp/r19b.log &
+mw -using R2020a matlab -r "sfnew;bdclose all" &> /tmp/r20a.log &
+mw -using R2020b matlab -r "sfnew;bdclose all" &> /tmp/r20b.log &
+mw -using R2021a matlab -r "sfnew;bdclose all" &> /tmp/r21a.log &
+mw -using R2021b matlab -r "sfnew;bdclose all" &> /tmp/r21b.log &
+mw -using R2022a matlab -r "sfnew;bdclose all" &> /tmp/r22a.log &
+mw -using R2022b matlab -r "sfnew;bdclose all" &> /tmp/r22b.log &
+
