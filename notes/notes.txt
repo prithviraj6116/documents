@@ -1553,3 +1553,5 @@ mw -using R2021b matlab -r "sfnew;bdclose all" &> /tmp/r21b.log &
 mw -using R2022a matlab -r "sfnew;bdclose all" &> /tmp/r22a.log &
 mw -using R2022b matlab -r "sfnew;bdclose all" &> /tmp/r22b.log &
 
+
+c style cast or reinterpret cast to convert pointer of one type to another. void* can be assigned to any pointer and vice-versa
