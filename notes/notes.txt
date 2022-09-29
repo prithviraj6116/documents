@@ -1454,7 +1454,7 @@ todo: buscreators
 todo: python
 todo: stateflow create auto-app with active-state data and recreate animation in app
 todo: Stateflow.internal.findCommand
-todo: pretty-printer navigation, keyboard-shortcuts, go-to-definition, 
+todo: pretty-printer navigation, keyboard-shortcuts, go-to-definition, fn(file-next),fp(file-previous),ff(file-first),fl(file-last),n(next),p(previous),b(back),d(definition)
 todo: custom code separate process
 todo: custom code c++
 todo: ffmpe2 for saving
@@ -1556,4 +1556,4 @@ mw -using R2022b matlab -r "sfnew;bdclose all" &> /tmp/r22b.log &
 
 c style cast or reinterpret cast to convert pointer of one type to another. void* can be assigned to any pointer and vice-versa
 
-why non-jit fallback for bus headers, test points
+why non-jit fallback for bus headers, enum headers, test points
