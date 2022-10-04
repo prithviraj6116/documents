@@ -1469,7 +1469,7 @@ todo: disabling "preserve element dimenstions" where it is required
 todo: how to use Simulink.ValueType
 todo: cc struct can have extra members than correspoding bus. but it must have all the members from bus. 
 todo: cstructname for mlfb/mal input/outputs or mal locals
-todo: linked atomic box: what happens when function called from two main charts with different spec.
+todo: linked atomic box: what happens when function called from two main charts with different spec12
 
 
 bus/enum types import/export setting algorithm:
@@ -1561,3 +1561,7 @@ why non-jit fallback for bus headers, enum headers, test points
 
 linked (atomic) boxes vs linked (atomic) subchart: when copied library chart contains states, it is copied as linked (atomic) subchart other as linked (atomic) box
 linkd (atomic) box is useful for sharing 
+
+Object principles: 
+1. SOLID: single responsibility, open-closed, liskov substitution, interface segregation, dependency inversion.
+2. CRC: class, responsibility, collaborator
