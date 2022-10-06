@@ -1572,3 +1572,5 @@ Object principles:
 vim: set gfn=Monospace\ 13
 vim: set gfn?
 vim: set gfn*
+
+subsystemRef: as if it copies chart/MLFB into main model. not sure what is difference between ModelRef/Library and subsystemRef
