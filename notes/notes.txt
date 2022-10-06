@@ -1471,6 +1471,8 @@ todo: cc struct can have extra members than correspoding bus. but it must have a
 todo: cstructname for mlfb/mal input/outputs or mal locals
 todo: linked atomic box: what happens when function called from two main charts with different spec12
 todo: MLFB from modelreference, open referred model, set a breakpoint on referred model, open main model(do not navigate to MLFB), simulate
+       g2617873
+
 
 
 bus/enum types import/export setting algorithm:
@@ -1566,3 +1568,7 @@ linkd (atomic) box is useful for sharing
 Object principles: 
 1. SOLID: single responsibility, open-closed, liskov substitution, interface segregation, dependency inversion.
 2. CRC: class, responsibility, collaborator
+
+vim: set gfn=Monospace\ 13
+vim: set gfn?
+vim: set gfn*
