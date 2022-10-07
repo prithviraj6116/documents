@@ -1574,3 +1574,8 @@ vim: set gfn?
 vim: set gfn*
 
 subsystemRef: as if it copies chart/MLFB into main model. not sure what is difference between ModelRef/Library and subsystemRef
+
+>> modelName='myModel2';studioApp = SLM3I.SLDomain.getLastActiveStudioAppFor(get_param(modelName,'handle'));st1=studioApp.getStudio.getStudioTag;
+
+
+model reference, subsystem reference, library comparison: https://www.mathworks.com/help/simulink/ug/model-architecture-guidelines.html
