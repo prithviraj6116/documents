@@ -1579,3 +1579,6 @@ subsystemRef: as if it copies chart/MLFB into main model. not sure what is diffe
 
 
 model reference, subsystem reference, library comparison: https://www.mathworks.com/help/simulink/ug/model-architecture-guidelines.html
+
+matlab -webui -debugjs
+JSDDesktop
