@@ -1587,6 +1587,7 @@ JSDDesktop
 
 state: statetypeenum(.type) stateusertypeenum(state_get_usertype)
 sf('get',stateid,'.treeNode) or sf('ActualParentOf',stateChartTransitionFunctionDataBoxJunctionId)
+Box can never be return by ACtualParentOf
 sf('get',stateid,'.type)
 
 get_state_for_atomic_subchart
