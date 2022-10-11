@@ -1779,3 +1779,10 @@ end
 
 
 GECKO_OVERRIDE RB_OVERRIDE USERLOCK_OVERRIDE
+
+MRP DPR RDM epic story
+
+
+output edge triggered event must be EitherEdge.
+input edge triggered event can be falling, rising or eitheredge.
+you can have multiple output events, some function-call, some edge triggered and mixed but not inputs
