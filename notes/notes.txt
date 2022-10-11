@@ -1607,6 +1607,20 @@ slfcn/slbasedstateif to slfcnblk:  sf('get',slfcnIdOrslstateId,'.simulink.blockh
 sf('FunctionsIn/SubstatesIn/DataIn/EventsIn/JunctionsIn/TransitionsIn',id)
 sf('ActualParentOf',id)
 
+[realSuperTransitionid,~,~]=sf('get',superTransitionFirstLinkId,'.subLink')
+superTransitionFirstLinkId=sf('get',realSuperTransitionid,'.subLink')
+sf('get',normalTransitionId,'.type')==0 (SF::NORMAL)
+sf('get',realSuperTransitionid,'.type')==2 (SF::SUPER)
+sf('get',superTransitionFirstLinkId,'.type')==1 (SF::SUB)
+sf('get',anyOf4FunctionId,'.type')==3
+sf('get',boxOrAtomicBoxOrNoteOrImage','.type')==2
+sf('get',andstategroupedOrSubchartOrAtomicSubchartstateorSLStateState,'.type')==1
+sf('get',orStateGroupedOrSubchartOrAtomicSubchartstateorSLStateState,'.type')==1
+
+sf('get',id,'.isa') == STATE/TRANSITION/DATA/EVENT/CHART/MACHINE/INSTANCE/PORT/JUNCTION/TARGET/LINKCHART/SCRIPT
+
+
+
 
 function getAllDB(mainModelName)
     %v=sf('find',sf('FunctionsIn',sf('get',sf('GetSFBlockData',gcbh),'instance.chart')),'state.name','mlfcn1')
