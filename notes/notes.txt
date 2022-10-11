@@ -1590,7 +1590,186 @@ sf('get',stateid,'.treeNode) or sf('ActualParentOf',stateChartTransitionFunction
 Box can never be return by ACtualParentOf
 sf('get',stateid,'.type)
 
+slblock to chart:     sf('get',sf('GetSFBlockData',slBlock),'.chart') 
+chart to slblock: w1=up(sf('IdToHandle',chartId));w1.Handle
+
 get_state_for_atomic_subchart
 getSubchartState
 isUsedAsComponent
 SLUtils.isStateflowBlock
+
+
+
+
+function getAllDB(mainModelName)
+    %v=sf('find',sf('FunctionsIn',sf('get',sf('GetSFBlockData',gcbh),'instance.chart')),'state.name','mlfcn1')
+%v=sf('find',sf('SubstatesIn',sf('get',sf('GetSFBlockData',gcbh),'instance.chart')),'state.name','stateA')
+%v=sf('get',sf('find',sf('SubstatesIn',sf('get',sf('GetSFBlockData',gcbh),'instance.chart')),'state.name','A'),'state.simulink.blockHandle')
+%sf('get',sf('GetSFBlockData',get_param(get_param(gcbh,'ReferenceBlock'),'handle')),'instance.chart')
+%getappdata(get_param(sf('get',sf('GetSFBlockData',get_param(get_param(gcbh,'ReferenceBlock'),'handle')),'instance.sfunctionBlock'),'Object'),'SF_InstanceSpecChecksum')
+%get_param([gcb,'/ SFunction '],'handle')
+     clc;
+    if ~exist('mainModelName','var')
+        mainModelName = bdroot;
+    end
+    if false
+        givenBlock = get_param(givenPath, 'handle');
+        referenceBlock = get_param(chartPath,'ReferenceBlock');
+        if ~isempty(referenceBlock)
+            chartBlock = referenceBlock;
+        else
+            chartBlock = givenBlock;
+        end
+        chartInstanceId = sf('GetSFBlockData', chartBlock);
+        chartId = sf('get',chartInstanceId, 'instance.chart');
+        chartInstanceId = sf('get',chartId, 'chart.instance');
+        
+    end
+    AllModelReferencesInModel = find_system(mainModelName,'BlockType','ModelReference');
+    AllModelsReferencedInMainModelNames=cellfun(@(x) get_param(x,'ModelName'),AllModelReferencesInModel,'UniformOutput',false);
+    AllModelNames = [mainModelName,AllModelsReferencedInMainModelNames'];
+    AllSFBlocksInMainModelIncludingReferences = {};
+    for i = 1:length(AllModelNames)
+        modelName = AllModelNames{i};
+        AllSimulinkBlocksInModel = find_system(modelName);
+        IsBlockASFBlockInModel = cellfun(@(x) isSFBlock(x), AllSimulinkBlocksInModel);
+        AllSFBlocksInThisModel = AllSimulinkBlocksInModel(IsBlockASFBlockInModel);
+        AllSFBlocksInMainModelIncludingReferences = [AllSFBlocksInMainModelIncludingReferences AllSFBlocksInThisModel'];
+    end
+    AllSFBlocksInMainModelIncludingReferences = unique(AllSFBlocksInMainModelIncludingReferences);
+
+    data = sf('get','all','data.id');
+    dataU=arrayfun(@(x) sf('IdToHandle',x), data, 'UniformOutput', false);
+    dataP={};
+    for i = 1:length(dataU)
+        if ~isempty(dataU{i})
+            dataP{end+1} = [num2str(dataU{i}.id) ' : ' dataU{i}.path filesep dataU{i}.name];
+        end
+    end
+
+    states = sf('get','all','state.id');
+    statesU=arrayfun(@(x) sf('IdToHandle',x), states, 'UniformOutput', false);
+    statesP={};
+    for i = 1:length(statesU)
+        if ~isempty(statesU{i})
+            statesP{end+1} = [num2str(statesU{i}.id) ' : ' statesU{i}.path filesep statesU{i}.name]; %#ok<*AGROW>
+        end
+    end
+
+
+    machines = sf('get','all','machine.id');
+    machinesU=arrayfun(@(x) sf('IdToHandle',x), machines, 'UniformOutput', false);
+    machinesP={};
+    linkCharts={};
+    for i = 1:length(machinesU)
+        if ~isempty(machinesU{i})
+            machinesP{end+1} = [num2str(machinesU{i}.id) ' : ' machinesU{i}.path];
+            linkCharts{end+1} =  sf('get',machinesU{i}.Id,'machine.sfLinks');
+        end
+    end
+
+
+    targets = sf('get','all','target.id');
+    targetsU=arrayfun(@(x) sf('IdToHandle',x), targets, 'UniformOutput', false);
+    targetsP={};
+    for i = 1:length(targetsU)
+        if ~isempty(targetsU{i})
+            targetsP{end+1} = [num2str(targetsU{i}.id) ' : ' targetsU{i}.path filesep targetsU{i}.name];
+        end
+    end
+
+    charts = sf('get','all','chart.id');
+    chartsU=arrayfun(@(x) sf('IdToHandle',x), charts, 'UniformOutput', false);
+    chartsP={};
+    for i = 1:length(chartsU)
+        if ~isempty(chartsU{i})
+            chartsP{end+1} = [num2str(chartsU{i}.id) ' : ' chartsU{i}.path];
+        end
+    end
+
+    instances = sf('get','all','instance.id');
+    instancesP={};
+    for i = 1:length(instances)
+        chart = sf('get',instances(i),'instance.chart');
+        chartU = sf('IdToHandle',chart);
+        instancesP{end+1} = [num2str(instances(i)) ' : ' num2str(chart) ' : ' chartU.Path];
+    end
+    linkChartIds={};
+    linkChartsU={};
+    linkChartsP={};
+    for i = 1:length(linkCharts)
+        l = linkCharts{i};
+        for j = 1:length(l)
+            linkChartIds{end+1}=sf('GetSFBlockData', l(j));
+            linkChartsU{end+1}=sf('IdToHandle',linkChartIds{end});
+            referenceBlock = get_param(l(j),'ReferenceBlock');
+            chartSLBlockH = get_param(referenceBlock,'handle');
+            chartInstanceId = sf('GetSFBlockData', chartSLBlockH);
+            chartId = sf('get',chartInstanceId, 'instance.chart');
+            chartU = sf('IdToHandle',chartId);
+            linkChartsP{end+1}=[num2str(linkChartsU{end}.Id) ' : '  linkChartsU{end}.Path ' : ' num2str(chartId) ' : ' referenceBlock ' : ' chartU.Path];
+        end
+    end
+
+    disp('-------------sl handles----------');
+    largestPathLength = 0;
+    for i = 1:length(AllSFBlocksInMainModelIncludingReferences)
+        if largestPathLength < length(AllSFBlocksInMainModelIncludingReferences{i})
+            largestPathLength = length(AllSFBlocksInMainModelIncludingReferences{i});
+        end
+    end
+    disp([mainModelName repelem(' ',1,(largestPathLength) - length(mainModelName))...
+            ': slroobdhandle: ' ...
+            num2str(get_param(mainModelName,'handle')) ...
+            ]);        
+    for i = 1:length(AllSFBlocksInMainModelIncludingReferences)
+        
+        disp([AllSFBlocksInMainModelIncludingReferences{i} repelem(' ',1,(largestPathLength) - length(AllSFBlocksInMainModelIncludingReferences{i}))...
+            ': sfblockhandle: ' ...
+            num2str(get_param(AllSFBlocksInMainModelIncludingReferences{i},'handle')) ...
+            ': sfuncblockhandle: ' ...
+            num2str(get_param([AllSFBlocksInMainModelIncludingReferences{i} '/ SFunction '],'handle'))...
+            ]);
+    end
+
+    disp('-------------machines------------');
+    for i = 1:length(machinesP)
+        disp(machinesP{i});
+    end
+    disp('-------------targets------------')
+    for i = 1:length(targetsP)
+        disp(targetsP{i});
+    end
+    disp('-------------charts-------------')
+    for i = 1:length(chartsP)
+        disp(chartsP{i});
+    end
+    disp('-------------instances----------')
+    for i = 1:length(instancesP)
+        disp(instancesP{i});
+    end
+    disp('-------------linkCharts---------')
+    for i = 1:length(linkChartsP)
+        disp(linkChartsP{i});
+    end
+    disp('-------------states--------------')
+    for i = 1:length(statesP)
+        disp(statesP{i});
+    end
+    disp('-------------data---------------')
+    for i = 1:length(dataP)
+        disp(dataP{i});
+    end
+    disp('-------------sf blocks----------')
+    for i = 1:length(AllSFBlocksInMainModelIncludingReferences)
+        disp(AllSFBlocksInMainModelIncludingReferences{i});
+    end
+    
+    disp('-------------end---------------')
+end
+function v = isSFBlock(blockH)
+    blockH = get_param(blockH,'handle');
+    v =strcmpi(get_param(blockH, 'Type'), 'Block') && ...
+        strcmpi(get_param(blockH, 'BlockType'), 'Subsystem') && ...
+        ~strcmpi(get_param(blockH, 'SFBlockType'), 'NONE');
+end
