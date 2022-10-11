@@ -1475,6 +1475,7 @@ todo: MLFB from modelreference, open referred model, set a breakpoint on referre
 todo: matlab gdb stack, set variable value fix in feature.cpp
 todo: TTFcn under TTchart  is searchable;rt.find('-isa','Stateflow.TruthTable')
 todo: connection of slfunction and simulinkbasedstate
+todo: DataOf -> DeOf (gdb stack missing)
 
 
 
