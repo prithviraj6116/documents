@@ -1586,7 +1586,7 @@ matlab -webui -debugjs
 JSDDesktop
 
 state: statetypeenum(.type) stateusertypeenum(state_get_usertype)
-sf('get',stateid,'.treeNode)
+sf('get',stateid,'.treeNode) or sf('ActualParentOf',stateChartTransitionFunctionDataBoxJunctionId)
 sf('get',stateid,'.type)
 
 get_state_for_atomic_subchart
