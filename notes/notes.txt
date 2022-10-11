@@ -1603,6 +1603,9 @@ SLUtils.isStateflowBlock
 
 chartid to sfunctionblock: sf('get',sf('get',chartId,'.instance'),'instance.sfunctionBlock')
 chartid to simulinkblock : sf('get',sf('get',chartId,'.instance'),'instance.simulinkBlock') 
+slfcn/slbasedstateif to slfcnblk:  sf('get',slfcnIdOrslstateId,'.simulink.blockhandle')
+sf('FunctionsIn/SubstatesIn/DataIn/EventsIn/JunctionsIn/TransitionsIn',id)
+sf('ActualParentOf',id)
 
 
 function getAllDB(mainModelName)
@@ -1789,3 +1792,5 @@ output edge triggered event must be EitherEdge.
 input edge triggered event can be falling, rising or eitheredge.
 you can have multiple output events, some function-call, some edge triggered and mixed but not inputs
 function-call-inputs/outputs cannot be viewd in Scope,XYGraph,SDI
+
+
