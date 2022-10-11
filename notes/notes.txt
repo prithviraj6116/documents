@@ -1590,7 +1590,7 @@ sf('get',stateid,'.treeNode) or sf('ActualParentOf',stateChartTransitionFunction
 Box can never be return by ACtualParentOf
 sf('get',stateid,'.type)
 
-slblock to chart:     sf('get',sf('GetSFBlockData',slBlock),'.chart') 
+slblock(non-link) to chart:     sf('get',sf('GetSFBlockData',slBlock),'.chart') 
 chart to slblock: w1=up(sf('IdToHandle',chartId));w1.Handle
 
 get_state_for_atomic_subchart
@@ -1775,3 +1775,7 @@ function v = isSFBlock(blockH)
         strcmpi(get_param(blockH, 'BlockType'), 'Subsystem') && ...
         ~strcmpi(get_param(blockH, 'SFBlockType'), 'NONE');
 end
+
+
+
+GECKO_OVERRIDE RB_OVERRIDE USERLOCK_OVERRIDE
