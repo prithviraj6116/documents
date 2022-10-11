@@ -1599,6 +1599,8 @@ isUsedAsComponent
 SLUtils.isStateflowBlock
 
 
+chartid to sfunctionblock: sf('get',sf('get',chartId,'.instance'),'instance.sfunctionBlock')
+chartid to simulinkblock : sf('get',sf('get',chartId,'.instance'),'instance.simulinkBlock') 
 
 
 function getAllDB(mainModelName)
