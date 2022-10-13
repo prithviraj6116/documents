@@ -1840,4 +1840,4 @@ input edge triggered event can be falling, rising or eitheredge.
 you can have multiple output events, some function-call, some edge triggered and mixed but not inputs
 function-call-inputs/outputs cannot be viewd in Scope,XYGraph,SDI
 
-
+Model data editor: parameter tab: block state parameter and argument parameter from model refererence model workspace
