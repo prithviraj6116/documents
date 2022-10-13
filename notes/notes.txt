@@ -1481,7 +1481,7 @@ todo: sharing of Parameters,DSM,CC,exportedSFFcns across library,modelreferenc a
 atomic subcharts limitations:
 1. chart level function prototype fully specialized
 2. no output events
-3. mapped main chart data fully specialized
+3. atomic subchart output can only map to full specialized main chart local/output
 
 
 
