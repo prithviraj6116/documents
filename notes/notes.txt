@@ -1626,6 +1626,9 @@ Simulink.Signal InitialValue is string
 DSM block supports string but initial value must be 0
 Simulink Signals do not support string when used as DSM or when used as specification for signal line.
 
+DSM and Simulink Signal supports: bus, enum
+
+
 [realSuperTransitionid,~,~]=sf('get',superTransitionFirstLinkId,'.subLink')
 superTransitionFirstLinkId=sf('get',realSuperTransitionid,'.firstSubWire')
 sf('get',normalTransitionId,'.type')==0 (SF::NORMAL)
