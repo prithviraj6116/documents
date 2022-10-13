@@ -1624,7 +1624,7 @@ local: DSM block or using Simulink.Signal in model workspace: only accessible in
 global: using Simulink.Signal in base workspace, need full-specialiled size/type/complexity: accessible anywhere. corresponding DSM write/read block shows global icon
 Simulink.Signal InitialValue is string
 DSM block supports string but initial value must be 0
-Simulink Signals do not support string when used as DSM
+Simulink Signals do not support string when used as DSM or when used as specification for signal line.
 
 [realSuperTransitionid,~,~]=sf('get',superTransitionFirstLinkId,'.subLink')
 superTransitionFirstLinkId=sf('get',realSuperTransitionid,'.firstSubWire')
