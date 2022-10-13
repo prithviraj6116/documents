@@ -1632,6 +1632,9 @@ parametrized library links
 parametrized model reference instances. bottom model's model workspace parameter/MVariable mark as argument. use model block instance parameters
 self-modifiable mask on library block's masks code tab
 
+model(not library/ss)->toolstrip->modeling->create system mask: this is used when used as model reference
+model reference local solver: input signal handling
+
 [realSuperTransitionid,~,~]=sf('get',superTransitionFirstLinkId,'.subLink')
 superTransitionFirstLinkId=sf('get',realSuperTransitionid,'.firstSubWire')
 sf('get',normalTransitionId,'.type')==0 (SF::NORMAL)
