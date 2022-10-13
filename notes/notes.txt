@@ -1483,6 +1483,7 @@ todo: linked atomicsubchart state and linked atomicboxes icon in symbols window 
 todo: globally exported function from linked atomic subchart shows up as undefined in main chart symbols window
 todo: globally exporting function is not available in non-linked atomic subcharts
 todo: sharing of Parameters,DSM,CC,exportedSFFcns across library,modelreferenc and subsystem reference instances and using export model
+todo: model data editor does not show stateflow in/out or locals
 
 atomic subcharts limitations:
 1. chart level function prototype fully specialized
