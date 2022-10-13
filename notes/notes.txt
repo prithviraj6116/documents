@@ -1630,6 +1630,7 @@ DSM and Simulink Signal supports: bus, enum
 
 parametrized library links
 parametrized model reference instances. bottom model's model workspace parameter/MVariable mark as argument. use model block instance parameters
+self-modifiable mask on library block's masks code tab
 
 [realSuperTransitionid,~,~]=sf('get',superTransitionFirstLinkId,'.subLink')
 superTransitionFirstLinkId=sf('get',realSuperTransitionid,'.firstSubWire')
