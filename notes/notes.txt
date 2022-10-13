@@ -1484,6 +1484,7 @@ todo: globally exported function from linked atomic subchart shows up as undefin
 todo: globally exporting function is not available in non-linked atomic subcharts
 todo: sharing of Parameters,DSM,CC,exportedSFFcns across library,modelreferenc and subsystem reference instances and using export model
 todo: model data editor does not show stateflow in/out or locals
+todo: MLFcn symbol window ununsed chartlevel:add G1 go to MLFcn level and go back and remove G1 and go forward
 
 atomic subcharts limitations:
 1. chart level function prototype fully specialized
