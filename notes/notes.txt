@@ -1619,8 +1619,12 @@ slfcn/slbasedstateif to slfcnblk:  sf('get',slfcnIdOrslstateId,'.simulink.blockh
 sf('FunctionsIn/SubstatesIn/DataIn/EventsIn/JunctionsIn/TransitionsIn',id)
 sf('ActualParentOf',id)
 
+DSM: Data Store Memory
+local: DSM block or using Simulink.Signal in model workspace: only accessible in model not in model reference
+global: using Simulink.Signal in base workspace: accessible anywhere. corresponding DSM write/read block shows global icon
+
 [realSuperTransitionid,~,~]=sf('get',superTransitionFirstLinkId,'.subLink')
-superTransitionFirstLinkId=sf('get',realSuperTransitionid,'.subLink')
+superTransitionFirstLinkId=sf('get',realSuperTransitionid,'.firstSubWire')
 sf('get',normalTransitionId,'.type')==0 (SF::NORMAL)
 sf('get',realSuperTransitionid,'.type')==2 (SF::SUPER)
 sf('get',superTransitionFirstLinkId,'.type')==1 (SF::SUB)
