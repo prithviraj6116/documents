@@ -1480,6 +1480,8 @@ todo: localdata used in MLFcn in SF throws mllint error
 todo: copying boxes(atomic box,linked atomic box) does not change the name
 todo: atomicsubchart state and atomicboxes icon in symbols window is same
 todo: linked atomicsubchart state and linked atomicboxes icon in symbols window is same
+todo: globally exported function from linked atomic subchart shows up as undefined in main chart symbols window
+todo: globally exporting function is not available in non-linked atomic subcharts
 todo: sharing of Parameters,DSM,CC,exportedSFFcns across library,modelreferenc and subsystem reference instances and using export model
 
 atomic subcharts limitations:
