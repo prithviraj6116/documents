@@ -1477,6 +1477,7 @@ todo: TTFcn under TTchart  is searchable;rt.find('-isa','Stateflow.TruthTable')
 todo: connection of slfunction and simulinkbasedstate
 todo: DataOf -> DeOf (gdb stack missing)
 todo: localdata used in MLFcn in SF throws mllint error
+todo: copying boxes(atomic box,linked atomic box) does not change the name
 todo: sharing of Parameters,DSM,CC,exportedSFFcns across library,modelreferenc and subsystem reference instances and using export model
 
 atomic subcharts limitations:
