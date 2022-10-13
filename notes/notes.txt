@@ -1628,6 +1628,8 @@ Simulink Signals do not support string when used as DSM or when used as specific
 
 DSM and Simulink Signal supports: bus, enum
 
+parametrized library links
+parametrized model reference instances. bottom model's model workspace parameter/MVariable mark as argument. use model block instance parameters
 
 [realSuperTransitionid,~,~]=sf('get',superTransitionFirstLinkId,'.subLink')
 superTransitionFirstLinkId=sf('get',realSuperTransitionid,'.firstSubWire')
