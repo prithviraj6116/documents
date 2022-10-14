@@ -1842,3 +1842,4 @@ you can have multiple output events, some function-call, some edge triggered and
 function-call-inputs/outputs cannot be viewd in Scope,XYGraph,SDI
 
 Model data editor: parameter tab: block state parameter and argument parameter from model refererence model workspace
+python3 http server python3 -m http.server 8000 
