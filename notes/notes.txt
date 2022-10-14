@@ -1630,6 +1630,9 @@ Simulink Signals do not support string when used as DSM or when used as specific
 
 DSM and Simulink Signal supports: bus, enum
 
+DSM:       no varsize
+Parameter: no varsize, no string
+
 parametrized library links
 parametrized model reference instances. bottom model's model workspace parameter/MVariable mark as argument. use model block instance parameters
 self-modifiable mask on library block's masks code tab
@@ -1843,3 +1846,5 @@ function-call-inputs/outputs cannot be viewd in Scope,XYGraph,SDI
 
 Model data editor: parameter tab: block state parameter and argument parameter from model refererence model workspace
 python3 http server python3 -m http.server 8000 
+
+sbsmartbuild -mods all -k -ignore-failed-modules -no-ch-validate -lean  &> sbsmartbuild2.log -list-mode -no-build
