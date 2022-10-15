@@ -1633,6 +1633,7 @@ DSM and Simulink Signal supports: bus, enum
 
 DSM:       no varsize
 Parameter: no varsize, no string
+Signals:               no string
 
 parametrized library links
 parametrized model reference instances. bottom model's model workspace parameter/MVariable mark as argument. use model block instance parameters
