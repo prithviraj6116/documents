@@ -1486,6 +1486,7 @@ todo: sharing of Parameters,DSM,CC,exportedSFFcns across library,modelreferenc a
 todo: model data editor does not show stateflow in/out or locals
 todo: MLFcn symbol window ununsed chartlevel:add G1 go to MLFcn level and go back and remove G1 and go forward
 todo: Dipanjan feature " matrix size 1 as fixed checkbox" (1) c++
+todo: MAL unassigned data is shown as 0 in Symbols window 
 
 atomic subcharts limitations:
 1. chart level function prototype fully specialized
@@ -1551,7 +1552,7 @@ DES: (1) no during action (2) no simulink based states (3) no sample time (4) no
      (8) no code generation
 
 Simulink editor developer help page: https://confluence.mathworks.com/pages/viewpage.action?pageId=775337453
-nonjit-fallback: (1) imported bus (2) test-point (3) ir_vars (unbounded array C++) (4) ir_functions (unbounded array C++)
+nonjit-fallback: (1) imported bus (2) test-point (3) ir_vars (varsize and/or unbounded array C++) (4) ir_functions (unbounded array C++)
 parameters:
 EnablePacing
 PacingRate
@@ -1634,6 +1635,10 @@ DSM and Simulink Signal supports: bus, enum
 DSM:       no varsize
 Parameter: no varsize, no string
 Signals:               no string
+
+C chart: ":=" fixed point assignment
+
+matlab matrix expansion: kron(expand individual element/row/column n times), repmat(expand whole matrix n times)
 
 parametrized library links
 parametrized model reference instances. bottom model's model workspace parameter/MVariable mark as argument. use model block instance parameters
