@@ -1489,6 +1489,7 @@ todo: Dipanjan feature " matrix size 1 as fixed checkbox" (1) c++
 todo: MAL unassigned data is shown as 0 in Symbols window 
 todo: initial value changing from scalar to non-scalar for MAL inherited size data 
 todo: subsystem reference semantics when inside library
+todo: verify atmoic subchart mapping (data logging and exported functions) with different scope mapping
 
 atomic subchart restrictions: 
 (1) Big NO: moore, continuous, output event, messages, varsize, masked library chart 
