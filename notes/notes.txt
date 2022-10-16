@@ -1488,6 +1488,7 @@ todo: MLFcn symbol window ununsed chartlevel:add G1 go to MLFcn level and go bac
 todo: Dipanjan feature " matrix size 1 as fixed checkbox" (1) c++
 todo: MAL unassigned data is shown as 0 in Symbols window 
 todo: initial value changing from scalar to non-scalar for MAL inherited size data 
+todo: subsystem reference semantics when inside library
 
 Stateflow remove trailing 1 from  dimensions > 2
 edit time size [n,m,1,1,1]==comliled size [n,m]
