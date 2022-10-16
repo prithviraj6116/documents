@@ -1648,6 +1648,8 @@ C chart: ":=" fixed point assignment
 
 Modref: cannot use anything from main model workspace or sldd used by main model (and not used by modref)
 
+Only possible in base workspace/sldd: Bus, ValueType, Alias type, configuration, variant, variantcontrol, variantvariable
+
 matlab matrix expansion: kron(expand individual element/row/column n times), repmat(expand whole matrix n times)
 
 parametrized library links
