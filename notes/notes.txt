@@ -1490,6 +1490,14 @@ todo: MAL unassigned data is shown as 0 in Symbols window
 todo: initial value changing from scalar to non-scalar for MAL inherited size data 
 todo: subsystem reference semantics when inside library
 
+atomic subchart restrictions: 
+(1) Big NO: moore, continuous, output event, messages, varsize, masked library chart 
+(2) local events(subchart top level):  no outgoing transition, 
+(3) different scope mapping: no data logging (might be wrong), no exported function from atomic subchart
+(4) local data C subchart: no non-zero based indexing
+(5) input events: must have input to input and unique mapping
+(6) local/output data of main chart mapped to atmoic subchart data: must fully specified
+
 Stateflow remove trailing 1 from  dimensions > 2
 edit time size [n,m,1,1,1]==comliled size [n,m]
 edit time size [n,1,1,1,1]==comliled size [n,1]
