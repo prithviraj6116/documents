@@ -1650,6 +1650,8 @@ Modref: cannot use anything from main model workspace or sldd used by main model
 
 Only possible in base workspace/sldd: Bus, ValueType, Alias type, configuration, variant, variantcontrol, variantvariable
 
+[mydir,~,~=fileparts(mfilename('fullpath')) : get dir of matlab file from inside
+
 matlab matrix expansion: kron(expand individual element/row/column n times), repmat(expand whole matrix n times)
 
 parametrized library links
