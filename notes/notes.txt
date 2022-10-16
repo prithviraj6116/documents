@@ -1870,3 +1870,4 @@ Model data editor: parameter tab: block state parameter and argument parameter f
 python3 http server python3 -m http.server 8000 
 
 sbsmartbuild -mods all -k -ignore-failed-modules -no-ch-validate -lean  &> sbsmartbuild2.log -list-mode -no-build
+coverage: decision, condition decision, MCDC(modified condition decision coverage)
