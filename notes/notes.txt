@@ -1883,3 +1883,7 @@ sbsmartbuild -mods all -k -ignore-failed-modules -no-ch-validate -lean  &> sbsma
 coverage: decision, condition decision, MCDC(modified condition decision coverage)
 
 Bstateflow full debug sandbox: mw -using Bstateflow sbs clone create -c Bstateflow -j 2088785 &> sbsmartbuild1.log; cd $s/Bstateflow.j2088785/; sbsmartbuild -mods all -k -ignore-failed-modules -no-ch-validate -lean  &> sbsmartbuild2.log
+find matlab/bin/glnxa64 -iname "libmw*dbg" -exec grep  "\-O0"  -L {} \;
+ time find oct10/matlab/bin/glnxa64 -iname "libmw*dbg" -exec grep  "\-g \-O2"  -l {} &> libmwso_with_O0.log \; 
+$ time find . -iname "libmw.so*" -exec ln -sf /local-ssd/ppatil/oct10/matlab/bin/glnxa64/{} {} \;
+
