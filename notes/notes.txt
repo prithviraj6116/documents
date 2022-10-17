@@ -1475,7 +1475,7 @@ todo: MLFB from modelreference, open referred model, set a breakpoint on referre
 todo: matlab gdb stack, set variable value fix in feature.cpp
 todo: TTFcn under TTchart  is searchable;rt.find('-isa','Stateflow.TruthTable')
 todo: connection of slfunction and simulinkbasedstate
-todo: DataOf -> DeOf (gdb stack missing)
+todo: (DONE: happened due to Bstateflow not compiled)DataOf -> DeOf (gdb stack missing)
 todo: localdata used in MLFcn in SF throws mllint error
 todo: copying boxes(atomic box,linked atomic box) does not change the name
 todo: atomicsubchart state and atomicboxes icon in symbols window is same
@@ -1490,6 +1490,7 @@ todo: MAL unassigned data is shown as 0 in Symbols window
 todo: initial value changing from scalar to non-scalar for MAL inherited size data 
 todo: subsystem reference semantics when inside library
 todo: verify atmoic subchart mapping (data logging and exported functions) with different scope mapping
+todo: why we disallow function call output events in atomic subcharts
 
 atomic subchart restrictions: 
 (1) Big NO: moore, continuous, output event, messages, varsize, masked library chart 
