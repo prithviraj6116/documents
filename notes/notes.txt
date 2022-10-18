@@ -1913,6 +1913,6 @@ y2=cast(2,'like',y1)
 
 coder.ceval('-global','f1')
 coder.ceval('-layout:rowMajor','f1')
-coder.const and coder.Constant
+coder.const and coder.Constant: specify code generation time constant to constant fold-code
 
 
