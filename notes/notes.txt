@@ -1889,7 +1889,6 @@ $ time find . -iname "libmw.so*" -exec ln -sf /local-ssd/ppatil/oct10/matlab/bin
 
 make_bstateflow_full_debug_sandbox -keep-existing-debug-dll-intact/-k -create-new/-c [name] -dll-copy/-d
 
-matrix expansion in MATLAB:https://www.mathworks.com/help/matlab/matlab_prog/compatible-array-sizes-for-basic-operations.html 
 
 matlab_coder license is not required to generate mex files. it is required to generate c/c++ code
 license('inuse') gives you name to enable or disable using 
@@ -1897,5 +1896,9 @@ license('checkout','matlab_coder','enable');license('test','matlab_coder','enabl
 %#codegen pragma is used for lint only
 
 C: near, far, huge pointers segment+offset
+
+C chart: scalar expansion        e.g. d2x3=1;d2x3=e2x3+1;
+M chart: scalar+matrix expansion e.g. above;d2x3=e1x3;d2x3=e1x3+f2x3, or everything described in below help page
+matrix expansion in MATLAB:https://www.mathworks.com/help/matlab/matlab_prog/compatible-array-sizes-for-basic-operations.html 
 
 
