@@ -1894,5 +1894,5 @@ matrix expansion in MATLAB:https://www.mathworks.com/help/matlab/matlab_prog/com
 matlab_coder license is not required to generate mex files. it is required to generate c/c++ code
 license('inuse') gives you name to enable or disable using 
 license('checkout','matlab_coder','enable');license('test','matlab_coder','enable')
-
+%#codegen pragma is used for lint only
 
