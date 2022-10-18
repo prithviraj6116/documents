@@ -1896,3 +1896,6 @@ license('inuse') gives you name to enable or disable using
 license('checkout','matlab_coder','enable');license('test','matlab_coder','enable')
 %#codegen pragma is used for lint only
 
+C: near, far, huge pointers segment+offset
+
+
