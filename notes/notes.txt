@@ -1887,5 +1887,9 @@ find matlab/bin/glnxa64 -iname "libmw*dbg" -exec grep  "\-O0"  -L {} \;
  time find oct10/matlab/bin/glnxa64 -iname "libmw*dbg" -exec grep  "\-g \-O2"  -l {} &> libmwso_with_O0.log \; 
 $ time find . -iname "libmw.so*" -exec ln -sf /local-ssd/ppatil/oct10/matlab/bin/glnxa64/{} {} \;
 
-make_bstateflow_full_debug_sandbox -keep-existing-debug-dll-intact/-k -create-new/-c [name] -copy
+make_bstateflow_full_debug_sandbox -keep-existing-debug-dll-intact/-k -create-new/-c [name] -dll-copy/-d
+
+matrix expansion in MATLAB:https://www.mathworks.com/help/matlab/matlab_prog/compatible-array-sizes-for-basic-operations.html 
+
+matlab coder license is not required to generate mex files. it is required to generate c/c++ code.
 
