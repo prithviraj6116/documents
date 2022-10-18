@@ -1906,4 +1906,6 @@ coderTypeEditor
 save('dataFile.mat', 'myVarName','mat') %mat is default
 save('dataFile.dat', 'myVarName','ascii', '-tabs')
 
+cfg=coder.config;cfg.GlobalDataSyncMethod  coder.extrinsic('sync:on','f1')
+
 
