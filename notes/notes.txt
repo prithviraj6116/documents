@@ -1901,4 +1901,9 @@ C chart: scalar expansion        e.g. d2x3=1;d2x3=e2x3+1;
 M chart: scalar+matrix expansion e.g. above;d2x3=e1x3;d2x3=e1x3+f2x3, or everything described in below help page
 matrix expansion in MATLAB:https://www.mathworks.com/help/matlab/matlab_prog/compatible-array-sizes-for-basic-operations.html 
 
+coderTypeEditor
+
+save('dataFile.mat', 'myVarName','mat') %mat is default
+save('dataFile.dat', 'myVarName','ascii', '-tabs')
+
 
