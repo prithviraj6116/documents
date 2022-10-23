@@ -1923,3 +1923,4 @@ mw sbruntests -kill -session-id 1513433
 
 https://reviewboard.mathworks.com/r/779306/diff/1/
 custom cc initilizer SimCustomInitializer/SimCustomTerminator
+ if test `sbps -user distccd | wc -l` -gt 0; then echo yes; fi
