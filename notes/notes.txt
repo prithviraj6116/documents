@@ -1491,6 +1491,8 @@ todo: initial value changing from scalar to non-scalar for MAL inherited size da
 todo: subsystem reference semantics when inside library
 todo: verify atmoic subchart mapping (data logging and exported functions) with different scope mapping
 todo: why we disallow function call output events in atomic subcharts
+todo: linker based listing of auto-move stateflow-sf_cdr classes/functions
+todo: gvim improvements
 
 atomic subchart restrictions: 
 (1) Big NO: moore, continuous, output event, messages, varsize, masked library chart 
@@ -1917,10 +1919,17 @@ coder.const and coder.Constant: specify code generation time constant to constan
 
 
 
-C++ not allowed outside of class definition: override
+C++ not allowed outside of class definition: override, default argument
 
 mw sbruntests -kill -session-id 1513433
 
 https://reviewboard.mathworks.com/r/779306/diff/1/
 custom cc initilizer SimCustomInitializer/SimCustomTerminator
  if test `sbps -user distccd | wc -l` -gt 0; then echo yes; fi
+
+
+for normal duplicate charts: sfun(1),rtw(2),mdlrtw(1)
+for library linked charts  : sfun(1),rtw(1),mdlrtw(1):  exception:mdlrtw-slci:(2):e.g:g2777763:when output function call is connected to variant subsystem
+//for two exact same chart: sfun: 1 construct_module, rtw: 2 construct_module,  mdlrtw: 1 call, mdlrtw(slci): ? calls, mdlrts(when charts are variant subsystem): ? calls
+for library charts(spec1(2instances), spec2(1instance): sfun: 2 construct_module, rtw: 2 construct_module,  mdlrtw: 2 call, mdlrtw(slci): ? calls, mdlrts(when charts are variant subsystem): ? calls
+
