@@ -1935,3 +1935,5 @@ for library linked charts  : sfun(1),rtw(1),mdlrtw(1):  exception:mdlrtw-slci:(2
 //for two exact same chart: sfun: 1 construct_module, rtw: 2 construct_module,  mdlrtw: 1 call, mdlrtw(slci): ? calls, mdlrts(when charts are variant subsystem): ? calls
 for library charts(spec1(2instances), spec2(1instance): sfun: 2 construct_module, rtw: 2 construct_module,  mdlrtw: 2 call, mdlrtw(slci): ? calls, mdlrts(when charts are variant subsystem): ? calls
 
+
+vim: :call cursor(linenumber, columnnumber)
