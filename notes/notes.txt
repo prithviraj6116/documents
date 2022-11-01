@@ -1938,3 +1938,5 @@ for library charts(spec1(2instances), spec2(1instance): sfun: 2 construct_module
 
 vim: :call cursor(linenumber, columnnumber)
 include what you use: https://confluence.mathworks.com/display/CORECGIR/Include-What-You-Use+on+Modules+Downstream+of+CGIR
+
+class methods using function pointer: "this" pointer is not available, almost like a not member
