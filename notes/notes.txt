@@ -1940,3 +1940,4 @@ vim: :call cursor(linenumber, columnnumber)
 include what you use: https://confluence.mathworks.com/display/CORECGIR/Include-What-You-Use+on+Modules+Downstream+of+CGIR
 
 class methods using function pointer: "this" pointer is not available, almost like a not member
+gcc -Wl,--wrap=functionName
