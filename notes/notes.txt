@@ -1497,7 +1497,7 @@ todo: ram's bug(created by me about subsystem reference MLFB): windows:mlfb inte
 todo: possible loss of data for size_t=mxuint32 on windows but not on linux why?  http://bat3cave.mathworks.com/Cabbage/cluster/Bstateflow/job/j2108270#tab=Summary
 todo: bug: index vector block parameter is wrong.
 todo: non-bus capable blocks: mux, demux, manual switch, multi-port switch, index vector(understandble)
-todo: list bus-enabled, function-call enabled and message-enabled blocks
+todo: list bus-enabled, function-call enabled, message-enabled, enum-enabled, imagetype-enabled, string-enabled blocks.
 
 atomic subchart restrictions: 
 (1) Big NO: moore, continuous, output event, messages, varsize, masked library chart 
