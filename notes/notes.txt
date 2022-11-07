@@ -1507,6 +1507,14 @@ todo:(1)cgir navigation (2) stateflow command helper
      (5) auto sf_cdr passthrough (6) auto sf_cdr coders/sf_ir move (7) debug sandboxes (8) batch command with stateflow
 
 
+Parallel toolbox and server: 
+parfor, perfeval
+
+Batch Processing(without parallel server)
+1. createTask(j,@myf1,1,{12});submit(j);wait(j);fetchOutputs(j)
+2. j=batch("myf1",1,{12});wait(j);fetchOutputs(j)
+
+
 source blocks: ramp-repeating, step-repeatingstair, sine-chirping-whitenoise-random-pulse-counter
 
 
