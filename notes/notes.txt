@@ -1504,7 +1504,7 @@ todo: list bus-enabled, function-call enabled, message-enabled, enum-enabled, im
 todo: SF does not allow output types via back propagation. like sum block. this is useful with "Data Type Propagation" block
 
 
-source blocks: ramp-repeating, step-repeatingstair-pulse-counter, sine-chirping-whitenoise
+source blocks: ramp-repeating, step-repeatingstair, sine-chirping-whitenoise-random-pulse-counter
 
 
 atomic subchart restrictions: 
