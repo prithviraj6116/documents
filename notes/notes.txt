@@ -1495,7 +1495,8 @@ todo: linker based listing of auto-move stateflow-sf_cdr classes/functions
 todo: gvim improvements
 todo: ram's bug(created by me about subsystem reference MLFB): windows:mlfb internal linux:crash  is because of NDEBUG ?
 todo: possible loss of data for size_t=mxuint32 on windows but not on linux why?  http://bat3cave.mathworks.com/Cabbage/cluster/Bstateflow/job/j2108270#tab=Summary
-todo: vector signal blocks: mux, vector concanate,demux,index vector, selector. mux/demux,vector index: not supported for bus vectors
+todo: bus vectors: supported: vectorcat,selector, unsupported: mux, demux, index
+todo: function signals supported blocks: mux,demux,selector, unsupported:index,vectorcat, manual-switch,multiport-switch
 todo: switches: manual,multi-port: message,functions not supported
 todo: variant source/sink support all above
 todo: bug: index vector block parameter is wrong.
