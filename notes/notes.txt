@@ -1975,3 +1975,8 @@ src/cg_ir/export/include/cg_ir/base/Obj.hpp
 rootDir = matlabroot;
 jDesktop = com.mathworks.mde.desk.MLDesktop.getInstance;
 jDesktop.getMainFrame.setTitle(rootDir);
+
+
+sbrdesktop ah-stateflow -g 700x700
+sbnativeproj toolbox/stateflow/sf_cdr
+sbnativeproj -launch
