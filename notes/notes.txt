@@ -1970,3 +1970,8 @@ cgir flags :src/cgir_cgel/parse/CglFlagListener.cpp
 prototype: imported+externalFcn+variadic
 function: external, variadic not allowd. imported is allowed
 src/cg_ir/export/include/cg_ir/base/Obj.hpp
+
+ com.mathworks.services.Prefs.setBooleanPref('GeneralShowMLRootOnTitle',true)
+rootDir = matlabroot;
+jDesktop = com.mathworks.mde.desk.MLDesktop.getInstance;
+jDesktop.getMainFrame.setTitle(rootDir);
