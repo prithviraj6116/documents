@@ -1518,7 +1518,10 @@ Batch Processing(without parallel server)
 source blocks: ramp-repeating, step-repeatingstair, sine-chirping-whitenoise-random-pulse-counter
 
 
-atomic subchart restrictions: 
+continuous chart restrictions or limitations: 
+(1) no events
+(2) require at least one state
+atomic subchart restrictions or limitations: 
 (1) Big NO: moore, continuous, output event, messages, varsize, masked library chart 
 (2) local events(subchart top level):  no outgoing transition, 
 (3) different scope mapping: no data logging (might be wrong), no exported function from atomic subchart
