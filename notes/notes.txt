@@ -1511,7 +1511,10 @@ ssGetTimeResolution: zero:   (1) continuous (2) FiM without-input-event
                      nonzero (1) discrete, edge-triggered, function-call-triggered, FiM-with-input-event
                      Note: FiM only possible with variable-step solver
 
-FiM: Fixed in Minor step: SF chart, inherited sample time, input connected to port with 0 sample time, varible-step solver
+FiM conditions: Fixed in Minor step: (1) SF chart and, 
+                                     (2) inherited sample time and,
+                                     (3) input connected to port with 0 sample time and,
+                                     (4) varible-step solver
 
 ssGetTimeResolution (and not ssGetSampleTime) is used by absolute time operators counters
 for function-call triggered and edge-triggered SF charts because optimization is not possible.
