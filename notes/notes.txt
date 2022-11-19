@@ -1506,10 +1506,15 @@ todo:(1)cgir navigation (2) stateflow command helper
      (3) stateflow command guideline enforcement mlx(m commands) and unittest(cpp commands) (4) RB review feedback compilation
      (5) auto sf_cdr passthrough (6) auto sf_cdr coders/sf_ir move (7) debug sandboxes (8) batch command with stateflow
 
-ssGetSampleTime and ssGetOffsetTime: D1,O1: for discrete, 0,0:continuous, -1,-1:edge-triggered,function-call-triggered, 0,-1:FiM
-ssGetTimeResolution: always nonzero for all (discrete, continuous, edge-triggered, function-call-triggered, FiM
+ssGetSampleTime and ssGetOffsetTime: D1,O1: for discrete, 0,0:continuous, -1,-1:edge-triggered,function-call-triggered, 0,1:FiM
+ssGetTimeResolution: zero:   (1) continuous(fixed or variable solver) (2) FiM without-input-event
+                     nonzero (1) discrete, edge-triggered, function-call-triggered, FiM-with-input-event)
+                     Note: FiM only possible with variable-step solver
 
 FiM: Fixed in Minor step: SF chart, inherited sample time, input connected to port with 0 sample time, varible-step solver
+
+ssGetTimeResolution (and not ssGetSampleTime) is used by absolute time operators for function-call triggered and edge-triggered
+SF charts because optimization is not possible.
 Parallel toolbox and server: 
 parfor, perfeval
 
