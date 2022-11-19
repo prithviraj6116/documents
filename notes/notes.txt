@@ -1506,7 +1506,10 @@ todo:(1)cgir navigation (2) stateflow command helper
      (3) stateflow command guideline enforcement mlx(m commands) and unittest(cpp commands) (4) RB review feedback compilation
      (5) auto sf_cdr passthrough (6) auto sf_cdr coders/sf_ir move (7) debug sandboxes (8) batch command with stateflow
 
+ssGetSampleTime and ssGetOffsetTime: D1,O1: for discrete, 0,0:continuous, -1,-1:edge-triggered,function-call-triggered, 0,-1:FiM
+ssGetTimeResolution: always nonzero for all (discrete, continuous, edge-triggered, function-call-triggered, FiM
 
+FiM: Fixed in Minor step: SF chart, inherited sample time, input connected to port with 0 sample time, varible-step solver
 Parallel toolbox and server: 
 parfor, perfeval
 
@@ -1521,6 +1524,7 @@ source blocks: ramp-repeating, step-repeatingstair, sine-chirping-whitenoise-ran
 continuous chart restrictions or limitations: 
 (1) no events
 (2) require at least one state
+
 atomic subchart restrictions or limitations: 
 (1) Big NO: moore, continuous, output event, messages, varsize, masked library chart 
 (2) local events(subchart top level):  no outgoing transition, 
@@ -1528,6 +1532,7 @@ atomic subchart restrictions or limitations:
 (4) local data C subchart: no non-zero based indexing
 (5) input events: must have input to input and unique mapping
 (6) local/output data of main chart mapped to atmoic subchart data: must fully specified
+(7) chart level function prototype fully specialized because it can be called from main chart without exporting it
 
 Stateflow remove trailing 1 from  dimensions > 2
 edit time size [n,m,1,1,1]==comliled size [n,m]
@@ -1535,11 +1540,6 @@ edit time size [n,1,1,1,1]==comliled size [n,1]
 edit time size [n,1]==comliled size [n,1]
 edit time size [n]==comliled size [n]
 edit time size [1,1,n]==comliled size [1,1,n]
-
-atomic subcharts limitations:
-1. chart level function prototype fully specialized
-2. no output events
-3. atomic subchart output can only map to full specialized main chart local/output
 
 
 
