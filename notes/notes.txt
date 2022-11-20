@@ -1524,6 +1524,11 @@ FiM conditions: Fixed in Minor step: (1) SF chart and,
 ModelReference:
     sample time: must be integer multiple of main model sample time
     solver: default: solver of main model.  local: can be used local solver of reference model as well
+
+ExecuteAtInit:
+    a. without input events: chart is executed twice at t=0;
+
+
 Edge-triggered SF event:
 1. multiple events: 
    a. inputs     : chart is called multiple times once of each event
