@@ -1520,6 +1520,10 @@ FiM conditions: Fixed in Minor step: (1) SF chart and,
                                      (2) inherited sample time and,
                                      (3) input connected to port with 0 sample time and,
                                      (4) varible-step solver
+
+ModelReference:
+    sample time: must be integer multiple of main model sample time
+    solver: default: solver of main model.  local: can be used local solver of reference model as well
 Edge-triggered SF event:
 1. multiple events: 
    a. inputs     : chart is called multiple times once of each event
