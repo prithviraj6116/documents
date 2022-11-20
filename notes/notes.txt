@@ -1505,6 +1505,7 @@ todo:(1)cgir navigation (2) stateflow command helper
      (3) stateflow command guideline enforcement mlx(m commands) and unittest(cpp commands) (4) RB review feedback compilation
      (5) auto sf_cdr passthrough (6) auto sf_cdr coders/sf_ir move (7) debug sandboxes (8) batch command with stateflow
 todo: modelreference hierarchy: sample time, DSM, parameter, custom code, exported functions
+todo: output triggered event sent at t=0 is not listened. can we detect it?
 
 ssGetSampleTime and ssGetOffsetTime: D1,O1: for discrete, 0,0:continuous, -1,-1:edge-triggered,function-call-triggered, 0,1:FiM
 ssGetTimeResolution: zero:   (1) continuous (2) FiM without-input-event
