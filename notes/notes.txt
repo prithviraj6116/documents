@@ -1509,6 +1509,7 @@ todo: output triggered event sent at t=0 is not listened. can we detect it?
 todo: practise useful commands: cut, grep, time, find, pkill, 
 todo: how to look inside simulink blocks like evilsf, e.g. repeating stair block. if I add trigger at top leve, error shown point it internals
 todo: difference between [E1] and E1 on transition?
+todo: modelrefsimtarget only shows disp output at t=0
 
 ssGetSampleTime and ssGetOffsetTime: D1,O1: for discrete, 0,0:continuous, -1,-1:edge-triggered,function-call-triggered, 0,1:FiM
 ssGetTimeResolution: zero:   (1) continuous (2) FiM without-input-event
