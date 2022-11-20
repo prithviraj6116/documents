@@ -1516,13 +1516,17 @@ FiM conditions: Fixed in Minor step: (1) SF chart and,
                                      (3) input connected to port with 0 sample time and,
                                      (4) varible-step solver
 Edge-triggered SF event:
-1. multiple evens: 
+1. multiple events: 
    a. inputs     : chart is called multiple times once of each event
-   b. output send: sent one by one in multiple steps
+   b. output send: sends all, one at a step in in multiple steps
 2. types: 
    a. inputSL/outputSL: boolean 
    b. inputSF/outputSF: int8
-3. 
+3. output event:
+   a. can only be Either
+   b. event sent at t=0 is lost or downstream chart/block cannot act on it. This is because, SL starts calling events listener from t=1;
+4. input event:
+   a. cannot listen at t=0 as SL starts calling event listener from t=1;
 
 ssGetTimeResolution (and not ssGetSampleTime) is used by absolute time operators counters
 for function-call triggered and edge-triggered SF charts because optimization is not possible.
