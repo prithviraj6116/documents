@@ -1526,7 +1526,8 @@ ModelReference:
     solver: default: solver of main model.  local: can be used local solver of reference model as well
 
 ExecuteAtInit:
-    a. without input events: chart is executed twice at t=0;
+    a. without input ET event: chart is executed twice at t=0;
+    b. to see what happens with chart with input FC event
 
 
 Edge-triggered SF event:
