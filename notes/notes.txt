@@ -1528,7 +1528,7 @@ Edge-triggered SF event:
    b. event sent at t=0 is lost or downstream chart/block cannot act on it. This is because, SL starts calling events listener from t=1;
 4. input event:
    a. cannot listen at t=0 as SL starts calling event listener from t=1;
-
+ 
 ssGetTimeResolution (and not ssGetSampleTime) is used by absolute time operators counters
 for function-call triggered and edge-triggered SF charts because optimization is not possible.
 
