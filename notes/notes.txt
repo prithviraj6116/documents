@@ -1519,7 +1519,10 @@ Edge-triggered SF event:
 1. multiple evens: 
    a. inputs     : chart is called multiple times once of each event
    b. output send: sent one by one in multiple steps
-2. inputSL/ouputSL: boolean inputSF/outputSF: int8
+2. types: 
+   a. inputSL/outputSL: boolean 
+   b. inputSF/outputSF: int8
+3. 
 
 ssGetTimeResolution (and not ssGetSampleTime) is used by absolute time operators counters
 for function-call triggered and edge-triggered SF charts because optimization is not possible.
