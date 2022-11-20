@@ -1506,6 +1506,7 @@ todo:(1)cgir navigation (2) stateflow command helper
      (5) auto sf_cdr passthrough (6) auto sf_cdr coders/sf_ir move (7) debug sandboxes (8) batch command with stateflow
 todo: modelreference hierarchy: sample time, DSM, parameter, custom code, exported functions
 todo: output triggered event sent at t=0 is not listened. can we detect it?
+todo: practise useful commands: cut, grep, time, find, pkill, 
 
 ssGetSampleTime and ssGetOffsetTime: D1,O1: for discrete, 0,0:continuous, -1,-1:edge-triggered,function-call-triggered, 0,1:FiM
 ssGetTimeResolution: zero:   (1) continuous (2) FiM without-input-event
@@ -1528,7 +1529,8 @@ Edge-triggered SF event:
    b. event sent at t=0 is lost or downstream chart/block cannot act on it. This is because, SL starts calling events listener from t=1;
 4. input event:
    a. cannot listen at t=0 as SL starts calling event listener from t=1;
- 
+
+
 ssGetTimeResolution (and not ssGetSampleTime) is used by absolute time operators counters
 for function-call triggered and edge-triggered SF charts because optimization is not possible.
 
