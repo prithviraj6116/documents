@@ -1515,6 +1515,11 @@ FiM conditions: Fixed in Minor step: (1) SF chart and,
                                      (2) inherited sample time and,
                                      (3) input connected to port with 0 sample time and,
                                      (4) varible-step solver
+Edge-triggered SF event:
+1. multiple evens: 
+   a. inputs     : chart is called multiple times once of each event
+   b. output send: sent one by one in multiple steps
+2. inputSL/ouputSL: boolean inputSF/outputSF: int8
 
 ssGetTimeResolution (and not ssGetSampleTime) is used by absolute time operators counters
 for function-call triggered and edge-triggered SF charts because optimization is not possible.
