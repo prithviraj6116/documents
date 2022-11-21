@@ -1535,6 +1535,7 @@ Function call SF event:
 1. function call generator: can be connected to function-call-sf-input-port of any size. size is backpropagated
 2. mux with function calls: must have unique input function call signals
 3. demux: size are auto split into output ports of demux
+
 Edge-triggered SF event:
 1. multiple events: 
    a. inputs     : chart is called multiple times once of each event
@@ -1547,6 +1548,7 @@ Edge-triggered SF event:
    b. event sent at t=0 is lost or downstream chart/block cannot act on it. This is because, SL starts calling events listener from t=1;
 4. input event:
    a. cannot listen at t=0 as SL starts calling event listener from t=1;
+6. mdlEnable,mdlStart: NOOP for edge-triggered events
 
 
 ssGetTimeResolution (and not ssGetSampleTime) is used by absolute time operators counters
