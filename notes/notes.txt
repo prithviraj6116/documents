@@ -2030,3 +2030,7 @@ jDesktop.getMainFrame.setTitle(rootDir);
 sbrdesktop ah-stateflow -g 700x700
 sbnativeproj toolbox/stateflow/sf_cdr
 sbnativeproj -launch
+
+
+sf functions:
+sf_call_output_fcn_call
