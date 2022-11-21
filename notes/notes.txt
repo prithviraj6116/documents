@@ -1510,6 +1510,7 @@ todo: practise useful commands: cut, grep, time, find, pkill,
 todo: how to look inside simulink blocks like evilsf, e.g. repeating stair block. if I add trigger at top leve, error shown point it internals
 todo: difference between [E1] and E1 on transition?
 todo: modelrefsimtarget only shows disp output at t=0
+todo: ExecAtInit in atomic subchart is hidden 
 
 ssGetSampleTime and ssGetOffsetTime: D1,O1: for discrete, 0,0:continuous, -1,-1:edge-triggered,function-call-triggered, 0,1:FiM
 ssGetTimeResolution: zero:   (1) continuous (2) FiM without-input-event
@@ -1526,7 +1527,7 @@ ModelReference:
     solver: default: solver of main model.  local: can be used local solver of reference model as well
 
 ExecuteAtInit:
-    a. without input ET event: chart is executed twice at t=0;
+    a. without input edge event: chart is executed twice at t=0;
     b. to see what happens with chart with input FC event
 
 
