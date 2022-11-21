@@ -2037,3 +2037,5 @@ sf functions:
     1.sf_call_output_fcn_call
   sf_mex:
     1. sf_mex_call
+  StateflowFacade
+    1. supportsLegacyBehaviorForPersistentVarInContinuousTime  
