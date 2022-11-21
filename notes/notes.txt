@@ -1528,8 +1528,9 @@ ModelReference:
     solver: default: solver of main model.  local: can be used local solver of reference model as well
 
 ExecuteAtInit:
-    a. without input edge event: chart is executed twice at t=0;
-    b. to see what happens with chart with input FC event
+    a. without input edge or input function-call event: chart is executed twice at t=0;
+    b. ExecAtInit=false: first event(FCEvent@t=0 or ETEvent@t=nonzerovalue), chart is not active.
+       Hence, chart takes step but event is not used except event is used on chart default transition path.
 
 Function call SF event:
 1. function call generator: can be connected to function-call-sf-input-port of any size. size is backpropagated
