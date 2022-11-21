@@ -2033,4 +2033,7 @@ sbnativeproj -launch
 
 
 sf functions:
-sf_call_output_fcn_call
+  sfc_sf:
+    1.sf_call_output_fcn_call
+  sf_mex:
+    1. sf_mex_call
