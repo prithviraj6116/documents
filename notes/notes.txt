@@ -1536,6 +1536,7 @@ Function call SF event:
 1. function call generator: can be connected to function-call-sf-input-port of any size. size is backpropagated
 2. mux with function calls: must have unique input function call signals
 3. demux: size are auto split into output ports of demux
+4. input event: can be listened at t=0;
 
 Edge-triggered SF event:
 1. multiple events: 
