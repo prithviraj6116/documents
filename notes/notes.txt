@@ -2092,7 +2092,7 @@ QEgatekeeper workflow simplication
                                       
 (3) QE gatekeeper
   Process change:
-    a. qualify job for snap-only: attach to existing or create new
+    a. qualify job for snap-only: attach to existing BP or create new BP
     b. qualify job for non-snap: run auto-script which tells you to either
      (1) able to point to change: create new BP and assign to owner
      (2) not able to point to change: either attach to existing BP or create new BP(owner=unassigned)
