@@ -1512,6 +1512,7 @@ todo: difference between [E1] and E1 on transition?
 todo: modelrefsimtarget only shows disp output at t=0
 todo: ExecAtInit in atomic subchart is hidden 
 todo: enabled subsystem: effect of (1)states when enabling and (2)output when disabled on Stateflow chart inside
+todo: qegatekeeper workflow simplification (1) snap-only Bstateflow job and Bstateflow_job qualification job (2) auto test failure detection
 
 ssGetSampleTime and ssGetOffsetTime: D1,O1: for discrete, 0,0:continuous, -1,-1:edge-triggered,function-call-triggered, 0,1:FiM
 ssGetTimeResolution: zero:   (1) continuous (2) FiM without-input-event
@@ -2031,10 +2032,14 @@ sbrdesktop ah-stateflow -g 700x700
 sbnativeproj toolbox/stateflow/sf_cdr
 sbnativeproj -launch
 
-
+ss:
+1. ssEnableSystemWithTid, ssCallSystem(ssCallSystemWithTid)
 sf functions:
   sfc_sf:
     1.sf_call_output_fcn_call
+    2. output event related
+      a.sf_call_output_fcn_e(d)nable
+      b.sf_call_output_fcn_call
   sf_mex:
     1. sf_mex_call
   StateflowFacade
