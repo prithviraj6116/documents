@@ -2093,9 +2093,9 @@ QEgatekeeper workflow simplication
 (3) QE gatekeeper
   Process change:
     a. qualify job for snap-only: attach to existing BP or create new BP
-    b. qualify job for non-snap: run auto-script which tells you to either
-     (1) able to point to change: create new BP and assign to owner
-     (2) not able to point to change: either attach to existing BP or create new BP(owner=unassigned)
+    b. qualify job for non-snap: run auto-script which tells you whether it is 
+     (1)     able to point to a change: create a new BP and assign to an owner
+     (2) not able to point to a change: either attach to an existing BP or create a new BP(owner=unassigned)
  Performance Assessment:
    a. QE time spend on gatekeeping reduced to minimal. 
    b. I cannot quantify it but I can safely assume that most mechanical work like below is eliminated
