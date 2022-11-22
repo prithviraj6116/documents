@@ -1513,6 +1513,8 @@ todo: modelrefsimtarget only shows disp output at t=0
 todo: ExecAtInit in atomic subchart is hidden 
 todo: enabled subsystem: effect of (1)states when enabling and (2)output when disabled on Stateflow chart inside
 todo: QEgatekeeper workflow simplification 
+todo: MW book clubs. what others are reading?
+
 ssGetSampleTime and ssGetOffsetTime: D1,O1: for discrete, 0,0:continuous, -1,-1:edge-triggered,function-call-triggered, 0,1:FiM
 ssGetTimeResolution: zero:   (1) continuous (2) FiM without-input-event
                      nonzero (1) discrete, edge-triggered, function-call-triggered, FiM-with-input-event
