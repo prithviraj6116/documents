@@ -1512,7 +1512,13 @@ todo: difference between [E1] and E1 on transition?
 todo: modelrefsimtarget only shows disp output at t=0
 todo: ExecAtInit in atomic subchart is hidden 
 todo: enabled subsystem: effect of (1)states when enabling and (2)output when disabled on Stateflow chart inside
-todo: qegatekeeper workflow simplification (1) snap-only Bstateflow job and Bstateflow_job qualification job (2) BP to change auto-detection
+todo: qegatekeeper workflow simplification 
+      (1) snap-only Bstateflow job: 
+          1a. disallow auto-snap
+          1b. when queue is empty and snap available: lock, snap, enqueue job, unlock.
+      (2) snap-only Bstateflow_stage qualification job:
+          2a. 
+      (2) BaT test failure to BP creation: mostly auto with minimal QE input
 
 ssGetSampleTime and ssGetOffsetTime: D1,O1: for discrete, 0,0:continuous, -1,-1:edge-triggered,function-call-triggered, 0,1:FiM
 ssGetTimeResolution: zero:   (1) continuous (2) FiM without-input-event
