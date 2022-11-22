@@ -1512,14 +1512,7 @@ todo: difference between [E1] and E1 on transition?
 todo: modelrefsimtarget only shows disp output at t=0
 todo: ExecAtInit in atomic subchart is hidden 
 todo: enabled subsystem: effect of (1)states when enabling and (2)output when disabled on Stateflow chart inside
-todo: qegatekeeper workflow simplification 
-      (1) snap-only Bstateflow job: 
-          1a. disallow auto-snap
-          1b. when queue is empty and snap available: lock, snap, enqueue job, unlock.
-      (2) snap-only Bstateflow_stage qualification job:
-          2a. 
-      (2) BaT test failure to BP creation: mostly auto with minimal QE input
-
+todo: QEgatekeeper workflow simplification 
 ssGetSampleTime and ssGetOffsetTime: D1,O1: for discrete, 0,0:continuous, -1,-1:edge-triggered,function-call-triggered, 0,1:FiM
 ssGetTimeResolution: zero:   (1) continuous (2) FiM without-input-event
                      nonzero (1) discrete, edge-triggered, function-call-triggered, FiM-with-input-event
@@ -2050,3 +2043,63 @@ sf functions:
     1. sf_mex_call
   StateflowFacade
     1. supportsLegacyBehaviorForPersistentVarInContinuousTime  
+
+
+
+QEgatekeeper workflow simplication
+(1) snap-only Bstateflow job: 
+  Process change: 
+    a. disallow auto snap
+    b. custom auto snap: 
+       lock cluster, auto-snap, unlock cluster
+    c. disallow dev-auto job creation
+    d. custom-dev-auto job creation to create seperate job for snap. e.g.
+       Assume,
+         job0=current running job, and
+         Pending changes: c1_nonsnap, c2_nonsnap, c3_snap, c4_snap, c5_snap, c6_nonsnap, c7_nonsnap
+       then,
+         custom-dev-auto would do following,
+          (1) when job0 finishes, create job1:c1_nonsnap, c2_nonsnap2
+          (2) when job1 finishes, create job2:c3_snap,c4_snap,c5_snap
+          (3) when job2 finishes, create job3:c6_nonsnap,c7_nonsnap
+  Performance Assessment: 
+    a. Some slow-down in "LKG per days" metric
+    b. Given that we now create a LKG in ~4 hours and most of the day Bstateflow is idle, 
+       I see this slow-down almost non-noticable to Bstateflow users.
+(2) snap-only Bstateflow_stage qualification job:
+  Process chage: 
+    a. update job-aggregration optimization to have separate job for snap-only Bstateflow job
+  Perfomance Assessment: 
+    a. Slow-down due to additional number of qualify-in-stage jobs
+    b. Assume,
+        N_current is number of qualify-in-stage jobs per month (currently)
+        S is number of snaps per month,
+      Then,
+        N_new <= N_current + S + (upto)S
+      Where
+        "N_old+S" part is fixed 
+        "(upto)S" is worst-case upper-limit 
+          a. Caused by opting out of job-aggregration optimization when there is snap-only job
+          b. worst-case example 
+             Assume that Bstateflow has following LKGs available when stage qualify job finishes, 
+             Bstateflow LKG available for qualify: LKG1, LKG2, LKG3(snap-only), LKG4, LKG5
+             Then,
+             Current: qualifyjob1: LKG1, LKG2, LKG3(snap-only), LKG4, LKG5
+             New    : qualifyjob1: LKG1, LKG2, 
+                      qualifyjob2:LKG3(snap-only),
+                      qualifyjob3: LKG4, LKG5
+             N_old=1, S=1, N_new=3==(1+1+1)
+                                      
+(3) QE gatekeeper
+  Process change:
+    a. qualify job for snap-only: attach to existing or create new
+    b. qualify job for non-snap: run auto-script which tells you to either
+     (1) able to point to change: create new BP and assign to owner
+     (2) not able to point to change: either attach to existing BP or create new BP(owner=unassigned)
+ Performance Assessment:
+   a. QE time spend on gatekeeping reduced to minimal. 
+   b. I cannot quantify it but I can safely assume that most mechanical work like below is eliminated
+      e.g. reading test logs, searching failure syndromes, browsing changes in job and see if it is related
+
+I think slowdown in (2) is minimal comparing to QEgatekeeper's time saved;
+
