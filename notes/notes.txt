@@ -1517,6 +1517,8 @@ todo: MW book clubs. what others are reading?
 todo: mainchart(E1,E2,E3)->atomicsubchart(E1,E3): when mainchart woken up by E2, atomicsubchart executes call_event
 todo: find out restriction on mapping 1-n n-1 1-n(different scope)
 todo: create bug: dsm:dsm(1) mapping gives wrong error
+todo: atomic subchart v2: (1)unbounded dsm (2) chart level functions (3) rtw (4) input events (5) mapping expressions
+                          (6)incremental codegen (7) clean mappedPortInfo (8) linked subcharts
 
 ssGetSampleTime and ssGetOffsetTime: D1,O1: for discrete, 0,0:continuous, -1,-1:edge-triggered,function-call-triggered, 0,1:FiM
 ssGetTimeResolution: zero:   (1) continuous (2) FiM without-input-event
