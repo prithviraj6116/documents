@@ -1522,7 +1522,8 @@ todo: gvim to open new gvim from existing gvim with all file corresponding to ne
 todo: atomic subchart v2: (1)unbounded dsm (2) chart level functions (3) rtw (4) input events (5) mapping expressions
                           (6)incremental codegen (7) clean mappedPortInfo (8) linked subcharts
                           (9) variants (10) continuous daa (11) other charts(mealy,moore, continuous)
-                          (12) idcinfo
+                          (12) idcinfo(why fromportarray crashes 
+                          (13) populateMappingOnIDC:call in CG, early return in Prop if idinfo->inPortMapping non-empty
 
 ssGetSampleTime and ssGetOffsetTime: D1,O1: for discrete, 0,0:continuous, -1,-1:edge-triggered,function-call-triggered, 0,1:FiM
 ssGetTimeResolution: zero:   (1) continuous (2) FiM without-input-event
