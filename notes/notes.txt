@@ -1526,7 +1526,8 @@ todo: atomic subchart v2: (1)unbounded dsm (2) chart level functions (3) rtw (4)
                           (9) variants (10) continuous daa (11) other charts(mealy,moore, continuous)
                           (12) idcinfo(why fromportarray crashes 
                           (13) populateMappingOnIDC:call in CG, early return in Prop if idinfo->inPortMapping non-empty
-                          (14) hdl/plc/ert/grt/rapidaccel/sldv (15) mE1->aE2,mE2->aE1 (16) aE1->disabled
+                          (14) jit/hdl/plc/ert/grt/rapidaccel/sldv (15) mE1->aE2,mE2->aE1 (16) aE1->disabled
+                          (17) slci/coverage/lint/exporttoprevious/grandfather
 
 ssGetSampleTime and ssGetOffsetTime: D1,O1: for discrete, 0,0:continuous, -1,-1:edge-triggered,function-call-triggered, 0,1:FiM
 ssGetTimeResolution: zero:   (1) continuous (2) FiM without-input-event
