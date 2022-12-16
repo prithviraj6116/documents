@@ -1442,6 +1442,13 @@ perl coder2m.pl ../../../coder/ force
 ascii escape sequnces \a \b \r \f \n \t \v
 32 non alpha ascii symbols. 
 ---reading end----remembering end----
+---language construct begin---
+python: string, list, dictionary,
+        list index, list initialization,
+        comma, semicolon
+        positional arguments, default arguments, 
+        match/switch
+---language construct end---
 
 
 simulink model always stops here even blank simulink model
