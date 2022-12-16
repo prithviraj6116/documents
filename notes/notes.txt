@@ -1443,7 +1443,7 @@ ascii escape sequnces \a \b \r \f \n \t \v
 32 non alpha ascii symbols. 
 ---reading end----remembering end----
 ---language construct begin---
-python: string, list, dictionary,
+python: string, list=[], tuple=(), set={},dictionary={},
         list index, list initialization,
         comma, semicolon
         positional arguments, default arguments, 
@@ -1683,6 +1683,7 @@ EnablePacing
 PacingRate
 DefaultCustomCodeFunctionArrayLayout
 UseRowMajorAlgorithm
+InstrumentedSignals
 
 CG::Obj->CG::Node,CG::Edge,CG::Scope,CG::Symbol
 CG::Node->CG::Stmt,CG::Expr
