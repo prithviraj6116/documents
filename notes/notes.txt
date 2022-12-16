@@ -1448,6 +1448,9 @@ python: string, list=[], tuple=(), set={},dictionary={},
         comma, semicolon
         positional arguments, default arguments, 
         match/switch
+matlab: class member access requires class object (obj.methodname)
+C++   : class member access: does not explicitly require class object (methodname() or this.methodname());
+ 
 ---language construct end---
 
 
