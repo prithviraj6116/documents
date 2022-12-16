@@ -1437,6 +1437,13 @@ cd matlab/toolbox/stateflow/coder/private/bin
 perl coder2m.pl ../../../coder/ force
 
 
+
+---reading begin----remembering begin----
+ascii escape sequnces \a \b \r \f \n \t \v
+32 non alpha ascii symbols. 
+---reading end----remembering end----
+
+
 simulink model always stops here even blank simulink model
 WidgetRepositoryApiImpl::anyWidgetsExistForModel
 inmem
