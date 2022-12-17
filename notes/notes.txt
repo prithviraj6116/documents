@@ -1550,6 +1550,7 @@ todo: atomic subchart v2: (1)unbounded dsm (2) chart level functions (3) rtw (4)
                           (19) no atomic subcharts: hdl(no , des(only local event), continuous(no event)  no SF: synchronous
                                plc: converts atomic subcharts to normal subchart during code generation
                           (20) unatomize
+                          (21) superstes
 
 ssGetSampleTime and ssGetOffsetTime: D1,O1: for discrete, 0,0:continuous, -1,-1:edge-triggered,function-call-triggered, 0,1:FiM
 ssGetTimeResolution: zero:   (1) continuous (2) FiM without-input-event
