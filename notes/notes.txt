@@ -246,6 +246,7 @@ watch: to repeat commands every x seconds
 desktop envorinment: sudo update-alternatives --set x-session-manager /usr/bin/mate-session
                      ls /usr/share/xsessions
 IDEAS 
+12. sbreviewboard with clone+sbbackup+sbsmartbuild
 11. debug dll copy from some cronjob sandbox to sbsyncmaster/sbclone
 10. loadSymbolsForBreakpoints() in gdb to be used by emcas, vscode
 9. warn on putting breakpoint on dll build without -O0
@@ -1546,6 +1547,7 @@ todo: sb/bat tool to catch deadcode in a job and create geck automatically. if a
 todo: gvim to open new gvim from existing gvim with all file corresponding to new sandbox opened. 
       e.g. if oldsandbox/file1.cpp is open in old gvim then newsandbox/file1.cpp open in new gvim.
 todo: hdl, plc, jit, grt, ert, rapidsim, rtwsimtarget, gpu, mealy, moore, continuous, discreet, export-function, synchronous, dataflow, algrebiac loop
+todo:sbreviewboard with clone+sbbackup+sbsmartbuild
 todo: atomic subchart v2: (1)unbounded dsm (2) chart level functions (3) rtw (4) input events (5) mapping expressions
                           (6)incremental codegen (7) clean mappedPortInfo (8) linked subcharts
                           (9) variants (10) continuous daa (11) other charts(mealy,moore, continuous)
