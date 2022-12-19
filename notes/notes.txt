@@ -875,6 +875,7 @@ get_param(blockPathOrModel,'DialogParameters');
 get_param(blockPathOrModel,'IntrinsicDialogParameters');
 get_param(blockPathOrModel,'AlgorithmParameters');
 get_param(blockPathOrModel,'SecondaryAlgorithmParameters');
+get_param(bdroot,'InstrumentedSignals');
 portHandles=get_param(inputOrOutputPor,'PortHandles');
 signalH = portHandles.Outport<(n)>
 signalH = portHandles.Inport<(n)>
