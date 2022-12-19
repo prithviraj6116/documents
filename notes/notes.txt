@@ -1,3 +1,5 @@
+Reviewboard RB review board 
+1. lambda to initialize variable with a complex expression
 System composure license: https://web.yammer.com/main/org/mathworks.com/threads/eyJfdHlwZSI6IlRocmVhZCIsImlkIjoiMTcyMTE3MDAzNjk1NzE4NCJ9
 SLDV:
 sldvoptions
@@ -873,6 +875,10 @@ get_param(blockPathOrModel,'DialogParameters');
 get_param(blockPathOrModel,'IntrinsicDialogParameters');
 get_param(blockPathOrModel,'AlgorithmParameters');
 get_param(blockPathOrModel,'SecondaryAlgorithmParameters');
+portHandles=get_param(inputOrOutputPor,'PortHandles');
+signalH = portHandles.Outport<(n)>
+signalH = portHandles.Inport<(n)>
+get_param(signalH,'DataLogging')
 get_param(0, 'CurrentSystem');
 SLPrmDescTypes.hpp contains paramcategory and paramtypes
 hdldispmdlparams('augustlearn1','all')
