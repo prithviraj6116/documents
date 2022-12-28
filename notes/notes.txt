@@ -882,6 +882,7 @@ signalH = portHandles.Outport<(n)>
 signalH = portHandles.Inport<(n)>
 get_param(signalH,'DataLogging')
 get_param(0, 'CurrentSystem');
+save_system('u1','SaveDirtyReferencedModels','on')
 SLPrmDescTypes.hpp contains paramcategory and paramtypes
 hdldispmdlparams('augustlearn1','all')
 hdlset_param hdlget_param

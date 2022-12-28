@@ -11,6 +11,9 @@ set height 0
 set breakpoint pending on
 breaksegv
 
+define ppr
+    call pp($arg0, "/tmp/foo.html")
+end
 
 
 
