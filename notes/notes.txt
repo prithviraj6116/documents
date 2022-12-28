@@ -1561,6 +1561,7 @@ todo: atomic subchart v2: (1)unbounded dsm (2) chart level functions (3) rtw (4)
                                plc: converts atomic subcharts to normal subchart during code generation
                           (20) unatomize
                           (21) superstep semantics
+                          (22) inplace data
 
 ssGetSampleTime and ssGetOffsetTime: D1,O1: for discrete, 0,0:continuous, -1,-1:edge-triggered,function-call-triggered, 0,1:FiM
 ssGetTimeResolution: zero:   (1) continuous (2) FiM without-input-event
