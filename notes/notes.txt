@@ -1564,6 +1564,8 @@ todo: atomic subchart v2: (1)unbounded dsm (2) chart level functions (3) rtw (4)
                           (20) unatomize
                           (21) superstep semantics
                           (22) inplace data
+                          (23) link disable/restore/break
+                          (24) atomic subchart to subchart and vice versa
 
 Links:
 https://confluence.mathworks.com/display/CODEINFR/2.+Duplication+of+RTWCG+binding+code+in+Stateflow+driver+and+MATLAB+System+Block+code+construction
