@@ -512,28 +512,34 @@ C Not strongly typed: no run time checking for arguments matching parameter type
 
 
 Languages:
+assembly
 basic:
 pascal:
 delhi/openpascal:
 cobol: cobc -x  hello.cob
 fortran: gfortran f1.f90 
+c: gcc/clang
+c++: g++/clang++
+objective-c:
+visual basic
+c#:
+java: javac/java
 go: /usr/local/go/bin/go run . 
 swift: /usr/local/swift/bin/swiftc myswift1.swift -o m1
-scala: scalac Hello.scala;scala Hello  
+scala: scalac/scala Hello.scala
 rust: rustc rs1.c 
-r:
-python
-c
-c++
-java
-matlab
-php
-c#
-visual basic
-assembly
-sql
-perl
 ruby
+perl
+php
+python
+r:
+matlab:
+javascript
+typescript
+sql
+
+
+
 
 markdown:
 data-interchange: json, xml
