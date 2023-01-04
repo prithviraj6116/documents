@@ -932,6 +932,11 @@ get_param(blockH, 'parent') vs getfullname(blockH)
 get_param(blockH, 'ReferenceBlock')
 
 getSimulinkBlockHandle(blockPath) vs get_param(blockPath, 'handle')
+
+generate baseline:
+evil_generate_baseline('tg2877891)% for existing test model
+runtests('tg2877891','GenerateBaselines',true);%for a new test model
+
 TTT: mainmodel->lib1(notopened)->lib2(opened,breakpoint)
 chartInstance = sf('GetSFBlockData', SFblockH);  
 TTT: rtwOptimizationInfo g1290447 how is it used in rtw and rapidaccel
@@ -1592,6 +1597,7 @@ todo: ai, robotics,
 todo: stateflow defaults
 todo: stateflow hover show data types or other information when not simulating.
 todo: implicit(en,du,ex,hasChanged)
+todo:  IllegalMaskParamsForAtomicSubchart  might be restrictive. we could still allow lib charts with mask but with no parameter data to be used as atomic subchart
 todo: atomic subchart v2: (1)unbounded dsm (2) chart level functions (3) rtw (4) input events (5) mapping expressions
                           (6)incremental codegen (7) clean mappedPortInfo (8) linked subcharts
                           (9) variants (10) continuous daa (11) other charts(mealy,moore, continuous)
