@@ -517,6 +517,7 @@ Languages:
 assembly
 basic:
 pascal:
+lisp
 delhi/openpascal:
 cobol: cobc -x  hello.cob
 fortran: gfortran f1.f90 
@@ -539,6 +540,12 @@ matlab:
 javascript
 typescript
 sql
+haskell
+common lisp
+ocaml
+F#
+erlang
+clojure
 
 
 
@@ -1613,6 +1620,7 @@ todo: atomic subchart v2: (1)unbounded dsm (2) chart level functions (3) rtw (4)
                           (22) inplace data
                           (23) link disable/restore/break
                           (24) atomic subchart to subchart and vice versa
+                          (25) sfun: mdl_initialize_subchart from mainchart, haschanged_sf_get_data_reuse, exported function
 
 Links:
 https://confluence.mathworks.com/display/CODEINFR/2.+Duplication+of+RTWCG+binding+code+in+Stateflow+driver+and+MATLAB+System+Block+code+construction
