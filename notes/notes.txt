@@ -1686,6 +1686,12 @@ continuous chart restrictions or limitations:
 (1) no events
 (2) require at least one state
 
+moore chart restrictions or limitations:
+(1) no atomic subchart or atomic box 
+(2) no en,du,ex sections
+(3) no simulink functions
+(4) output can only depend of current state (but not updated current state) e.g. out1=local1;local1++ is okay but local1++;out1=local1 is not.
+
 atomic subchart restrictions or limitations: 
 (1) Big NO: moore, continuous, output event, messages, varsize, masked library chart 
 (2) local events(subchart top level):  no outgoing transition, 
