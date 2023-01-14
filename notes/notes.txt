@@ -921,6 +921,9 @@ get_param(blockPathOrModel,'SecondaryAlgorithmParameters');
 get_param(bdroot,'InstrumentedSignals');
 get_param(bdroot,'SaveFormat');//,'StructureWithTime','Array','DataSet','Structure'
 
+>> sf('get',c.id,'state.activeStateOutput.useStringType')
+
+
 
 portHandles=get_param(inputOrOutputPor,'PortHandles');
 signalH = portHandles.Outport<(n)>
