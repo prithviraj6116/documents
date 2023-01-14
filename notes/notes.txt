@@ -1689,7 +1689,7 @@ continuous chart restrictions or limitations:
 moore chart restrictions or limitations:
 (1) no atomic subchart or atomic box 
 (2) no en,du,ex sections
-(3) no simulink functions
+(3) no SL functions simulink functions, atomic subcharchat, atomic boxes, 
 (4) output can only depend of current state (but not updated current state) e.g. out1=local1;local1++ is okay but local1++;out1=local1 is not.
 (5) no implicit recursive local events i.e. en,ex,chg
 (6) no explicit recursive local event i.e. user defined local events
