@@ -1686,6 +1686,9 @@ deb10: 20b,21a,21b,22a
 deb11: 
 on target
 sudo gdbserver localhost:10001 myprogram  //sudo is required
+
+ulcm gvim/gdb with wrapper ssh: (1) s:way terminal (2) s:vertical=1
+
 on host
 gdb
 file myprogam
