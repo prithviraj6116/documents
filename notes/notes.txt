@@ -1680,7 +1680,16 @@ Batch Processing(without parallel server)
 
 
 source blocks: ramp-repeating, step-repeatingstair, sine-chirping-whitenoise-random-pulse-counter
-
+deb08: 18a
+deb09: 18b,19a,19b,20a(error)
+deb10: 20b,21a,21b,22a
+deb11: 
+on target
+sudo gdbserver localhost:10001 myprogram  //sudo is required
+on host
+gdb
+file myprogam
+targer remote targetIP:10001
 
 continuous chart restrictions or limitations: 
 (1) no events
