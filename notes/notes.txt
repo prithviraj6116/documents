@@ -2239,8 +2239,12 @@ QEgatekeeper workflow simplication
 I think slowdown in (2) is minimal comparing to QEgatekeeper's time saved;
 
 
-
-message iscodingdebugformachine:
+1. codingdebugformachine CdrLowerMessagesForSim.cpp  CdrDebuggerTransform.cpp 
+2. guard data browse instrumentation by isInstrumentingDataBrose instead of isInstrumentingRutimeErrors
+3. better names or refactor isSimOn, isCodingSimulation
+4. isInstrumentingMarshallOut
+5. DebuggerInstrumentationLevel
+test failures for 1. message iscodingdebugformachine:
 test/toolbox/stateflow/string_support/tBusMessageWithStringTypeField_strlength_MAL.m
 test/toolbox/stateflow/string_support/tBusMessageWithStringTypeField_strlength_MAL2STT.m
 test/toolbox/stateflow/string_support/tMsgStringsInBus_MultipleKeywords_MAL.m
