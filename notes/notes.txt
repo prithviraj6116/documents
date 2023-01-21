@@ -590,6 +590,10 @@ sbmake CTB=stateflow_resources;
 
 runtests with parameters:
 runtests("t_sl_trackerGNNRetrodiction[ScenarioParameters=EKF]/checkRapidAcceleratorAgainstNormal")
+>> runtests("testFileName[classsetupparam1=value,classetupparam2=value]/[methodsetupparam1=value,methodsetupparam2=value]testpointname")
+>> runtests("tBusMessageWithStringTypeField_strlength_MAL[classsetupparam1=value,classetupparam2=value]/[methodsetupparam1=value,methodsetupparam2=value]runTest")
+Setting up matlabtest.fixtures.QEAttributesFixture
+
 edg parser components:
 CTB="shared_cxxfe_parser_mi shared_cxxfe_parser_mi shared_cxxfe_ast shared_cxxfe_instrum shared_cxxfe_instrum shared_cxxfe_instrum shared_cxxfe_instrum shared_cxxfe_ast_annotations shared_cxxfe_instrum_mi shared_cxxfe_instrum_mi shared_cxxfe_parser shared_cxxfe_il2ast shared_cxxfe_il2ast shared_cxxfe_il2ast shared_cxxfe_ast2cgir shared_cxxfe_ast2cgir shared_cxxfe_ast2cgir shared_cxxfe_il2cgir shared_cxxfe_il2cgir shared_cxxfe_il2cgir shared_cxxfe_cgir"
 
