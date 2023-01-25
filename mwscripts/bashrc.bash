@@ -6,6 +6,11 @@ export VISUAL=gvim
 export EDITOR=gvim
 export SBTOOLS_VNC_WINDOW_MGR=mate-session
 
+function cd {
+  command cd "$1"
+  pwd > /tmp/terminal_pwd
+}
+
 function p4o {
     export PPP_P4OPENED=$(p4 opened)
     export PPP_SBROOT=$(sbroot)
