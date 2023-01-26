@@ -1614,6 +1614,7 @@ todo: implicit(en,du,ex,hasChanged)
 todo:  IllegalMaskParamsForAtomicSubchart  might be restrictive. we could still allow lib charts with mask but with no parameter data to be used as atomic subchart
 todo: qegatekeeper healper for running tests in previous jobs and previous MATLAB versions and in submission sandboxes
 todo: windows compile through gvim/gdb
+todo: lcmenv for ulcm: (1) breakpoint before gdb start (2) breakpoint before attach
 todo: atomic subchart v2: (1)unbounded dsm (2) chart level functions (3) rtw (4) input events (5) mapping expressions
                           (6)incremental codegen (7) clean mappedPortInfo (8) linked subcharts
                           (9) variants (10) continuous daa (11) other charts(mealy,moore, continuous)
