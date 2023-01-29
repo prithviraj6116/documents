@@ -6,34 +6,43 @@
 #
 
 
-source /mathworks/hub/share/sbtools/.gdbinit
-set height 0
+#source /mathworks/hub/share/sbtools/.gdbinit
+#set height 0
 set breakpoint pending on
-breaksegv
+#breaksegv
 
-define ppr
-    call pp($arg0, "/tmp/foo.html")
+#define ppr
+#    call pp($arg0, "/tmp/foo.html")
+#end
+
+
+
+#define load_common_libs
+#    sb-auto-load-libs libmw\(stateflow\|sf_\)
+#    sb-auto-load-libs libmw\(cg_ir\|cgir_support\|cgir_xform\)
+#    sb-auto-load-libs libmw\(mcr\|fl\|sl_services\)
+#    sb-auto-load-libs sf_sfun
+#    sb-auto-load-libs sf_req
+#    #sb-auto-load-libs sf_builtin
+#    #sb-auto-load-libs sf.mexa64
+#    #sb-auto-load-libs libmwlxemainservices
+#    #sb-auto-load-libs libmex
+#    #sb-auto-load-libs libmwm_dispatcher
+#end
+define load_common_libs2
+    sharedlibrary libmwstateflow.so
 end
 
-
-
-define load_common_libs
-    sb-auto-load-libs libmw\(stateflow\|sf_\)
-    sb-auto-load-libs libmw\(cg_ir\|cgir_support\|cgir_xform\)
-    sb-auto-load-libs libmw\(mcr\|fl\|sl_services\)
-    sb-auto-load-libs sf_sfun
-    sb-auto-load-libs sf_req
-    #sb-auto-load-libs sf_builtin
-    #sb-auto-load-libs sf.mexa64
-    #sb-auto-load-libs libmwlxemainservices
-    #sb-auto-load-libs libmex
-    #sb-auto-load-libs libmwm_dispatcher
+define mstackr
+  printf "--start--stack---m"
+  printf "%s", SF::dbstack()
+  printf "--end--stack---m\n"
 end
 
-define quick_attach_sf2
+define quick_attach_sf
     set auto-solib-add off
     attach $arg0
-    load_common_libs
+    load_common_libs2
 end
 
 
