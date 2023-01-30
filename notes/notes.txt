@@ -1622,9 +1622,14 @@ todo: lcmenv for ulcm:
 (4) DONE: gdb window after quitting
 (5) disp var1
 (6) global to script local
-(7) matlab crash
-(8) matlab license 18b/19b on deb9
-(9) dbstack/mstack issue:20b 
+(7) matlab crash issue  : all
+(9) dbstack/mstack issue: 20b 
+(11) deb9 :18b,19ab,20a
+     deb10:20b,21ab,22a
+----------not gdb/gvim issues------
+(12) distcc issue: deb9
+(8)  matlab license issue: 18b,19b
+(10) sbmake issue        : 20a
 
 todo: atomic subchart v2: (1)unbounded dsm (2) chart level functions (3) rtw (4) input events (5) mapping expressions
                           (6)incremental codegen (7) clean mappedPortInfo (8) linked subcharts
@@ -1644,6 +1649,7 @@ todo: atomic subchart v2: (1)unbounded dsm (2) chart level functions (3) rtw (4)
                           (25) sfun: mdl_initialize_subchart from mainchart, haschanged_sf_get_data_reuse, exported function
 
 Links:
+positive tests: https://confluence.mathworks.com/display/STAT/MATLABUnit+Test+Writing+for+Stateflow#MATLABUnitTestWritingforStateflow-stateflowtest.TestCase.PositiveTest 
 https://confluence.mathworks.com/display/CODEINFR/2.+Duplication+of+RTWCG+binding+code+in+Stateflow+driver+and+MATLAB+System+Block+code+construction
 ssGetSampleTime and ssGetOffsetTime: D1,O1: for discrete, 0,0:continuous, -1,-1:edge-triggered,function-call-triggered, 0,1:FiM
 ssGetTimeResolution: zero:   (1) continuous (2) FiM without-input-event
