@@ -50,6 +50,7 @@ map srf yiw:%s/<C-r>"//gc<left><left><left>
 map sa :up!<ENTER>
 map s1g :!cd ~/Downloads/stu1;rm cpp1;g++ cpp1.cpp -o cpp1 -std=c++17;./cpp1;cd -<ENTER>
 map s2g :!git add -u;git commit -m "abc";git push<ENTER>
+map sn <C-w>w<C-n><ENTER>
 "map s1g :!g++ -E cpp1.cpp;<ENTER>
 "map sm 0f<SPACE>f<SPACE>f<SPACE>lvf:h"ay<ESC>f:lvf<SPACE>"by<C-W>w:e +<C-R>b <C-R>a<CR><C-W>w<C-W>w
 "map s2g :!git add -u;git commit -m "abc";git push<ENTER>

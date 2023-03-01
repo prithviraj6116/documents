@@ -46,13 +46,13 @@ sub chd {
         'lang',"$d/gitRepo1/pppGitHub/lang",
         'notes',"$d/gitRepo1/pppGitHub/notes",
         'mwscripts',"$d/gitRepo1/pppGitHub/mwscripts",
-        "7: hubdocs","/mathworks/devel/sandbox/ppatil/misc/hubdocs",
-        "6: local downloads","/home/ppatil/Downloads",
-        "5: network downloads","/mathworks/home/ppatil/Downloads",
-        "4: sfroot","$MYSBROOT/matlab/toolbox/stateflow/src/",
-        "3: sftest","$MYSBROOT/matlab/test/toolbox/stateflow",
-        "2: matlabroot","$MYSBROOT/matlab",
-        "1: $MYSBNAME","$MYSBROOT",
+        "hubdocs","/mathworks/devel/sandbox/ppatil/misc/hubdocs",
+        "6.sf_xform","$MYSBROOT/matlab/toolbox/stateflow/sf_xform/",
+        "5.sf_cdr","$MYSBROOT/matlab/toolbox/stateflow/sf_cdr/",
+        "4.src stateflow","$MYSBROOT/matlab/toolbox/stateflow/src/",
+        "3.sf test","$MYSBROOT/matlab/test/toolbox/stateflow",
+        "2.matlabroot","$MYSBROOT/matlab",
+        "1.$MYSBNAME","$MYSBROOT",
     );
     my @directoryKeys=sort(keys(%DirectoryShortCutMappings));
     #my @directoryKeys=keys(%DirectoryShortCutMappings);

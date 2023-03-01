@@ -2,6 +2,23 @@ function myStartup
     setMATLABTitle;
 %     setFileGenDir;
  sbmatlabcmdhelper
+ addPaths();
+ loadStateflow();
+ % s = settings;
+
+% s.matlab.desktop.DisplayScaleFactor.PersonalValue = 1 ;
+end
+function loadStateflow()
+    setBdocAsDocroot('current');
+    openExample('stateflow/AutomaticTransmissionUsingDurationOperatorExample');
+    bdclose all;
+end
+function addPaths()
+    addpath(fullfile(matlabroot,'toolbox/stateflow/tools'));
+    addpath('/mathworks/devel/sandbox/ppatil/misc/matlabtools');
+    addpath('//mathworks/hub/share/sbtools/matlab-cmds');
+    addpath('/mathworks/devel/sandbox/ppatil/misc/hubdocs/mwscripts');
+    addpath('/mathworks/devel/sandbox/ppatil/misc/hubdocs/mwscripts/templateModels');
 end
 function sbmatlabcmdhelper()
      addpath('//mathworks/hub/share/sbtools/matlab-cmds'); rehash;
