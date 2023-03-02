@@ -1648,6 +1648,7 @@ todo: atomic subchart v2: (1)unbounded dsm (2) chart level functions (3) rtw (4)
 todo: sbsmartbuild with reverted files does not work? p4 edit fil1.txt;sbsmartbuild -opened;p4 revert file1.txt;sbsmartbuild -opened   
 
 Links:
+quadcopter demo collections: https://confluence.mathworks.com/display/BFAERO/Install+Instructions 
 positive tests: https://confluence.mathworks.com/display/STAT/MATLABUnit+Test+Writing+for+Stateflow#MATLABUnitTestWritingforStateflow-stateflowtest.TestCase.PositiveTest 
 https://confluence.mathworks.com/display/CODEINFR/2.+Duplication+of+RTWCG+binding+code+in+Stateflow+driver+and+MATLAB+System+Block+code+construction
 ssGetSampleTime and ssGetOffsetTime: D1,O1: for discrete, 0,0:continuous, -1,-1:edge-triggered,function-call-triggered, 0,1:FiM
