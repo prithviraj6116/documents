@@ -1645,7 +1645,7 @@ todo: atomic subchart v2: (1)unbounded dsm (2) chart level functions (3) rtw (4)
                           (23) link disable/restore/break
                           (24) atomic subchart to subchart and vice versa
                           (25) sfun: mdl_initialize_subchart from mainchart, haschanged_sf_get_data_reuse, exported function
-todo: sbsmartbuild with reverted files does not work? p4 edit fil1.txt;sbsmartbuild -opened;p4 revert file1.txt;sbsmartbuild -opened
+todo: sbsmartbuild with reverted files does not work? p4 edit fil1.txt;sbsmartbuild -opened;p4 revert file1.txt;sbsmartbuild -opened 
 
 Links:
 positive tests: https://confluence.mathworks.com/display/STAT/MATLABUnit+Test+Writing+for+Stateflow#MATLABUnitTestWritingforStateflow-stateflowtest.TestCase.PositiveTest 

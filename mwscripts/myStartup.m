@@ -9,8 +9,9 @@ function myStartup
 % s.matlab.desktop.DisplayScaleFactor.PersonalValue = 1 ;
 end
 function loadStateflow()
-    setBdocAsDocroot('current');
-    openExample('stateflow/AutomaticTransmissionUsingDurationOperatorExample');
+    % setBdocAsDocroot('current');
+    % openExample('stateflow/AutomaticTransmissionUsingDurationOperatorExample');
+    sfnew;
     bdclose all;
 end
 function addPaths()
