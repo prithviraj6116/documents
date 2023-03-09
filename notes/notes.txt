@@ -1730,6 +1730,24 @@ gdb
 file myprogam
 targer remote targetIP:10001
 
+
+
+sldv
+slci
+sdi
+eml
+cgir
+plccoder restrictions or limitations
+
+hdlcoder restrictions or limitations
+
+c++coder restrictions or limitations
+
+gpucoder restrictions or limitations
+
+jit restrictions or limitations
+
+
 continuous chart restrictions or limitations: 
 (1) no events
 (2) require at least one state
