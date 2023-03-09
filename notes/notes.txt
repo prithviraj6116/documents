@@ -1730,7 +1730,13 @@ gdb
 file myprogam
 targer remote targetIP:10001
 
-
+after(2,sec) vs [after(2,sec)]
+E1() vs send(E1)
+after, t, et
+chg,en,ex
+in
+hasChanged
+rising/falling
 
 sldv
 slci
