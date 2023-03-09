@@ -1824,6 +1824,9 @@ PacingRate
 DefaultCustomCodeFunctionArrayLayout
 UseRowMajorAlgorithm
 InstrumentedSignals
+MaskHideContents
+MaskObject
+BlockDVGIcon
 
 CG::Obj->CG::Node,CG::Edge,CG::Scope,CG::Symbol
 CG::Node->CG::Stmt,CG::Expr
