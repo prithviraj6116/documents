@@ -1828,6 +1828,13 @@ MaskHideContents
 MaskObject
 BlockDVGIcon
 
+
+PLC programmable control logic plccoder
+IEC 61131-3 
+plcgeneratecode(gcb)
+IDE: codysys, rockwell
+format: ladder diagram, function block diagram, structured text, instruction list, sequential function chart
+
 CG::Obj->CG::Node,CG::Edge,CG::Scope,CG::Symbol
 CG::Node->CG::Stmt,CG::Expr
 CG::Symbol->CG::Var,CG::Type,CG::Const
