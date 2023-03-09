@@ -1834,6 +1834,8 @@ IEC 61131-3
 plcgeneratecode(gcb)
 IDE: codysys, rockwell
 format: ladder diagram, function block diagram, structured text, instruction list, sequential function chart  
+extenstion: .st, .exp
+syntex of structure text: types (8:int,uint 16:sint,usint 32:dint,udint bool, 32:real 64:lreal
 
 CG::Obj->CG::Node,CG::Edge,CG::Scope,CG::Symbol
 CG::Node->CG::Stmt,CG::Expr
