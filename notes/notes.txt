@@ -1741,7 +1741,7 @@ this
 
 
 stateflow SF keywords or operators:
-after: after(3,sec)==[after(3,sec)] but after(3,E)!=[after(3,E)]   after(3,E)==E[after(2,E)]
+after: after(3,sec)==[after(3,sec)] but after(3,E)!=[after(3,E)]   after(3,E)==E[after(2,E)]  i.e. [after(3,E)] is taken when ECounter>3 even when currentSfEvent!=E
 sldv
 slci
 sdi
