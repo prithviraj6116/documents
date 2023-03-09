@@ -1739,6 +1739,9 @@ hasChanged
 rising/falling
 this
 
+
+stateflow SF keywords or operators:
+after: after(3,sec)==[after(3,sec)] but after(3,E)!=[after(3,E)]   after(3,E)==E[after(2,E)]
 sldv
 slci
 sdi
