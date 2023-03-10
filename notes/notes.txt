@@ -1655,6 +1655,7 @@ todo: coverage, open model that it multiple lines
 todo: allow snapshot or sbbackup+newsandbox+restore+build as part of sbreviewboard for better reviews
 todo: allow easier reproductions for BPs
 todo: sfnewlibchart for creating a new library model with a stateflow chart, sfnewsschart,sfnewmodrefchart
+todo: list all sf(...) commands as called by tests
 
 
 
