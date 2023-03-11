@@ -1656,6 +1656,8 @@ todo: allow snapshot or sbbackup+newsandbox+restore+build as part of sbreviewboa
 todo: allow easier reproductions for BPs
 todo: sfnewlibchart for creating a new library model with a stateflow chart, sfnewsschart,sfnewmodrefchart
 todo: list all sf(...) commands as called by tests
+todo: sf pass level to functions mapping: pass level:1. propagation 1a.dim 1b.type 1c.complex 1d unit 2.mdlpostpropagation 2a.construct_context 2b.construct_module 3.mdlsetworkwidth 4.mdlruntimeresources 5. mdloutput 6. edit-time 7. open 7a.load 7b. postload 8 save 8a. presave 8b. postsave
+todo: detailed SF coverage 
 
 
 
