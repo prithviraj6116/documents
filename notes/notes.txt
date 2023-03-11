@@ -1660,7 +1660,7 @@ todo: sf pass level to functions mapping: pass level:1. propagation 1a.dim 1b.ty
 todo: detailed SF coverage 
 
 
-
+std::string s1=123; //compiles assign character to s1;
 web ui matlab: mw env ML_WEBUI=0 matlab & 
 
 Links:
