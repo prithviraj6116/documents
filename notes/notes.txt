@@ -1659,6 +1659,9 @@ todo: list all sf(...) commands as called by tests
 todo: sf pass level to functions mapping: pass level:1. propagation 1a.dim 1b.type 1c.complex 1d unit 2.mdlpostpropagation 2a.construct_context 2b.construct_module 3.mdlsetworkwidth 4.mdlruntimeresources 5. mdloutput 6. edit-time 7. open 7a.load 7b. postload 8 save 8a. presave 8b. postsave
 todo: detailed SF coverage 
 
+matlab commands
+1: clear global myglobal1
+2: setappdata(uddH,"key", value);getappdata(uddH,"key")
 
 std::string s1=123; //compiles assign character to s1;
 web ui matlab: mw env ML_WEBUI=0 matlab & 
