@@ -1660,11 +1660,13 @@ todo: sf pass level to functions mapping: pass level:1. propagation 1a.dim 1b.ty
 todo: detailed SF coverage, phases,
 todo: intelligence via rote learning using AI for language learning
 todo: fit rtwcode code to cleanly designed sfchart/mlfb/genericSLblock
+todo: command searching (code,gecko,confluence,inside) and indexing
 
 
 matlab commands
 1: clear global myglobal1
 2: setappdata(uddH,"key", value);getappdata(uddH,"key")
+3. sbrestore -from-shelf
 
 std::string s1=123; //compiles assign character to s1;
 web ui matlab: mw env ML_WEBUI=0 matlab & 
