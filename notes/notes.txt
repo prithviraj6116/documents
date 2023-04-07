@@ -1525,6 +1525,7 @@ C++   : class member access: does not explicitly require class object (methodnam
 ---language construct end---
 c++: key function: first non-inline virtual function
 matlab: cell(row,column) to preallocate cell array
+matlab: indentcode()
 
 simulink model always stops here even blank simulink model
 WidgetRepositoryApiImpl::anyWidgetsExistForModel
