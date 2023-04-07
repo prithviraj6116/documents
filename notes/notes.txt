@@ -1524,6 +1524,7 @@ C++   : class member access: does not explicitly require class object (methodnam
  
 ---language construct end---
 c++: key function: first non-inline virtual function
+matlab: cell(row,column) to preallocate cell array
 
 simulink model always stops here even blank simulink model
 WidgetRepositoryApiImpl::anyWidgetsExistForModel
@@ -1539,6 +1540,7 @@ todo: des in raccel or sil or rsim
 todo: sf4ml_testtools in different clusters
 todo: buscreators 
 todo: python
+todo: difference between glnx64 and glnxa64 in matlab/bin
 todo: stateflow create auto-app with active-state data and recreate animation in app
 todo: Stateflow.internal.findCommand
 todo: pretty-printer navigation, keyboard-shortcuts, go-to-definition, fn(file-next),fp(file-previous),ff(file-first),fl(file-last),n(next),p(previous),b(back),d(definition)
