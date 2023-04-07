@@ -1526,6 +1526,7 @@ C++   : class member access: does not explicitly require class object (methodnam
 c++: key function: first non-inline virtual function
 matlab: cell(row,column) to preallocate cell array
 matlab: indentcode()
+matlab: timestamp datestr(datetime('now'),'yymmddHHMMSS') 
 c++: no stack when 1. incorrect compilation 2. infinite loop
 
 simulink model always stops here even blank simulink model
