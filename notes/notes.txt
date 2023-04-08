@@ -1536,6 +1536,9 @@ inmem
 license('inuse')
 SLM3I.SLCommonDomain.isStateflowLoaded()
 Stateflow.App.Cdr.Utils.isStateflowLoaded()
+todo: Aditya's approxiate computing applications
+todo: Suraj's data cleanup applications
+todo: 
 todo: why does vdp load Stateflow?
 todo: important fixes for bus with variable-size elements and persistent data with such buses: https://komodo.mathworks.com/main/gecko/view?Record=2742645
 todo: create bug for DES chart inner transition to substate
