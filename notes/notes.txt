@@ -1530,6 +1530,7 @@ matlab: indentcode()
 matlab: timestamp datestr(datetime('now'),'yymmddHHMMSS') 
 matlab:version='R2021a';modelName='test_model';load_system(modelName);Simulink.exportToVersion(modelName,[modelName version],version) 
 c++: no stack when 1. incorrect compilation 2. infinite loop
+simulink: slfeature('ScopedDSM')
 
 simulink model always stops here even blank simulink model
 WidgetRepositoryApiImpl::anyWidgetsExistForModel
