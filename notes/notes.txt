@@ -1535,6 +1535,7 @@ simulink: data store diagnostics RWW  1. R:read before write  2. RW:write after 
 simulink: data store: 1. global, needs Simulink.Signal at base workspace and fully-typed, no diagnostics, scope extends for all model including model blocks 
                       2. local, can be auto typed, diagnositcs, scoped extends thourhg models barring Model blocks
                       3. data references/scoped, must be fully typeds, diagnostics,reference is searched till we find global DSM or local DSM in upper levels including model blocks/main model
+c++: bullseye coverage used by bcov team  https://mathworks.sharepoint.com/sites/qe/projects/codecov/default.aspx  
 
 simulink model always stops here even blank simulink model
 WidgetRepositoryApiImpl::anyWidgetsExistForModel
