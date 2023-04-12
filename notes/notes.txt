@@ -1536,7 +1536,9 @@ simulink: data store: 1. global, needs Simulink.Signal at base workspace and ful
                       2. local, can be auto typed, diagnositcs, scoped extends thourhg models barring Model blocks
                       3. data references/scoped, must be fully typeds, diagnostics,reference is searched till we find global DSM or local DSM in upper levels including model blocks/main model
 c++: bullseye coverage used by bcov team  https://mathworks.sharepoint.com/sites/qe/projects/codecov/default.aspx  
-
+c++: only in declaration: default arguments, override, virtual
+c++: 
+mp3: 1.https://youtu.be/hubr4m745s0 
 simulink model always stops here even blank simulink model
 WidgetRepositoryApiImpl::anyWidgetsExistForModel
 inmem
