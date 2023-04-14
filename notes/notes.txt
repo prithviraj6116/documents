@@ -1537,7 +1537,8 @@ simulink: data store: 1. global, needs Simulink.Signal at base workspace and ful
                       3. data references/scoped, must be fully typeds, diagnostics,reference is searched till we find global DSM or local DSM in upper levels including model blocks/main model
 c++: bullseye coverage used by bcov team  https://mathworks.sharepoint.com/sites/qe/projects/codecov/default.aspx  
 c++: only in declaration: default arguments, override, virtual
-c++: 
+review board RB: rbt patch --print https://reviewboard.mathworks.com/r/834890  &> p2.patch 
+               patch -p3 < p1.patch 
 mp3: 1.https://youtu.be/hubr4m745s0 
 simulink model always stops here even blank simulink model
 WidgetRepositoryApiImpl::anyWidgetsExistForModel
@@ -1545,6 +1546,7 @@ inmem
 license('inuse')
 SLM3I.SLCommonDomain.isStateflowLoaded()
 Stateflow.App.Cdr.Utils.isStateflowLoaded()
+
 todo: hasChange(outdata) and outport_reuse enabled? darren https://reviewboard.mathworks.com/r/837333/diff/1/   
 todo: syntax error. what happens of the text in same section but before syntax error.
 todo: 
