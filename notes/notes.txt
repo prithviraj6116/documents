@@ -1546,7 +1546,9 @@ inmem
 license('inuse')
 SLM3I.SLCommonDomain.isStateflowLoaded()
 Stateflow.App.Cdr.Utils.isStateflowLoaded()
-
+todo: coverage/heat map: test attributes, model attributes,trace,heat map of if/else branches, unreached code, uncovered code
+todo: JITC and sf_runtime, published headers
+todo: metasyntax ast for C and M: how it is formed
 todo: hasChange(outdata) and outport_reuse enabled? darren https://reviewboard.mathworks.com/r/837333/diff/1/   
 todo: syntax error. what happens of the text in same section but before syntax error.
 todo: 
