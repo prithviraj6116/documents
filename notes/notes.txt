@@ -596,7 +596,7 @@ sbmake CTB=stateflow_resources;
 runtests with parameters:
 runtests("t_sl_trackerGNNRetrodiction[ScenarioParameters=EKF]/checkRapidAcceleratorAgainstNormal")
 >> runtests("testFileName[classsetupparam1=value,classetupparam2=value]/[methodsetupparam1=value,methodsetupparam2=value]testpointname")
->> runtests("tBusMessageWithStringTypeField_strlength_MAL[classsetupparam1=value,classetupparam2=value]/[methodsetupparam1=value,methodsetupparam2=value]runTest")
+>> runtests("tBusMessageWithStringTypeField_strlength_MAL[classsetupparameter1=value,classetupparameter2=value]/[methodsetupparameter1=value,methodsetupparameter2=value]runTest(testparameter1=value,testparameter2=value)")
 Setting up matlabtest.fixtures.QEAttributesFixture
 
 edg parser components:
@@ -1546,6 +1546,7 @@ inmem
 license('inuse')
 SLM3I.SLCommonDomain.isStateflowLoaded()
 Stateflow.App.Cdr.Utils.isStateflowLoaded()
+todo: test classetupparameter, methodsetupparameter,testparameters: how methodsetupparameter works
 todo: coverage/heat map: test attributes, model attributes,trace,heat map of if/else branches, unreached code, uncovered code
 todo: JITC and sf_runtime, published headers
 todo: metasyntax ast for C and M: how it is formed
