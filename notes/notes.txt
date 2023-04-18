@@ -1546,7 +1546,7 @@ inmem
 license('inuse')
 SLM3I.SLCommonDomain.isStateflowLoaded()
 Stateflow.App.Cdr.Utils.isStateflowLoaded()
-todo: rtb patch + linux patch: how to make linux patch work with p4 edit/add
+todo: rtb patch + linux patch: how to make linux patch work with p4 edit/add. how rbt patch works with binary files
 todo: how to create a snapshot or sbcopy at: sbreviewboard or sbruntests
 todo: test classetupparameter, methodsetupparameter,testparameters: how methodsetupparameter works
 todo: coverage/heat map: test attributes, model attributes,trace,heat map of if/else branches, unreached code, uncovered code
