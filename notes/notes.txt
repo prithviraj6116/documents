@@ -1546,6 +1546,7 @@ inmem
 license('inuse')
 SLM3I.SLCommonDomain.isStateflowLoaded()
 Stateflow.App.Cdr.Utils.isStateflowLoaded()
+MATLAB: "clear global variable" can cause regression in IMT e.g.g2990366 
 todo: onedrive video experience
 todo: rtb patch + linux patch: how to make linux patch work with p4 edit/add. how rbt patch works with binary files
 todo: how to create a snapshot or sbcopy at: sbreviewboard or sbruntests
