@@ -1525,6 +1525,7 @@ C++   : class member access: does not explicitly require class object (methodnam
 ---language construct end---
 c++: key function: first non-inline virtual function
 matlab: mw -using R2021b<U1|U2|...|UN|:ship>; mw -using R2021b will open latest update
+license: ./bin/matlab -r "sfnew;bdclose all" -c /mathworks/devel/jobarchive/Bmain/latest_pass/matlab/licenses/license.dat 
 matlab: cell(row,column) to preallocate cell array
 matlab: indentcode()
 matlab: timestamp datestr(datetime('now'),'yymmddHHMMSS') 
