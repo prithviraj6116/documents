@@ -1188,6 +1188,7 @@ p4 branch_unlock //mw/Bstateflow -allow ppatil
 p4 branch_lock //mw/Bstateflow -reason “for fixing build failures”
 sfc coder_options debugBuilds 1;
 sfc coder_options forceDebugOff 1; 
+slfeature('rtwcgir',7)
 sf feature evil;
 slfeature('rtwcgir',6)
 help slcg
