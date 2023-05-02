@@ -1552,6 +1552,7 @@ MATLAB: "clear global variable" can cause regression in IMT e.g.g2990366
 linux bash :w1=$(ps -C  python3 -o pid=);top -p $w1 
 simulink: RapidAcceleratorUptodate vs usefastrestart
 matlab: parsim vs batchsim
+todo: crontab -e example: see down 
 todo: SF4ML.openInstalledMATLAB('R2019b')
 todo: gecko automate: OriginatedIn
 todo: exportToVersion one command for all geck attachments
@@ -2388,3 +2389,12 @@ test/toolbox/stateflow/thiskeyword/not_supported/t_simulation_modes.m
 
 
 gujrati: 3.48 7.37 10.20 14.13 
+
+crontab example
+USER=ppatil
+ZFS_MASTER_SB="Bstateflow"
+SILENT=1
+LOCATION=AH
+PATH=/home/savadhan/bin:/mathworks/hub/share/sbtools/bin/glnxa64:/sandbox/savadhan/sbtools:/usr/local/bin:/usr/bin:/bin:/sbin:/usr/local/netbin:/hub/bat/share/bin:/usr/bin:/hub/share/bin:/hub/share/sbtools
+
+30 14 * * * cd /sandbox/ppatil;/sandbox/savadhan/sbtools/evil-sync-latest-pass-sb
