@@ -1552,6 +1552,9 @@ MATLAB: "clear global variable" can cause regression in IMT e.g.g2990366
 linux bash :w1=$(ps -C  python3 -o pid=);top -p $w1 
 simulink: RapidAcceleratorUptodate vs usefastrestart
 matlab: parsim vs batchsim
+todo: SF4ML.openInstalledMATLAB('R2019b')
+todo: gecko automate: OriginatedIn
+todo: exportToVersion one command for all geck attachments
 todo: http://ah-cgir-00-l.mathworks.com/mathworks/inside/labs/dev/matlab_coder_tools/mlcddux/charts/  https://confluence.mathworks.com/display/MLCODER/MATLAB+Coder+DDUX+Site+Reference+Guide  
 todo: does network sandbxo with makefile modified and compiled with CTB creates symbols for all cpp files in that module?
 todo: what is value of  /mathworks/devel/jobarchive/Bstateflow/latest_pass/job-info   when LKG is accepted but archive in-progress?
