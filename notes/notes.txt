@@ -1552,6 +1552,7 @@ MATLAB: "clear global variable" can cause regression in IMT e.g.g2990366
 linux bash :w1=$(ps -C  python3 -o pid=);top -p $w1 
 simulink: RapidAcceleratorUptodate vs usefastrestart
 matlab: parsim vs batchsim
+gvim:  highlight duplicate lines :sort and :g/^\(.*\)$\n\1$/p 
 todo: crontab -e example: see down 
 todo: SF4ML.openInstalledMATLAB('R2019b')
 todo: gecko automate: OriginatedIn
