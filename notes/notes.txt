@@ -1553,7 +1553,9 @@ linux bash :w1=$(ps -C  python3 -o pid=);top -p $w1
 simulink: RapidAcceleratorUptodate vs usefastrestart
 matlab: parsim vs batchsim
 gvim:  highlight duplicate lines :sort and :g/^\(.*\)$\n\1$/p 
-todo: te
+
+todo: gvim open file slowdown for network sandbox
+todo: gvim auto include adds '.'
 todo: crontab -e example: see down 
 todo: SF4ML.openInstalledMATLAB('R2019b')
 todo: gecko automate: OriginatedIn
