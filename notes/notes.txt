@@ -1553,6 +1553,7 @@ linux bash :w1=$(ps -C  python3 -o pid=);top -p $w1
 simulink: RapidAcceleratorUptodate vs usefastrestart
 matlab: parsim vs batchsim
 gvim:  highlight duplicate lines :sort and :g/^\(.*\)$\n\1$/p 
+todo: te
 todo: crontab -e example: see down 
 todo: SF4ML.openInstalledMATLAB('R2019b')
 todo: gecko automate: OriginatedIn
@@ -1562,7 +1563,7 @@ todo: does network sandbxo with makefile modified and compiled with CTB creates 
 todo: what is value of  /mathworks/devel/jobarchive/Bstateflow/latest_pass/job-info   when LKG is accepted but archive in-progress?
 todo: how to compile sf_variants/sf_sfun/sf_runtime using sbmake CTB= from matlabroot?
 todo: sf coverage : 0. same files in two modules 1. "ctor with default initializeation with {" is not included 2. inline 3. abstract 4. lambda 5. std::functions 6. .c 7. virtual 8.
-todo: sf covreage addition: MCDC, profiling, refactoring cues, RB cues, web dashboard for dll infolike(size,compile time,symbols,branches,complexity,types etc.)
+todo: sf covreage addition: MCDC, profiling, refactoring cues, RB cues, web dashboard for dll infolike(size,compile time,symbols,branches,complexity,types etc.),minTestSubsetOfAcgirToCoverAll
 todo: does static variable is shared across libraries and templates
 todo: does .hpp definition of class method means inlining even when method is outside of class but in .hpp
 todo: onedrive video experience
