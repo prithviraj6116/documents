@@ -1555,7 +1555,7 @@ matlab: parsim vs batchsim
 gvim:  highlight duplicate lines :sort and :g/^\(.*\)$\n\1$/p 
 matlab: matfile read and write to variables in matfile without loading whole mat file as done by save/load
 matlab: save('file1.mat','var1','var2','-v7.3') 
-
+c++: default argument in declaration only. if no declaration then in definition
 todo: gvim open file slowdown for network sandbox
 todo: gvim auto include adds '.'
 todo: crontab -e example: see down 
