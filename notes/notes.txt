@@ -1557,6 +1557,7 @@ matlab: matfile read and write to variables in matfile without loading whole mat
 matlab: save('file1.mat','var1','var2','-v7.3') 
 c++: default argument in declaration only. if no declaration then in definition
 p4: p4 annotate -I //mw/Bstateflow/matlab/toolbox/stateflow/src/stateflow/cdr/prs_main.cpp#10 | grep -i parser_argument_expression_action 
+sbtools:  sbindent -sort-includes 
 todo: how judiciary gets power via simulation of minds
 todo: gvim open file slowdown for network sandbox
 todo: gvim auto include adds '.'
