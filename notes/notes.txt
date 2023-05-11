@@ -1,4 +1,4 @@
-temp:class_of, chart, moore, labelstring, coverageInfo
+temp:class_of, chart, moore, labelstring, coverageInfo,triggered
 matlab commands abc
 subsref
 subsassign
