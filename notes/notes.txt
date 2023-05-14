@@ -1578,6 +1578,7 @@ todo: sf covreage addition: MCDC, profiling, refactoring cues, RB cues, web dash
 todo: sf coverage addition: compile time statistics form sf dlls e.g. basic compile time, for each header what files get compiled, prebuild times, etc.
 todo: sf coverage: reduce size of mappings
 todo: sf coverage //mwfixes 
+todo: sf coverage timings  sftest.source2test('fsm/chart.cpp', 1891, 'NumberOfTests', 10); for fixpt tests
 todo: does static variable is shared across libraries and templates
 todo: does .hpp definition of class method means inlining even when method is outside of class but in .hpp
 todo: onedrive video experience
