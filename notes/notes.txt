@@ -1563,6 +1563,7 @@ pip: libclang pyelftools
 sbtools: sbruntests -kill -session-id 1662167 
 make,sbmake,gmake,sbcc:  put this "print-%  : ; @echo $* = $($*)" in makefile and use mw gmake print-envname to print value of any make variable
 make,sbmake,gmake,sbcc: mw gmake print-MOD_INCLUDE_PATH 
+libclang python: lp541
 todo: sf coverage: give links for test, open, run, copyruncommand
 todo: sf coverage instrumentFcnUsingDwarfInfo does not work if fcn is on first line
 todo: qualify1.bash does not send emails for sbmake
@@ -2422,3 +2423,9 @@ LOCATION=AH
 PATH=/home/savadhan/bin:/mathworks/hub/share/sbtools/bin/glnxa64:/sandbox/savadhan/sbtools:/usr/local/bin:/usr/bin:/bin:/sbin:/usr/local/netbin:/hub/bat/share/bin:/usr/bin:/hub/share/bin:/hub/share/sbtools
 
 30 14 * * * cd /sandbox/ppatil;/sandbox/savadhan/sbtools/evil-sync-latest-pass-sb
+
+lp541
+tu = index.parse(fileName,args,options=clang.cindex.TranslationUnit.PARSE_DETAILED_PROCESSING_RECORD);
+#tu = index.parse(fileName,args,options=clang.cindex.TranslationUnit.PARSE_DETAILED_PROCESSING_RECORD);
+#tu = index.parse(fileName,args='-xc++ --std=c++0x'.split());
+#getIfStmtInfo(tu.cursor,tu.cursor,"")
