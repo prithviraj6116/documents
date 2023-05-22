@@ -2433,3 +2433,7 @@ tu = index.parse(fileName,args,options=clang.cindex.TranslationUnit.PARSE_DETAIL
 #tu = index.parse(fileName,args,options=clang.cindex.TranslationUnit.PARSE_DETAILED_PROCESSING_RECORD);
 #tu = index.parse(fileName,args='-xc++ --std=c++0x'.split());
 #getIfStmtInfo(tu.cursor,tu.cursor,"")
+
+mkdir /local-ssd/ppatil/mycov22/matlab/derived/glnxa64/src/include/mwcov;g++ -fpic -c mwcov.cpp -o mwcov.o;g++ -shared -o libmwcov.so mwcov.o;cp libmwcov.so /local-ssd/ppatil/mycov22/matlab/bin/;cp mwcov.hpp /local-ssd/ppatil/mycov22/matlab/derived/glnxa64/src/include/mwcov;
+
+
