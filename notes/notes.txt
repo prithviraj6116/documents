@@ -1566,6 +1566,7 @@ make,sbmake,gmake,sbcc:
                         printallvariablenames  : ; echo $(.VARIABLES)
                         print-%  : ; @echo $* = $($*) 
                         mw gmake printallvariablenames;mw gmake print-MOD_INCLUDE_PATH  
+make,sbmake,gmake,sbcc: LIBDEPS+=newdll
 libclang python: lp541
 todo: sf coverage 1.range based for loops instrumentation for clang.cindex
 todo: sf coverage: give links for test, open, run, copyruncommand
