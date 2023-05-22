@@ -1562,7 +1562,10 @@ sbtools:  sbindent -sort-includes
 pip: libclang pyelftools
 sbtools: sbruntests -kill -session-id 1662167 
 make,sbmake,gmake,sbcc:  put this "print-%  : ; @echo $* = $($*)" in makefile and use mw gmake print-envname to print value of any make variable
-make,sbmake,gmake,sbcc: mw gmake print-MOD_INCLUDE_PATH 
+make,sbmake,gmake,sbcc: 
+                        printallvariablenames  : ; echo $(.VARIABLES)
+                        print-%  : ; @echo $* = $($*) 
+                        mw gmake printallvariablenames;mw gmake print-MOD_INCLUDE_PATH  
 libclang python: lp541
 todo: sf coverage 1.range based for loops instrumentation for clang.cindex
 todo: sf coverage: give links for test, open, run, copyruncommand
