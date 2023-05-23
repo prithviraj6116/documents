@@ -2436,6 +2436,17 @@ tu = index.parse(fileName,args,options=clang.cindex.TranslationUnit.PARSE_DETAIL
 #tu = index.parse(fileName,args='-xc++ --std=c++0x'.split());
 #getIfStmtInfo(tu.cursor,tu.cursor,"")
 
-mkdir /local-ssd/ppatil/mycov22/matlab/derived/glnxa64/src/include/mwcov;g++ -fpic -c mwcov.cpp -o mwcov.o;g++ -shared -o libmwcov.so mwcov.o;cp libmwcov.so /local-ssd/ppatil/mycov22/matlab/bin/;cp mwcov.hpp /local-ssd/ppatil/mycov22/matlab/derived/glnxa64/src/include/mwcov;
+cd $d/mycov22/matlab;
+mkdir derived/glnxa64/src/include/mwcov;
+cd $d/mycov22/matlab/mwcov;
+g++ -fpic -c mwcov.cpp -o mwcov.o;
+g++ -shared -o libmwcov.so mwcov.o;
+cd $d/mycov22/matlab;
+mv libmwcov.so bin/glnxa64;
+cp mwcov/mwcov.hpp derived/glnxa64/src/include/mwcov;
+mw -using matlab -r "rehash toolboxcache;mex mwocovmex.cpp -L$d/mycov22/bin/glnxa64 -lmwcov;rehash toolboxcache"
+cd $d/mycov22/matlab;
+mv mwcovmex.mexa64 bin/glnxa64;
+
 
 
