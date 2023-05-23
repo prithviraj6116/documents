@@ -1569,6 +1569,7 @@ make,sbmake,gmake,sbcc:
 make,sbmake,gmake,sbcc: LIBDEPS+=customdll
 test:https://mathworks.sharepoint.com/sites/devu/testingresourcecenter/testingstandards/TestStandardsMATLABUnit/Index.aspx 
 libclang python: lp541
+todo: compare speed of matlab with and without nojvm
 todo: sf coverage 1.range based for loops instrumentation for clang.cindex
 todo: sf coverage: give links for test, open, run, copyruncommand
 todo: sf coverage instrumentFcnUsingDwarfInfo does not work if fcn is on first line
@@ -2438,15 +2439,19 @@ tu = index.parse(fileName,args,options=clang.cindex.TranslationUnit.PARSE_DETAIL
 
 cd $d/mycov22/matlab;
 mkdir derived/glnxa64/src/include/mwcov;
+chmod 777 -R mwcov;
 cd $d/mycov22/matlab/mwcov;
-g++ -fpic -c mwcov.cpp -o mwcov.o;
+mkdir logs;
+chmod 777 -R logs;
+g++ -std=c++17 -O0 -g -fpic -c mwcov.cpp -o mwcov.o;
 g++ -shared -o libmwcov.so mwcov.o;
 cd $d/mycov22/matlab;
-mv libmwcov.so bin/glnxa64;
+mv mwcov/libmwcov.so bin/glnxa64;
 cp mwcov/mwcov.hpp derived/glnxa64/src/include/mwcov;
-mw -using matlab -r "rehash toolboxcache;mex mwocovmex.cpp -L$d/mycov22/bin/glnxa64 -lmwcov;rehash toolboxcache"
+cd $d/mycov22/matlab/mwcov;
+mw matlab -nodesktop -nosplash -nojvm -r "rehash toolboxcache;mex mwcovmex.cpp -L$d/mycov22/bin/glnxa64 -lmwcov;rehash toolboxcache;exit"
 cd $d/mycov22/matlab;
-mv mwcovmex.mexa64 bin/glnxa64;
+mv mwcov/mwcovmex.mexa64 bin/glnxa64;
 
 
 
