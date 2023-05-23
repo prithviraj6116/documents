@@ -2449,9 +2449,16 @@ cd $d/mycov22/matlab;
 mv mwcov/libmwcov.so bin/glnxa64;
 cp mwcov/mwcov.hpp derived/glnxa64/src/include/mwcov;
 cd $d/mycov22/matlab/mwcov;
-mw matlab -nodesktop -nosplash -nojvm -r "rehash toolboxcache;mex mwcovmex.cpp -L$d/mycov22/bin/glnxa64 -lmwcov;rehash toolboxcache;exit"
+mw matlab -nodesktop -nosplash -nojvm -r "rehash toolboxcache;mex mwcovmex.cpp -L$d/mycov22/bin/glnxa64 -lmwcov;movefile('mwcovmex.mexa64','../test/tools/sf4ml');rehash toolboxcache;exit"
 cd $d/mycov22/matlab;
-mv mwcov/mwcovmex.mexa64 bin/glnxa64;
+
+cd $d/mycov22/matlab/mwcov;
+tic;instrumentCoverageForCppModules({"toolbox/stateflow/sf_cdr","toolbox/stateflow/sf_xform","toolbox/stateflow/sf_ast","toolbox/stateflow/sf_cal","toolbox/stateflow/sf_mal","toolbox/stateflow/sf_customcode","toolbox/stateflow/src/sf_variants","toolbox/stateflow/src/sf_runtime","toolbox/stateflow/src/sf_sfun","toolbox/stateflow/src/stateflow"},{"/cdr_auto","fsm/mi","fsm/Lint","fsm/auto","/gpobj","concrete"});toc;
+
+
+
+
+
 
 
 
