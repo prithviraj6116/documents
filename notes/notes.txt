@@ -2437,23 +2437,25 @@ tu = index.parse(fileName,args,options=clang.cindex.TranslationUnit.PARSE_DETAIL
 #tu = index.parse(fileName,args='-xc++ --std=c++0x'.split());
 #getIfStmtInfo(tu.cursor,tu.cursor,"")
 
-cd $d/mycov22/matlab;
+matlabroot=$d/mycov22/matlab
+sbroot=$s/mwcov_1
+matlabroot=$sbroot/matlab
+cd $matlabroot
 mkdir derived/glnxa64/src/include/mwcov;
 chmod 777 -R mwcov;
-cd $d/mycov22/matlab/mwcov;
+cd $matlabroot/mwcov;
 mkdir logs;
 chmod 777 -R logs;
 g++ -std=c++17 -O0 -g -fpic -c mwcov.cpp -o mwcov.o;
 g++ -shared -o libmwcov.so mwcov.o;
-cd $d/mycov22/matlab;
+cd $matlabroot
 mv mwcov/libmwcov.so bin/glnxa64;
 cp mwcov/mwcov.hpp derived/glnxa64/src/include/mwcov;
-cd $d/mycov22/matlab/mwcov;
-mw matlab -nodesktop -nosplash -nojvm -r "rehash toolboxcache;mex mwcovmex.cpp -L$d/mycov22/bin/glnxa64 -lmwcov;movefile('mwcovmex.mexa64','../test/tools/sf4ml');rehash toolboxcache;exit"
-cd $d/mycov22/matlab;
-
-cd $d/mycov22/matlab/mwcov;
-tic;instrumentCoverageForCppModules({"toolbox/stateflow/sf_cdr","toolbox/stateflow/sf_xform","toolbox/stateflow/sf_ast","toolbox/stateflow/sf_cal","toolbox/stateflow/sf_mal","toolbox/stateflow/sf_customcode","toolbox/stateflow/src/sf_variants","toolbox/stateflow/src/sf_runtime","toolbox/stateflow/src/sf_sfun","toolbox/stateflow/src/stateflow"},{"/cdr_auto","fsm/mi","fsm/Lint","fsm/auto","/gpobj","concrete"});toc;
+cd $matlabroot/mwcov;
+mw matlab -nodesktop -nosplash -nojvm -r "rehash toolboxcache;mex mwcovmex.cpp -L"$sbroot"/bin/glnxa64 -lmwcov;movefile('mwcovmex.mexa64','../test/tools/sf4ml');rehash toolboxcache;exit"
+cd $matlabroot
+cd $matlabroot/mwcov;
+mw matlab -nodesktop -nosplash -nojvm -r "tic;instrumentCoverageForCppModules({\"toolbox/stateflow/sf_cdr\",\"toolbox/stateflow/sf_xform\",\"toolbox/stateflow/sf_ast\",\"toolbox/stateflow/sf_cal\",\"toolbox/stateflow/sf_mal\",\"toolbox/stateflow/sf_customcode\",\"toolbox/stateflow/src/sf_variants\",\"toolbox/stateflow/src/sf_runtime\",\"toolbox/stateflow/src/sf_sfun\",\"toolbox/stateflow/src/stateflow\"},{\"/cdr_auto\",\"fsm/mi\",\"fsm/Lint\",\"fsm/auto\",\"/gpobj\",\"concrete\"});toc;"
 
 
 
