@@ -1567,9 +1567,11 @@ make,sbmake,gmake,sbcc:
                         print-%  : ; @echo $* = $($*) 
                         mw gmake printallvariablenames;mw gmake print-MOD_INCLUDE_PATH  
 make,sbmake,gmake,sbcc: LIBDEPS+=customdll
+make,sbmake,gmake,sbcc: substitutre make variable with subst as CFLAGS := $(subst -W , , $(CFLAGS))
 test:https://mathworks.sharepoint.com/sites/devu/testingresourcecenter/testingstandards/TestStandardsMATLABUnit/Index.aspx 
 libclang python: lp541
 sbtools:http://ah-ppatil-l.dhcp.mathworks.com/local-ssd/ppatil/   or   http://vdi-dd1ah-010.dhcp.mathworks.com/local-ssd/saurabhg/  or https://mathworks.sharepoint.com/sites/WikiArchive/PDF/Desktop%20Web%20Server.pdf  
+todo: -Wno-error only works with specific error as -Wno-error=unused-variable
 todo: testfiles vs testpoints in sbruntests report and sfcore and in TestRunner.m
 todo: sfcoverage parser.yac/y_tab
 todo: compare speed of matlab with and without nojvm
