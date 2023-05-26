@@ -1574,6 +1574,7 @@ sbtools:http://ah-ppatil-l.dhcp.mathworks.com/local-ssd/ppatil/   or   http://vd
 todo: sfcoverage macro in if:cdr/prs_pre_error_checks.cpp +910  lambda in if: LowerLatchFunctions
 todo: gvim network file opening is very slow
 todo: gvim search files shows duplicate files after searching same string second time
+todo: sftools: api to parse sf c++ file using libclang python api
 todo: -Wno-error only works with specific error as -Wno-error=unused-variable
 todo: testfiles vs testpoints in sbruntests report and sfcore and in TestRunner.m
 todo: sfcoverage parser.yac/y_tab
