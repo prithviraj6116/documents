@@ -1573,6 +1573,7 @@ libclang python: lp541
 sbtools:http://ah-ppatil-l.dhcp.mathworks.com/local-ssd/ppatil/   or   http://vdi-dd1ah-010.dhcp.mathworks.com/local-ssd/saurabhg/  or https://mathworks.sharepoint.com/sites/WikiArchive/PDF/Desktop%20Web%20Server.pdf  
 todo: sfcoverage macro in if:cdr/prs_pre_error_checks.cpp +910  lambda in if: LowerLatchFunctions
 todo: gvim network file opening is very slow
+todo: gvim search files shows duplicate files after searching same string second time
 todo: -Wno-error only works with specific error as -Wno-error=unused-variable
 todo: testfiles vs testpoints in sbruntests report and sfcore and in TestRunner.m
 todo: sfcoverage parser.yac/y_tab
@@ -2444,8 +2445,7 @@ tu = index.parse(fileName,args,options=clang.cindex.TranslationUnit.PARSE_DETAIL
 #tu = index.parse(fileName,args='-xc++ --std=c++0x'.split());
 #getIfStmtInfo(tu.cursor,tu.cursor,"")
 
-matlabroot=$d/mycov22/matlab
-sbroot=$s/mwcov_1
+sbroot=$d/mycov23;
 matlabroot=$sbroot/matlab
 cd $matlabroot
 mkdir derived/glnxa64/src/include/mwcov;
