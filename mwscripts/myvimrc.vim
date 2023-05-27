@@ -42,7 +42,7 @@ highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=bold guifg=blue guibg=
 
 
 "map - :Ex<ENTER>
-"map s <Nop>
+"map sh <Nop>
 "map sv <Leader><Leader>s
 map sr yiw:,$s/<C-r>"//gc<left><left><left>
 map srf yiw:%s/<C-r>"//gc<left><left><left>
@@ -50,7 +50,10 @@ map srf yiw:%s/<C-r>"//gc<left><left><left>
 map sa :up!<ENTER>
 map s1g :!cd ~/Downloads/stu1;rm cpp1;g++ cpp1.cpp -o cpp1 -std=c++17;./cpp1;cd -<ENTER>
 map s2g :!git add -u;git commit -m "abc";git push<ENTER>
-map sn <C-w>w<C-n><ENTER>
+"map sn <C-w>w<C-n><ENTER>
+map sb <C-w><C-w><C-d><C-w><C-w>
+map sc <C-w><C-w><C-u><C-w><C-w>
+
 "map s1g :!g++ -E cpp1.cpp;<ENTER>
 "map sm 0f<SPACE>f<SPACE>f<SPACE>lvf:h"ay<ESC>f:lvf<SPACE>"by<C-W>w:e +<C-R>b <C-R>a<CR><C-W>w<C-W>w
 "map s2g :!git add -u;git commit -m "abc";git push<ENTER>
