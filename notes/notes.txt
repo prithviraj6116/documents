@@ -1573,6 +1573,7 @@ libclang python: lp541
 sbtools:http://ah-ppatil-l.dhcp.mathworks.com/local-ssd/ppatil/   or   http://vdi-dd1ah-010.dhcp.mathworks.com/local-ssd/saurabhg/  or https://mathworks.sharepoint.com/sites/WikiArchive/PDF/Desktop%20Web%20Server.pdf  
 todo: sfcoverage macro in if:cdr/prs_pre_error_checks.cpp +910  lambda in if: LowerLatchFunctions
 todo: compiler statistics, stateflow generated code(sfun/rtw) statistics
+todo: sfcoverage: multiple objectives on same line 1. case 2: if(true)
 todo: gvim network file opening is very slow
 todo: gvim search files shows duplicate files after searching same string second time
 todo: sftools: api to parse sf c++ file using libclang python api
