@@ -1572,6 +1572,7 @@ test:https://mathworks.sharepoint.com/sites/devu/testingresourcecenter/testingst
 libclang python: lp541
 sbtools:http://ah-ppatil-l.dhcp.mathworks.com/local-ssd/ppatil/   or   http://vdi-dd1ah-010.dhcp.mathworks.com/local-ssd/saurabhg/  or https://mathworks.sharepoint.com/sites/WikiArchive/PDF/Desktop%20Web%20Server.pdf  
 matlab: echo vs disp: echo is used to turned on/off logging during execution
+todo: sfcoverage: investivage if misses 1. StateMetaSyntaxParser.cpp:86 2. visibility.cpp
 todo: c++ how to use string in operator[] argument e.g. arrayVar1["abc"] like used by matlab StructArray
 todo: cell commands loads simulink
 todo: sf coverage: error out on multiple coverage objectives on the same line except for if
@@ -2454,24 +2455,24 @@ tu = index.parse(fileName,args,options=clang.cindex.TranslationUnit.PARSE_DETAIL
 #tu = index.parse(fileName,args='-xc++ --std=c++0x'.split());
 #getIfStmtInfo(tu.cursor,tu.cursor,"")
 
-sbroot=$d/mycov22;
-sbroot=$s/mwcov_q1;
-matlabroot=$sbroot/matlab
-cd $matlabroot
+cd $s/mwcov_q1;
+sbroot=$(sbroot);
+mlroot=$(sbroot)/matlab
+cd $mlroot
 mkdir derived/glnxa64/src/include/mwcov;
 chmod 777 -R mwcov;
-cd $matlabroot/mwcov;
+cd $mlroot/mwcov;
 mkdir logs;
 chmod 777 -R logs;
 g++ -std=c++17 -O0 -g -fpic -c mwcov.cpp -o mwcov.o;
 g++ -shared -o libmwcov.so mwcov.o;
-cd $matlabroot
+cd $mlroot
 mv mwcov/libmwcov.so bin/glnxa64;
 cp mwcov/mwcov.hpp derived/glnxa64/src/include/mwcov;
-cd $matlabroot/mwcov;
+cd $mlroot/mwcov;
 mw matlab -nodesktop -nosplash -nojvm -r "rehash toolboxcache;mex mwcovmex.cpp -L"$sbroot"/bin/glnxa64 -lmwcov;movefile('mwcovmex.mexa64','../test/tools/sf4ml');rehash toolboxcache;exit"
-cd $matlabroot
-cd $matlabroot/mwcov;
+cd $mlroot
+cd $mlroot/mwcov;
 mw matlab -nodesktop -nosplash -nojvm -r "tic;instrumentCoverageForCppModules({\"toolbox/stateflow/sf_cdr\",\"toolbox/stateflow/sf_xform\",\"toolbox/stateflow/sf_ast\",\"toolbox/stateflow/sf_cal\",\"toolbox/stateflow/sf_mal\",\"toolbox/stateflow/sf_customcode\",\"toolbox/stateflow/src/sf_variants\",\"toolbox/stateflow/src/sf_runtime\",\"toolbox/stateflow/src/sf_sfun\",\"toolbox/stateflow/src/stateflow\"},{\"/cdr_auto\",\"fsm/mi\",\"fsm/Lint\",\"fsm/auto\",\"/gpobj\",\"concrete\","y_tab"});toc;"
 
 
