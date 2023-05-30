@@ -1572,6 +1572,7 @@ test:https://mathworks.sharepoint.com/sites/devu/testingresourcecenter/testingst
 libclang python: lp541
 sbtools:http://ah-ppatil-l.dhcp.mathworks.com/local-ssd/ppatil/   or   http://vdi-dd1ah-010.dhcp.mathworks.com/local-ssd/saurabhg/  or https://mathworks.sharepoint.com/sites/WikiArchive/PDF/Desktop%20Web%20Server.pdf  
 matlab: echo vs disp: echo is used to turned on/off logging during execution
+todo: c++ how to use string in operator[] argument e.g. arrayVar1["abc"] like used by matlab StructArray
 todo: cell commands loads simulink
 todo: sf coverage: error out on multiple coverage objectives on the same line except for if
 todo: sfcoverage macro in if:cdr/prs_pre_error_checks.cpp +910  lambda in if: LowerLatchFunctions
