@@ -2455,6 +2455,7 @@ tu = index.parse(fileName,args,options=clang.cindex.TranslationUnit.PARSE_DETAIL
 #getIfStmtInfo(tu.cursor,tu.cursor,"")
 
 sbroot=$d/mycov22;
+sbroot=$s/mwcov_q1;
 matlabroot=$sbroot/matlab
 cd $matlabroot
 mkdir derived/glnxa64/src/include/mwcov;
@@ -2471,7 +2472,7 @@ cd $matlabroot/mwcov;
 mw matlab -nodesktop -nosplash -nojvm -r "rehash toolboxcache;mex mwcovmex.cpp -L"$sbroot"/bin/glnxa64 -lmwcov;movefile('mwcovmex.mexa64','../test/tools/sf4ml');rehash toolboxcache;exit"
 cd $matlabroot
 cd $matlabroot/mwcov;
-mw matlab -nodesktop -nosplash -nojvm -r "tic;instrumentCoverageForCppModules({\"toolbox/stateflow/sf_cdr\",\"toolbox/stateflow/sf_xform\",\"toolbox/stateflow/sf_ast\",\"toolbox/stateflow/sf_cal\",\"toolbox/stateflow/sf_mal\",\"toolbox/stateflow/sf_customcode\",\"toolbox/stateflow/src/sf_variants\",\"toolbox/stateflow/src/sf_runtime\",\"toolbox/stateflow/src/sf_sfun\",\"toolbox/stateflow/src/stateflow\"},{\"/cdr_auto\",\"fsm/mi\",\"fsm/Lint\",\"fsm/auto\",\"/gpobj\",\"concrete\"});toc;"
+mw matlab -nodesktop -nosplash -nojvm -r "tic;instrumentCoverageForCppModules({\"toolbox/stateflow/sf_cdr\",\"toolbox/stateflow/sf_xform\",\"toolbox/stateflow/sf_ast\",\"toolbox/stateflow/sf_cal\",\"toolbox/stateflow/sf_mal\",\"toolbox/stateflow/sf_customcode\",\"toolbox/stateflow/src/sf_variants\",\"toolbox/stateflow/src/sf_runtime\",\"toolbox/stateflow/src/sf_sfun\",\"toolbox/stateflow/src/stateflow\"},{\"/cdr_auto\",\"fsm/mi\",\"fsm/Lint\",\"fsm/auto\",\"/gpobj\",\"concrete\","y_tab"});toc;"
 
 
 
