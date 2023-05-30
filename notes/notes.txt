@@ -1571,6 +1571,7 @@ make,sbmake,gmake,sbcc: substitutre make variable with subst as CFLAGS := $(subs
 test:https://mathworks.sharepoint.com/sites/devu/testingresourcecenter/testingstandards/TestStandardsMATLABUnit/Index.aspx 
 libclang python: lp541
 sbtools:http://ah-ppatil-l.dhcp.mathworks.com/local-ssd/ppatil/   or   http://vdi-dd1ah-010.dhcp.mathworks.com/local-ssd/saurabhg/  or https://mathworks.sharepoint.com/sites/WikiArchive/PDF/Desktop%20Web%20Server.pdf  
+matlab: echo vs disp: echo is used to turned on/off logging during execution
 todo: cell commands loads simulink
 todo: sf coverage: error out on multiple coverage objectives on the same line except for if
 todo: sfcoverage macro in if:cdr/prs_pre_error_checks.cpp +910  lambda in if: LowerLatchFunctions
@@ -2452,7 +2453,7 @@ tu = index.parse(fileName,args,options=clang.cindex.TranslationUnit.PARSE_DETAIL
 #tu = index.parse(fileName,args='-xc++ --std=c++0x'.split());
 #getIfStmtInfo(tu.cursor,tu.cursor,"")
 
-sbroot=$d/mycov25;
+sbroot=$d/mycov22;
 matlabroot=$sbroot/matlab
 cd $matlabroot
 mkdir derived/glnxa64/src/include/mwcov;
