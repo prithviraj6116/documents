@@ -1574,6 +1574,9 @@ sbtools:http://ah-ppatil-l.dhcp.mathworks.com/local-ssd/ppatil/   or   http://vd
 matlab: echo vs disp: echo is used to turned on/off logging during execution
 todo: sfcoverage: investivage if misses 1. StateMetaSyntaxParser.cpp:86 2. visibility.cpp
 todo: snap job performance improvements: dll redirect/copy from parent cluster job + sbsmartbuild of all the changes since last snap
+todo: qegatekeeper autmation + dev build failure early detection: clone when job is accepted + apply one non-snap change + compile (g++/clang/windows) + snapshot  
+      in case of failure, send an email and wait for fix. ability to continue after fix has been applied.
+      either continue till snap change or use snap-job-improvement approach for snap change as well (i.e. parent cluster dll copy + targeted sbsmartbuild)
 todo: sbmake/sbcc/sbsmartbuild compile with -Werror disabled
 todo: c++ how to use string in operator[] argument e.g. arrayVar1["abc"] like used by matlab StructArray
 todo: cell commands loads simulink
