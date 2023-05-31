@@ -1573,6 +1573,8 @@ libclang python: lp541
 sbtools:http://ah-ppatil-l.dhcp.mathworks.com/local-ssd/ppatil/   or   http://vdi-dd1ah-010.dhcp.mathworks.com/local-ssd/saurabhg/  or https://mathworks.sharepoint.com/sites/WikiArchive/PDF/Desktop%20Web%20Server.pdf  
 matlab: echo vs disp: echo is used to turned on/off logging during execution
 todo: sfcoverage: investivage if misses 1. StateMetaSyntaxParser.cpp:86 2. visibility.cpp
+todo: snap job performance improvements: dll redirect/copy from parent cluster job + sbsmartbuild of all the changes since last snap
+todo: sbmake/sbcc/sbsmartbuild compile with -Werror disabled
 todo: c++ how to use string in operator[] argument e.g. arrayVar1["abc"] like used by matlab StructArray
 todo: cell commands loads simulink
 todo: sf coverage: error out on multiple coverage objectives on the same line except for if
@@ -2455,7 +2457,7 @@ tu = index.parse(fileName,args,options=clang.cindex.TranslationUnit.PARSE_DETAIL
 #tu = index.parse(fileName,args='-xc++ --std=c++0x'.split());
 #getIfStmtInfo(tu.cursor,tu.cursor,"")
 
-cd $s/mwcov_q1;
+cd $s/mwcov_q2;
 sbroot=$(sbroot);
 mlroot=$(sbroot)/matlab
 cd $mlroot
