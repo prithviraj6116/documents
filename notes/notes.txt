@@ -1573,6 +1573,7 @@ libclang python: lp541
 sbtools:http://ah-ppatil-l.dhcp.mathworks.com/local-ssd/ppatil/   or   http://vdi-dd1ah-010.dhcp.mathworks.com/local-ssd/saurabhg/  or https://mathworks.sharepoint.com/sites/WikiArchive/PDF/Desktop%20Web%20Server.pdf  
 matlab: echo vs disp: echo is used to turned on/off logging during execution
 linux: hostname -f gives you dhcp address of host
+todo: docker matlab mpm jupyter
 todo: quantify network file open time or slowdown
 todo: order of participants in teams meetings right panel 
 todo: sfcoverage if(auto w1=f1()) { ;  if instrumentation is not added, instead compound stmt instrumentation is added
