@@ -1582,6 +1582,8 @@ todo: cdractionsubsyschart.cpp 85
 todo: linux what is ~. is it environment variable because "$echo ~" works without $ like other environment variables
 todo: sfcoverage: investivage if misses 1. StateMetaSyntaxParser.cpp:86 2. visibility.cpp 3.cdr/ExclusiveStateCoder.cpp:494  4. flow/AllFlowGraphsCoder.cpp:226 
 g "if (" --include=*cpp | grep -iv logIf  | grep -iv unittest | grep -iv pkgtest | grep -iv auto | grep -iv "((("
+g "if (" --include=*cpp | grep -iv logIf  | grep -iv unittest | grep -iv pkgtest | grep -iv auto | grep -iv "(((" | grep -iv testing | grep -iv Lint | grep -iv gpobj
+
 todo: snap job performance improvements: dll redirect/copy from parent cluster job + sbsmartbuild of all the changes since last snap
 todo: qegatekeeper autmation + dev build failure early detection: clone when job is accepted + apply one non-snap change + compile (g++/clang/windows) + snapshot  
       in case of failure, send an email and wait for fix. ability to continue after fix has been applied.
