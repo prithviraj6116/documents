@@ -1574,6 +1574,7 @@ sbtools:http://ah-ppatil-l.dhcp.mathworks.com/local-ssd/ppatil/   or   http://vd
 matlab: echo vs disp: echo is used to turned on/off logging during execution
 linux: hostname -f gives you dhcp address of host
 todo: docker matlab mpm jupyter
+todo: sfcoverage duplicate code finder
 todo: quantify network file open time or slowdown
 todo: order of participants in teams meetings right panel 
 todo: sfcoverage if(auto w1=f1()) { ;  if instrumentation is not added, instead compound stmt instrumentation is added
