@@ -1574,7 +1574,7 @@ sbtools:http://ah-ppatil-l.dhcp.mathworks.com/local-ssd/ppatil/   or   http://vd
 matlab: echo vs disp: echo is used to turned on/off logging during execution
 linux: hostname -f gives you dhcp address of host
 todo sfcoverage mwcov.bash show stage times using stageStartTimeStamp=$(date +%m) echo "Time(m): $(( stageFinishTimeStamp - stageStartTimeStamp + 1))
-todo sfcoverage all but 1 if branch does not return: can we optimize
+todo sfcoverage return in if: optimize, we may not need "}cov::" for if stmts with ifcond instrumented
 todo: sfcoverage lambda in if or if in macro for elseif but not for previous ifs/elseif
 todo: sfcoverage: linetocovobjective: macro lines or lines starting with # or c style lines
 todo: sfcoverage: linetocovobjective statements in else branch 
