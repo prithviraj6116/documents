@@ -1575,6 +1575,7 @@ matlab: echo vs disp: echo is used to turned on/off logging during execution
 linux: hostname -f gives you dhcp address of host
 todo: sfcoverage lambda in if or if in macro for elseif but not for previous ifs/elseif
 todo: sfcoverage: linetocovobjective: macro lines or lines starting with # or c style lines
+todo: sfcoverage: linetocovobjective statements in else branch 
 todo: sfcoverage: linetocovobjective statements after catch
 todo: docker matlab mpm jupyter
 todo: sfcoverage duplicate code finder
