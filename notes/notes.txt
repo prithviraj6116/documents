@@ -1574,6 +1574,7 @@ sbtools:http://ah-ppatil-l.dhcp.mathworks.com/local-ssd/ppatil/   or   http://vd
 matlab: echo vs disp: echo is used to turned on/off logging during execution
 linux: hostname -f gives you dhcp address of host
 todo: sfcoverage lambda in if or if in macro for elseif but not for previous ifs/elseif
+todo: sfcoverage: linetocovobjective: macro lines or lines starting with # or c style lines
 todo: docker matlab mpm jupyter
 todo: sfcoverage duplicate code finder
 todo: quantify network file open time or slowdown
