@@ -1573,6 +1573,7 @@ libclang python: lp541
 sbtools:http://ah-ppatil-l.dhcp.mathworks.com/local-ssd/ppatil/   or   http://vdi-dd1ah-010.dhcp.mathworks.com/local-ssd/saurabhg/  or https://mathworks.sharepoint.com/sites/WikiArchive/PDF/Desktop%20Web%20Server.pdf  
 matlab: echo vs disp: echo is used to turned on/off logging during execution
 linux: hostname -f gives you dhcp address of host
+sbtools: existance of mw_anchor tells sbsyncmaster it is a sandbox
 todo sfcoverage mwcov.bash show stage times using stageStartTimeStamp=$(date +%m) echo "Time(m): $(( stageFinishTimeStamp - stageStartTimeStamp + 1))
 todo sfcoverage: if end instrumentation on last line of function with function returning non-void throws  [-Werror=return-type] 
 todo: sfcoverage: date +%m to date +%M
