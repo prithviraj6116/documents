@@ -1575,6 +1575,9 @@ matlab: echo vs disp: echo is used to turned on/off logging during execution
 linux: hostname -f gives you dhcp address of host
 linux: $(date +%M) is different than $(date +%s). s return elapsed seconds (1-inf) but M return only minute value (1-60)
 sbtools: existance of mw_anchor tells sbsyncmaster it is a sandbox, -C does not work from such location
+matlab: parfor is not nested. nested parfor = for. see lp542
+matlab: sprintf formating info = sprintf('Worker: %2.0f\tTask: %2.0f:%2.0f', t.ID,topIdx, bottomIdx);
+matlab: parfor print workder id;t = getCurrentTask(); t.ID
 todo: typeditor spreadsheet bus creation and exporting.how it works. docked type editor spreadsheet
 todo: model data editor, interface editor, typeeditor (docked), property inspector, model explorer, model browser
 todo: matlab packages, namespace, projects
@@ -2513,6 +2516,35 @@ mw matlab -nodesktop -nosplash -nojvm -r "tic;instrumentCoverageForCppModules({\
 
 
 
+lp542
+function profileParfor(nestedParFor)
+    tasks = {100,3,3,3,3,3};
+    taskTime = 1;
+    tic;
+    if nestedParFor
+        parfor idx = 1:length(tasks)
+            task_1(idx, tasks{idx}, taskTime);
+        end
+    else
+        for idx = 1:length(tasks)
+            task_1(idx, tasks{idx}, taskTime);
+        end
+    end
+    toc;
+end
+function task_1(topId, tasks, taskTime)
+    parfor idx = 1:tasks
+        task_2(topId, idx, taskTime);
+    end
+end
+function task_2(topIdx, bottomIdx, taskTime)
+    t = getCurrentTask();
+    if ~isempty(t)
+        info = sprintf('Worker: %2.0f\tTask: %2.0f:%2.0f', t.ID,topIdx, bottomIdx);
+        disp(info);
+    end
+    pause(taskTime);
+end
 
 
 
