@@ -1578,6 +1578,7 @@ sbtools: existance of mw_anchor tells sbsyncmaster it is a sandbox, -C does not 
 matlab: parfor is not nested. nested parfor = for. see lp542
 matlab: sprintf formating info = sprintf('Worker: %2.0f\tTask: %2.0f:%2.0f', t.ID,topIdx, bottomIdx);
 matlab: parfor print workder id;t = getCurrentTask(); t.ID
+todo: get information when when sf is loaded and when sf license is used. which blocks(open,create,edit,simulate etc.) loads sf and which of those checkout license. run fbt like tests to get this information
 todo: typeditor spreadsheet bus creation and exporting.how it works. docked type editor spreadsheet
 todo: model data editor, interface editor, typeeditor (docked), property inspector, model explorer, model browser
 todo: matlab packages, namespace, projects
