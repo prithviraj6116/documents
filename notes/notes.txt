@@ -1577,6 +1577,9 @@ linux: $(date +%M) is different than $(date +%s). s return elapsed seconds (1-in
 sbtools: existance of mw_anchor tells sbsyncmaster it is a sandbox, -C does not work from such location
 todo: typeditor spreadsheet bus creation and exporting.how it works. docked type editor spreadsheet
 todo: model data editor, interface editor, typeeditor (docked), property inspector, model explorer, model browser
+todo: matlab packages, namespace, projects
+todo: nested parfor vs one level parfor performance
+todo: print(')
 todo sfcoverage mwcov.bash show stage times using stageStartTimeStamp=$(date +%m) echo "Time(m): $(( stageFinishTimeStamp - stageStartTimeStamp + 1))
 todo sfcoverage: if end instrumentation on last line of function with function returning non-void throws  [-Werror=return-type] 
 todo: sfcoverage: date +%m to date +%M
