@@ -39,7 +39,7 @@ function chd() {
     export PPP_COMMAND=chd
     export PPP_DIRECTORYNUMBER='-1';
     export ORIGSBROOT=$(sbroot 2>/tmp/log1)
-    export MYSBNAME=$(echo $ORIGSBROOT|cut -d'.' -f 2)
+    export MYSBNAME=$(echo $ORIGSBROOT|cut -d'.' -f 2-)
     export MYSBROOT=$(getUserSbroot $MYSBNAME $ORIGSBROOT)
     export MYSBNAME=${MYSBNAME/$d\//(local)}
     if [[ $# == 0 ]];
