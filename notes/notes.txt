@@ -1583,6 +1583,7 @@ simulink: slsvTestingHook('LoadSaveVerbosity',3)
 gdb: thread apply all back 10   -> gdb>thread apply all gdbcmd
 gdb: sharedlibrary loads all symbols from all library
 simulink load save: https://web.yammer.com/main/org/mathworks.com/threads/eyJfdHlwZSI6IlRocmVhZCIsImlkIjoiMjI5MTQ0ODYzODQ4MDM4NCJ9   or https://mathworks-my.sharepoint.com/personal/mwood_mathworks_com/_layouts/15/stream.aspx?id=%2Fpersonal%2Fmwood%5Fmathworks%5Fcom%2FDocuments%2Fresave%5Fharness%5Fdebugging%2Emp4&nav=eyJwbGF5YmFja09wdGlvbnMiOnsic3RhcnRUaW1lSW5TZWNvbmRzIjo3NTcuNzc0MTQ5fX0%3D&referrer=Yammer&referrerScenario=PopOut%2Emis%2E9cdf0edb%2D6a57%2D48be%2Dac75%2Da451e0a85e71  
+todo: sfcoverage avoid links when nodesktop is specified
 todo: polyspace https://confluence.mathworks.com/display/POLYSP/Polyspace+Lab%3A+MathWorks+users 
 todo: get information when when sf is loaded and when sf license is used. which blocks(open,create,edit,simulate etc.) loads sf and which of those checkout license. run fbt like tests to get this information
 todo: why cellarray elements shown as {[1]} instead of {1} 
