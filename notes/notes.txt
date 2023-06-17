@@ -1588,6 +1588,7 @@ matlab: find element in an array find(X==val)->indices   X(X>=val)->elements  X=
 matlab: open matlab preferences: >>preferences
 linux: lscpu
 matlab: parallel computing toolbox: gcp('nocreate');
+todo: pool = parpool('Threads') only uses 6 and not all 12 threads
 todo: sbmake or anyother way to easily find out when prebuild is required
 todo: tool to find out easy fixes to compile failures and fix them automatically
 todo: leanarray in jobCoverage.mat
