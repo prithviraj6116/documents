@@ -1589,6 +1589,7 @@ matlab: open matlab preferences: >>preferences
 linux: lscpu
 matlab: parallel computing toolbox: gcp('nocreate');
 bash: watch command with pipe argument.notice "s and 's.  $watch -n2 "bash -c 'ls $s/m20-Bstateflow.j2305831/matlab/mwcov/logs/ | wc -l'" 
+mwtools: leased windows machine using devpoolmanager, login: AD.MATHWORKS.COM\ppatil
 todo: model finder PFT 6/19/23
 todo: S-function external and custom code debugger PFT 6/19/23
 todo: pool = parpool('Threads') only uses 6 and not all 12 threads
