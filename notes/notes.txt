@@ -1591,6 +1591,7 @@ matlab: parallel computing toolbox: gcp('nocreate');
 bash: watch command with pipe argument.notice "s and 's.  $watch -n2 "bash -c 'ls $s/m20-Bstateflow.j2305831/matlab/mwcov/logs/ | wc -l'" 
 mwtools: leased windows machine using devpoolmanager, login: AD.MATHWORKS.COM\ppatil
 c++: default arguments can be specified on definition if no declaration. With declaration, same default value must be specified on all declarations.
+todo: qualify1 to run on from sandbox location directly with arguments like myqual or possibly with arguments
 todo: vtunes, polyspace, 
 todo: mwcoverage:break,continue with non-block-start line mappings
 todo: mwcoverage: thread-safe instrumentation
