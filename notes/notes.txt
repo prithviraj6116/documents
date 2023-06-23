@@ -1591,7 +1591,7 @@ matlab: parallel computing toolbox: gcp('nocreate');
 bash: watch command with pipe argument.notice "s and 's.  $watch -n2 "bash -c 'ls $s/m20-Bstateflow.j2305831/matlab/mwcov/logs/ | wc -l'" 
 mwtools: leased windows machine using devpoolmanager, login: AD.MATHWORKS.COM\ppatil
 c++: default arguments can be specified on definition if no declaration. With declaration, same default value must be specified on all declarations.
-todo: sbsmartbuild logs has a lot of information. find out more
+todo: sbsmartbuild logs has a lot of information. find out more e.g. build1 with NOLINKTESTS=1 
 todo: sbruntests result web page has a lot more information (e.g. change priority). find out more.
 todo: qualify1 to run on from sandbox location directly with arguments like myqual or possibly with arguments
 todo: vtunes, polyspace, 
