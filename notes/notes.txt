@@ -1594,6 +1594,7 @@ c++: default arguments can be specified on definition if no declaration. With de
 mwtools: ls /mathworks/devel/bat/Bstateflow has information about cluster jobs
 todo: format of matlab/derived folder for each component
 todo: how exported headers work with matlab/derived and with sbmake/sbcc/sbsmartbuild etc.
+todo: mw test/doc/resource/examples/help components as against software components
 todo: does bat job build/test node run on a single machine or used -distcc like
 todo: maca vs maci
 todo: linux cp command  does not work with .. and _ in filename e.g. cp ../cal_q16/matlab/toolbox/stateflow/sf_cal/_clang-format  matlab/toolbox/stateflow/sf_cal/_clang-format
