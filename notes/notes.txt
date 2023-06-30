@@ -1592,6 +1592,7 @@ bash: watch command with pipe argument.notice "s and 's.  $watch -n2 "bash -c 'l
 mwtools: leased windows machine using devpoolmanager, login: AD.MATHWORKS.COM\ppatil
 c++: default arguments can be specified on definition if no declaration. With declaration, same default value must be specified on all declarations.
 mwtools: ls /mathworks/devel/bat/Bstateflow has information about cluster jobs
+todo: linux run command and open its ui in particular workspace
 todo: linux subsystem for windows
 todo: what is HostQuiesced means in sbhostlease -list
 todo: format of /mathworks/ subfolders, especially subfolders ofr /mathworks/devel 
