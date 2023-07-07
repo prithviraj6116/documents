@@ -1592,7 +1592,7 @@ bash: watch command with pipe argument.notice "s and 's.  $watch -n2 "bash -c 'l
 mwtools: leased windows machine using devpoolmanager, login: AD.MATHWORKS.COM\ppatil
 c++: default arguments can be specified on definition if no declaration. With declaration, same default value must be specified on all declarations.
 mwtools: ls /mathworks/devel/bat/Bstateflow has information about cluster jobs
-linux: echo foo | xclip -selection clipboard  
+linux: copy bash command output to clipboard: echo foo | xclip -selection clipboard  
 todo: sbcompilecommands
 todo: move class method definitions from .cpp to .hpp and vice versa and manage scope:: automatically
 todo: c++ xml/json libs nlohmann 
