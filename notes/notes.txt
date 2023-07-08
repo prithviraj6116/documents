@@ -1594,6 +1594,8 @@ c++: default arguments can be specified on definition if no declaration. With de
 mwtools: ls /mathworks/devel/bat/Bstateflow has information about cluster jobs
 linux: copy bash command output to clipboard (xclip/xsel) : echo foo | xclip -selection clipboard  (-o to output to command window)
 p4v: selecting multiple files in changelist and open with shows gvim only when relevant (e.g. cpp) file is under the cursor while pressing right click
+todo: matlab file can be dragged to p4v and to gvim. see what else does or doesnot(but should) work with file dragging
+todo: hackathon ideas
 todo: sbcompilecommands
 todo: move class method definitions from .cpp to .hpp and vice versa and manage scope:: automatically
 todo: c++ xml/json libs nlohmann 
