@@ -1596,6 +1596,7 @@ linux: copy bash command output to clipboard (xclip/xsel) : echo foo | xclip -se
 p4v: selecting multiple files in changelist and open with shows gvim only when relevant (e.g. cpp) file is under the cursor while pressing right click
 matlab: dbstop('if','error');dbstop('if','caugth','error');dbstop('if','all','error');
 linux bash: dumping binary data on bash terminal changes terminals settings. use $reset 
+Acronyms: HSP(hardware support package)
 todo: matlab file can be dragged to p4v and to gvim. see what else does or doesnot(but should) work with file dragging
 todo: hackathon ideas
 todo: sbcompilecommands
