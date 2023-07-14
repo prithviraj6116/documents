@@ -1599,6 +1599,8 @@ linux bash: dumping binary data on bash terminal changes terminals settings. use
 Acronyms: HSP(hardware support package)
 linux: to fix EADDRINUSE error:sudo lsof -i :3000<portnumber> which shows processes using that port number. then you can kill them using sudo kill -9 pid.
        this fixes addrinuse address already in use 5000 unhandled  
+matlab: get the sandbox location of user: fullfile(filesep, 'mathworks','devel','sandbox',char(java.lang.System.getProperty('user.name')));
+todo: savadhan folders download
 todo: matlab: error when adding a variable to a static workspace(anonymous or nested or function containing nested functinos)
 todo: matlab file can be dragged to p4v and to gvim. see what else does or doesnot(but should) work with file dragging
 todo: hackathon ideas
