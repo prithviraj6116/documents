@@ -1601,6 +1601,7 @@ linux: to fix EADDRINUSE error:sudo lsof -i :3000<portnumber> which shows proces
        this fixes addrinuse address already in use 5000 unhandled  
 matlab: get the sandbox location of user: fullfile(filesep, 'mathworks','devel','sandbox',char(java.lang.System.getProperty('user.name')));
 nodejs: node --max-old-space-size=1024 index.js
+bug: invalid state name prevents other edit time errors(unresolved data)
 todo: libclang missing if 1. if insided lambda
 todo: savadhan folders download
 todo: matlab: error when adding a variable to a static workspace(anonymous or nested or function containing nested functinos)
