@@ -1,13 +1,15 @@
-"function VundleInit()
-"    set rtp+=~/.vim/bundle/Vundle.vim
-"    call vundle#begin()
-"    Plugin 'VundleVim/Vundle.vim'
-"    Plugin 'gcmt/taboo.vim'
-"    " Plugin 'vim-scripts/Conque-GDB'
-"    Plugin 'easymotion/vim-easymotion'
-"    call vundle#end()
-"endfunction
-"
+function VundleInit()
+    set rtp+=~/.vim/bundle/Vundle.vim
+    call vundle#begin()
+    "Plugin 'VundleVim/Vundle.vim'
+    "Plugin 'gcmt/taboo.vim'
+    "Plugin 'vim-scripts/Conque-GDB'
+    Plugin 'ycm-core/YouCompleteMe'
+    "Plugin 'easymotion/vim-easymotion'
+    Plugin 'machakann/vim-Verdin'
+    call vundle#end()
+endfunction
+
 
 set swapfile
 set dir=/tmp
@@ -73,5 +75,8 @@ map sc <C-w><C-w><C-u><C-w><C-w>
 "map gg <C-t>
 "
 "
-":call VundleInit()
+:call VundleInit()
+set completeopt-=preview
+let g:ycm_auto_hover='' "CursorHold
+let g:Verdin#autocomplete = 1
 

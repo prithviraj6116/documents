@@ -1602,7 +1602,9 @@ linux: to fix EADDRINUSE error:sudo lsof -i :3000<portnumber> which shows proces
 matlab: get the sandbox location of user: fullfile(filesep, 'mathworks','devel','sandbox',char(java.lang.System.getProperty('user.name')));
 nodejs: node --max-old-space-size=1024 index.js
 bug: invalid state name prevents other edit time errors(unresolved data)
-failures: could not think about better way to get compile commands to clang.cindex e.g. using sbcompilecommands, srinath told about it. rootcauses:  countermeasures:
+failures: better way to get compile commands to clang.cindex e.g. using sbcompilecommands, srinath told about it. rootcauses:  countermeasures:
+failures: clang.cindex.CursorKind.CXX_CATCH_STMT 
+vim: ycm:  https://medium.com/parallel-thinking/actually-great-vim-javascript-completion-eaefa1cb443d  https://github.com/machakann/vim-Verdin 
 todo: libclang missing if 1. if insided lambda
 todo: savadhan folders download
 todo: matlab: error when adding a variable to a static workspace(anonymous or nested or function containing nested functinos)
@@ -2610,3 +2612,18 @@ end
 
 
 
+function VundleInit()
+    set rtp+=~/.vim/bundle/Vundle.vim
+    call vundle#begin()
+    "Plugin 'VundleVim/Vundle.vim'
+    "Plugin 'gcmt/taboo.vim'
+    "Plugin 'vim-scripts/Conque-GDB'
+    Plugin 'ycm-core/YouCompleteMe'
+    "Plugin 'easymotion/vim-easymotion'
+    Plugin 'machakann/vim-Verdin'
+    call vundle#end()
+endfunction
+:call VundleInit()
+set completeopt-=preview
+let g:ycm_auto_hover='' "CursorHold
+let g:Verdin#autocomplete = 1
