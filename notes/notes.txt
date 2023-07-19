@@ -1605,8 +1605,9 @@ bug: invalid state name prevents other edit time errors(unresolved data)
 failures: better way to get compile commands to clang.cindex e.g. using sbcompilecommands, srinath told about it. rootcauses:  countermeasures:
 failures: clang.cindex.CursorKind.CXX_CATCH_STMT 
 vim: ycm:  https://medium.com/parallel-thinking/actually-great-vim-javascript-completion-eaefa1cb443d  https://github.com/machakann/vim-Verdin 
+todo: savadhan vim/mw-completions sbcpptags
 todo: nvim lua benefits better scripting
-todo: coverage 1. iflogs for implicitdeclar 2. verify line logs for macro{} 3. objective number 4.
+todo: coverage 1. iflogs for implicitdeclar 2. verify line logs for macro{} 3. objective number 4. os.system warning/error to file, use script 5. print() to same file as that of os.system 6. mwcov.cpp mwcovmex.cpp 7. combine all test results 8. webUI 9. objid in seq 10. obj offset instead of objid (pros/cons)
 todo: python indent rules
 todo: parallel programming python, matlab, c++, javascript
 todo: libclang missing if 1. if insided lambda
