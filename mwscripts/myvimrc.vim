@@ -34,6 +34,7 @@ map srf yiw:%s/<C-r>"//gc<left><left><left>
 map sa :up!<ENTER>
 map s1g :!cd ~/Downloads/stu1;rm cpp1;g++ cpp1.cpp -o cpp1 -std=c++17;./cpp1;cd -<ENTER>
 map s2g :!git add -u;git commit -m "abc";git push<ENTER>
+map s3g :!cd ~/Downloads/stu55/;rustc  r1.rc;./r1<ENTER>
 map sb <C-w><C-w><C-d><C-w><C-w>
 map sc <C-w><C-w><C-u><C-w><C-w>
 
