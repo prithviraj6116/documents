@@ -1609,7 +1609,7 @@ python/bash:  os.system('cmd >> logfile 2>&1' ) for redirecting stderr to stdout
 git:  git reset --soft HEAD~3  combine commits
 python: sort based on field/subelement of array element: myarray.sort(key=lambda x: x[0], reverse=True)
 python: print(msg,end='\r',sep='',flust=True): overwrite same line, 
-todo: hdl mappings: src/cgir_hdl hdlcoder/hdlimport,  (?)->src/codermapping_hdl(_client) (?)->hdlcoder/hdl_datamodel
+todo: hdl mappings: test:hdlcoder src: src/cgir_hdl hdlcoder/hdlimport,  (?)->src/codermapping_hdl(_client) (?)->hdlcoder/hdl_datamodel
 todo: sysml, xml,uml requirement manager, system composer
 todo: savadhan vim/mw-completions sbcpptags
 todo: nvim lua benefits better scripting
