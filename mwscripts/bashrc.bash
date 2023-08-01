@@ -82,3 +82,8 @@ alias newSession="cd ~;rm -rf logs log matlab_crash_dump* orig.matlab_crash_dump
 #export PS1=..............................................................................\\n$\ 
 export PROMPT_COMMAND='echo -ne "\033]0;$(getTerminalTabTitle)\007"'
 
+
+#temporary shortcuts
+#alias gns="gvim index.js public/css/covreport.css public/index.html  public/js/covreport.js &"
+alias gns="cd /mathworks/devel/sandbox/ppatil/misc/gitRepo1/stateflow-tools/scripts/cov; gvim mwcov.hpp mwcov.cpp mwcovmex.cpp instrumentCoverage.py getPathTests.py server/index.js server/public/css/covreport.css server/public/index.html  server/public/js/covreport.js &"
+
