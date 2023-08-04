@@ -1609,6 +1609,8 @@ python/bash:  os.system('cmd >> logfile 2>&1' ) for redirecting stderr to stdout
 git:  git reset --soft HEAD~3  combine commits
 python: sort based on field/subelement of array element: myarray.sort(key=lambda x: x[0], reverse=True)
 python: print(msg,end='\r',sep='',flust=True): overwrite same line, 
+python: python3 -m site --user-base => gives location where packages are installed.
+python: sys.path.append(AbovePath+"site-packages")
 todo: gdb not printing std::containers 
 todo: webui coverage when same file from two different modules is open, cFile is handled but cModule is not
 todo: cgir log + bug + geck =>machine learning to find bug
