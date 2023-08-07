@@ -1612,6 +1612,7 @@ python: print(msg,end='\r',sep='',flust=True): overwrite same line,
 python: python3 -m site --user-base => gives location where packages are installed.
 python: sys.path.append(AbovePath+"site-packages")
 vim: open file and go to line number :e +lineNumber fileName
+js: var varName = function(){} vs function functionName(){} 
 todo: function at the start of file does not get instrumented in mwcov coverage
 todo: gdb not printing std::containers 
 todo: webui coverage when same file from two different modules is open, cFile is handled but cModule is not
