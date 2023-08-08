@@ -1615,6 +1615,9 @@ vim: open file and go to line number :e +lineNumber fileName
 js: var varName = function(){} vs function functionName(){} 
 bash: top -p pid
 bash: top -bc pName
+todo: coverage: data flow,
+todo: nvim
+todo: synchronizations: software transactional memory
 todo: people: Bill Joy (vi) Bram Moolenar (vim) 
 todo: function at the start of file does not get instrumented in mwcov coverage
 todo: gdb not printing std::containers 
