@@ -1618,7 +1618,7 @@ bash: top -bc pName
 todo: coverage: data flow,
 todo: nvim
 todo: synchronizations: software transactional memory
-todo: people: Bill Joy (vi) Bram Moolenar (vim) 
+todo: people: Bill Joy (vi) Bram Moolenar (vim) Larry Hastings(Python) Guido Van Rossume (Python)
 todo: function at the start of file does not get instrumented in mwcov coverage
 todo: gdb not printing std::containers 
 todo: webui coverage when same file from two different modules is open, cFile is handled but cModule is not
