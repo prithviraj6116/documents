@@ -1615,6 +1615,7 @@ vim: open file and go to line number :e +lineNumber fileName
 js: var varName = function(){} vs function functionName(){} 
 bash: top -p pid
 bash: top -bc pName
+todo: people: Bram Moolenar
 todo: function at the start of file does not get instrumented in mwcov coverage
 todo: gdb not printing std::containers 
 todo: webui coverage when same file from two different modules is open, cFile is handled but cModule is not
