@@ -1,4 +1,4 @@
-temp:class_of, chart, moore, labelstring, coverageInfo,triggered,name     
+temp:class_of, chart, moore, labelstring, coverageInfo,triggered,name      test
 matlab commands abc
 subsref
 subsassign
@@ -1615,6 +1615,9 @@ vim: open file and go to line number :e +lineNumber fileName
 js: var varName = function(){} vs function functionName(){} 
 bash: top -p pid
 bash: top -bc pName
+bash: top -bc | grep commandText
+bash: ps -p pId -o lstart
+bash: command chaining 1. c1&&c2:c1 is run, if passes, c2 is run  2. c1;c2: c1 is run, when finished, irrespective if pass/fail, c2 is run 3. c1&c2: c1 is run and immediately c2 is run 4. c1||c2: c1 is run
 todo: coverage: data flow,
 todo: nvim
 todo: synchronizations: software transactional memory
