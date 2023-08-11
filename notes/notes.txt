@@ -1619,7 +1619,7 @@ bash: top -bc | grep commandText
 bash: ps -p pId -o lstart
 bash: command chaining 1. c1&&c2:c1 is run, if passes, c2 is run  2. c1||c2: c1 is run and if fails c2 is run 3. c1;c2: c1 is run, when finished, irrespective if pass/fail, c2 is run 4. c1&c2: c1 is run and immediately c2 is run 
 bash: command ouput indirection: c1>file:outputwrite c1&>file:output&errorwrite c1>>file:outputappend c1&>>file:output&errorappend(maynot work, use next instead) c1>c2 2&> file:output&errorappend
-bash: top: shift-f + up/down + s + q
+bash: top: 1. E to mega/giga/kilo 2. shift-f + up/down + s + q to sort with different column
 todo: coverage: data flow,
 todo: nvim
 todo: synchronizations: software transactional memory
