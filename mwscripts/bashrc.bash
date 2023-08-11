@@ -70,6 +70,15 @@ a="gvim +/\"$1\" $(grep -irl $1 $2 $3 $4 $5 --exclude=*swp --exclude=*swo --excl
 b=$(echo $a|tr '\n' ' ');
 eval $b
 } 
+
+function cl {
+ cmd1="$@ | xclip -selection clipboard"
+# eval $1
+cmd2="xclip -selection clipboard -o"
+ eval $cmd1
+ eval $cmd2
+}
+
 export h=/mathworks/devel/sandbox/ppatil/misc/hubdocs/mwscripts
 
 
