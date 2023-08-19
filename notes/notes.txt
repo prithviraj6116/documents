@@ -1621,6 +1621,8 @@ bash: command chaining 1. c1&&c2:c1 is run, if passes, c2 is run  2. c1||c2: c1 
 bash: command ouput indirection: c1>file:outputwrite c1&>file:output&errorwrite c1>>file:outputappend c1&>>file:output&errorappend(maynot work, use next instead) c1>c2 2&> file:output&errorappend
 bash: top : 1. E to mega/giga/kilo 2. shift-f + up/down + s + q to sort with different column
 js: array has slice and splice;  string has only slice since string is pod not reference as array is. splice modifies the object
+vim: :execute "normal! 3GP"  => go to line 3 and paste
+vim: macro record and play: qa<cmd>q @a or :.,$norm @a
 todo: libclang,libtooling,cppcheck  https://stackoverflow.com/questions/60627345/python-libclang-how-to-distinguish-const-vs-constexpr-types 
 todo: sbjobtracker,ntiana
 todo: coverage: data flow,
