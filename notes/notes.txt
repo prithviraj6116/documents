@@ -1620,6 +1620,7 @@ bash: ps -p pId -o lstart
 bash: command chaining 1. c1&&c2:c1 is run, if passes, c2 is run  2. c1||c2: c1 is run and if fails c2 is run 3. c1;c2: c1 is run, when finished, irrespective if pass/fail, c2 is run 4. c1&c2: c1 is run and immediately c2 is run 
 bash: command stdout indirection: c1>file:outputwrite c1&>file:output&errorwrite c1>>file:outputappend c1&>>file:output&errorappend(maynot work, use next instead) c1>c2 2&>1 file:output&errorappend
 bash: command stdin indirection: <(file) vs <<(here-doc) vs <<<(herestring) vs "<()"(process substituion)
+bash: xarg to convert piped stdin to arguments; command1 | xargs -I {} command2 {}
 bash: top : 1. E to mega/giga/kilo 2. shift-f + up/down + s + q to sort with different column
 js: array has slice and splice;  string has only slice since string is pod not reference as array is. splice modifies the object
 vim: :execute "normal! 3GP"  => go to line 3 and paste
