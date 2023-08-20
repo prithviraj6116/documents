@@ -1626,6 +1626,7 @@ bash: top : 1. E to mega/giga/kilo 2. shift-f + up/down + s + q to sort with dif
 js: array has slice and splice;  string has only slice since string is pod not reference as array is. splice modifies the object
 vim: :execute "normal! 3GP"  => go to line 3 and paste
 vim: macro record and play: qa<cmd>q @a or :.,$norm @a
+todo: demo examples: stlcore mtl_evaluator half_utils
 todo: fileserver on /mathworks/inside/labs/dev/stateflow-tools
 todo: libclang,libtooling,cppcheck  https://stackoverflow.com/questions/60627345/python-libclang-how-to-distinguish-const-vs-constexpr-types 
 todo: sbjobtracker,ntiana
