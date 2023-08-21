@@ -2689,7 +2689,8 @@ set completeopt-=preview
 let g:ycm_auto_hover='' "CursorHold
 let g:Verdin#autocomplete = 1
 
-todo: crontab -e USER=ppatil
+todo: crontab -e 
+USER=ppatil
 ZFS_MASTER_SB="Bstateflow"
 SILENT=1
 LOCATION=AH
