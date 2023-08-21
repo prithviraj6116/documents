@@ -1630,6 +1630,7 @@ bash: top : 1. E to mega/giga/kilo 2. shift-f + up/down + s + q to sort with dif
 js: array has slice and splice;  string has only slice since string is pod not reference as array is. splice modifies the object
 vim: :execute "normal! 3GP"  => go to line 3 and paste
 vim: macro record and play: qa<cmd>q @a or :.,$norm @a
+todo: alm vs plm vs ple pure::variants codebeamer, jama, lifecycle management software
 todo: mw coverage: 1. hpp 2. macro surrounding code (as much as possible) 3. changelist 4. sbjobtracker
 todo: tool to c++include minimum and sorted libclang or libtooling.
 todo: c++20? modules, auto convert, 
