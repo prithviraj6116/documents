@@ -1627,6 +1627,9 @@ js: array has slice and splice;  string has only slice since string is pod not r
 vim: :execute "normal! 3GP"  => go to line 3 and paste
 vim: macro record and play: qa<cmd>q @a or :.,$norm @a
 todo: mw coverage: 1. hpp 2. macro surrounding code (as much as possible) 3. changelist 4. sbjobtracker
+todo: tool to c++include minimum and sorted libclang or libtooling.
+todo: c++20? modules, auto convert, 
+todo: compile time monitor. 1. time for compiling each file 2. downstream files per include
 todo: demo examples: stlcore mtl_evaluator half_utils, hdlcore dom_hdl/HDLArrayDistancePragma.cpp::processPragmaCall
 todo: source2test: changelist->source2test, rbviewer, cgirprettyprintnavigator, sfcommandsfinders
 todo: fileserver on /mathworks/inside/labs/dev/stateflow-tools
