@@ -1,3 +1,7 @@
+doto: habit stacking, habit tracking, make it obvious, make is easy, make is satisfying. add some immediate rewards
+doto: books to read:
+
+
 temp:class_of, chart, moore, labelstring, coverageInfo,triggered,name      test
 matlab commands abc
 subsref
