@@ -85,7 +85,7 @@ export h=/mathworks/devel/sandbox/ppatil/misc/hubdocs/mwscripts
 alias sbmakeq="sbmake -distcc DEBUG=1"
 alias sbmakeq1="sbmake BH_ALLOW_ISOLATED_BUILDS= -distcc DEBUG=1"
 alias sbmakeq2="sbmake NORUNTESTS=1 NOBUILDTESTS=1 BH_ALLOW_ISOLATED_BUILDS= -distcc DEBUG=1"
-alias sbr="sb -r \"addpath('/mathworks/devel/sandbox/ppatil/misc/hubdocs/mwscripts');myStartup;cd('~/Downloads') \" &> /tmp/matlab.log &";        
+alias sbr="sb -r \"addpath('/mathworks/devel/sandbox/ppatil/misc/hubdocs/mwscripts');myStartup;cd('~/Downloads/u1') \" &> /tmp/matlab.log &";        
 alias mynote="cd /mathworks/devel/sandbox/ppatil/misc/hubdocs/notes/;gvim notes.txt & cd - "
 alias newSession="cd ~;rm -rf logs log matlab_crash_dump* orig.matlab_crash_dump*; pkill -9 -f matlab;sbstop 8 0;pkill -9 -f chrome;pkill -9 -f mozilla; pkill -9 -f firefox; pkill -9 -f p4v;pkill -9 -f gvim;cd -;google-chrome &> /tmp/chrome.log & mynote &> /tmp/log1 &"
 #export PS1=..............................................................................\\n$\ 
@@ -94,7 +94,7 @@ export PROMPT_COMMAND='echo -ne "\033]0;$(getTerminalTabTitle)\007"'
 
 #temporary shortcuts
 #alias gns="gvim index.js public/css/covreport.css public/index.html  public/js/covreport.js &"
-alias gcf="cd /mathworks/devel/sandbox/ppatil/misc/gitRepo1/stateflow-tools/cov; gvim instrumentCoverage.py mwcov.hpp mwcov.cpp mwcovmex.cpp getPathTests.py runSfCovCronJob.py ../scripts/runOnLeasedMachine.py &"
+alias gcf="cd /mathworks/devel/sandbox/ppatil/misc/gitRepo1/stateflow-tools/cov; gvim sbjobtracker_coverage.py  instrumentCoverage.py mwcov.hpp mwcov.cpp mwcovmex.cpp getPathTests.py runSfCovCronJob.py ../scripts/runOnLeasedMachine.py &"
 alias gq="gvim /mathworks/devel/sandbox/ppatil/misc/configurations/qualify1.bash &"
 alias gns="cd /mathworks/devel/sandbox/ppatil/misc/gitRepo1/mwcppcoverage/; gvim  public/js/covreport.js routes/index.js app.js public/covreport.html public/css/covreport.css &"
 export PATH=$PATH:/usr/local/go/bin

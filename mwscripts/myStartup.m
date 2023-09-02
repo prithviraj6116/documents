@@ -11,8 +11,11 @@ end
 function loadStateflow()
     % setBdocAsDocroot('current');
     % openExample('stateflow/AutomaticTransmissionUsingDurationOperatorExample');
-    sfnew;
-    bdclose all;
+    %sfnew;
+    sf('Feature', 'SFLint',0); 
+    cd ~/Downloads/u1;
+    open_system('s1');
+    bdclose('all');
 end
 function addPaths()
     addpath(fullfile(matlabroot,'toolbox/stateflow/tools'));
