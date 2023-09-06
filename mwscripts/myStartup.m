@@ -12,7 +12,7 @@ function loadStateflow()
     % setBdocAsDocroot('current');
     % openExample('stateflow/AutomaticTransmissionUsingDurationOperatorExample');
     %sfnew;
-    sf('Feature', 'SFLint',0); 
+    %sf('Feature', 'SFLint',0); 
     cd ~/Downloads/u1;
     open_system('s1');
     bdclose('all');
