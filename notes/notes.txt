@@ -1635,6 +1635,7 @@ vim: macro record and play: qa<cmd>q @a or :.,$norm @a
 sbtools: file server from sbtools http://www-sbtools-ah.mathworks.com/mathworks/devel/sandbox/ppatil/misc/ 
          file server from inside labs: https://inside-labs.mathworks.com/sandbox/ppatil/  
          info about fs: https://mathworks.sharepoint.com/sites/ssg/inside/SitePages/Inside%20Files.aspx 
+todo: sfnew to create ert+fixed-time solver
 todo: regular expressions: https://rubular.com/r/1LnJswio3F 
 todo: vtune, inlining of unconditional function calls, overhead of M-C trips
 todo: mwcoverage: variant lambda, macro foreachifcontinue, if(macro(12)), ci/cd report 
