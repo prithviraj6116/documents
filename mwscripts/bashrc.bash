@@ -94,7 +94,7 @@ export PROMPT_COMMAND='echo -ne "\033]0;$(getTerminalTabTitle)\007"'
 
 #temporary shortcuts
 #alias gns="gvim index.js public/css/covreport.css public/index.html  public/js/covreport.js &"
-alias gcf="cd /mathworks/devel/sandbox/ppatil/misc/gitRepo1/stateflow-tools/cov; gvim sbjobtracker_coverage.py  instrumentCoverage.py mwcov.hpp mwcov.cpp mwcovmex.cpp getPathTests.py runSfCovCronJob.py ../scripts/runOnLeasedMachine.py &"
+alias gcf="cd /mathworks/devel/sandbox/ppatil/misc/gitRepo1/stateflow-tools/cov; gvim sbjobtracker_coverage.py  instrumentCoverage.py mwcov.hpp mwcov.cpp mwcovmex.cpp getPathTests.py ../scripts/runOnLeasedMachine.py &"
 alias gq="gvim /mathworks/devel/sandbox/ppatil/misc/configurations/qualify1.bash &"
 alias gns="cd /mathworks/devel/sandbox/ppatil/misc/gitRepo1/mwcppcoverage/; gvim  public/js/covreport.js routes/index.js app.js public/covreport.html public/css/covreport.css &"
 export PATH=$PATH:/usr/local/go/bin
