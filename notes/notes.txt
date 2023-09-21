@@ -25,7 +25,7 @@ p4 clients -a -u ppatil -U
 p4 client -df -Ds ppatil.ulcm122ad
 killall mate-panel : to reboot mate desktop without logout. it kills mate desktop process and debian automatically starts new mate desktop process
 killall == pkill -9 -f
-----------------
+---------------- 23
 non-jit modelName_sfun_registry.c
 sf_machine_global_initializer
   sf_register_machine_exported_symbols
