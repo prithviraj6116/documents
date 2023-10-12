@@ -1636,6 +1636,7 @@ sbtools: file server from sbtools http://www-sbtools-ah.mathworks.com/mathworks/
          file server from inside labs: https://inside-labs.mathworks.com/sandbox/ppatil/  
          info about fs: https://mathworks.sharepoint.com/sites/ssg/inside/SitePages/Inside%20Files.aspx 
 lint: consumeActionQueue 
+todo:disp(bdroot);set_param(bdroot,'SolverType','Fixed-step');set_param(bdroot, 'SystemTargetFile', 'ert.tlc'); 
 todo: sfir pointer comparision in getObject  http://sbd510333glnxa64.mathworks.com/mathworks/devel/sbs/34/ppatil.ch1_q4/work/sbruntests/20230910_185447/sbtest/sbscanlog_results.html 
 todo: sfnew to create ert+fixed-time solver
 todo: regular expressions: https://rubular.com/r/1LnJswio3F 
