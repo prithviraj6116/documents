@@ -13,8 +13,8 @@ function loadStateflow()
     % openExample('stateflow/AutomaticTransmissionUsingDurationOperatorExample');
     %sfnew;
     %sf('Feature', 'SFLint',0); 
-    cd ~/Downloads/u1;
-    open_system('s1');
+    cd ~/Downloads;
+    %open_system('s1');
     bdclose('all');
 end
 function addPaths()
