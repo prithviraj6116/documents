@@ -1638,6 +1638,7 @@ sbtools: file server from sbtools http://www-sbtools-ah.mathworks.com/mathworks/
 lint: consumeActionQueue 
 imt/upt:https://imtws00ah.mathworks.com:5000/imtClusterMonitoring?cluster=Bstateflow 
 imt prequal app:https://uptws-00-ah.mathworks.com:8443/apps/prequal  
+linux bash: chsh; bash --rcfile ~/.bashrc; bash --login
 todo:disp(bdroot);set_param(bdroot,'SolverType','Fixed-step');set_param(bdroot, 'SystemTargetFile', 'ert.tlc'); 
 todo: sfir pointer comparision in getObject  http://sbd510333glnxa64.mathworks.com/mathworks/devel/sbs/34/ppatil.ch1_q4/work/sbruntests/20230910_185447/sbtest/sbscanlog_results.html 
 todo: sfnew to create ert+fixed-time solver
