@@ -11,7 +11,7 @@ end
 function loadStateflow()
     % setBdocAsDocroot('current');
     % openExample('stateflow/AutomaticTransmissionUsingDurationOperatorExample');
-    %sfnew;
+    sfnew;
     %sf('Feature', 'SFLint',0); 
     cd ~/Downloads;
     %open_system('s1');
