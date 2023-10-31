@@ -599,6 +599,11 @@ mw -using Bstateflow gmake -f //mathworks/hub/share/apps/iat/tools/sc/R2020a/460
 cd matlab;
 sbmake CTB=stateflow_resources;
 
+
+
+test modes:
+RTWInlineOff: set_param(bdroot,'InlineParams','off');
+
 runtests("tfoo.m", IgnoreBPs=true); runtests with bpgeck or bps
 runtests with parameters:
 runtests("t_sl_trackerGNNRetrodiction[ScenarioParameters=EKF]/checkRapidAcceleratorAgainstNormal")
