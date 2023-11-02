@@ -2723,8 +2723,12 @@ PATH=/home/savadhan/bin:/mathworks/hub/share/sbtools/bin/glnxa64:/sandbox/savadh
 #define CASE(n) } if ( switch_ == n ) {
 #define DEFAULT }
 
- clear;find . -name "*cpp" -exec sed   -i "s/case \(SF_.*_TYPE\):/CASESFCGTYPE(\1);/g"  {} \;
+c4/v1 backup
+c6/y1 backup
+clear;find . -name "*cpp" -exec sed   -i "s/case \(SF_.*_TYPE\):/CASESFCGTYPE(\1);/g"  {} \;
 find . -iname "*pp" -exec sed -i "s/ir::DataType:://g"   {} \;
 find . -iname "*pp" -exec sed -i "s/ DataType:://g"   {} \;
+
+
 clear;find . -name "*cpp" -exec sed -i "s/ == \(SF_.*_TYPE\)/ == GETSFCGTYPE(\1);/g"  {} \;
 clear;find . -name "*cpp" -exec sed -i "s/ = \(SF_.*_TYPE\)/ = GETSFCGTYPE(\1);/g"   {} \;
