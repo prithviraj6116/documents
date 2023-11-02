@@ -2717,3 +2717,14 @@ PATH=/home/savadhan/bin:/mathworks/hub/share/sbtools/bin/glnxa64:/sandbox/savadh
 #35 */1 * * * python3 /mathworks/devel/sandbox/ppatil/misc/gitRepo1/stateflow-tools/scripts/runOnLeasedMachine.py  --command "python3 /mathworks/devel/sandbox/ppatil/misc/gitRepo1/stateflow-tools/cov/instrumentCoverage.py  --modulepaths toolbox/stateflow/sf_ast toolbox/stateflow/sf_cal toolbox/stateflow/sf_mal toolbox/stateflow/sf_customcode toolbox/stateflow/sf_cdr toolbox/stateflow/sf_xform toolbox/stateflow/src/sf_runtime toolbox/stateflow/src/sf_variants toolbox/stateflow/src/stateflow --skipfiles cdr_auto testing unittest pkgtest fsm/Lint fsm/mi y_tab makerules gpob fsm/auto --sbcluster Bstateflow --testsuites sfcore --mappingname sfcorecov" --machineNumber 2 > /dev/null 2>&1
 #18 */1 * * * python3 /mathworks/devel/sandbox/ppatil/misc/gitRepo1/stateflow-tools/scripts/runOnLeasedMachine.py --command "bash /mathworks/devel/sandbox/ppatil/misc/sfcoveragelogs/sfcovcron.bash" --machineNumber 4 > /dev/null 2>&1 
  
+
+ c++ switch to if-else based for
+#define SWITCH(s) for(int switch_=s, b=1;b;b=0) {
+#define CASE(n) } if ( switch_ == n ) {
+#define DEFAULT }
+
+ clear;find . -name "*cpp" -exec sed   -i "s/case \(SF_.*_TYPE\):/CASESFCGTYPE(\1);/g"  {} \;
+find . -iname "*pp" -exec sed -i "s/ir::DataType:://g"   {} \;
+find . -iname "*pp" -exec sed -i "s/ DataType:://g"   {} \;
+clear;find . -name "*cpp" -exec sed -i "s/ == \(SF_.*_TYPE\)/ == GETSFCGTYPE(\1);/g"  {} \;
+clear;find . -name "*cpp" -exec sed -i "s/ = \(SF_.*_TYPE\)/ = GETSFCGTYPE(\1);/g"   {} \;
