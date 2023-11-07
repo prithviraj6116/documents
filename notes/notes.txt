@@ -1644,6 +1644,7 @@ lint: consumeActionQueue
 imt/upt:https://imtws00ah.mathworks.com:5000/imtClusterMonitoring?cluster=Bstateflow 
 imt prequal app:https://uptws-00-ah.mathworks.com:8443/apps/prequal  
 linux bash: chsh; bash --rcfile ~/.bashrc; bash --login
+resaveandbuild harness: toolbox/simulink/internal/ResaveAndBuild  needs authoredLibs.token  sf('GetIsAuthoredSFChart',chartId).  https://confluence.mathworks.com/display/STAT/Authored+Chart+Usage 
 todo:disp(bdroot);set_param(bdroot,'SolverType','Fixed-step');set_param(bdroot, 'SystemTargetFile', 'ert.tlc'); 
 todo: sfir pointer comparision in getObject  http://sbd510333glnxa64.mathworks.com/mathworks/devel/sbs/34/ppatil.ch1_q4/work/sbruntests/20230910_185447/sbtest/sbscanlog_results.html 
 todo: sfnew to create ert+fixed-time solver
@@ -2725,10 +2726,9 @@ PATH=/home/savadhan/bin:/mathworks/hub/share/sbtools/bin/glnxa64:/sandbox/savadh
 
 c4/v1 backup
 c6/y1 backup
-clear;find . -name "*cpp" -exec sed   -i "s/case \(SF_.*_TYPE\):/CASESFCGTYPE(\1);/g"  {} \;
 find . -iname "*pp" -exec sed -i "s/ir::DataType:://g"   {} \;
 find . -iname "*pp" -exec sed -i "s/ DataType:://g"   {} \;
-
+clear;find . -name "*cpp" -exec sed   -i "s/case \(SF_.*_TYPE\):/CASESFCGTYPE(\1);/g"  {} \;
 
 clear;find . -name "*cpp" -exec sed -i "s/ == \(SF_.*_TYPE\)/ == GETSFCGTYPE(\1);/g"  {} \;
 clear;find . -name "*cpp" -exec sed -i "s/ = \(SF_.*_TYPE\)/ = GETSFCGTYPE(\1);/g"   {} \;
