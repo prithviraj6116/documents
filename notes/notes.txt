@@ -2735,3 +2735,10 @@ clear;find . -name "*cpp" -exec sed   -i "s/case \(SF_.*_TYPE\):/CASESFCGTYPE(\1
 
 clear;find . -name "*cpp" -exec sed -i "s/ == \(SF_.*_TYPE\)/ == GETSFCGTYPE(\1);/g"  {} \;
 clear;find . -name "*cpp" -exec sed -i "s/ = \(SF_.*_TYPE\)/ = GETSFCGTYPE(\1);/g"   {} \;
+
+
+gvim src/stateflow/cdr/prs_eml_action_lang.cpp src/stateflow/cdr/cdr_ast2ir_coverage_utils.cpp src/stateflow/cdr/prs_main.cpp src/stateflow/cdr/cdr_ast2ir_utils.cpp sf_cal/Parser.cpp sf_cal/Ast.cpp
+
+
+todo sf_cal parser prs_main.cpp:
+1. parsing for temporal astvisitor 

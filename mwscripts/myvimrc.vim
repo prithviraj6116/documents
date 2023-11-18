@@ -32,7 +32,7 @@ highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=bold guifg=blue guibg=
 map sr yiw:,$s/<C-r>"//gc<left><left><left>
 map srf yiw:%s/<C-r>"//gc<left><left><left>
 map sa :up!<ENTER>
-map s1g :!cd ~/Downloads/stu1;rm cpp1;g++ cpp1.cpp -o cpp1 -std=c++17;./cpp1;cd -<ENTER>
+map s1g :!cd ~/Downloads/langcpp;rm cpp1;g++ cpp1.cpp -o cpp1 -std=c++17;./cpp1;cd -<ENTER>
 map s2g :!git add -u;git commit -m "incremental changes sfcoverage";git push<ENTER>
 map s3g :!cd ~/Downloads/langcpp/;rm ./ro;rustc  % -o ro;./ro<ENTER>
 map sb <C-w><C-w><C-d><C-w><C-w>
