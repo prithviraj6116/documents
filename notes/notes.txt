@@ -2742,3 +2742,7 @@ gvim src/stateflow/cdr/prs_eml_action_lang.cpp src/stateflow/cdr/cdr_ast2ir_cove
 
 todo sf_cal parser prs_main.cpp:
 1. parsing for temporal astvisitor 
+2. astvisitor to sf_cal
+3. parse_chart, parse_machine,parse_single_transition,parse_object -> parse
+4. astnode.preprocessed mal: no astnode for mal
+5. std::variants yystype
