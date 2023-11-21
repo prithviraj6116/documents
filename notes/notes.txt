@@ -1645,6 +1645,7 @@ imt/upt:https://imtws00ah.mathworks.com:5000/imtClusterMonitoring?cluster=Bstate
 imt prequal app:https://uptws-00-ah.mathworks.com:8443/apps/prequal  
 linux bash: chsh; bash --rcfile ~/.bashrc; bash --login
 resaveandbuild harness: toolbox/simulink/internal/ResaveAndBuild  needs authoredLibs.token  sf('GetIsAuthoredSFChart',chartId).  https://confluence.mathworks.com/display/STAT/Authored+Chart+Usage 
+visual studio joshua : sbvisual -gen toolbox/stateflow/src/stateflow toolbox/stateflow/src/sf_runtime toolbox/stateflow/sf_core_services toolbox/stateflow/sf_xform toolbox/stateflow/sf_ir toolbox/stateflow/sf_il  toolbox/stateflow/sf_cdr test/toolbox/stateflow/sf_xform_tests test/toolbox/stateflow/sf_cdr_tests toolbox/stateflow/sf_cdr_interface src/cg_ir:no-test src/cgir_support:no-pch:no-test toolbox/stateflow/sf_services toolbox/stateflow/sf_cdr_testhelper 
 todo: unscoped enum to scoped enum: auto way
 todo: X.hpp -> downstream files (i.e. those get compiled when X.hpp is changed)
 todo: X.hpp or Y.cpp-> list .hpp from where each symbol is coming from
