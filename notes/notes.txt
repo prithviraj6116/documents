@@ -2490,8 +2490,9 @@ save('dataFile.dat', 'myVarName','ascii', '-tabs')
 
 cfg=coder.config;cfg.GlobalDataSyncMethod  coder.extrinsic('sync:on','f1')
 
-y1=cast(1,'int8')
-y2=cast(2,'like',y1)
+y1=cast(1,'int8');mal
+y2=cast(2,'like',y1);mal
+y2=cast(2,int8);cal
 
 coder.ceval('-global','f1')
 coder.ceval('-layout:rowMajor','f1')
