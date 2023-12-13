@@ -2493,6 +2493,7 @@ cfg=coder.config;cfg.GlobalDataSyncMethod  coder.extrinsic('sync:on','f1')
 y1=cast(1,'int8');mal
 y2=cast(2,'like',y1);mal
 y2=cast(2,int8);cal
+y2=cast(2,type(y1));cal
 
 coder.ceval('-global','f1')
 coder.ceval('-layout:rowMajor','f1')
@@ -2748,3 +2749,6 @@ todo sf_cal parser prs_main.cpp:
 3. parse_chart, parse_machine,parse_single_transition,parse_object -> parse
 4. astnode.preprocessed mal: no astnode for mal
 5. std::variants yystype
+
+
+p4 sync @=10688855;p4 sync @=10688865;p4 sync @=10688901;
