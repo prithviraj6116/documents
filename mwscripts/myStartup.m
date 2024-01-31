@@ -33,6 +33,10 @@ function setFileGenDir
     cfg.CodeGenFolder='/home/ppatil/Downloads/mycg';
 end
 function setMATLABTitle
+desktop = matlab.ui.container.internal.RootApp.getInstance();
+desktop.Title = matlabroot;
+end
+function setMATLABTitleJavaDesktop
     rootDir = matlabroot;
     rootDirParts = split(rootDir,'/');
     jDesktop = com.mathworks.mde.desk.MLDesktop.getInstance;
