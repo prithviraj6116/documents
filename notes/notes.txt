@@ -1649,6 +1649,7 @@ visual studio joshua : sbvisual -gen toolbox/stateflow/src/stateflow toolbox/sta
 matlab: rehash toolboxcache
 sbtools: mw sbgentbxcache
 bash: set -i vi; set -i emacs
+gmake: mw gmake --no-silent -n : prints gmake commands
 todo: avoid using mouse in terminal as much as possible. how to move around in bash output text
 todo: unscoped enum to scoped enum: auto way
 todo: X.hpp -> downstream files (i.e. those get compiled when X.hpp is changed)

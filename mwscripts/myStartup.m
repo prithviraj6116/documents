@@ -34,7 +34,22 @@ function setFileGenDir
 end
 function setMATLABTitle
 desktop = matlab.ui.container.internal.RootApp.getInstance();
-desktop.Title = matlabroot;
+    rootDir = matlabroot;
+    rootDirParts = split(rootDir,'/');
+    mlPID = num2str(feature('getpid'));
+    desktop.Title = [rootDirParts{end-1} ' nw pid:'  mlPID];
+
+    for i = 1:length(rootDirParts)
+        if startsWith(rootDirParts{i},'ppatil')
+            if isequal(rootDirParts{i}, 'ppatil')
+                desktop.Title = [rootDirParts{i+1} ' local pid:' mlPID];
+            else
+                names = split(rootDirParts{i},'.');
+                desktop.Title = [names{2} ' nw pid:'  mlPID];
+            end
+            break;
+        end
+    end
 end
 function setMATLABTitleJavaDesktop
     rootDir = matlabroot;
