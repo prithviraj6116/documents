@@ -2998,3 +2998,23 @@ function tempf1
     sf('feature','Globals Reuse',0);
 end
 
+
+#ifndef zzztest
+#define zzztest
+namespace testing {
+class zzz : public Test {
+  public:
+zzz(){
+    const ::testing::TestInfo* const test_info = ::testing::UnitTest::GetInstance()->current_test_info();
+    std::cout << "test Name:" << test_info->name() << std::endl;
+    std::cout << "test case:" << test_info->test_case_name() << std::endl;
+    std::cout << "test suite:" << test_info->test_suite_name() << std::endl;
+    std::filesystem::path cwd = std::filesystem::current_path() / "filename.txt";
+    std::cout << "file name:" << cwd.string() << std::endl;
+    auto w1 =  std::filesystem::canonical("/proc/self/exe");
+    std::cout << "file name1:" << w1 << std::endl;
+}
+};
+}
+#define Test zzz
+#endif
