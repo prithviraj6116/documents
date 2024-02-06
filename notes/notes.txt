@@ -3019,3 +3019,47 @@ zzz(){
 }
 #define Test zzz
 #endif
+
+#ifndef zzztest
+#define zzztest
+#include <filesystem>
+#include <iostream>
+namespace testing {
+inline void reportTestStartHelper(::testing::TestInfo const* test_info) {
+    //std::cout << "test Name:" << test_info->name() << std::endl;
+    //std::cout << "test case:" << test_info->test_case_name() << std::endl;
+    //std::cout << "test suite:" << test_info->test_suite_name() << std::endl;
+    //std::filesystem::path cwd = std::filesystem::current_path() / "filename.txt";
+    //std::cout << "file name:" << cwd.string() << std::endl;
+    auto testDir =  std::string("cpptest:") + std::string(std::filesystem::canonical("/proc/self/exe"));
+    cov::reportTestStart(testDir.c_str(), test_info->test_suite_name(), test_info->name());
+}
+inline void reportTestEndHelper(::testing::TestInfo const* ) {
+    auto testDir =  std::string(std::filesystem::canonical("/proc/self/exe"));
+    auto matlabRootEndPos = testDir.find("/derived");
+    auto matlabRoot = testDir.substr(0,matlabRootEndPos);
+    cov::reportTestEnd(matlabRoot.c_str(),0.0);
+}
+template <typename T>
+class yyy : public TestWithParam<T> {
+  public:
+    yyy(){
+        reportTestStartHelper(::testing::UnitTest::GetInstance()->current_test_info());
+    }
+    ~yyy() {
+        reportTestEndHelper(::testing::UnitTest::GetInstance()->current_test_info());
+    }
+};
+class zzz : public Test {
+  public:
+    zzz(){
+        reportTestStartHelper(::testing::UnitTest::GetInstance()->current_test_info());
+    }
+    ~zzz() {
+        reportTestEndHelper(::testing::UnitTest::GetInstance()->current_test_info());
+    }
+};
+}
+#define Test zzz
+#define TestWithParam yyy
+#endif
