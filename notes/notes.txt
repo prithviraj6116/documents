@@ -3064,3 +3064,6 @@ class zzz : public Test {
 #define Test zzz
 #define TestWithParam yyy
 #endif
+
+spinlock does not work sometimes for matlab/test/toolbox/stateflow/comparisons/merge/tMultipleMerge.m for fcn at 1213 using coverage tool
+
