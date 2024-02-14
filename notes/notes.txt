@@ -3065,5 +3065,5 @@ class zzz : public Test {
 #define TestWithParam yyy
 #endif
 
-spinlock does not work sometimes for matlab/test/toolbox/stateflow/comparisons/merge/tMultipleMerge.m for fcn at 1213 using coverage tool
+spinlock does not work sometimes for matlab/test/toolbox/stateflow/comparisons/merge/tMultipleMerge.m for fcn at 1213 using coverage tool mwboost::optional in sldiff::getSFChartVertex return > 1 values for bool if (node)
 
