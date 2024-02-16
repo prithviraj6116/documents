@@ -2782,7 +2782,7 @@ function loadStateflow()
     bdclose('all');
 end
 function addPaths()
-    addpath(fullfile(matlabroot,'toolbox/stateflow/tools'));
+    addpath(fullfile(matlabroot,'toolbox/stateflow/tools')); 
     addpath('/mathworks/devel/sandbox/ppatil/misc/matlabtools');
     addpath('//mathworks/hub/share/sbtools/matlab-cmds');
     addpath('/mathworks/devel/sandbox/ppatil/misc/hubdocs/mwscripts');
