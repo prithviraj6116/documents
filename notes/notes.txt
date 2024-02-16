@@ -3067,3 +3067,5 @@ class zzz : public Test {
 
 spinlock does not work sometimes for matlab/test/toolbox/stateflow/comparisons/merge/tMultipleMerge.m for fcn at 1213 using coverage tool mwboost::optional in sldiff::getSFChartVertex return > 1 values for bool if (node)
 
+
+gvim //mathworks/hub/share/sbtools/mirror/sbvim-runtime/pack/mw/opt/sbv-tools/autoload/mw/coverage.vim &
