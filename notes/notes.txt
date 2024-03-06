@@ -3069,3 +3069,27 @@ spinlock does not work sometimes for matlab/test/toolbox/stateflow/comparisons/m
 
 
 gvim //mathworks/hub/share/sbtools/mirror/sbvim-runtime/pack/mw/opt/sbv-tools/autoload/mw/coverage.vim &
+
+$ g++ -O3 -Wall -shared -std=c++17 -fPIC $(python3 -m pybind11 --includes) ppp5c.cpp -o ppp6c$(python3-config --extension-suffix)
+
+pybind11 . 1
+project(ppp5c)
+add_library(ppp6c
+    SHARED
+  ppp5c.cpp
+  )
+link_directories(/local-ssd/ppatil/repo1/clang-llvm/build/lib)
+target_link_libraries(ppp6c clangReorderFields -L/local-ssd/ppatil/repo1/clang-llvm/build/lib )
+target_include_directories(ppp6c
+    PUBLIC
+    /usr/include/python3.9
+    /home/ppatil/.local/lib/python3.9/site-packages/pybind11/include)
+
+
+pybind11 . 2
+cmake_minimum_required(VERSION 3.4...3.18)
+project(ppp4)
+add_subdirectory(pybind11)
+pybind11_add_module(ppp4 src/main.cpp)
+target_link_libraries(ppp4 PRIVATE clangReorderFields -L/local-ssd/ppatil/repo1/clang-llvm/build/lib)
+    
