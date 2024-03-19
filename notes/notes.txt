@@ -3092,4 +3092,8 @@ project(ppp4)
 add_subdirectory(pybind11)
 pybind11_add_module(ppp4 src/main.cpp)
 target_link_libraries(ppp4 PRIVATE clangReorderFields -L/local-ssd/ppatil/repo1/clang-llvm/build/lib)
-    
+   
+
+file /local-ssd/ppatil/repo1/clang-llvm/build/bin/clang-reorder-fields 
+r cpp3.cpp --record-name s1 --fields-order i1,j2
+sharedlibrary 
