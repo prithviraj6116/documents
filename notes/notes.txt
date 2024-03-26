@@ -1652,6 +1652,7 @@ bash: set -i vi; set -i emacs
 gmake: mw gmake --no-silent -n : prints gmake commands
 gmake: g++ -E -P  file1.cpp: prints preprocessed text
 node: npx nodemon
+todo: db object revamp change backup /mathworks/devel/sandbox/ppatil/_sbbackup/local_vdi-lsddp-178_local-ssd_ppatil_na1_backup/na1_q1 
 todo: avoid using mouse in terminal as much as possible. how to move around in bash output text
 todo: unscoped enum to scoped enum: auto way
 todo: X.hpp -> downstream files (i.e. those get compiled when X.hpp is changed)
