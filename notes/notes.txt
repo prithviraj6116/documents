@@ -247,6 +247,7 @@ sbruntests -cfg sfcore -cfg slstring -cfg reqtable
 sbmake/sbcc DEBUG   Mode == DEBUG=1 ASSERTS=1 => -g -O0 
 sbmake/sbcc MIXED   Mode == DEBUG=  ASSERTS=1 => -g -O2
 sbmake/sbcc RELEASE Mode == DEBUG=  ASSERTS=0 => -g -O2 -DNDEBUG
+sbcc -compile filename.cpp
 in non-jit genereted code-directory, open .mku file and add -v to CC as "CC = /local-ssd/ppatil/fexp2/matlab/bin/mex -R2018a -v" 
 sim(modelName,'SimulationMode','normal'/'accel'/'rapid'/'software');
 rtwbuild(modelName);slbuild(modelName,noarg/'StandaloneCoderTarget'/'ModelReferenceSimTarget');Code_102
@@ -3098,3 +3099,8 @@ target_link_libraries(ppp4 PRIVATE clangReorderFields -L/local-ssd/ppatil/repo1/
 file /local-ssd/ppatil/repo1/clang-llvm/build/bin/clang-reorder-fields 
 r cpp3.cpp --record-name s1 --fields-order i1,j2
 sharedlibrary 
+
+cd ~/Downloads/langcpp/ppp4 
+clear;/local-ssd/ppatil/repo1/clang-llvm/build/bin/clang-reorder-fields  cpp3.cpp --record-name s1 --fields-order i1,j2
+cd /local-ssd/ppatil/repo1/clang-llvm/build  
+clear;ninja  clang-reorder-fields -j4
