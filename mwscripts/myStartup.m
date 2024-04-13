@@ -1,5 +1,9 @@
 function myStartup
-    setMATLABTitle;
+    if feature('webui') == 0
+        setMATLABTitleJavaDesktop;
+    else
+        setMATLABTitleJSDesktop;
+    end
 %     setFileGenDir;
  sbmatlabcmdhelper
  addPaths();
@@ -32,7 +36,7 @@ function setFileGenDir
     cfg.CacheFolder='/home/ppatil/Downloads/mycg';
     cfg.CodeGenFolder='/home/ppatil/Downloads/mycg';
 end
-function setMATLABTitle
+function setMATLABTitleJSDesktop
 desktop = matlab.ui.container.internal.RootApp.getInstance();
     rootDir = matlabroot;
     rootDirParts = split(rootDir,'/');

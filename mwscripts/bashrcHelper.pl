@@ -49,7 +49,7 @@ sub chd {
         "hubdocs","/mathworks/devel/sandbox/ppatil/misc/hubdocs",
         "7.sf_cal","$MYSBROOT/matlab/toolbox/stateflow/sf_cal/",
         "6.sf_xform","$MYSBROOT/matlab/toolbox/stateflow/sf_xform/",
-        "5.sf_cdr","$MYSBROOT/matlab/toolbox/stateflow/sf_cdr/",
+        "5.sf_cal","$MYSBROOT/matlab/toolbox/stateflow/sf_cal/",
         "4.src stateflow","$MYSBROOT/matlab/toolbox/stateflow/src/stateflow",
         "3.sf test","$MYSBROOT/matlab/test/toolbox/stateflow",
         "2.matlabroot","$MYSBROOT/matlab",
