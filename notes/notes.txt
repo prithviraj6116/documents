@@ -3108,3 +3108,41 @@ clear;ninja  clang-reorder-fields -j4
 
 
 CalParser.cpp ParserSymbolResolver in compile path //mathworks/devel/sandbox/ppatil/_sbbackup/local_vdi-lsddp-178_local-ssd_ppatil_nd1_backup/v1   
+
+
+  ir::Chart irChart{};
+    if (CalParseGuard::isActive()) {
+        irChart = db_chart(get_chart_of(id))->fIrWrapper->fContext->getChart();
+    }
+    auto parseInfo =
+        cal::ParseChartInfo{getIdentifier(id, 0, irChart),
+                            getIdentifier(get_chart_of(id), 0, irChart), cal::parseLevel};
+    auto calIdManager = SfCalIdentifierManager{&parseInfo, irChart};
+    auto calErrorMgr = CalErrorManager{&parseInfo};
+    auto cId = getIdentifier(id, 0, irChart);
+    if (!object_is_state(getObject(cId)) and !object_is_transition(getObject(cId))) {
+        return;
+    }
+    auto nonIrSymbolResolver =
+        SfCalParserSymbolResolver{&parseInfo, &calIdManager, &calErrorMgr, irChart};
+    auto irSymbolResolver =
+        cal::ParserSymbolResolverIrBased{&parseInfo, &calIdManager, &calErrorMgr, irChart};
+    cal::ParserSymbolResolver* calParserSymbolResolver{nullptr};
+    if (cal::parseLevel < PARSE_LEVEL_2) {
+        calParserSymbolResolver = &nonIrSymbolResolver;
+    } else {
+        calParserSymbolResolver = &irSymbolResolver;
+    }
+
+    auto calParseObj = cal::Parser(getIdentifier(id, 0, irChart), &parseInfo, &calErrorMgr,
+                                   &calIdManager, calParserSymbolResolver);
+    if (object_is_state(id)) {
+        db_state(id)->parsed = calParseObj.parseState();
+    } else {
+        cg_assert(object_is_transition(id));
+        if (db_transition(id)->dst.id == 0) {
+            return;
+        }
+        db_transition(id)->parsed = calParseObj.parseTransition();
+    }
+    populate_coverage_info(id);
