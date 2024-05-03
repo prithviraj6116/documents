@@ -1,3 +1,8 @@
+SF semantics:
+1. passbyreference: 
+2. inputs: chart input are readonly but not function inputs
+
+
 doto: habit stacking, habit tracking, make it obvious, make is easy, make is satisfying. add some immediate rewards           
 
 
