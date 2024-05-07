@@ -3152,3 +3152,6 @@ CalParser.cpp ParserSymbolResolver in compile path //mathworks/devel/sandbox/ppa
         db_transition(id)->parsed = calParseObj.parseTransition();
     }
     populate_coverage_info(id);
+
+
+http://sbd320269glnxa64.mathworks.com/mathworks/devel/sbs/78/ppatil.ng4_q5/work/sbruntests/20240506_174147/sbtest/sbscanlog_results.html
