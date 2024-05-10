@@ -2758,7 +2758,7 @@ clear;find . -name "*cpp" -exec sed -i "s/ = \(SF_.*_TYPE\)/ = GETSFCGTYPE(\1);/
 
 gvim src/stateflow/cdr/prs_eml_action_lang.cpp src/stateflow/cdr/cdr_ast2ir_coverage_utils.cpp src/stateflow/cdr/prs_main.cpp src/stateflow/cdr/cdr_ast2ir_utils.cpp sf_cal/Parser.cpp sf_cal/Ast.cpp
 
-
+todo: sf_cal: subchart event not resolved using ast in ast2ir but functions
 todo sf_cal parser prs_main.cpp:
 1. parsing for temporal astvisitor 
 2. astvisitor to sf_cal
