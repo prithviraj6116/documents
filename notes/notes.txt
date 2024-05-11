@@ -3155,3 +3155,34 @@ CalParser.cpp ParserSymbolResolver in compile path //mathworks/devel/sandbox/ppa
 
 
 http://sbd320269glnxa64.mathworks.com/mathworks/devel/sbs/78/ppatil.ng4_q5/work/sbruntests/20240506_174147/sbtest/sbscanlog_results.html
+
+Bblkcore
+src/cgir_algorithm 122:217
+src/SimulinkBlock 251:368
+src/sl_common_blocks/sl_datetime_blocks 26:44
+src/sl_common_blocks/sl_lookuptable_blocks 23:38
+src/sl_common_blocks/sl_elem_blocks 177:269
+src/sl_common_blocks/sl_image_blocks 12:22
+src/sl_common_blocks/sl_matrix_blocks 23:33
+src/sl_common_blocks/sl_string_blocks 57:93
+src/sl_data_access 4:14
+src/sl_date_time 9:21
+src/sl_lutwidget 62:127
+src/sl_types 66:115
+src/sl_pointer_util 5:8
+src/stringutil 5:11
+toolbox/coder/foundation/src/tokenizer 3:9
+toolbox/coder/foundation/src/coderWatermark 7:13
+toolbox/shared/sl_blk_datamodel/datamodel 5:13
+src/sl_lut_shared 5:8
+
+Bslcomp
+src/SimulinkBlock 367 
+src/sl_engine_classes 288 
+src/sl_compile 574 
+src/sl_graphical_classes 407 
+src/simulink 971 
+src/sl_lang_exec_blocks 43 
+src/sl_lang_blocks 506 
+toolbox/simulink/core/slresolve/src 2 
+src/sl_link_bd 65
