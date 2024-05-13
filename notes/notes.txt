@@ -1658,6 +1658,8 @@ bash: set -i vi; set -i emacs
 gmake: mw gmake --no-silent -n : prints gmake commands
 gmake: g++ -E -P  file1.cpp: prints preprocessed text
 node: npx nodemon
+vim: find duplicate lines: :sort and then :g/^\(.*\)$\n\1$/p 
+vim: remote duplicate lines: :sort u
 todo: simulink enumeration with three enumerators Simulink.defineIntEnumType('MyColor',{'Red','Blue','Green','Black'},[0 10 20 100]);
 todo: sbr 23bd  /mathworks/devel/jobarchive/BR2023bd/latest_pass/matlab 
 todo: db object revamp change backup /mathworks/devel/sandbox/ppatil/_sbbackup/local_vdi-lsddp-178_local-ssd_ppatil_nc1_backup/v2
