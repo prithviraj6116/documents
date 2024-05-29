@@ -3201,3 +3201,4 @@ http://p4db.mathworks.com/cgi-bin/realEdits/showfile.cgi?f=matlab%2Ftoolbox%2Fst
 
 Stateflow semantics:
 1. atomic subchart: top-level local event is allowed to be called from main chart.
+2. do all functions get inlined during c sfun?
