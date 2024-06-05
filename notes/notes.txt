@@ -3204,3 +3204,12 @@ Stateflow semantics:
 2. do all functions get inlined during c sfun?
 
 1. long on windows is 32b/4B, on linux is 64b/8B
+
+
+
+names:
+Markov chain
+Markov process
+stochastic 
+incredibuild
+visual studio
