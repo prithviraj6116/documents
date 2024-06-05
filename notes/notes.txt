@@ -3213,3 +3213,7 @@ Markov process
 stochastic 
 incredibuild
 visual studio
+aggregation
+composition
+association
+UML unified modeling language
