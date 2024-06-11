@@ -3218,4 +3218,12 @@ composition
 association
 UML unified modeling language
 semicolon
+logical
+boolean
+eml: embedded matlab 
+emxarray: embeddable matlab array
+mex: matlab executable
+mxarray: C type for matlab array
+array, vector, scalar
+double, single, fixed point, real_T, real32_T, real64_T, single precision, double precision,  extern/include/tmwtypes.h
 
