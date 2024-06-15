@@ -3231,3 +3231,9 @@ sbruntests: asrt: assert
 giving random names (like tempdir) in the model break IMT by rebuilding second time without change
 slbuild: closes the model at the end if it was unloaded before running the command
 sandbagging: lowering expectations to produce better-than-expected results
+todo: how to get error id thrown on DV or cmdline?
+stateflow bind keyword: C:data,event,SLfunction M:event,SFfunction. 
+     data binding : bind: dataWithUnscopedAccessWhetherChartOrStateLocalDataReadAnywhereWriteOnlyInBoundStateAndChildren
+     event binding: bind: anyEventScopedOrUnScopedChartOrStateLocalUsedOnlyInBoundStateAndChildren
+                          outputFunctionScopedEventEnableDisableFcnCallSubsystemOnStateEntryExitIfUniqulyTriggering
+     SFFunction binding: SLFunctions in state are bound to it and can be called only in state and its children, enable/disable on state entry/exit 
