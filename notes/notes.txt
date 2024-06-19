@@ -3239,3 +3239,4 @@ stateflow bind keyword: C:data,event,SLfunction M:event,SFfunction.
      SFFunction binding: SLFunctions in state are bound to it and can be called only in state and its children, enable/disable on state entry/exit 
 build commands: slbuild rtwbuild makehdl
 stateflow release notes: https://www.mathworks.com/help/stateflow/release-notes.html?rntext=&startrelease=R2019b&endrelease=R2024a&groupby=release&sortby=ascending&searchHighlight= 
+SF_XFORM_EXPORT_TEMPLATE vs SF_XFORM_EXPORT_CLASS: issue happens in linking in BaT
