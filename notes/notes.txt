@@ -3245,7 +3245,7 @@ SF_XFORM_EXPORT_TEMPLATE vs SF_XFORM_EXPORT_CLASS: issue happens in linking in B
 
 
 A: Alka 
-B: BrahmaChaitanya, Brahmananda Maharaj
+B: BrahmaChaitanya, Brahmananda Maharaj, Bhakti Raghav Maharaj
 C: Chokha Mela,
 D: Dnyaneshwar
 E: Eknath
