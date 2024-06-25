@@ -3261,11 +3261,11 @@ N: Nivrutthinath, Namdev, Netan, NarasingDev
 O:
 P: Pandurang, Pandava, Pradip, Pralhada
 Q:
-R: Ram, Raoji, Ramdas
+R: Ram, Raoji, Ramdas, Rakhumai, Radha
 S: Sita, Sopandev, Shivam
 T: Tukaram, Tukamai, Tejswini
 U:
-V: Vitthala
+V: Vitthala, Varkari
 W:
 X:
 Y:
