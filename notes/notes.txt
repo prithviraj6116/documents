@@ -3106,6 +3106,55 @@ pybind11_add_module(ppp4 src/main.cpp)
 target_link_libraries(ppp4 PRIVATE clangReorderFields -L/local-ssd/ppatil/repo1/clang-llvm/build/lib)
    
 
+
+#include <pybind11/pybind11.h>
+
+#define STRINGIFY(x) #x
+#define MACRO_STRINGIFY(x) STRINGIFY(x)
+
+namespace clang{
+int f21(int i1, int j1);
+}
+int add(int i, int j) {
+    return clang::f21(i, j);
+}
+
+namespace py = pybind11;
+
+PYBIND11_MODULE(ppp4, m) {
+    m.doc() = R"pbdoc(
+        Pybind11 example plugin
+        -----------------------
+
+        .. currentmodule:: ppp4
+
+        .. autosummary::
+           :toctree: _generate
+
+           add
+           subtract
+    )pbdoc";
+
+    m.def("add", &add, R"pbdoc(
+        Add two numbers
+
+        Some other explanation about the add function.
+    )pbdoc");
+
+    m.def("subtract", [](int i, int j) { return i - j; }, R"pbdoc(
+        Subtract two numbers
+
+        Some other explanation about the subtract function.
+    )pbdoc");
+
+#ifdef VERSION_INFO
+    m.attr("__version__") = MACRO_STRINGIFY(VERSION_INFO);
+#else
+    m.attr("__version__") = "dev";
+#endif
+}
+
+
 file /local-ssd/ppatil/repo1/clang-llvm/build/bin/clang-reorder-fields 
 r cpp3.cpp --record-name s1 --fields-order i1,j2
 sharedlibrary 
