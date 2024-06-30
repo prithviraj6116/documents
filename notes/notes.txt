@@ -3109,7 +3109,7 @@ target_link_libraries(ppp4 PRIVATE clangReorderFields -L/local-ssd/ppatil/repo1/
 file /local-ssd/ppatil/repo1/clang-llvm/build/bin/clang-reorder-fields 
 r cpp3.cpp --record-name s1 --fields-order i1,j2
 sharedlibrary 
-
+generate compile_commands.json on linux: bear -- actualcommand e.g. bear -- g++ --std=c++17 cpp3.cpp -o cpp3
 cd ~/Downloads/langcpp/ppp4 
 clear;/local-ssd/ppatil/repo1/clang-llvm/build/bin/clang-reorder-fields  cpp3.cpp --record-name s1 --fields-order i1,j2
 cd /local-ssd/ppatil/repo1/clang-llvm/build  
@@ -3241,7 +3241,8 @@ build commands: slbuild rtwbuild makehdl
 stateflow release notes: https://www.mathworks.com/help/stateflow/release-notes.html?rntext=&startrelease=R2019b&endrelease=R2024a&groupby=release&sortby=ascending&searchHighlight= 
 SF_XFORM_EXPORT_TEMPLATE vs SF_XFORM_EXPORT_CLASS: issue happens in linking in BaT
 
-
+K>> cd(matlabroot);cd toolbox/stateflow/tools
+K>> sf_nativestack
 
 
 A: Alka 
