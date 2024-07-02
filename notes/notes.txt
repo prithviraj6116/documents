@@ -3293,6 +3293,10 @@ SF_XFORM_EXPORT_TEMPLATE vs SF_XFORM_EXPORT_CLASS: issue happens in linking in B
 K>> cd(matlabroot);cd toolbox/stateflow/tools
 K>> sf_nativestack
 
+view gdb symbols
+gdb -q  /mathworks/devel/jobarchive/Bstateflow/latest_pass/matlab/bin/glnxa64/libmwsf_ast.so
+(gdb) info sources
+dwarfdump  /mathworks/devel/jobarchive/Bstateflow/latest_pass/matlab/bin/glnxa64/libmwsf_ast.so | grep sf_ast
 
 A: Alka 
 B: BrahmaChaitanya, Brahmananda Maharaj, Bhakti Raghav Maharaj
