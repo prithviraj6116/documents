@@ -65,7 +65,6 @@ let g:Verdin#autocomplete = 1
 
 
 
-
 "highlight cursor guifg=red guibg=blue
 "highlight statusline guifg=green guibg=red
 "let g:netrw_preview = 1

@@ -3297,7 +3297,7 @@ view gdb symbols
 gdb -q  /mathworks/devel/jobarchive/Bstateflow/latest_pass/matlab/bin/glnxa64/libmwsf_ast.so
 (gdb) info sources
 dwarfdump  /mathworks/devel/jobarchive/Bstateflow/latest_pass/matlab/bin/glnxa64/libmwsf_ast.so | grep sf_ast
-
+component dependency: mw ch downstream sf_xform
 A: Alka 
 B: BrahmaChaitanya, Brahmananda Maharaj, Bhakti Raghav Maharaj
 C: Chokha Mela,
