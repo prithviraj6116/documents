@@ -1642,7 +1642,7 @@ bash: xarg to convert piped stdin to arguments; command1 | xargs -I {} command2 
 bash: top : 1. E to mega/giga/kilo 2. shift-f + up/down + s + q to sort with different column
 js: array has slice and splice;  string has only slice since string is pod not reference as array is. splice modifies the object
 vim: :execute "normal! 3GP"  => go to line 3 and paste
-vim: macro record and play: qa<cmd>q @a or :.,$norm @a
+vim: macro record and play: qa<cmd>q @a or :.,$norm @a 
 sbtools: file server from sbtools http://www-sbtools-ah.mathworks.com/mathworks/devel/sandbox/ppatil/misc/ 
          file server from inside labs: https://inside-labs.mathworks.com/sandbox/ppatil/  
          info about fs: https://mathworks.sharepoint.com/sites/ssg/inside/SitePages/Inside%20Files.aspx 
@@ -1660,6 +1660,7 @@ gmake: g++ -E -P  file1.cpp: prints preprocessed text
 node: npx nodemon
 vim: find duplicate lines: :sort and then :g/^\(.*\)$\n\1$/p 
 vim: remote duplicate lines: :sort u
+matlab: sort struct by field  sort([structurearray.fieldname]) or sort({cellarray.f
 todo: fix sf_cdr_tests and sf_xform_tests debugging
 todo: simulink enumeration with three enumerators Simulink.defineIntEnumType('MyColor',{'Red','Blue','Green','Black'},[0 10 20 100]);
 todo: sbr 23bd  /mathworks/devel/jobarchive/BR2023bd/latest_pass/matlab 
