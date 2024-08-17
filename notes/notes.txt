@@ -3330,3 +3330,5 @@ Y:
 Z:    m   a  
 
 glibc:  Roland McGrath and Ulrich Drepper 
+
+db13: 1.12.43 2.20.03
