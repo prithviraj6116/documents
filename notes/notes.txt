@@ -1668,7 +1668,7 @@ todo: fix sf_cdr_tests and sf_xform_tests debugging
 todo: simulink enumeration with three enumerators Simulink.defineIntEnumType('MyColor',{'Red','Blue','Green','Black'},[0 10 20 100]);
 todo: sbr 23bd  /mathworks/devel/jobarchive/BR2023bd/latest_pass/matlab 
 todo: db object revamp change backup /mathworks/devel/sandbox/ppatil/_sbbackup/local_vdi-lsddp-178_local-ssd_ppatil_nc1_backup/v2
-                                     //mathworks/devel/sandbox/ppatil/_sbbackup/local_vdi-lsddp-139_local-ssd_ppatil_af4_backup/v1 
+                                     //mathworks/devel/sandbox/ppatil/_sbbackup/local_vdi-lsddp-139_local-ssd_ppatil_af4_backup/wu78
 todo: avoid using mouse in terminal as much as possible. how to move around in bash output text
 todo: unscoped enum to scoped enum: auto way
 todo: X.hpp -> downstream files (i.e. those get compiled when X.hpp is changed)
@@ -3339,3 +3339,6 @@ db11: 1.26.01
 db13: 1.12.43 2.20.03 A+1.35(B) 
 db15: 1.16.09
 db18: A+36.57(B),2.4.14,B+47.44(C),2.8.57,
+
+
+mac: ah-dvalovci-m 
