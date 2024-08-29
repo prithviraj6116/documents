@@ -1663,6 +1663,8 @@ vim: remote duplicate lines: :sort u
 matlab: sort struct by field  sort([structurearray.fieldname]) or sort({cellarray.f
 niceread:https://www.laws-of-software.com/ 
 niceread: CORBA https://serviceweaver.dev/blog/corba.html#:~:text=For%20example%2C%20CORBA%20had%20unnecessarily,not%20the%20distributed%20object%20paradigm. 
+sbvisual: sbsmartbuild -no-sbpatch -nativeproj/-nativeproj-build/-nativeproj-ibuild
+windows: p4 login -a; p4 client P4CLIENT=actualsandboxname; subst X: Y:\sbs\78\ppatil.ppdd_q1;sbp4fixclientroots  -force
 todo:   https://mathworks.atlassian.net/wiki/spaces/II/pages/60376446/Automatic+Packaging+of+Derived+Content+Developer+s+Guide 
 todo: fix sf_cdr_tests and sf_xform_tests debugging
 todo: simulink enumeration with three enumerators Simulink.defineIntEnumType('MyColor',{'Red','Blue','Green','Black'},[0 10 20 100]);
