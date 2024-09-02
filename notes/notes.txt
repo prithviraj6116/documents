@@ -1663,8 +1663,17 @@ vim: remote duplicate lines: :sort u
 matlab: sort struct by field  sort([structurearray.fieldname]) or sort({cellarray.f
 niceread:https://www.laws-of-software.com/ 
 niceread: CORBA https://serviceweaver.dev/blog/corba.html#:~:text=For%20example%2C%20CORBA%20had%20unnecessarily,not%20the%20distributed%20object%20paradigm. 
+
+
+p4 login -a
+map Y: to \mathworks\devel\sbs\
+cd Y:\78\sbname
+sbsubst
+sbp4fixclientroots -force
+sbsmartbuild -no-sbpatch -nativeproj-build
 sbvisual: sbsmartbuild -no-sbpatch -nativeproj/-nativeproj-build/-nativeproj-ibuild
-windows: p4 login -a; p4 client P4CLIENT=actualsandboxname; subst X: Y:\sbs\78\ppatil.ppdd_q1;sbp4fixclientroots  -force
+windows: p4 login -a; p4 client P4CLIENT=actualsandboxname; net use G: \\mathworks\devel\sbs; cd /d G:\78\ppatil.ppdd_q1; subst; sbp4fixclientroots  -force; sbsmartbuild -no-sbpatch -nativeproj-build
+todo: 1. cgir pretty printer navigation workflow 2. codesearch and cody with gvim 3. build on windows workflow 4. include order, splitter, fw declaration
 todo:   https://mathworks.atlassian.net/wiki/spaces/II/pages/60376446/Automatic+Packaging+of+Derived+Content+Developer+s+Guide 
 todo: fix sf_cdr_tests and sf_xform_tests debugging
 todo: simulink enumeration with three enumerators Simulink.defineIntEnumType('MyColor',{'Red','Blue','Green','Black'},[0 10 20 100]);
