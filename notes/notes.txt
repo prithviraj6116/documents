@@ -1673,6 +1673,7 @@ sbp4fixclientroots -force
 sbsmartbuild -no-sbpatch -nativeproj-build
 sbvisual: sbsmartbuild -no-sbpatch -nativeproj/-nativeproj-build/-nativeproj-ibuild
 windows: p4 login -a; p4 client P4CLIENT=actualsandboxname; net use G: \\mathworks\devel\sbs; cd /d G:\78\ppatil.ppdd_q1; subst; sbp4fixclientroots  -force; sbsmartbuild -no-sbpatch -nativeproj-build
+javascript js debugging:  stt: Stateflow.internal.StateTransitionTableManager.SetDebugMode(sttH.Id, true) 
 todo: 1. cgir pretty printer navigation workflow 2. codesearch and cody with gvim 3. build on windows workflow 4. include order, splitter, fw declaration
 todo:   https://mathworks.atlassian.net/wiki/spaces/II/pages/60376446/Automatic+Packaging+of+Derived+Content+Developer+s+Guide 
 todo: fix sf_cdr_tests and sf_xform_tests debugging
@@ -3353,4 +3354,4 @@ db18: A+36.57(B),2.4.14,B+47.44(C),2.8.57,
 
 
 mac: ah-dvalovci-m 
-linux:ah-ddasroy-l 
+linux:ah-ddasroy-l   saurabh: vdi-ahddp-025 
