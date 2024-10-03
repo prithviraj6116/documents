@@ -3358,3 +3358,6 @@ db18: A+36.57(B),2.4.14,B+47.44(C),2.8.57,
 
 mac: ah-dvalovci-m 
 linux:ah-ddasroy-l   saurabh: vdi-ahddp-025 
+
+compiler options:
+fCodingUsingNativeArrays
