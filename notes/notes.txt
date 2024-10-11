@@ -3366,18 +3366,4 @@ https://mathworks.atlassian.net/wiki/spaces/STAT/pages/133072258/Stateflow+Data+
 http://p4dbmaster.mathworks.com/cgi-bin/changeView.cgi?CH=6883778
 http://p4dbmaster.mathworks.com/cgi-bin/changeView.cgi?CH=11887123
 
-
-namespace dd {
-struct State {
-    unsigned int translation;
-};
-}
-
-unsigned int get_myBasicType() { return model.myBasicType;}
-void set_myBasicType(unsigned int&& val) { model.myBasicType = val;} 
-std::pair<const fl::uchar*, size_t> get_mySFUnicodeString() { return {model.myString.c_str(), model.myString.size()}; }
-void set_mySFUnicodeString(fl::ustring&& val) { model.myString = std::move(val);}
-std::pair<const unsigned int*, size_t> get_mySFVector() {return {model.myVector.data(), model.myVector.size()};}
-void set_mySFVector(std::vector<unsigned int>&& val) { model.myVector = std::move(val);};
-void setArrayElement_mySFVector(unsigned int&& val, unsigned int index) { model.myVector[index] = val;}
-void pushbackArrayElement_mySFVector(unsigned int&& val) { model.myVector.push_back(val);}
+ustring change: //mathworks/devel/sandbox/ppatil/_sbbackup/sbs_ppatil.ufix_q8_backup/v1 
