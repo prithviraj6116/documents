@@ -1674,7 +1674,7 @@ sbsmartbuild -no-sbpatch -nativeproj-build
 sbvisual: sbsmartbuild -no-sbpatch -nativeproj/-nativeproj-build/-nativeproj-ibuild
 windows: p4 login -a; p4 client P4CLIENT=actualsandboxname; net use G: \\mathworks\devel\sbs; cd /d G:\78\ppatil.ppdd_q1; subst; sbp4fixclientroots  -force; sbsmartbuild -no-sbpatch -nativeproj-build
 javascript js debugging:  stt: Stateflow.internal.StateTransitionTableManager.SetDebugMode(sttH.Id, true) 
-gdb sbgdb sb -debug: mw sbgdb -x .sbtools/sb-debug/source-path.gdbinit  or sb -debug -setenv ML_WEBUI=0
+gdb sbgdb sb -debug: mw sbgdb -x .sbtools/sb-debug/source-path.gdbinit  or sb -debug -setenv ML_WEBUI=0  
 todo:  error messages  https://emrt-prod.ipws.mathworks.com/ 
 todo: inside labs:https://classic-labs.mathworks.com/  insidelabs-git
 todo: dr evil https://sfdrevil.ipws.mathworks.com/#!/    https://inside-labs.mathworks.com/dev/stateflow-tools/drevil/#!/ 
