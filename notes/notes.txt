@@ -1679,6 +1679,7 @@ sblocalhub -prune
 links:
 1.support email tracker: https://www-sbtools-ah.mathworks.com/mathworks/hub/share/sbtools/apps/tomato/index.cgi/messages/search?keyword=sbsmartbuild&start_date=&end_date=&group_id=&sender=&owner=&only_status= 
 gdb sbgdb sb -debug: mw sbgdb -x .sbtools/sb-debug/source-path.gdbinit  or sb -debug -setenv ML_WEBUI=0  
+code coverage component lists:  https://filemetrics.mathworks.com/filemetrics/fileMetricReport/list?teamLogin=jnl&measureCode=lineCov&metricCode=MCCMATLAB&measures=lineCov,chLineCov,report,timestamp&sort=fileName&order=asc 
 todo:  error messages  https://emrt-prod.ipws.mathworks.com/ 
 todo: inside labs:https://classic-labs.mathworks.com/  insidelabs-git
 todo: dr evil https://sfdrevil.ipws.mathworks.com/#!/    https://inside-labs.mathworks.com/dev/stateflow-tools/drevil/#!/ 

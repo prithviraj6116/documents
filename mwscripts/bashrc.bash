@@ -85,8 +85,12 @@ export h=/mathworks/devel/sandbox/ppatil/misc/hubdocs/mwscripts
 alias sbmakeq="sbmake -distcc DEBUG=1"
 alias sbmakeq1="sbmake BH_ALLOW_ISOLATED_BUILDS= -distcc DEBUG=1"
 alias sbmakeq2="sbmake NORUNTESTS=1 NOBUILDTESTS=1 BH_ALLOW_ISOLATED_BUILDS= -distcc DEBUG=1"
-alias sbrjs="mw env ML_WEBUI=1  matlab -r \"addpath('/mathworks/devel/sandbox/ppatil/misc/hubdocs/mwscripts');myStartup;cd('~/Downloads/w4') \" &> /tmp/matlab.log &";         
-alias sbr="mw env ML_WEBUI=0  matlab -nosplash -r \"addpath('/mathworks/devel/sandbox/ppatil/misc/hubdocs/mwscripts');myStartup;cd('~/Downloads/w4') \" &> /tmp/matlab.log &";        
+alias sbrjs="mw env ML_WEBUI=1  matlab -r \"sfnew;bdclose('all');addpath('/mathworks/devel/sandbox/ppatil/misc/hubdocs/mwscripts');myStartup;cd('~/Downloads/w4') \" &>> /tmp/matlab.log &";         
+alias sbrjs1="mw env ML_WEBUI=1  matlab -r \"sfnew;bdclose('all');addpath('/mathworks/devel/sandbox/ppatil/misc/hubdocs/mwscripts');myStartup;cd('~/Downloads/w4') \" &";
+alias sbrjs2="mw env ML_WEBUI=1  matlab -nosplash -r \"sfnew;bdclose('all');feature('getpid'); \" &";
+alias sbr="mw env ML_WEBUI=0  matlab -nosplash -r \"sfnew;bdclose('all');addpath('/mathworks/devel/sandbox/ppatil/misc/hubdocs/mwscripts');myStartup;cd('~/Downloads/w4') \" &>> /tmp/matlab.log &";        
+alias sbr1="mw env ML_WEBUI=0  matlab -nosplash -r \"sfnew;bdclose('all');addpath('/mathworks/devel/sandbox/ppatil/misc/hubdocs/mwscripts');myStartup;cd('~/Downloads/w4') \" &"; 
+alias sbr2="mw env ML_WEBUI=0  matlab -nosplash -r \"sfnew;bdclose('all');feature('getpid'); \" &";
 alias mynote="cd /mathworks/devel/sandbox/ppatil/misc/hubdocs/notes/;gvim notes.txt & cd - "
 alias newSession="cd ~;rm -rf logs log matlab_crash_dump* orig.matlab_crash_dump*; pkill -9 -f matlab;sbstop 8 0;pkill -9 -f chrome;pkill -9 -f mozilla; pkill -9 -f firefox; pkill -9 -f p4v;pkill -9 -f gvim;cd -;google-chrome &> /tmp/chrome.log & mynote &> /tmp/log1 &"
 #export PS1=..............................................................................\\n$\ 
