@@ -51,7 +51,7 @@ function VundleInit()
 endfunction
 
 
-:call VundleInit()
+":call VundleInit()
 set completeopt-=preview
 let g:ycm_auto_hover='' "CursorHold
 let g:Verdin#autocomplete = 1
