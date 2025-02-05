@@ -501,6 +501,7 @@ sfc('coder_options')
 sbsmartbuild -opened; mw runlikebat does not work
 
 
+
 c style comments: //
 -Wimplicit-int
 int main()
@@ -940,6 +941,7 @@ matlab/src/sl_graphical_classes/export/include/sl_graphical_classes/RegisterMode
 allslfeature=slf_feature('report');
 slflist= slfeature('query','stateflow');
 mw runlikebat -testlist test/toolbox/stateflow/sf_in_matlab/bug_fixes/tg1879530_BPonCommentedTransition.m -interactive -logs /tmp/asvs
+https://mathworks.atlassian.net/wiki/spaces/CTI/pages/124999419/runlikebat#runlikebat-Whenshouldrunlikebatbeused?
 slfeature('ListSetAndSave',1);get_param(blockPathOrModel,'ObjectParameters');%to see all(active,hidden,featured-off,obsolote) parameters
 get_param(blockPathOrModel,'DialogParameters');
 get_param(blockPathOrModel,'IntrinsicDialogParameters');
@@ -1680,6 +1682,8 @@ links:
 1.support email tracker: https://www-sbtools-ah.mathworks.com/mathworks/hub/share/sbtools/apps/tomato/index.cgi/messages/search?keyword=sbsmartbuild&start_date=&end_date=&group_id=&sender=&owner=&only_status= 
 gdb sbgdb sb -debug: mw sbgdb -x .sbtools/sb-debug/source-path.gdbinit  or sb -debug -setenv ML_WEBUI=0  
 code coverage component lists:  https://filemetrics.mathworks.com/filemetrics/fileMetricReport/list?teamLogin=jnl&measureCode=lineCov&metricCode=MCCMATLAB&measures=lineCov,chLineCov,report,timestamp&sort=fileName&order=asc 
+
+todo: code descriptions for slci,rtw stateflow.tlc
 todo: binfo.mat postcodegeninfo 1. machine->rtwinfo 2. chart->sfuninfo 3. machinebuildinfo 4. dworkinfo-mxarray 5. clean up postcodegeninfo.hpp 6. resolveToSignelobject boolean 7. remove dWorkVarHighLevelTypes and dworkVars from CdrModuleInfo 8. charttlc, initialize,outputfcn 
 todo:  error messages  https://emrt-prod.ipws.mathworks.com/ 
 todo: inside labs:https://classic-labs.mathworks.com/  insidelabs-git

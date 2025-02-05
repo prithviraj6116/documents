@@ -1,5 +1,6 @@
 function myStartup
-    sf('Feature', 'SFLint',0);
+    %return;
+    %sf('Feature', 'SFLint',0);
     if feature('webui') == 0
         setMATLABTitleJavaDesktop;
     else
@@ -8,7 +9,7 @@ function myStartup
 %     setFileGenDir;
  sbmatlabcmdhelper
  addPaths();
- loadStateflow();
+ %loadStateflow();
  % s = settings;
 
 % s.matlab.desktop.DisplayScaleFactor.PersonalValue = 1 ;
