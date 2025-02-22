@@ -231,6 +231,8 @@ MWTOOLS
 
 emacs: sbe, vertical split:c-x-3, gdb:c-x-m-d, breakpoint: c-x-a-b
 valgrind:
+  mw -using pwd sb -nodesktop -nojvm -valgrind-memcheck-opt="--show-leak-kinds=all --track-origins=yes" -r script
+
    cd /mathworks/devel/sandbox/jaadm/Bmain_valgrind_debug/latest_valgrind_pass; mw -using Bmain sbs clone create -snapshot clone_me -n q1_valgrind
    sbsync-and-make -src-root Bmain -run-sbvalsetup -build-type debug -ignore-failed-modules
    sb -memmgr "debug,nonewhandler" -nodesktop -nosplash -nojvm
@@ -3378,3 +3380,18 @@ http://p4dbmaster.mathworks.com/cgi-bin/changeView.cgi?CH=6883778
 http://p4dbmaster.mathworks.com/cgi-bin/changeView.cgi?CH=11887123
 
 ustring change: //mathworks/devel/sandbox/ppatil/_sbbackup/sbs_ppatil.ufix_q8_backup/v1 
+
+
+
+
+
+
+
+
+
+learning 2025:
+https://inside-files.mathworks.com/dev/ltc/doxygen/Bfl/html/user_view/foundation/log/src/log/index.html
+
+v=feature('diagnosticSpec','sf::cdr.*=all');
+v=feature('diagnosticDest','file=mylogfile.txt');
+http://inside-files.mathworks.com/dev/ltc/doxygen/Bfl/html/user_view/foundation/log/src/log/
