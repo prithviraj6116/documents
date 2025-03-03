@@ -3414,5 +3414,6 @@ clear;mw TestsToRun -selector Bstateflow/STATEFLOW_CORE_TESTS
 https://mathworks.sharepoint.com/sites/WikiArchive/PDF/Out-of-Model%20Conditions%20in%20Component%20XML%20Files.pdf
 
 
+download sourcegrpah from here: https://sourcegraph.com/docs/cli/quickstart
 export SRC_ENDPOINT=https://sourcegraph.mathworks.com
 export SRC_ACCESS_TOKEN=
