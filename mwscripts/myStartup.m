@@ -1,5 +1,4 @@
 function myStartup
-    %return;
     %sf('Feature', 'SFLint',0);
     if feature('webui') == 0
         setMATLABTitleJavaDesktop;

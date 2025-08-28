@@ -3419,3 +3419,13 @@ export SRC_ENDPOINT=https://sourcegraph.mathworks.com
 export SRC_ACCESS_TOKEN=
 https://www.mathworks.com/help/doc-archives.html
 
+
+
+
+Normal Chart: 
+Demo Machine
+Authored Charts
+
+License Exists and available for checkout
+License Does not Exist
+License exists
