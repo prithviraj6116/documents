@@ -1,0 +1,9 @@
+
+{
+    "python.pythonPath": "path/to/your/virtualenv/bin/python",  // Update this path
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+    "python.linting.pylintArgs": [
+        "--max-line-length=120"
+    ]
+}
