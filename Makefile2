@@ -1,4 +1,4 @@
-CXXFLAGS+=-g -O0 -Werror -fno-stack-protector       
+ CXXFLAGS+=-g -O0 -Werror -fno-stack-protector       
 override CXXFLAGS+=-std=c++14 
 
 CLEAN :=
