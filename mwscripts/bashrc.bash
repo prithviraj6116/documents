@@ -44,14 +44,14 @@ function chd() {
     export MYSBNAME=${MYSBNAME/$d\//(local)}
     if [[ $# == 0 ]];
     then
-        echo "$(perl /mathworks/devel/sandbox/ppatil/misc/hubdocs/mwscripts/bashrcHelper.pl)"
+        echo "$(perl /mathworks/devel/sandbox/ppatil/misc/gitRepo1/hubdocs/mwscripts/bashrcHelper.pl)"
         read -p "Enter directory number: " directoryNumber
         export PPP_DIRECTORYNUMBER=$directoryNumber
     else
-        temp1=$(perl /mathworks/devel/sandbox/ppatil/misc/hubdocs/mwscripts/bashrcHelper.pl)
+        temp1=$(perl /mathworks/devel/sandbox/ppatil/misc/gitRepo1/hubdocs/mwscripts/bashrcHelper.pl)
         export PPP_DIRECTORYNUMBER=$1
     fi
-    cd "$(perl /mathworks/devel/sandbox/ppatil/misc/hubdocs/mwscripts/bashrcHelper.pl)"
+    cd "$(perl /mathworks/devel/sandbox/ppatil/misc/gitRepo1/hubdocs/mwscripts/bashrcHelper.pl)"
 }
 function getTerminalTabTitle() {
     PWD1=${PWD/$s/\$s}
@@ -79,19 +79,19 @@ cmd2="xclip -selection clipboard -o"
  eval $cmd2
 }
 
-export h=/mathworks/devel/sandbox/ppatil/misc/hubdocs/mwscripts
+export h=/mathworks/devel/sandbox/ppatil/misc/gitRepo1/hubdocs/mwscripts
 
 
 alias sbmakeq="sbmake -distcc DEBUG=1"
 alias sbmakeq1="sbmake BH_ALLOW_ISOLATED_BUILDS= -distcc DEBUG=1"
 alias sbmakeq2="sbmake NORUNTESTS=1 NOBUILDTESTS=1 BH_ALLOW_ISOLATED_BUILDS= -distcc DEBUG=1"
-alias sbr="mw env ML_WEBUI=1  matlab -r \"sfnew;bdclose('all');addpath('/mathworks/devel/sandbox/ppatil/misc/hubdocs/mwscripts');myStartup;cd('~/Downloads/w4') \" &>> /tmp/matlab.log &";         
-alias sbrjs1="mw env ML_WEBUI=1  matlab -r \"sfnew;bdclose('all');addpath('/mathworks/devel/sandbox/ppatil/misc/hubdocs/mwscripts');myStartup;cd('~/Downloads/w4') \" &";
+alias sbr="mw env ML_WEBUI=1  matlab -r \"sfnew;bdclose('all');addpath('/mathworks/devel/sandbox/ppatil/misc/gitRepo1/hubdocs/mwscripts');myStartup;cd('~/Downloads/w4') \" &>> /tmp/matlab.log &";         
+alias sbrjs1="mw env ML_WEBUI=1  matlab -r \"sfnew;bdclose('all');addpath('/mathworks/devel/sandbox/ppatil/misc/gitRepo1/hubdocs/mwscripts');myStartup;cd('~/Downloads/w4') \" &";
 alias sbrjs2="mw env ML_WEBUI=1  matlab -nosplash -r \"sfnew;bdclose('all');feature('getpid'); \" &";
-alias sbrjava="mw env ML_WEBUI=0  matlab -nosplash -r \"sfnew;bdclose('all');addpath('/mathworks/devel/sandbox/ppatil/misc/hubdocs/mwscripts');myStartup;cd('~/Downloads/w4') \" &>> /tmp/matlab.log &";        
-alias sbr1="mw env ML_WEBUI=0  matlab -nosplash -r \"sfnew;bdclose('all');addpath('/mathworks/devel/sandbox/ppatil/misc/hubdocs/mwscripts');myStartup;cd('~/Downloads/w4') \" &"; 
+alias sbrjava="mw env ML_WEBUI=0  matlab -nosplash -r \"sfnew;bdclose('all');addpath('/mathworks/devel/sandbox/ppatil/misc/gitRepo1/hubdocs/mwscripts');myStartup;cd('~/Downloads/w4') \" &>> /tmp/matlab.log &";        
+alias sbr1="mw env ML_WEBUI=0  matlab -nosplash -r \"sfnew;bdclose('all');addpath('/mathworks/devel/sandbox/ppatil/misc/gitRepo1/hubdocs/mwscripts');myStartup;cd('~/Downloads/w4') \" &"; 
 alias sbr2="mw env ML_WEBUI=0  matlab -nosplash -r \"sfnew;bdclose('all');feature('getpid'); \" &";
-alias mynote="cd /mathworks/devel/sandbox/ppatil/misc/hubdocs/notes/;gvim notes.txt & cd - "
+alias mynote="cd /mathworks/devel/sandbox/ppatil/misc/gitRepo1/hubdocs/notes/;gvim notes.txt & cd - "
 alias newSession="cd ~;rm -rf logs log matlab_crash_dump* orig.matlab_crash_dump*; pkill -9 -f matlab;sbstop 8 0;pkill -9 -f chrome;pkill -9 -f mozilla; pkill -9 -f firefox; pkill -9 -f p4v;pkill -9 -f gvim;cd -;google-chrome &> /tmp/chrome.log & mynote &> /tmp/log1 &"
 #export PS1=..............................................................................\\n$\ 
 export PROMPT_COMMAND='echo -ne "\033]0;$(getTerminalTabTitle)\007"'

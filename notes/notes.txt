@@ -1,4 +1,4 @@
-SF semantics:
+SF semantics:  
 1. passbyreference: 
 2. inputs: chart input are readonly but not function inputs
 
