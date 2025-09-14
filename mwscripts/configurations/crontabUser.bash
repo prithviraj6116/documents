@@ -25,14 +25,14 @@ cloneNetworkSB()
 }
 
 dateNow=`date +%y%m%d%H%M%S`;
-. /hub/share/sbtools/bash_setup.bash;
+. /mathworks/hub/share/sbtools/bash_setup.bash;
 dirName=$s/misc/logs/backupCloneRestore/syncSSD/logs_$dateNow;
 
 
 export PYTHONPATH=/sandbox/savadhan:/sandbox/savadhan/sbtools
   
 mkdir -p $dirName/Bstateflow;
-sbsyncmaster -C /local-ssd/$USER -log-dir $dirName/Bstateflow -src-root Bstateflow -cfg /sandbox/$USER/misc/configurations/sbsync.cfg;
+sbsyncmaster -C /local-ssd/$USER -log-dir $dirName/Bstateflow -src-root Bstateflow -cfg /mathworks/devel/sandbox/$USER/misc/configurations/sbsync.cfg;
 #mkdir -p $dirName/Beml;
 #sbsyncmaster -C /local-ssd/$USER -log-dir $dirName/Beml -src-root Beml -prime-from /local-ssd/$USER/Bstateflow.latest_pass   -cfg /sandbox/$USER/misc/configurations/sbsync.cfg;
 #mkdir -p $dirName/Bmain_task1;
