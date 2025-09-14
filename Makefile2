@@ -1,7 +1,7 @@
  CXXFLAGS+=-g -O0 -Werror -fno-stack-protector       
 override CXXFLAGS+=-std=c++14 
 
-CLEAN :=
+CLEAN := 
 
 all: dump-sections dump-segments dump-syms dump-tree dump-lines find-pc cpp1
 
