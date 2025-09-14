@@ -1,4 +1,4 @@
-
+  
 # Task Manager
 
 This is a simple Python-based task manager application that allows you to add, view, and remove tasks.
