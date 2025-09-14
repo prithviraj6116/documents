@@ -2,7 +2,7 @@
 from tasks.task_manager import TaskManager
 
 def main():
-    task_manager = TaskManager()
+    task_manager = TaskManager() 
 
     while True:
         print("\nTask Manager")
